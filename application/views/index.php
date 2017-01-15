@@ -77,71 +77,6 @@
                                                 </a>
 
                                             </li>
-                                            <!--<li class="dropdown dropdown-mega">-->
-                                            <!--<a class="dropdown-toggle" href="#">-->
-                                            <!--Profile-->
-                                            <!--</a>-->
-                                            <!--<ul class="dropdown-menu">-->
-                                            <!--<li>-->
-                                            <!--<div class="dropdown-mega-content">-->
-                                            <!--<div class="row">-->
-                                            <!--<div class="col-md-3">-->
-                                            <!--<span class="dropdown-mega-sub-title">Shortcodes 1</span>-->
-                                            <!--<ul class="dropdown-mega-sub-nav">-->
-                                            <!--<li><a href="shortcodes-accordions.html">Accordions</a></li>-->
-                                            <!--<li><a href="shortcodes-toggles.html">Toggles</a></li>-->
-                                            <!--<li><a href="shortcodes-tabs.html">Tabs</a></li>-->
-                                            <!--<li><a href="shortcodes-icons.html">Icons</a></li>-->
-                                            <!--<li><a href="shortcodes-icon-boxes.html">Icon Boxes</a></li>-->
-                                            <!--<li><a href="shortcodes-carousels.html">Carousels</a></li>-->
-                                            <!--<li><a href="shortcodes-modals.html">Modals</a></li>-->
-                                            <!--<li><a href="shortcodes-lightboxes.html">Lightboxes</a></li>-->
-                                            <!--</ul>-->
-                                            <!--</div>-->
-                                            <!--<div class="col-md-3">-->
-                                            <!--<span class="dropdown-mega-sub-title">Shortcodes 2</span>-->
-                                            <!--<ul class="dropdown-mega-sub-nav">-->
-                                            <!--<li><a href="shortcodes-buttons.html">Buttons</a></li>-->
-                                            <!--<li><a href="shortcodes-labels.html">Labels</a></li>-->
-                                            <!--<li><a href="shortcodes-lists.html">Lists</a></li>-->
-                                            <!--<li><a href="shortcodes-image-gallery.html">Image Gallery</a></li>-->
-                                            <!--<li><a href="shortcodes-image-frames.html">Image Frames</a></li>-->
-                                            <!--<li><a href="shortcodes-testimonials.html">Testimonials</a></li>-->
-                                            <!--<li><a href="shortcodes-blockquotes.html">Blockquotes</a></li>-->
-                                            <!--<li><a href="shortcodes-word-rotator.html">Word Rotator</a></li>-->
-                                            <!--</ul>-->
-                                            <!--</div>-->
-                                            <!--<div class="col-md-3">-->
-                                            <!--<span class="dropdown-mega-sub-title">Shortcodes 3</span>-->
-                                            <!--<ul class="dropdown-mega-sub-nav">-->
-                                            <!--<li><a href="shortcodes-call-to-action.html">Call to Action</a></li>-->
-                                            <!--<li><a href="shortcodes-pricing-tables.html">Pricing Tables</a></li>-->
-                                            <!--<li><a href="shortcodes-tables.html">Tables</a></li>-->
-                                            <!--<li><a href="shortcodes-progressbars.html">Progress Bars</a></li>-->
-                                            <!--<li><a href="shortcodes-counters.html">Counters</a></li>-->
-                                            <!--<li><a href="shortcodes-sections-parallax.html">Sections &amp; Parallax</a></li>-->
-                                            <!--<li><a href="shortcodes-tooltips-popovers.html">Tooltips &amp; Popovers</a></li>-->
-                                            <!--<li><a href="shortcodes-sticky-elements.html">Sticky Elements</a></li>-->
-                                            <!--</ul>-->
-                                            <!--</div>-->
-                                            <!--<div class="col-md-3">-->
-                                            <!--<span class="dropdown-mega-sub-title">Shortcodes 4</span>-->
-                                            <!--<ul class="dropdown-mega-sub-nav">-->
-                                            <!--<li><a href="shortcodes-headings.html">Headings</a></li>-->
-                                            <!--<li><a href="shortcodes-dividers.html">Dividers</a></li>-->
-                                            <!--<li><a href="shortcodes-animations.html">Animations</a></li>-->
-                                            <!--<li><a href="shortcodes-medias.html">Medias</a></li>-->
-                                            <!--<li><a href="shortcodes-maps.html">Maps</a></li>-->
-                                            <!--<li><a href="shortcodes-arrows.html">Arrows</a></li>-->
-                                            <!--<li><a href="shortcodes-alerts.html">Alerts</a></li>-->
-                                            <!--<li><a href="shortcodes-posts.html">Posts</a></li>-->
-                                            <!--</ul>-->
-                                            <!--</div>-->
-                                            <!--</div>-->
-                                            <!--</div>-->
-                                            <!--</li>-->
-                                            <!--</ul>-->
-                                            <!--</li>-->
                                             <li class="dropdown">
                                                 <a class="dropdown-toggle" href="#">
                                                     Profile
@@ -278,117 +213,8 @@
         <div class="home-intro light">
             <div class="container">
 
-                <!--<div class="row">-->
-                <!--<div class="col-md-8">-->
-                <!--<p>-->
-                <!--The fastest way to grow your business with the leader in <em>Technology</em>-->
-                <!--<span>Check out our options and features included.</span>-->
-                <!--</p>-->
-                <!--</div>-->
-                <!--<div class="col-md-4">-->
-                <!--<div class="get-started">-->
-                <!--<a href="#" class="btn btn-lg btn-primary">Get Started Now!</a>-->
-                <!--<div class="learn-more">or <a href="index.html">learn more.</a></div>-->
-                <!--</div>-->
-                <!--</div>-->
-                <!--</div>-->
-
             </div>
-        </div>
-
-        <!--<div class="container">-->
-        <!--<div class="row center">-->
-        <!--<div class="col-md-12">-->
-        <!--<h1 class="word-rotator-title mb-sm">-->
-        <!--Porto is-->
-        <!--<strong class="inverted">-->
-        <!--<span class="word-rotate" data-plugin-options='{"delay": 2000}'>-->
-        <!--<span class="word-rotate-items">-->
-        <!--<span>incredibly</span>-->
-        <!--<span>especially</span>-->
-        <!--<span>extremely</span>-->
-        <!--</span>-->
-        <!--</span>-->
-        <!--</strong>-->
-        <!--beautiful and fully responsive.-->
-        <!--</h1>-->
-        <!--<p class="lead">-->
-        <!--Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce elementum, nulla vel pellentesque consequat, ante nulla hendrerit arcu, ac tincidunt mauris lacus sed leo. vamus suscipit molestie vestibulum.-->
-        <!--</p>-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--<div class="row mt-xlg">-->
-        <!--<div class="col-md-4">-->
-        <!--<div class="feature-box">-->
-        <!--<div class="feature-box-icon">-->
-        <!--<i class="fa fa-group"></i>-->
-        <!--</div>-->
-        <!--<div class="feature-box-info">-->
-        <!--<h4 class="heading-primary mb-xs">Customer Support</h4>-->
-        <!--<p>Lorem ipsum dolor sit amet, consectetur adipiscing <span class="alternative-font">metus.</span> elit. Quisque rutrum pellentesque imperdiet.</p>-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--<div class="col-md-4">-->
-        <!--<div class="feature-box">-->
-        <!--<div class="feature-box-icon">-->
-        <!--<i class="fa fa-film"></i>-->
-        <!--</div>-->
-        <!--<div class="feature-box-info">-->
-        <!--<h4 class="heading-primary mb-xs">Sliders</h4>-->
-        <!--<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque rutrum pellentesque imperdiet. Nulla lacinia iaculis nulla.</p>-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--<div class="col-md-4">-->
-        <!--<div class="feature-box">-->
-        <!--<div class="feature-box-icon">-->
-        <!--<i class="fa fa-bars"></i>-->
-        <!--</div>-->
-        <!--<div class="feature-box-info">-->
-        <!--<h4 class="heading-primary mb-xs">Buttons</h4>-->
-        <!--<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque rutrum pellentesque imperdiet. Nulla lacinia iaculis nulla.</p>-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--<div class="row mt-lg">-->
-        <!--<div class="col-md-4">-->
-        <!--<div class="feature-box">-->
-        <!--<div class="feature-box-icon">-->
-        <!--<i class="fa fa-file"></i>-->
-        <!--</div>-->
-        <!--<div class="feature-box-info">-->
-        <!--<h4 class="heading-primary mb-xs">HTML5 / CSS3 / JS</h4>-->
-        <!--<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque rutrum pellentesque imperdiet. Nulla lacinia iaculis nulla.</p>-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--<div class="col-md-4">-->
-        <!--<div class="feature-box">-->
-        <!--<div class="feature-box-icon">-->
-        <!--<i class="fa fa-check"></i>-->
-        <!--</div>-->
-        <!--<div class="feature-box-info">-->
-        <!--<h4 class="heading-primary mb-xs">Icons</h4>-->
-        <!--<p>Lorem ipsum dolor sit amet, consectetur adipiscing <span class="alternative-font">metus.</span> elit. Quisque rutrum pellentesque imperdiet.</p>-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--<div class="col-md-4">-->
-        <!--<div class="feature-box">-->
-        <!--<div class="feature-box-icon">-->
-        <!--<i class="fa fa-desktop"></i>-->
-        <!--</div>-->
-        <!--<div class="feature-box-info">-->
-        <!--<h4 class="heading-primary mb-xs">Lightbox</h4>-->
-        <!--<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque rutrum pellentesque imperdiet. Nulla lacinia iaculis nulla.</p>-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--</div>-->
-
+       </div>
 
         <div class="container">
             <div class="row">
@@ -408,7 +234,7 @@
                         kreativitas mahasiswa di bidang ilmu pengetahuan dan teknologi</h2>
 
                 </div>
-                <div class="col-md-3 ">
+                <div class="col-md-3">
                     <img class="img-responsive" src="<?= base_url() ?>assets/img/Page_profile.png" width="170"
                          data-appear-animation="fadeInRight" alt="">
                 </div>
@@ -548,7 +374,7 @@
 
                 </div>
             </div>
-            <!---blog--->
+            <!-- blog -->
             <div class="row">
                 <div class="col-md-12">
 
@@ -562,7 +388,7 @@
                                     <a href="portfolio-single-project.html">
 								<span class="thumb-info thumb-info-centered-info thumb-info-no-borders">
 									<span class="thumb-info-wrapper">
-										<img src="img/projects/project.jpg" class="img-responsive" alt="">
+										<img src="<?= base_url() ?>assets/img/projects/project.jpg" class="img-responsive" alt="">
 										<span class="thumb-info-title">
 											<span class="thumb-info-inner">Project Title</span>
 											<span class="thumb-info-type">Project Type</span>
@@ -580,7 +406,7 @@
                                     <a href="portfolio-single-project.html">
 								<span class="thumb-info thumb-info-centered-info thumb-info-no-borders">
 									<span class="thumb-info-wrapper">
-										<img src="img/projects/project-2.jpg" class="img-responsive" alt="">
+										<img src="<?= base_url() ?>assets/img/projects/project-2.jpg" class="img-responsive" alt="">
 										<span class="thumb-info-title">
 											<span class="thumb-info-inner">Judul</span>
 											<span class="thumb-info-type">Project Type</span>
@@ -597,7 +423,7 @@
                                 <a href="portfolio-single-project.html">
 								<span class="thumb-info thumb-info-centered-info thumb-info-no-borders">
 									<span class="thumb-info-wrapper">
-										<img src="img/projects/project-2.jpg" class="img-responsive" alt="">
+										<img src="<?= base_url() ?>assets/img/projects/project-2.jpg" class="img-responsive" alt="">
 										<span class="thumb-info-title">
 											<span class="thumb-info-inner">Judul</span>
 											<span class="thumb-info-type">Project Type</span>
@@ -614,7 +440,7 @@
                                 <a href="portfolio-single-project.html">
 								<span class="thumb-info thumb-info-centered-info thumb-info-no-borders">
 									<span class="thumb-info-wrapper">
-										<img src="img/projects/project-2.jpg" class="img-responsive" alt="">
+										<img src="<?= base_url() ?>assets/img/projects/project-2.jpg" class="img-responsive" alt="">
 										<span class="thumb-info-title">
 											<span class="thumb-info-inner">Judul</span>
 											<span class="thumb-info-type">Project Type</span>
@@ -631,7 +457,7 @@
                                 <a href="portfolio-single-project.html">
 								<span class="thumb-info thumb-info-centered-info thumb-info-no-borders">
 									<span class="thumb-info-wrapper">
-										<img src="img/projects/project-2.jpg" class="img-responsive" alt="">
+										<img src="<?= base_url() ?>assets/img/projects/project-2.jpg" class="img-responsive" alt="">
 										<span class="thumb-info-title">
 											<span class="thumb-info-inner">Judul</span>
 											<span class="thumb-info-type">Project Type</span>
@@ -714,8 +540,8 @@
         <div class="footer-copyright">
             <div class="container">
                 <div class="row">
-                    <!--<div class="col-md-2">-->
-                        <!--<a href="index.html" class="logo">-->
+                    <div class="col-md-2">
+                        <!--<a href="index.html" class="logo">
                             <!--<img alt="Porto Website Template" class="img-responsive" width="1000" src="img/g3392.png">-->
                         <!--</a>-->
                     <!--</div>-->
