@@ -1,16 +1,17 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Dashboard extends Admin_Controller {
+class Pos extends CI_Controller {
 
 	public function index()
 	{
 		$this->load->view('assets/csslinkadm');
 		$this->load->view('admin/navbar');
-		$this->load->view('admin/index');
+		$this->load->view('admin/pos');
 		$this->load->view('assets/jslinkadm');
 	}
+
 }
 
-/* End of file admin.php */
-/* Location: ./application/controllers/admin.php */
+/* End of file pos.php */
+/* Location: ./application/controllers/pos.php */
