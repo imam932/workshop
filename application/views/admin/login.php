@@ -11,25 +11,35 @@
 </head>
 
 <body>
-  <div class="login-form">
-   <h1>Vini</h1>
-   <div class="form-group ">
-     <input type="text" class="form-control" placeholder="Username " id="UserName">
-     <i class="fa fa-user"></i>
-   </div>
-   <div class="form-group log-status">
-     <input type="password" class="form-control" placeholder="Password" id="Passwod">
-     <i class="fa fa-lock"></i>
-   </div>
-   <span class="alert">Invalid Credentials</span>
-   <a class="link" href="#">Lost your password?</a>
-   <button type="button" class="log-btn" >Log in</button>
-   
-   
- </div>
+    <div class="login-form">
+        <img src="<?= base_url() ?>assets/admin/img/logo.png">
 
- <script src="<?= base_url() ?>assets/vendor/jquery/jquery.js"></script>
- <script src="<?= base_url() ?>assets/admin/js/index.js"></script>
+        <form method="post" action="Login/process_login">
 
+            <!-- Field Username -->
+            <?php if(isset($error_message['username'])) { ?>
+            <div class="alert"><?= $error_message['username']; ?></div>
+            <?php } ?>
+            <div class="form-group ">
+                <input type="text" class="form-control" placeholder="Username " id="UserName" name="username">
+                <i class="fa fa-user"></i>
+            </div>
+
+            <!-- Field Password -->
+            <?php if(isset($error_message['password'])) { ?>
+            <div class="alert"><?= $error_message['password']; ?></div>
+            <?php } ?>
+            <div class="form-group log-status">
+                <input type="password" class="form-control" placeholder="Password" id="Passwod" name="password">
+                <i class="fa fa-lock"></i>
+            </div>
+
+            <?php if(isset($error_message['invalid_user'])) { ?>
+            <div class="alert"><?= $error_message['invalid_user']; ?></div>
+            <?php } ?>
+            <button type="submit" class="log-btn" >Log in</button>
+        </form>
+    </div>
+    <script src="<?= base_url() ?>assets/vendor/jquery/jquery.js"></script>
 </body>
 </html>

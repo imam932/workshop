@@ -17,10 +17,15 @@ h1 {
   font-size: 50px;
 }
 
+.login-form img {
+  max-width: 100%;
+  margin-bottom: 10px;
+}
+
 .login-form {
   width: 350px;
   padding: 40px 30px;
-  background: #eee;
+  background: #F7F7F6;
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
   border-radius: 4px;
@@ -102,10 +107,9 @@ h1 {
 }
 
 .alert {
-  display: none;
   font-size: 12px;
-  color: #f00;
-  float: left;
+  color: #FF6868;
+  margin: 10px 0px;
 }
 
 @-moz-keyframes wrong-log {

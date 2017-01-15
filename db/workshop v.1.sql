@@ -1,10 +1,10 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
+-- version 4.5.2
 -- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: 14 Jan 2017 pada 15.11
--- Versi Server: 10.1.19-MariaDB
+-- Host: localhost
+-- Generation Time: Jan 15, 2017 at 06:59 
+-- Server version: 10.1.19-MariaDB
 -- PHP Version: 7.0.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -23,7 +23,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `artikel`
+-- Table structure for table `artikel`
 --
 
 CREATE TABLE `artikel` (
@@ -39,20 +39,27 @@ CREATE TABLE `artikel` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `autentikasi`
+-- Table structure for table `autentikasi`
 --
 
 CREATE TABLE `autentikasi` (
   `id_autentikasi` varchar(15) NOT NULL,
   `username` varchar(20) NOT NULL,
-  `password` varchar(20) NOT NULL,
+  `password` text NOT NULL,
   `id_user` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `autentikasi`
+--
+
+INSERT INTO `autentikasi` (`id_autentikasi`, `username`, `password`, `id_user`) VALUES
+('1', 'admin', '21232f297a57a5a743894a0e4a801fc3', '1');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `galeri`
+-- Table structure for table `galeri`
 --
 
 CREATE TABLE `galeri` (
@@ -66,7 +73,7 @@ CREATE TABLE `galeri` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kategori_artikel`
+-- Table structure for table `kategori_artikel`
 --
 
 CREATE TABLE `kategori_artikel` (
@@ -77,7 +84,7 @@ CREATE TABLE `kategori_artikel` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tag`
+-- Table structure for table `tag`
 --
 
 CREATE TABLE `tag` (
@@ -88,7 +95,7 @@ CREATE TABLE `tag` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tutorial`
+-- Table structure for table `tutorial`
 --
 
 CREATE TABLE `tutorial` (
@@ -102,7 +109,7 @@ CREATE TABLE `tutorial` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `user`
+-- Table structure for table `user`
 --
 
 CREATE TABLE `user` (
@@ -111,8 +118,15 @@ CREATE TABLE `user` (
   `jkel` tinyint(1) NOT NULL,
   `tgl_lahir` date NOT NULL,
   `alamat` varchar(100) NOT NULL,
-  `no_tlp` int(12) NOT NULL
+  `no_tlp` varchar(12) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`id_user`, `nama_user`, `jkel`, `tgl_lahir`, `alamat`, `no_tlp`) VALUES
+('1', 'nindra', 1, '2017-01-11', 'probolinggo', '1212');
 
 --
 -- Indexes for dumped tables
