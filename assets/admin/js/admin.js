@@ -3,4 +3,5 @@ $(document).ready(function() {
 		height : 185
 	});
 	$('#example').DataTable();
+	$('#datetimepicker').datetimepicker();
 });
