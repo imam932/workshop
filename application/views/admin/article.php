@@ -8,41 +8,97 @@
 
 		<div class="col-lg-9">
 			<div class="row">
-				<div class="panel panel-default">
+				<div class="panel panel-default article">
 					<div class="panel-body">
-						<div class="col-lg-11">
-							Judul artikel
+						<div class="row">
+							<div class="col-lg-11">
+								Judul artikel
+							</div>
+							<div class="col-lg-1">
+								<i class="fa fa-edit"></i>
+								<i class="fa fa-trash-o"></i>
+							</div>
 						</div>
-						<div class="col-lg-1">
-							<i class="fa fa-edit"></i>
-							<i class="fa fa-trash-o"></i>
-						</div>
+					</div>
+					<div class="panel-footer">
+						<span>
+							<i class="fa fa-calendar"></i>
+							16/01/2017
+						</span>
+
+						<span>
+							<i class="fa fa-tag"></i>
+							Category
+						</span>
+
+						<span>
+							<i class="fa fa-pencil"></i>
+							Admin
+						</span>
 					</div>
 				</div>
 			</div>
+
 			<div class="row">
-				<div class="panel panel-default">
+				<div class="panel panel-default article">
 					<div class="panel-body">
-						<div class="col-lg-11">
-							Judul artikel
+						<div class="row">
+							<div class="col-lg-11">
+								Judul artikel
+							</div>
+							<div class="col-lg-1">
+								<i class="fa fa-edit"></i>
+								<i class="fa fa-trash-o"></i>
+							</div>
 						</div>
-						<div class="col-lg-1">
-							<i class="fa fa-edit"></i>
-							<i class="fa fa-trash-o"></i>
-						</div>
+					</div>
+					<div class="panel-footer">
+						<span>
+							<i class="fa fa-calendar"></i>
+							16/01/2017
+						</span>
+
+						<span>
+							<i class="fa fa-tag"></i>
+							Category
+						</span>
+
+						<span>
+							<i class="fa fa-pencil"></i>
+							Admin
+						</span>
 					</div>
 				</div>
 			</div>
+
 			<div class="row">
-				<div class="panel panel-default">
+				<div class="panel panel-default article">
 					<div class="panel-body">
-						<div class="col-lg-11">
-							Judul artikel
+						<div class="row">
+							<div class="col-lg-11">
+								Judul artikel
+							</div>
+							<div class="col-lg-1">
+								<i class="fa fa-edit"></i>
+								<i class="fa fa-trash-o"></i>
+							</div>
 						</div>
-						<div class="col-lg-1">
-							<i class="fa fa-edit"></i>
-							<i class="fa fa-trash-o"></i>
-						</div>
+					</div>
+					<div class="panel-footer">
+						<span>
+							<i class="fa fa-calendar"></i>
+							16/01/2017
+						</span>
+
+						<span>
+							<i class="fa fa-tag"></i>
+							Category
+						</span>
+
+						<span>
+							<i class="fa fa-pencil"></i>
+							Admin
+						</span>
 					</div>
 				</div>
 			</div>

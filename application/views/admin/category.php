@@ -15,11 +15,11 @@
 					<tr>
 						<td>sdlkfgdfl</td>
 						<td>
-							<a href="barang_edit.php?id=<?php  ?>">
-								<i class="fa fa-pencil"></i>
-							</a> | 
-							<a href="barang_delete.php?id=<?php  ?>">
-								<i class="fa fa-trash"></i>
+							<a href="barang_edit.php?id=<?php  ?>" class="btn btn-primary btn-sm">
+								edit
+							</a>
+							<a href="barang_delete.php?id=<?php  ?>" class="btn btn-danger btn-sm">
+								delete
 							</a>
 						</td>
 					</tr>
