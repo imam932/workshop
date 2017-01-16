@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 16, 2017 at 10:47 
+-- Generation Time: Jan 16, 2017 at 03:12 
 -- Server version: 10.1.19-MariaDB
 -- PHP Version: 7.0.9
 
@@ -103,7 +103,8 @@ CREATE TABLE `tutorial` (
   `date` datetime NOT NULL,
   `title` varchar(200) NOT NULL,
   `description` text NOT NULL,
-  `id_user` varchar(15) NOT NULL
+  `id_user` varchar(15) NOT NULL,
+  `id_category` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
