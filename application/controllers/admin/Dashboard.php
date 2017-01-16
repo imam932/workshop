@@ -7,6 +7,7 @@ class Dashboard extends Admin_Controller {
 	{
 		$data['title'] = "Dashboard";
 		$data['desc'] = "Static Overview";
+		$data['breadcrumb'] = array('Dashboard');
 		$data['content'] = $this->load->view('admin/index', array(),TRUE);
 
 		$this->load->view('admin/template', $data);

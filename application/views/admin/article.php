@@ -1,13 +1,11 @@
 <!-- Page Heading -->
 <div class="row">
 	<div class="col-lg-12">
-		<ol class="breadcrumb">
-			<li class="active">
-				<p>
-					<a href="<?= base_url().'admin/Pos/New' ?>" class="btn btn-pos btn-sm"> POS Baru</a>
-				</p>
-			</li>
-		</ol>
+
+		<p>
+			<a href="<?= base_url().'admin/Article/New' ?>" class="btn btn-primary btn-sm"> Create New</a>
+		</p> <br>
+
 		<div class="col-lg-9">
 			<div class="row">
 				<div class="panel panel-default">

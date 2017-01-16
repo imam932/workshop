@@ -55,4 +55,4 @@ $route['translate_uri_dashes'] = FALSE;
 // -------------------------##------------------------------
 $route['admin'] 			= 'admin/Dashboard';
 $route['admin/Logout'] 		= 'admin/Login/process_logout';
-$route['admin/Pos/New']		= 'admin/Pos/newpos';
+$route['admin/Article/New']		= 'admin/Article/newArticle';

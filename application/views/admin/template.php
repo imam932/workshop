@@ -152,7 +152,7 @@
             <a href="<?= base_url().'admin/Dashboard' ?>"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
           </li>
           <li>
-            <a href="<?= base_url().'admin/pos' ?>"><i class="fa fa-fw fa-file"></i> Pos</a>
+            <a href="<?= base_url().'admin/Article' ?>"><i class="fa fa-fw fa-file"></i> Article</a>
           </li>
           <li>
             <a href="tables.html"><i class="fa fa-fw fa-table"></i> Galeri</a>
@@ -201,6 +201,28 @@
           </div>
         </div>
         <!-- /.row -->
+
+        <!-- breadcrumb -->
+        <ol class="breadcrumb">
+          <?php
+          $i = 0;
+          $size = sizeof($breadcrumb);
+          foreach ($breadcrumb as $value)
+          {
+            if($i == $size - 1)
+            {
+              echo "<li class='active'>$value</li>";
+            }
+            else
+            {
+              $url = base_url() . "admin/" . $value;
+              echo "<li><a href='$url'>$value</a></li>";
+            }
+
+            $i++;
+          }
+          ?>
+        </ol>
 
         <!-- ADD YOUR CONTENT HERE -->
         <?= $content; ?>
