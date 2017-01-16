@@ -232,6 +232,7 @@
   <script src="<?= base_url() ?>assets/admin/dist/summernote.js"></script>
   <script src="<?= base_url() ?>assets/admin/js/admin.js"></script>
   <script src="<?= base_url() ?>assets/admin/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="<?= base_url() ?>assets/admin/js/dataTables.min.js"></script>
   <script src="<?= base_url() ?>assets/admin/js/dataTables.bootstrap.min.js"></script>
 </body>
 

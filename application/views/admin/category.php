@@ -3,7 +3,7 @@
 	<div class="col-lg-12">
 
 		<div class="col-lg-6">
-			<table id="DataTable" class="table table-striped table-bordered dataTable" cellspacing="0" width="100%">
+			<table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
 				<thead>
 					<tr>
 						<th>Category</th>
@@ -17,7 +17,7 @@
 						<td>
 							<a href="barang_edit.php?id=<?php  ?>">
 								<i class="fa fa-pencil"></i>
-							</a>
+							</a> | 
 							<a href="barang_delete.php?id=<?php  ?>">
 								<i class="fa fa-trash"></i>
 							</a>
