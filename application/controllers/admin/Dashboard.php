@@ -5,10 +5,11 @@ class Dashboard extends Admin_Controller {
 
 	public function index()
 	{
-		$this->load->view('assets/csslinkadm');
-		$this->load->view('admin/navbar');
-		$this->load->view('admin/index');
-		$this->load->view('assets/jslinkadm');
+		$data['title'] = "Dashboard";
+		$data['desc'] = "Static Overview";
+		$data['content'] = $this->load->view('admin/index', array(),TRUE);
+
+		$this->load->view('admin/template', $data);
 	}
 }
 

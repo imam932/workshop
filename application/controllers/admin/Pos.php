@@ -4,19 +4,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Pos extends CI_Controller {
 
 	public function index(){
-		$this->load->view('assets/csslinkadm');
-		$this->load->view('admin/navbar');
-		$this->load->view('admin/pos');
-		$this->load->view('assets/jslinkadm');
+		$data['title'] = "POS";
+		$data['desc'] = "Create or Manage Articles";
+		$data['content'] = $this->load->view('admin/pos', array(), TRUE);
+
+		$this->load->view('admin/template', $data);
 	}
 
 	public function newpos(){
-		$this->load->view('assets/csslinkadm');
-		$this->load->view('admin/navbar');
-		$this->load->view('admin/pos_new');
-		$this->load->view('assets/jslinkadm');
+		$data['title'] = "NEW POS";
+		$data['desc'] = "Create Your Articles";
+		$data['content'] = $this->load->view('admin/pos_new', array(), TRUE);
+		
+		$this->load->view('admin/template', $data);
 	}
 }
 
 /* End of file pos.php */
 /* Location: ./application/controllers/pos.php */
+?>
