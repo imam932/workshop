@@ -1,10 +1,10 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Tag_model extends CI_Model
+class Model_autentikasi extends CI_Model
 {
 
-  $table = "tag";
+  $table = "autentikasi";
 
   public function __construct()
   {
@@ -27,7 +27,7 @@ class Tag_model extends CI_Model
 
   public function select_by_id($id)
   {
-    $this->db->where('id_tag', $id);
+    $this->db->where('id_user', $id);
     $query = $this->db->get($table);
 
     if($query->num_rows() == 1)
@@ -47,13 +47,13 @@ class Tag_model extends CI_Model
 
   public function update($data, $id)
   {
-    $this->db->where('id_tag', $id);
+    $this->db->where('id_user', $id);
     $this->db->update($table, $data);
   }
 
   public function delete($id)
   {
-    $this->db->where('id_tag', $id);
+    $this->db->where('id_user', $id);
     $this->db->delete($table);
   }
 }

@@ -1,10 +1,10 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Autentikasi_model extends CI_Model
+class Model_galeri extends CI_Model
 {
 
-  $table = "autentikasi";
+  $table = "galeri";
 
   public function __construct()
   {
@@ -27,7 +27,7 @@ class Autentikasi_model extends CI_Model
 
   public function select_by_id($id)
   {
-    $this->db->where('id_user', $id);
+    $this->db->where('id_galeri', $id);
     $query = $this->db->get($table);
 
     if($query->num_rows() == 1)
@@ -47,13 +47,13 @@ class Autentikasi_model extends CI_Model
 
   public function update($data, $id)
   {
-    $this->db->where('id_user', $id);
+    $this->db->where('id_galeri', $id);
     $this->db->update($table, $data);
   }
 
   public function delete($id)
   {
-    $this->db->where('id_user', $id);
+    $this->db->where('id_galeri', $id);
     $this->db->delete($table);
   }
 }
