@@ -26,5 +26,6 @@
     <link href="<?= base_url() ?>assets/admin/css/plugins/morris.css" rel="stylesheet">
 
     <link href="<?= base_url() ?>assets/admin/css/style.css" rel="stylesheet">
-    <link href="<?= base_url() ?>assets/admin/css/summernote.css" rel="stylesheet">
+    <link href="<?= base_url() ?>assets/admin/dist/summernote.css" rel="stylesheet">
+    <link href="<?= base_url() ?>assets/admin/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
 </head>
