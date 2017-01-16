@@ -1,9 +1,9 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Model_artikel extends CI_Model
+class Model_article extends CI_Model
 {
-	$table = "artikel";
+	$table = "article";
 
 	public function __construct()
 	{
@@ -26,7 +26,7 @@ class Model_artikel extends CI_Model
 
 	public function select_by_id($id)
 	{
-		$this->db->where('id_artikel', $id);
+		$this->db->where('id_article', $id);
 
 		$q = $this->db->get($table);
 
@@ -47,13 +47,13 @@ class Model_artikel extends CI_Model
 
 	public function update($data, $id)
 	{
-		$this->db->where('id_artikel', $id);
+		$this->db->where('id_article', $id);
 		$this->db->update($table, $data);
 	}
 
 	public function delete($id)
 	{
-		$this->db->where('id', $id);
+		$this->db->where('id_article', $id);
 		$this->db->delete($table);
 	}
 }

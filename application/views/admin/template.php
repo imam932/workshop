@@ -155,7 +155,7 @@
             <a href="<?= base_url().'admin/Article' ?>"><i class="fa fa-fw fa-file"></i> Article</a>
           </li>
           <li>
-            <a href="tables.html"><i class="fa fa-fw fa-table"></i> Galeri</a>
+            <a href="<?= base_url().'admin/Category' ?>"><i class="fa fa-fw fa-tag"></i> Category</a>
           </li>
           <li>
             <a href="forms.html"><i class="fa fa-fw fa-edit"></i> Tutorial</a>

@@ -8,7 +8,7 @@ class Login_admin extends CI_Model {
 		$condition = "username = '" . $data['username'] . "' AND password = '" . $data['password'] . "'";
 
 		$this->db->select("*");
-		$this->db->from("autentikasi");
+		$this->db->from("auth");
 		$this->db->where($condition);
 		$this->db->limit(1);
 
@@ -17,12 +17,12 @@ class Login_admin extends CI_Model {
 		if($query->num_rows() == 1)
 		{
 			return $query->result();
-		} 
+		}
 		else
 		{
 			return FALSE;
 		}
-	}	
+	}
 
 }
 
