@@ -1,3 +1,7 @@
+html, body {
+	height: 100%;
+}
+
 .panel-body .fa-edit{
 	padding-right: 5px;
 }
@@ -34,4 +38,39 @@ p {
 	text-overflow: ellipsis;
 	white-space: nowrap;
 	overflow: hidden;
+}
+
+.panel.article .panel-footer span {
+	display: inline-block;
+	margin-right: 10px;
+}
+
+#wrapper {
+	height: 100%;
+}
+
+#page-wrapper {
+	min-height: 100%;
+}
+
+.display-table {
+    display: table;
+    padding: 0px;
+    height: 100%;
+    width: 100%;
+}
+
+.display-table-row {
+    display: table-row;
+    height: 100%;
+}
+
+.display-table-cell {
+    display: table-cell;
+    float: none;
+    height: 100%;
+}
+
+.valign-top {
+    vertical-align: top;
 }

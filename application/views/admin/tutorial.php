@@ -11,7 +11,7 @@
     </div>
     <div class="col-lg-9">
       <div class="row">
-        <div class="panel panel-default">
+        <div class="panel panel-default article">
           <div class="panel-body">
             <div class="row">
               <div class="col-lg-11">
@@ -43,7 +43,7 @@
       </div>
 
       <div class="row">
-        <div class="panel panel-default">
+        <div class="panel panel-default article">
           <div class="panel-body">
             <div class="row">
               <div class="col-lg-11">
@@ -75,7 +75,7 @@
       </div>
 
       <div class="row">
-        <div class="panel panel-default">
+        <div class="panel panel-default article">
           <div class="panel-body">
             <div class="row">
               <div class="col-lg-11">
