@@ -26,4 +26,5 @@
     <link href="<?= base_url() ?>assets/admin/css/plugins/morris.css" rel="stylesheet">
 
     <link href="<?= base_url() ?>assets/admin/css/style.css" rel="stylesheet">
+    <link href="<?= base_url() ?>assets/admin/css/summernote.css" rel="stylesheet">
 </head>

@@ -18,9 +18,9 @@
 						</h1>
 						<ol class="breadcrumb">
 							<li class="active">
-							<p>
-								<button type="button" class="btn btn-pos btn-sm">POS Baru</button>
-							</p>
+								<p>
+								<a href="<?= base_url().'admin/Pos/New' ?>" class="btn btn-pos btn-sm"> POS Baru</a>
+								</p>
 							</li>
 						</ol>
 						<div class="col-lg-9">
