@@ -25,6 +25,7 @@
   <link href="<?= base_url() ?>assets/admin/css/style.css" rel="stylesheet">
   <link href="<?= base_url() ?>assets/admin/dist/summernote.css" rel="stylesheet">
   <link href="<?= base_url() ?>assets/admin/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="<?= base_url() ?>assets/admin/css/dataTables.bootstrap.min.css">
 </head>
 
 <body>
@@ -158,30 +159,14 @@
             <a href="<?= base_url().'admin/Category' ?>"><i class="fa fa-fw fa-tag"></i> Category</a>
           </li>
           <li>
-            <a href="forms.html"><i class="fa fa-fw fa-edit"></i> Tutorial</a>
+            <a href="<?= base_url().'admin/Tutorial' ?>"><i class="fa fa-fw fa-files-o"></i> Tutorial</a>
           </li>
           <li>
-            <a href="bootstrap-elements.html"><i class="fa fa-fw fa-desktop"></i> Bootstrap Elements</a>
+            <a href="<?= base_url().'admin/Gallery' ?>"><i class="fa fa-fw fa-file-image-o"></i> Gallery</a>
           </li>
+
           <li>
-            <a href="bootstrap-grid.html"><i class="fa fa-fw fa-wrench"></i> Bootstrap Grid</a>
-          </li>
-          <li>
-            <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Dropdown <i class="fa fa-fw fa-caret-down"></i></a>
-            <ul id="demo" class="collapse">
-              <li>
-                <a href="#">Dropdown Item</a>
-              </li>
-              <li>
-                <a href="#">Dropdown Item</a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a href="blank-page.html"><i class="fa fa-fw fa-file"></i> Blank Page</a>
-          </li>
-          <li>
-            <a href="index-rtl.html"><i class="fa fa-fw fa-dashboard"></i> RTL Dashboard</a>
+            <a href="<?= base_url().'admin/User' ?>"><i class="fa fa-fw fa-user"></i> User</a>
           </li>
         </ul>
       </div>
@@ -244,11 +229,10 @@
   <!-- Bootstrap Core JavaScript -->
   <script src="<?= base_url() ?>assets/admin/js/bootstrap.min.js"></script>
 
-  <!-- Morris Charts JavaScript -->
   <script src="<?= base_url() ?>assets/admin/dist/summernote.js"></script>
   <script src="<?= base_url() ?>assets/admin/js/admin.js"></script>
   <script src="<?= base_url() ?>assets/admin/js/bootstrap-datetimepicker.min.js"></script>
-
+  <script src="<?= base_url() ?>assets/admin/js/dataTables.bootstrap.min.js"></script>
 </body>
 
 </html>
