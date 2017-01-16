@@ -7,3 +7,31 @@
 p {
     margin: 0;
 }
+.panel .panel-footer .fa-edit{
+	padding-right: 20px;
+	padding-left: 20px;
+}
+.image-container{
+	position: relative;
+	border: solid 1px #FACC2E;
+	padding: 10px;
+	padding-bottom: 80%;
+	overflow: hidden;
+	margin-top: 20px;
+}
+.image-container img{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	margin: auto;
+	width: 100%;
+}
+.gallery-name{
+	font-size: 1.5em;
+	padding-bottom: 10px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
