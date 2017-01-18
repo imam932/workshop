@@ -6,41 +6,52 @@
 				<table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
 					<thead>
 						<tr>
+							<th>#</th>
 							<th>Category</th>
 							<th>Aksi</th>
 						</tr>
 					</thead>
 
 					<tbody>
-						<tr>
-							<td>sdlkfgdfl</td>
-							<td>
-								<a href="barang_edit.php?id=<?php  ?>" class="btn btn-primary btn-sm">
-									edit
-								</a>
-								<a href="barang_delete.php?id=<?php  ?>" class="btn btn-danger btn-sm">
-									delete
-								</a>
-							</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-			<!-- panel left -->
-			<div class="col-lg-6">
-				<div class="panel panel-default">
-					<form class="" action="index.html" method="post">
-						<div class="panel-body">
-							<div class="form-group">
-								<input type="text" name="" class="form-control" id="" placeholder="Category">
-							</div>
-
-							<input type="submit" name="" value="Add" class="btn btn-primary">
+						<?php
+						$no = 1;
+						foreach ($category as $row) {
+							?>
+								<tr>
+									<td><?= $no++; ?></td>
+									<td>
+										<form id="form<?=$row->id_category?>" action="<?=base_url()?>admin/Category/editCategory/<?=$row->id_category?>" method="post">
+											<div class="form-group">
+												<input type="text" class="form-control" name="category" value="<?= $row->category; ?>">
+												<span class="hidden"><?= $row->category; ?></span>
+											</div>
+										</form>
+									</td>
+									<td>
+										<div class="btn-group btn-group-sm">
+											<input form="form<?=$row->id_category?>" type="submit" value="Edit" class="btn btn-primary">
+											<a href="<?=base_url()?>admin/Category/deleteCategory/<?=$row->id_category?>" class="btn btn-danger btn-sm">
+												Delete
+											</a>
+										</div>
+									</td>
+								</tr>
+							<?php } ?>
+						</tbody>
+					</table>
+				</div>
+				<!-- panel left -->
+				<div class="col-lg-6">
+					<form class="" action="<?= base_url(); ?>admin/Category/newCategory" method="post">
+						<div class="input-group">
+							<input type="text" class="form-control" placeholder="Category" name="category">
+							<span class="input-group-btn">
+								<button class="btn btn-primary" name="submit">Add</button>
+							</span>
 						</div>
 					</form>
 				</div>
 			</div>
 		</div>
 	</div>
-</div>
 </div>

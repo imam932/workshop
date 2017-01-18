@@ -74,3 +74,12 @@ p {
 .valign-top {
     vertical-align: top;
 }
+
+.table .form-group {
+		display: block;
+}
+
+.table .form-group .form-control {
+		display: block;
+		width: 100%;
+}
