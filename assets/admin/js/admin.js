@@ -19,4 +19,8 @@ $(document).ready(function() {
 	});
 
 	$('.switch-art').bootstrapSwitch();
+
+	$('#clearImage').click(function() {
+		$('#image').val("");
+	});
 });
