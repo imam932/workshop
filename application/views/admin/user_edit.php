@@ -7,40 +7,34 @@
         <div class="panel-heading">
           <b>Add New User</b>
         </div>
-        <form class="" action="index.html" method="post">
+        <form class="" action="" method="post">
           <div class="panel-body">
             <div class="form-group">
-              <input type="text" name="name" class="form-control" placeholder="Name">
-            </div>
-            <div class="form-group">
-              <input type="text" name="username" class="form-control"  placeholder="Username">
-            </div>
-            <div class="form-group">
-              <input type="password" name="password" class="form-control"  placeholder="Password">
+              <input type="text" name="name" class="form-control">
             </div>
             <div class="radio">
               <label>
-                <input type="radio" name="gender"  value="Male" checked> Male
+                <input type="radio" name="gender" value="Male" checked> Male
               </label>
               <label>
-                <input type="radio" name="gender"  value="Female"> Female
+                <input type="radio" name="gender" value="Female"> Female
               </label>
             </div>
             <div class="form-group">
               <div class="input-group date" id="datepicker" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
-                <input class="form-control" size="16" type="text" name="birth" placeholder="Birth">
+                <input class="form-control" size="16" type="text" value="" name="birth">
                 <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
                 <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
               </div>
             </div>
             <div class="form-group">
-              <textarea name="" rows="2" class="form-control" placeholder="Address..."></textarea>
+              <textarea name="address" rows="2" class="form-control"></textarea>
             </div>
             <div class="form-group">
-              <input type="text" name="" class="form-control"  placeholder="Phone">
+              <input type="text" name="phone" class="form-control" >
             </div>
 
-            <input type="submit" name="" value="Add" class="btn btn-primary">
+            <input type="submit" name="submit" value="Add" class="btn btn-primary">
           </div>
         </form>
       </div>
