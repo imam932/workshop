@@ -40,7 +40,9 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="<?= base_url().'admin/Dashboard' ?>">Workshop & Riset Informatika</a>
+        <a class="navbar-brand" href="<?= base_url().'admin/Dashboard' ?>">
+          Workshop & Riset Informatika
+        </a>
       </div>
       <!-- Top Menu Items -->
       <ul class="nav navbar-right top-nav">
@@ -232,7 +234,7 @@
   <script src="<?= base_url() ?>assets/admin/dist/summernote.js"></script>
   <script src="<?= base_url() ?>assets/admin/js/admin.js"></script>
   <script src="<?= base_url() ?>assets/admin/js/bootstrap-datetimepicker.min.js"></script>
-    <script src="<?= base_url() ?>assets/admin/js/dataTables.min.js"></script>
+  <script src="<?= base_url() ?>assets/admin/js/dataTables.min.js"></script>
   <script src="<?= base_url() ?>assets/admin/js/dataTables.bootstrap.min.js"></script>
 </body>
 

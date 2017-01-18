@@ -19,7 +19,7 @@ class User extends CI_Controller{
     $this->load->view('admin/template', $data);
   }
 
-public function usernew(){
+public function newUser(){
   $data['title']          = "Users";
   $data['desc']		        = "New User";
   $data['breadcrumb']     = array('Dashboard', 'User', 'New');
