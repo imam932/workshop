@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Model_tutorial extends CI_Model
 {
 
-  $table = "tutorial";
+  var $table = "tutorial";
 
   public function __construct()
   {
@@ -13,7 +13,7 @@ class Model_tutorial extends CI_Model
 
   public function select_all()
   {
-    $query = $this->db->get($table);
+    $query = $this->db->get($this->table);
 
     if($query->num_rows() > 0)
     {
@@ -28,7 +28,7 @@ class Model_tutorial extends CI_Model
   public function select_by_id($id)
   {
     $this->db->where('id_tutorial', $id);
-    $query = $this->db->get($table);
+    $query = $this->db->get($this->table);
 
     if($query->num_rows() == 1)
     {
@@ -42,18 +42,18 @@ class Model_tutorial extends CI_Model
 
   public function insert($data)
   {
-    $this->db->insert($table, $data);
+    $this->db->insert($this->table, $data);
   }
 
   public function update($data, $id)
   {
     $this->db->where('id_tutorial', $id);
-    $this->db->update($table, $data);
+    $this->db->update($this->table, $data);
   }
 
   public function delete($id)
   {
     $this->db->where('id_tutorial', $id);
-    $this->db->delete($table);
+    $this->db->delete($this->table);
   }
 }

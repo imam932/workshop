@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Model_article extends CI_Model
 {
-	$table = "article";
+	var $table = "article";
 
 	public function __construct()
 	{
@@ -12,7 +12,7 @@ class Model_article extends CI_Model
 
 	public function select_all()
 	{
-		$q = $this->db->get($table);
+		$q = $this->db->get($this->table);
 
 		if($q->num_rows() > 0)
 		{
@@ -28,7 +28,7 @@ class Model_article extends CI_Model
 	{
 		$this->db->where('id_article', $id);
 
-		$q = $this->db->get($table);
+		$q = $this->db->get($this->table);
 
 		if ($q->num_rows() == 1)
 		{
@@ -42,19 +42,19 @@ class Model_article extends CI_Model
 
 	public function insert($data)
 	{
-		$this->db->insert($table, $data);
+		$this->db->insert($this->table, $data);
 	}
 
 	public function update($data, $id)
 	{
 		$this->db->where('id_article', $id);
-		$this->db->update($table, $data);
+		$this->db->update($this->table, $data);
 	}
 
 	public function delete($id)
 	{
 		$this->db->where('id_article', $id);
-		$this->db->delete($table);
+		$this->db->delete($this->table);
 	}
 }
 
