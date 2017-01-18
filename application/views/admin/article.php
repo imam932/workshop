@@ -37,7 +37,7 @@
 						</span>
 
 						<span>
-              <input type="checkbox" class="switch" checked>
+              <input type="checkbox" class="switch-art" checked>
             </span>
 					</div>
 				</div>
@@ -72,7 +72,7 @@
 						</span>
 
 						<span>
-              <input type="checkbox" class="switch" checked>
+              <input type="checkbox" class="switch-art" checked>
             </span>
 					</div>
 				</div>
@@ -107,7 +107,7 @@
 						</span>
 
 						<span>
-              <input type="checkbox" class="switch" checked>
+              <input type="checkbox" class="switch-art" checked>
             </span>
 					</div>
 				</div>

@@ -19,7 +19,6 @@
   <link rel="stylesheet" href="<?= base_url() ?>assets/vendor/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="<?= base_url() ?>assets/vendor/font-awesome/css/font-awesome.css">
 
-  <!-- Custom CSS -->
   <link href="<?= base_url() ?>assets/admin/css/sb-admin.css" rel="stylesheet">
 
   <link href="<?= base_url() ?>assets/admin/css/style.css" rel="stylesheet">
@@ -72,7 +71,7 @@
               <a href="#">
                 <div class="media">
                   <span class="pull-left">
-                    <img class="media-object" src="http://placehold.it/50x50" alt="">
+                    <img class="media-object" src="" alt="">
                   </span>
                   <div class="media-body">
                     <h5 class="media-heading"><strong>John Smith</strong>
@@ -87,7 +86,7 @@
               <a href="#">
                 <div class="media">
                   <span class="pull-left">
-                    <img class="media-object" src="http://placehold.it/50x50" alt="">
+                    <img class="media-object" src="" alt="">
                   </span>
                   <div class="media-body">
                     <h5 class="media-heading"><strong>John Smith</strong>
