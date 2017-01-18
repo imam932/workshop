@@ -6,9 +6,6 @@
       <a href="<?= base_url().'admin/Tutorial/New' ?>" class="btn btn-primary btn-sm"> Create New</a>
     </p> <br>
 
-    <div class="row">
-
-    </div>
     <div class="col-lg-9">
       <div class="row">
         <div class="panel panel-default article">
@@ -38,10 +35,14 @@
               <i class="fa fa-pencil"></i>
               Admin
             </span>
+
+            <span>
+              <input type="checkbox" class="switch" checked>
+            </span>
+
           </div>
         </div>
       </div>
-
       <div class="row">
         <div class="panel panel-default article">
           <div class="panel-body">
@@ -70,10 +71,14 @@
               <i class="fa fa-pencil"></i>
               Admin
             </span>
+
+            <span>
+              <input type="checkbox" class="switch" checked>
+            </span>
+
           </div>
         </div>
       </div>
-
       <div class="row">
         <div class="panel panel-default article">
           <div class="panel-body">
@@ -102,6 +107,11 @@
               <i class="fa fa-pencil"></i>
               Admin
             </span>
+
+            <span>
+              <input type="checkbox" class="switch" checked>
+            </span>
+
           </div>
         </div>
       </div>

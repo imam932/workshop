@@ -26,6 +26,7 @@
   <link href="<?= base_url() ?>assets/admin/dist/summernote.css" rel="stylesheet">
   <link href="<?= base_url() ?>assets/admin/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
   <link rel="stylesheet" href="<?= base_url() ?>assets/admin/css/dataTables.bootstrap.min.css">
+  <link rel="stylesheet" href="<?= base_url( )?>assets/admin/css/bootstrap-switch.min.css">
 </head>
 
 <body>
@@ -232,8 +233,9 @@
   <script src="<?= base_url() ?>assets/admin/dist/summernote.js"></script>
   <script src="<?= base_url() ?>assets/admin/js/admin.js"></script>
   <script src="<?= base_url() ?>assets/admin/js/bootstrap-datetimepicker.min.js"></script>
-    <script src="<?= base_url() ?>assets/admin/js/dataTables.min.js"></script>
+  <script src="<?= base_url() ?>assets/admin/js/dataTables.min.js"></script>
   <script src="<?= base_url() ?>assets/admin/js/dataTables.bootstrap.min.js"></script>
+  <script src="<?= base_url() ?>assets/admin/js/bootstrap-switch.min.js"></script>
 </body>
 
 </html>

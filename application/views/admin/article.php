@@ -35,10 +35,13 @@
 							<i class="fa fa-pencil"></i>
 							Admin
 						</span>
+
+						<span>
+              <input type="checkbox" class="switch" checked>
+            </span>
 					</div>
 				</div>
 			</div>
-
 			<div class="row">
 				<div class="panel panel-default article">
 					<div class="panel-body">
@@ -67,10 +70,13 @@
 							<i class="fa fa-pencil"></i>
 							Admin
 						</span>
+
+						<span>
+              <input type="checkbox" class="switch" checked>
+            </span>
 					</div>
 				</div>
 			</div>
-
 			<div class="row">
 				<div class="panel panel-default article">
 					<div class="panel-body">
@@ -99,6 +105,10 @@
 							<i class="fa fa-pencil"></i>
 							Admin
 						</span>
+
+						<span>
+              <input type="checkbox" class="switch" checked>
+            </span>
 					</div>
 				</div>
 			</div>

@@ -57,3 +57,4 @@ $route['admin'] 			= 'admin/Dashboard';
 $route['admin/Logout'] 		= 'admin/Login/process_logout';
 $route['admin/Article/New']		= 'admin/Article/newArticle';
 $route['admin/Tutorial/New']		= 'admin/Tutorial/newTutorial';
+$route['admin/User/New']		= 'admin/User/newUser';

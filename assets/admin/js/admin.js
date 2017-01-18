@@ -3,5 +3,9 @@ $(document).ready(function() {
 		height : 185
 	});
 	$('#example').DataTable();
-	$('#datetimepicker').datetimepicker();
+	$('#datetimepicker').datetimepicker({
+		format: 'DD/MM/YYYY'
+	});
+
+	$('.switch').bootstrapSwitch();
 });

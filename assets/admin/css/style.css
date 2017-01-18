@@ -40,7 +40,7 @@ p {
 	overflow: hidden;
 }
 
-.panel.article .panel-footer span {
+.panel.article .panel-footer > span {
 	display: inline-block;
 	margin-right: 10px;
 }

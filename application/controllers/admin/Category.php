@@ -26,7 +26,7 @@ class Category extends Admin_Controller {
   {
     $this->load->model('Model_category');
 
-    $data['id_category'] = random_string('alnum', 9) . date('dmy');
+    $data['id_category'] = random_string('alnum', 5) . date('my') . random_string('alnum', 6);
     $data['category'] = $this->input->post('category');
     $this->Model_category->insert($data);
 
