@@ -63,6 +63,9 @@
     <!-- panel left -->
     <div class="col-lg-4">
       <div class="panel panel-default">
+        <div class="panel-heading">
+          <b>Add New Image Gallery</b>
+        </div>
         <form class="" action="index.html" method="post">
           <div class="panel-body">
             <div class="form-group">
