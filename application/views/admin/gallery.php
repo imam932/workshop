@@ -1,6 +1,15 @@
 <!-- Page Heading -->
 <div class="row">
   <div class="col-lg-12">
+
+    <?php if(isset($error)) { ?>
+			<div class="alert alert-danger alert-link"><?=$error?></div>
+		<?php } ?>
+
+		<?php if(isset($message)) { ?>
+			<div class="alert alert-success alert-link"><?=$message?></div>
+		<?php } ?>
+
     <!-- panel right -->
     <div class="col-lg-8">
       <?php foreach ($gallery as $row) { ?>
@@ -14,7 +23,7 @@
           </div>
           <div class="btn-group" role="group" aria-label="...">
             <a class="btn btn-primary" href="<?=base_url()?>admin/Gallery/editGallery/<?=$row->id_gallery?>">Edit</a>
-            <a class="btn btn-danger" href="<?=base_url()?>admin/Gallery/deleteGallery/<?=$row->id_gallery?>">Delete</a>
+            <a class="btn btn-danger" href="<?=base_url()?>admin/Gallery/deleteGallery/<?=$row->id_gallery?>" onclick="return confirm('Delete gallery ?')">Delete</a>
           </div>
         </div>
       </div>
