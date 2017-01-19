@@ -30,6 +30,7 @@
                 <button type="button" class="btn btn-danger" id="clearImage">Clear</button>
               </span>
             </div>
+            <p class="help-block">leave blank to keep image</p>
           </div>
 
           <input type="submit" class="btn btn-primary" value="Save">
