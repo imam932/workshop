@@ -21,10 +21,16 @@ $(document).ready(function() {
 	$('.switch-art').bootstrapSwitch();
 
 	$('#clearImage').click(function() {
-		$('#image').val("");
+		$("#image").filestyle('clear');
 	});
 
 	$('.alert').click(function() {
 		$('.alert').slideToggle('fast');
+	});
+
+	$(":file").filestyle({
+		buttonBefore: true,
+		icon: false,
+		placeholder: "No file"
 	});
 });
