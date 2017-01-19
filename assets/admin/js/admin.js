@@ -23,4 +23,8 @@ $(document).ready(function() {
 	$('#clearImage').click(function() {
 		$('#image').val("");
 	});
+
+	$('.alert').click(function() {
+		$('.alert').slideToggle('fast');
+	});
 });
