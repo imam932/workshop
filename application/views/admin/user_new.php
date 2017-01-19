@@ -7,7 +7,7 @@
         <div class="panel-heading">
           <b>Add New User</b>
         </div>
-        <form class="" action="index.html" method="post">
+        <form class="" action="<?= base_url().'admin/User/New' ?>" method="post">
           <div class="panel-body">
             <div class="form-group">
               <input type="text" name="name" class="form-control" placeholder="Name">
@@ -20,27 +20,28 @@
             </div>
             <div class="radio">
               <label>
-                <input type="radio" name="gender"  value="Male" checked> Male
+                <input type="radio" name="gender"  value="1" checked> Male
               </label>
               <label>
-                <input type="radio" name="gender"  value="Female"> Female
+                <input type="radio" name="gender"  value="0"> Female
               </label>
             </div>
             <div class="form-group">
-              <div class="input-group date" id="datepicker" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
+              <div class="input-group date" id="datepicker" data-date="" data-date-format="yyyy-dd-mm" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
                 <input class="form-control" size="16" type="text" name="birth" placeholder="Birth">
                 <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
                 <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
               </div>
             </div>
             <div class="form-group">
-              <textarea name="" rows="2" class="form-control" placeholder="Address..."></textarea>
+              <textarea name="address" rows="2" class="form-control" placeholder="Address..."></textarea>
             </div>
             <div class="form-group">
-              <input type="text" name="" class="form-control"  placeholder="Phone">
+              <input type="text" name="phone" class="form-control"  placeholder="Phone">
             </div>
 
-            <input type="submit" name="" value="Add" class="btn btn-primary">
+            <input type="submit" value="Submit" class="btn btn-primary">
+            <a href="<?= base_url() ?>admin/User" class="btn btn-danger">Cancel</a>
           </div>
         </form>
       </div>

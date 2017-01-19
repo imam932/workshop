@@ -5,36 +5,37 @@
     <div class="col-lg-8">
       <div class="panel panel-default">
         <div class="panel-heading">
-          <b>Add New User</b>
+          <b>Update User</b>
         </div>
-        <form class="" action="" method="post">
+        <form class="" action="<?= base_url().'admin/User/Edituser/'.$user[0]->id_user ?>" method="post">
           <div class="panel-body">
             <div class="form-group">
-              <input type="text" name="name" class="form-control">
+              <input type="text" name="name" class="form-control" value="<?= $user[0]->name ?>">
             </div>
             <div class="radio">
               <label>
-                <input type="radio" name="gender" value="Male" checked> Male
+                <input type="radio" name="gender" value="1" <?php if($user[0]->gender == 1) echo 'checked' ?>> Male
               </label>
               <label>
-                <input type="radio" name="gender" value="Female"> Female
+                <input type="radio" name="gender" value="0" <?php if($user[0]->gender == 0) echo 'checked' ?>> Female
               </label>
             </div>
             <div class="form-group">
-              <div class="input-group date" id="datepicker" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
-                <input class="form-control" size="16" type="text" value="" name="birth">
+              <div class="input-group date" id="datepicker" data-date="" data-date-format="yyyy-mm-yy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
+                <input class="form-control" size="16" type="text" value="<?= $user[0]->birth ?>" name="birth">
                 <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
                 <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
               </div>
             </div>
             <div class="form-group">
-              <textarea name="address" rows="2" class="form-control"></textarea>
+              <textarea name="address" rows="2" class="form-control"><?= $user[0]->address ?></textarea>
             </div>
             <div class="form-group">
-              <input type="text" name="phone" class="form-control" >
+              <input type="text" name="phone" class="form-control" value="<?= $user[0]->phone ?>">
             </div>
 
-            <input type="submit" name="submit" value="Add" class="btn btn-primary">
+            <input type="submit" value="Submit" class="btn btn-primary">
+            <a href="<?= base_url() ?>admin/User" class="btn btn-danger">Cancel</a>
           </div>
         </form>
       </div>

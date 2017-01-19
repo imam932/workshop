@@ -47,13 +47,6 @@ class Model_user extends CI_Model
 
   public function update($data, $id)
   {
-    $data = array(
-            'name'      => $name,
-            'gender'    => $gender,
-            'birth'     => $birth,
-            'address'   => $address,
-            'phone'     => $phone
-           );
     $this->db->where('id_user', $id);
     $this->db->update($this->table, $data);
   }
