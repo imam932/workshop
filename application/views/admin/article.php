@@ -7,33 +7,46 @@
 		</p> <br>
 
 		<div class="col-lg-9">
+			<?php foreach ($article as $row) {
+				$time = new DateTime($row->date);
+			?>
 			<div class="row">
 				<div class="panel panel-default article">
 					<div class="panel-body">
 						<div class="row">
 							<div class="col-lg-11">
-								Judul artikel
+								<?= $row->title; ?>
 							</div>
 							<div class="col-lg-1">
-								<i class="fa fa-edit"></i>
-								<i class="fa fa-trash-o"></i>
+								<a href="<?= base_url() ?>admin/Article/editArticle/<?= $row->id_article ?>">
+									<i class="fa fa-edit"></i>
+								</a>
+
+								<a href="<?= base_url() ?>admin/Article/deleteArticle/<?= $row->id_article ?>" onclick="return confirm('Delete Article ?')">
+									<i class="fa fa-trash-o"></i>
+								</a>
 							</div>
 						</div>
 					</div>
 					<div class="panel-footer">
 						<span>
 							<i class="fa fa-calendar"></i>
-							16/01/2017
+							<?= $time->format('d/m/Y') ?>
+						</span>
+
+						<span>
+							<i class="fa fa-clock-o"></i>
+							<?= $time->format('H:i') ?>
 						</span>
 
 						<span>
 							<i class="fa fa-tag"></i>
-							Category
+							<?= $row->category ?>
 						</span>
 
 						<span>
 							<i class="fa fa-pencil"></i>
-							Admin
+							<?= $row->name ?>
 						</span>
 
 						<span>
@@ -42,76 +55,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="row">
-				<div class="panel panel-default article">
-					<div class="panel-body">
-						<div class="row">
-							<div class="col-lg-11">
-								Judul artikel
-							</div>
-							<div class="col-lg-1">
-								<i class="fa fa-edit"></i>
-								<i class="fa fa-trash-o"></i>
-							</div>
-						</div>
-					</div>
-					<div class="panel-footer">
-						<span>
-							<i class="fa fa-calendar"></i>
-							16/01/2017
-						</span>
-
-						<span>
-							<i class="fa fa-tag"></i>
-							Category
-						</span>
-
-						<span>
-							<i class="fa fa-pencil"></i>
-							Admin
-						</span>
-
-						<span>
-              <input type="checkbox" class="switch-art" checked>
-            </span>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="panel panel-default article">
-					<div class="panel-body">
-						<div class="row">
-							<div class="col-lg-11">
-								Judul artikel
-							</div>
-							<div class="col-lg-1">
-								<i class="fa fa-edit"></i>
-								<i class="fa fa-trash-o"></i>
-							</div>
-						</div>
-					</div>
-					<div class="panel-footer">
-						<span>
-							<i class="fa fa-calendar"></i>
-							16/01/2017
-						</span>
-
-						<span>
-							<i class="fa fa-tag"></i>
-							Category
-						</span>
-
-						<span>
-							<i class="fa fa-pencil"></i>
-							Admin
-						</span>
-
-						<span>
-              <input type="checkbox" class="switch-art" checked>
-            </span>
-					</div>
-				</div>
-			</div>
+			<?php } ?>
 		</div>
 		<!-- panel left -->
 		<div class="col-lg-3">

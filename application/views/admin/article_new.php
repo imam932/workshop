@@ -1,4 +1,5 @@
 <!-- Page Heading -->
+<form method="post" action="<?=base_url()?>admin/Article/New">
 <div class="row">
 	<div class="col-lg-9">
 
@@ -11,11 +12,11 @@
 
 			<div class="col-xs-12 col-sm-12 col-md-3">
 				<div class="form-group">
-					<select class="form-control" name="">
-						<option value="">Category</option>
-						<option>1</option>
-						<option>2</option>
-						<option>3</option>
+					<select class="form-control" name="id_category">
+						<option selected disabled>Select Category</option>
+						<?php foreach ($category as $row) { ?>
+						<<option value="<?= $row->id_category ?>"><?= $row->category ?></option>
+						<?php } ?>
 					</select>
 				</div>
 			</div>
@@ -26,8 +27,9 @@
 		</div>
 
 		<div class="right">
-			<input type="submit" name="simpan" id="input" class="btn btn-primary" value="Upload">
+			<input type="submit" name="simpan" id="input" class="btn btn-primary" value="Submit">
 			<a href="<?= base_url() ?>admin/Article" class="btn btn-danger">Cancel</a>
 		</div>
 	</div>
 </div>
+</form>

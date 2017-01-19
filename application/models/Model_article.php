@@ -12,7 +12,12 @@ class Model_article extends CI_Model
 
 	public function select_all()
 	{
-		$q = $this->db->get($this->table);
+		$this->db->order_by('date');
+		$this->db->from($this->table);
+		$this->db->join('category', 'article.id_category = category.id_category');
+		$this->db->join('user', 'article.id_user = user.id_user');
+
+		$q = $this->db->get();
 
 		if($q->num_rows() > 0)
 		{
@@ -26,13 +31,16 @@ class Model_article extends CI_Model
 
 	public function select_by_id($id)
 	{
-		$this->db->where('id_article', $id);
+		$this->db->from($this->table);
+		$this->db->join('category', 'article.id_category = category.id_category');
+		$this->db->join('user', 'article.id_user = user.id_user');
+		$this->db->where('article.id_article', $id);
 
-		$q = $this->db->get($this->table);
+		$q = $this->db->get();
 
 		if ($q->num_rows() == 1)
 		{
-			return $q->row();
+			return $q->result();
 		}
 		else
 		{
