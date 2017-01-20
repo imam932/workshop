@@ -5,7 +5,7 @@
 		<?php if(isset($error)) { ?>
 			<div class="alert alert-danger alert-link"><?=$error?></div>
 		<?php } ?>
-		
+
 		<form method="post" action="<?=base_url()?>admin/Article/editArticle/<?= $article[0]->id_article ?>">
 			<div class="row">
 				<div class="col-lg-9">

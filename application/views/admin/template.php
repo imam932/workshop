@@ -27,6 +27,7 @@
   <link rel="stylesheet" href="<?= base_url() ?>assets/admin/css/dataTables.bootstrap.min.css">
   <link rel="stylesheet" href="<?= base_url( )?>assets/admin/css/bootstrap-switch.min.css">
   <link rel="stylesheet" href="<?= base_url( )?>assets/admin/css/loadimg.min.css">
+  <link rel="stylesheet" href="<?= base_url( )?>assets/admin/css/jquery.paginate.css">
 </head>
 
 <body>
@@ -239,6 +240,8 @@
   <script src="<?= base_url() ?>assets/admin/js/dataTables.bootstrap.min.js"></script>
   <script src="<?= base_url() ?>assets/admin/js/bootstrap-switch.min.js"></script>
   <script src="<?= base_url() ?>assets/admin/js/bootstrap-filestyle.min.js"></script>
+  <script src="<?= base_url() ?>assets/admin/js/jquery.paginate.js"></script>
+  <script src="<?= base_url() ?>assets/admin/js/list.min.js"></script>
 </body>
 
 </html>
