@@ -6,6 +6,10 @@
 			<a href="<?= base_url().'admin/Article/New' ?>" class="btn btn-primary btn-sm"> Create New</a>
 		</p> <br>
 
+		<?php if(isset($message)) { ?>
+			<div class="alert alert-success alert-link"><?=$message?></div>
+		<?php } ?>
+		
 		<div class="col-lg-9">
 			<?php foreach ($article as $row) {
 				$time = new DateTime($row->date);
