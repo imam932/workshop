@@ -126,6 +126,13 @@ class Article extends Admin_Controller {
 
 		$this->load->view('admin/template', $data);
 	}
+
+	function publish($id, $bool)
+	{
+		$data['publish'] = $bool;
+		$this->Model_article->update($data, $id);
+		redirect('admin/Article', 'refresh');
+	}
 }
 
 /* End of file Article.php */

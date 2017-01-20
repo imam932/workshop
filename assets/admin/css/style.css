@@ -6,19 +6,13 @@ img {
 	max-width: 100%;
 }
 
-.panel-body .fa-edit{
-	padding-right: 5px;
-}
 .btn-pos{
 	background-color:  #FACC2E;
 }
 p {
     margin: 0;
 }
-.panel .panel-footer .fa-edit{
-	padding-right: 20px;
-	padding-left: 20px;
-}
+
 .image-container{
 	position: relative;
 	border: solid 2px #f5f5f5;
@@ -52,6 +46,29 @@ p {
 .panel.article .panel-footer > span {
 	display: inline-block;
 	margin-right: 10px;
+	line-height: 30px;
+	color: #5c5c5c;
+}
+
+.panel.article .title {
+	font-size: 20px;
+	line-height: 30px;
+}
+
+.panel.article .panel-body .fa {
+	font-size: 20px;
+	line-height: 30px;
+}
+
+.panel.article .panel-body .fa-trash-o {
+	color: #f64747;
+}
+
+@media screen and (max-width: 560px) {
+
+	.panel.article .panel-footer > span {
+		display: none;
+	}
 }
 
 #wrapper {

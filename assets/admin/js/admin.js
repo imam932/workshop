@@ -18,7 +18,12 @@ $(document).ready(function() {
 		forceParse: 0
 	});
 
-	$('.switch-art').bootstrapSwitch();
+	$('.switch-art').bootstrapSwitch({
+		size: 'small',
+		onText: 'Yes',
+		offText: 'No',
+		labelText: 'Publish'
+	});
 
 	$('#clearImage').click(function() {
 		$("#image").filestyle('clear');
@@ -32,5 +37,24 @@ $(document).ready(function() {
 		buttonBefore: true,
 		icon: false,
 		placeholder: "No file"
+	});
+
+	$('[name="publish-article"]').on('switchChange.bootstrapSwitch', function(event, state) {
+
+		var id = this.id;
+
+		// sql bug, change true/false to 1/0
+		if(state == true)
+		{
+			state = 1;
+		}
+		else if(state == false)
+		{
+			state = 0;
+		}
+
+		setTimeout(function () {
+			location='Article/publish/' + id + '/' + state;
+		}, 500);
 	});
 });
