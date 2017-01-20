@@ -14,7 +14,7 @@
 			<div class="col-lg-9" id="article">
 
 				<div class="form-group row">
-					<input class="search form-control" placeholder="search article" onkey="alert('reset')">
+					<input class="search form-control" placeholder="search tutorial" onkey="alert('reset')">
 				</div>
 
 				<div class="list">
