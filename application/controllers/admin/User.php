@@ -78,4 +78,25 @@ class User extends Admin_Controller{
 
     redirect('admin/User', 'refresh');
   }
+
+  public function profil(){
+    $id = $this->session->userdata('logged_in')['id_user'];
+    // load data
+    $data['user']  = $this->Model_user->select_by_id($id);
+    // load page
+    $data['content']        = $this->load->view('admin/user_profil', $data, TRUE);
+
+    // load template
+    $data['title']          = "Users";
+    $data['desc']		        = "Profil User";
+    $data['breadcrumb']     = array('Dashboard', 'User', 'Profil');
+    $this->load->view('admin/template', $data);
+  }
+
+  public function resetpassword(){
+    // load data
+    $data['auth'] = $this->Model_user->select_by_id($id);
+
+    $data['auth'] = $this->input->post('password');
+  }
 }
