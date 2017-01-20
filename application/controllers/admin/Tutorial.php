@@ -6,6 +6,8 @@ class Tutorial extends Admin_Controller {
   public function __construct()
   {
     parent::__construct();
+    $this->load->model('Model_tutorial');
+    $this->load->model('Model_category');
   }
 
   function index()

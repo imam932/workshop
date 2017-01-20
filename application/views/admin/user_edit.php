@@ -5,7 +5,7 @@
     <div class="col-lg-8">
       <div class="panel panel-default">
         <div class="panel-heading">
-          <b>Update User</b>
+          <b>Edit User</b>
         </div>
         <form class="" action="<?= base_url().'admin/User/Edituser/'.$user[0]->id_user ?>" method="post">
           <div class="panel-body">

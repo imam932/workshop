@@ -1,129 +1,85 @@
 <!-- Page Heading -->
 <div class="row">
-  <div class="col-lg-12">
+	<div class="col-lg-12">
 
-    <p>
-      <a href="<?= base_url().'admin/Tutorial/New' ?>" class="btn btn-primary btn-sm"> Create New</a>
-    </p> <br>
+		<p>
+			<a href="<?= base_url().'admin/Tutorial/New' ?>" class="btn btn-primary btn-sm"> Create New</a>
+		</p> <br>
 
-    <div class="col-lg-9">
-      <div class="row">
-        <div class="panel panel-default article">
-          <div class="panel-body">
-            <div class="row">
-              <div class="col-lg-11">
-                Judul tutorial
-              </div>
-              <div class="col-lg-1">
-                <i class="fa fa-edit"></i>
-                <i class="fa fa-trash-o"></i>
-              </div>
-            </div>
-          </div>
-          <div class="panel-footer">
-            <span>
-              <i class="fa fa-calendar"></i>
-              16/01/2017
-            </span>
+		<?php if(isset($message)) { ?>
+			<div class="alert alert-success alert-link"><?=$message?></div>
+			<?php } ?>
 
-            <span>
-              <i class="fa fa-tag"></i>
-              Category
-            </span>
 
-            <span>
-              <i class="fa fa-pencil"></i>
-              Admin
-            </span>
+			<div class="col-lg-9" id="article">
 
-            <span>
-              <input type="checkbox" class="switch-art" checked>
-            </span>
+				<div class="form-group row">
+					<input class="search form-control" placeholder="search article" onkey="alert('reset')">
+				</div>
 
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="panel panel-default article">
-          <div class="panel-body">
-            <div class="row">
-              <div class="col-lg-11">
-                Judul tutorial
-              </div>
-              <div class="col-lg-1">
-                <i class="fa fa-edit"></i>
-                <i class="fa fa-trash-o"></i>
-              </div>
-            </div>
-          </div>
-          <div class="panel-footer">
-            <span>
-              <i class="fa fa-calendar"></i>
-              16/01/2017
-            </span>
+				<div class="list">
+					<?php foreach ($article as $row) {
+						$time = new DateTime($row->date);
+						?>
+						<div class="row">
+							<div class="panel panel-default article">
+								<div class="panel-body">
+									<div class="row">
+										<div class="col-lg-12">
+											<span class="title"><?= $row->title; ?></span>
+											<div class="pull-right">
+												<a href="<?= base_url() ?>admin/Article/editArticle/<?= $row->id_article ?>">
+													<i class="fa fa-edit"></i>
+												</a>
+												&nbsp;
+												<a href="<?= base_url() ?>admin/Article/deleteArticle/<?= $row->id_article ?>" onclick="return confirm('Delete Article ?')">
+													<i class="fa fa-trash-o"></i>
+												</a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="panel-footer clearfix">
+									<span>
+										<i class="fa fa-calendar"></i>
+										<?= $time->format('d/m/Y') ?>
+									</span>
 
-            <span>
-              <i class="fa fa-tag"></i>
-              Category
-            </span>
+									<span>
+										<i class="fa fa-clock-o"></i>
+										<?= $time->format('H:i') ?>
+									</span>
 
-            <span>
-              <i class="fa fa-pencil"></i>
-              Admin
-            </span>
+									<span>
+										<i class="fa fa-tag"></i>
+										<?= $row->category ?>
+									</span>
 
-            <span>
-              <input type="checkbox" class="switch-art" checked>
-            </span>
+									<span>
+										<i class="fa fa-pencil"></i>
+										<?= $row->name ?>
+									</span>
 
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="panel panel-default article">
-          <div class="panel-body">
-            <div class="row">
-              <div class="col-lg-11">
-                Judul tutorial
-              </div>
-              <div class="col-lg-1">
-                <i class="fa fa-edit"></i>
-                <i class="fa fa-trash-o"></i>
-              </div>
-            </div>
-          </div>
-          <div class="panel-footer">
-            <span>
-              <i class="fa fa-calendar"></i>
-              16/01/2017
-            </span>
+									<div class="pull-right">
+										<input type="checkbox" name="publish-article" class="switch-art" id="<?= $row->id_article ?>" <?php if($row->publish == true) echo "checked" ?>>
+									</div>
 
-            <span>
-              <i class="fa fa-tag"></i>
-              Category
-            </span>
+								</div>
+							</div>
+						</div>
+						<?php } ?>
+					</div>
+					<ul class="pagination">
 
-            <span>
-              <i class="fa fa-pencil"></i>
-              Admin
-            </span>
-
-            <span>
-              <input type="checkbox" class="switch-art" checked>
-            </span>
-
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- panel left -->
-    <div class="col-lg-3">
-      <div class="panel panel-default">
-        <div class="panel-body">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium voluptatibus necessitatibus nesciunt vero, ea omnis eveniet veniam accusamus magni consequuntur officiis ipsum repellat cum, neque optio aut harum pariatur earum.
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
+					</ul>
+				</div>
+				<!-- panel Right -->
+				<div class="col-lg-3">
+					<div class="panel panel-default">
+						<div class="panel-body">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium voluptatibus necessitatibus nesciunt vero, ea omnis eveniet veniam accusamus magni consequuntur officiis ipsum repellat cum, neque optio aut harum pariatur earum.
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
