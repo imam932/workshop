@@ -25,7 +25,7 @@
                 </label>
               </div>
               <div class="form-group">
-                <div class="input-group date" id="datepicker" data-date="" data-date-format="yyyy-mm-yy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
+                <div class="input-group date" id="datepicker" data-date="" data-date-format="yyyy-mm-dd" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
                   <input class="form-control" size="16" type="text" value="<?= $user[0]->birth ?>" name="birth">
                   <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
                   <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
