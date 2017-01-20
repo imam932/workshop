@@ -137,26 +137,66 @@ class User extends Admin_Controller{
     redirect('admin/User', 'refresh');
   }
 
-  public function profil()
+  public function profile()
   {
     $id = $this->session->userdata('logged_in')['id_user'];
     // load data
     $data['user']  = $this->Model_user->select_by_id($id);
+    // error handling
+    if (!empty($this->session->flashdata('message')))
+    {
+      $data['message'] = $this->session->flashdata('message');
+    }
+    else if (!empty($this->session->flashdata('error')))
+    {
+      $data['error'] = $this->session->flashdata('error');
+    }
     // load page
-    $data['content']        = $this->load->view('admin/user_profil', $data, TRUE);
+    $data['content']        = $this->load->view('admin/user_profile', $data, TRUE);
 
     // load template
     $data['title']          = "Users";
-    $data['desc']		        = "Profil User";
-    $data['breadcrumb']     = array('Dashboard', 'User', 'Profil');
+    $data['desc']		        = "Profile User";
+    $data['breadcrumb']     = array('Dashboard', 'User', 'Profile');
     $this->load->view('admin/template', $data);
   }
 
-  public function resetPassword()
+  public function resetPassword($id)
   {
-    // load data
-    $data['auth'] = $this->Model_user->select_by_id($id);
+    $this->form_validation->set_rules('old_password', 'Old Password', 'required');
+    $this->form_validation->set_rules('password', 'Password', 'required');
+    $this->form_validation->set_rules('password2', 'Confirm Password', 'required');
 
-    $data['auth'] = $this->input->post('password');
+    if(!$this->form_validation->run())
+    {
+      $this->session->set_flashdata('error', validation_errors());
+    }
+    else
+    {
+      $auth = $this->Model_auth->select_by_id($id);
+      $old_password = md5($this->input->post('old_password'));
+      $data['password'] = md5($this->input->post('password'));
+      $password2 = md5($this->input->post('password2'));
+
+      $message = array();
+      if($old_password == $auth[0]->password)
+      {
+        if($data['password'] == $password2)
+        {
+          $this->Model_auth->update($data, $id);
+          $this->session->set_flashdata('message', 'Success ! Your password has been reseted');
+        }
+        else
+        {
+          $this->session->set_flashdata('error', 'Confirmation password invalid');
+        }
+      }
+      else
+      {
+        $this->session->set_flashdata('error', 'Your old password invalid');
+      }
+    }
+
+    redirect('admin/User/profile');
   }
 }
