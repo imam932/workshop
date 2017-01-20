@@ -7,14 +7,13 @@
         <div class="panel-heading">
           <!-- <b>Profil User</b> -->
         </div>
+        <label for="">Name</label>
         <p><?= $user[0]->name ?></p>
         <hr>
+        <label for="">Username</label>
         <p>Username</p>
         <hr>
-        <p>Password
-        <button type="submit" class="btn btn-info"> Reset Password </button>
-        </p>
-        <hr>
+        <label for="">gender</label>
         <p><?php
         if ($user[0]->gender == 1) {
           echo "Laki laki";
@@ -23,10 +22,13 @@
         }
         ?></p>
         <hr>
+        <label for="">Birth</label>
         <p><?= $user[0]->birth ?></p>
         <hr>
+        <label for="">Address</label>
         <p><?= $user[0]->address ?></p>
         <hr>
+        <label for="">Phone</label>
         <p><?= $user[0]->phone ?></p>
         <hr>
       </div>
@@ -38,11 +40,16 @@
         </div>
         <div class="panel-body">
           <div class="form-group">
-            <input type="text" name="username" class="form-control" value="">
+            <input type="password" name="username" class="form-control" value="" placeholder="Old Password">
           </div>
           <div class="form-group">
-            <input type="text" name="password" class="form-control" value="" placeholder="New Password">
+            <input type="password" name="password" class="form-control" value="" placeholder="New Password">
           </div>
+          <div class="form-group">
+            <input type="password" name="password" class="form-control" value="" placeholder="Konfirm Password">
+          </div>
+
+          <button type="submit" class="btn btn-primary">Reset</button>
         </div>
       </div>
     </div>
