@@ -47,24 +47,33 @@ class User extends Admin_Controller{
 	    }
       else
       {
-        $data['id_user'] = random_string('alnum', 6) . date('dm') . random_string('alnum', 5);
-        $data['name']    = $this->input->post('name');
-        $data['gender']  = $this->input->post('gender');
-        $data['birth']   = $this->input->post('birth');
-        $data['address'] = $this->input->post('address');
-        $data['phone']   = $this->input->post('phone');
+        $username_exist = $this->Model_auth->select_by_field('username', $this->input->post('username'));
+        if($username_exist)
+        {
+          $this->session->set_flashdata('error', 'Username exist, use another');
+          redirect('admin/User/New', 'refresh');
+        }
+        else
+        {
+          $data['id_user'] = random_string('alnum', 6) . date('dm') . random_string('alnum', 5);
+          $data['name']    = $this->input->post('name');
+          $data['gender']  = $this->input->post('gender');
+          $data['birth']   = $this->input->post('birth');
+          $data['address'] = $this->input->post('address');
+          $data['phone']   = $this->input->post('phone');
 
-        $this->Model_user->insert($data);
+          $this->Model_user->insert($data);
 
-        $data1['id_auth']   = random_string('alnum', 6) . date('dm') . random_string('alnum', 5);
-        $data1['username']  = $this->input->post('username');
-        $data1['password']  = md5($this->input->post('password'));
-        $data1['id_user']    = $data['id_user'];
+          $data1['id_auth']   = random_string('alnum', 6) . date('dm') . random_string('alnum', 5);
+          $data1['username']  = $this->input->post('username');
+          $data1['password']  = md5($this->input->post('password'));
+          $data1['id_user']    = $data['id_user'];
 
-        $this->Model_auth->insert($data1);
+          $this->Model_auth->insert($data1);
 
-        $this->session->set_flashdata('message', 'Success ! User has been added');
-        redirect('admin/User', 'refresh');
+          $this->session->set_flashdata('message', 'Success ! User has been added');
+          redirect('admin/User', 'refresh');
+        }
       }
     }
     //error handling

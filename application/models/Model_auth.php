@@ -40,6 +40,21 @@ class Model_auth extends CI_Model
     }
   }
 
+  public function select_by_field($field, $value)
+  {
+    $this->db->where($field, $value);
+    $query = $this->db->get($this->table);
+
+    if($query->num_rows() == 1)
+    {
+      return $query->result();
+    }
+    else
+    {
+      return false;
+    }
+  }
+
   public function insert($data)
   {
     $this->db->insert($this->table, $data);
