@@ -57,4 +57,9 @@ $(document).ready(function() {
 			location='Article/publish/' + id + '/' + state;
 		}, 500);
 	});
+
+	$('#paginate').paginate({
+		scope: $('div'),
+		perPage: 5
+	});
 });

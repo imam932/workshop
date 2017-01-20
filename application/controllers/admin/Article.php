@@ -51,6 +51,7 @@ class Article extends Admin_Controller {
 				$data['id_category'] = $this->input->post('id_category');
 				$data['posting'] = $this->input->post('posting');
 				$data['id_user'] = $this->session->userdata('logged_in')['id_user'];
+				$data['publish'] = 1;
 				$this->Model_article->insert($data);
 
 				$this->session->set_flashdata('message', 'Success ! Article has been created');
