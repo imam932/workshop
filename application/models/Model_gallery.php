@@ -13,7 +13,7 @@ class Model_gallery extends CI_Model
 
   public function select_all()
   {
-    $this->db->order_by('date');
+    $this->db->order_by('date', 'DESC');
     $query = $this->db->get($this->table);
 
     if($query->num_rows() > 0)

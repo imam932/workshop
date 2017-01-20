@@ -12,7 +12,7 @@ class Model_article extends CI_Model
 
 	public function select_all()
 	{
-		$this->db->order_by('date');
+		$this->db->order_by('date', 'DESC');
 		$this->db->from($this->table);
 		$this->db->join('category', 'article.id_category = category.id_category');
 		$this->db->join('user', 'article.id_user = user.id_user');

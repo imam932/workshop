@@ -43,6 +43,12 @@ p {
 	overflow: hidden;
 }
 
+.gallery-description span {
+	font-size: 12px;
+	margin-right: 10px;
+	display: inline-block;
+}
+
 .panel.article .panel-footer > span {
 	display: inline-block;
 	margin-right: 10px;

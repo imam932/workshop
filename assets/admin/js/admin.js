@@ -58,6 +58,7 @@ $(document).ready(function() {
 		}, 500);
 	});
 
+	// Paging search article
 	var options = {
     valueNames: [ 'title'],
     page: 5,
@@ -67,4 +68,15 @@ $(document).ready(function() {
   };
 
 	var article = new List('article', options);
+
+	// Paging search gallery
+	var optionsGallery = {
+    valueNames: [ 'title'],
+    page: 9,
+    plugins: [
+      ListPagination({})
+    ]
+  };
+
+	var gallery = new List('gallery', optionsGallery);
 });
