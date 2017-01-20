@@ -135,7 +135,7 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <?= $this->session->userdata('logged_in')['username']; ?><b class="caret"></b></a>
           <ul class="dropdown-menu">
             <li>
-              <a href="<?= base_url().'admin/User/profile/' ?>"><i class="fa fa-fw fa-user"></i> Profile</a>
+              <a href="<?= base_url().'admin/Profile/' ?>"><i class="fa fa-fw fa-user"></i> Profile</a>
             </li>
             <li>
               <a href="#"><i class="fa fa-fw fa-envelope"></i> Inbox</a>
@@ -169,9 +169,11 @@
             <a href="<?= base_url().'admin/Gallery' ?>"><i class="fa fa-fw fa-file-image-o"></i> Gallery</a>
           </li>
 
+          <?php if($this->session->userdata('logged_in')['admin']) { ?>
           <li>
-            <a href="<?= base_url().'admin/User' ?>"><i class="fa fa-fw fa-user"></i> User</a>
+            <a href="<?= base_url().'admin/User' ?>"><i class="fa fa-fw fa-user"></i> User </a>
           </li>
+          <?php } ?>
         </ul>
       </div>
       <!-- /.navbar-collapse -->

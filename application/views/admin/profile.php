@@ -2,7 +2,7 @@
 <div class="row">
   <div class="col-lg-12">
     <p>
-      <a href="<?= base_url().'admin/User/Edituser/'.$this->session->userdata('logged_in')['id_user'] ?>" class="btn btn-primary btn-sm"> Edit Profil</a>
+      <a href="<?= base_url().'admin/Profile/editProfile/'.$this->session->userdata('logged_in')['id_user'] ?>" class="btn btn-primary btn-sm"> Edit Profil</a>
     </p> <br>
 
     <?php if(isset($error)) { ?>
@@ -23,15 +23,12 @@
           <label for="">Name</label>
           <p><?= $user[0]->name ?></p>
           <hr>
-          <label for="">Username</label>
-          <p>Username</p>
-          <hr>
           <label for="">gender</label>
           <p><?php
           if ($user[0]->gender == 1) {
-            echo "Laki laki";
+            echo "Male";
           }else {
-            echo "Perempuan";
+            echo "Female";
           }
           ?></p>
           <hr>
@@ -47,7 +44,7 @@
         </div>
       </div>
       <div class="col-lg-4">
-        <form method="post" action="<?=base_url()?>admin/User/resetPassword/<?= $this->session->userdata('logged_in')['id_user'] ?>">
+        <form method="post" action="<?=base_url()?>admin/Profile/resetPassword/<?= $this->session->userdata('logged_in')['id_user'] ?>">
           <div class="panel panel-default">
             <div class="panel-heading">
               <b>Reset Password</b>

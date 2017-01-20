@@ -16,10 +16,11 @@
 						<tr>
 							<th>No.</th>
 							<th>Name</th>
-							<th>Genre</th>
+							<th>Gender</th>
 							<th>Birth</th>
 							<th>address</th>
 							<th>Phone</th>
+							<th>Admin</th>
 							<th>Action</th>
 						</tr>
 					</thead>
@@ -34,14 +35,15 @@
 								<td><?= $row->name ?></td>
 								<td><?php
 								if ($row->gender == 1) {
-									echo "Laki laki";
+									echo "Male";
 								}else {
-									echo "Perempuan";
+									echo "Female";
 								}
 								?></td>
 								<td><?= $row->birth ?></td>
 								<td><?= $row->address ?></td>
 								<td><?= $row->phone ?></td>
+								<td><?php if($row->admin) echo 'Yes'; else echo 'No';  ?></td>
 								<td>
 									<a href="<?= base_url().'admin/User/editUser/'.$row->id_user ?>" class="btn btn-primary btn-sm">
 										Edit

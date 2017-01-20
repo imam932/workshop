@@ -9,9 +9,9 @@
       <div class="col-lg-8">
         <div class="panel panel-default">
           <div class="panel-heading">
-            <b>Edit User</b>
+            <b>Edit Profile</b>
           </div>
-          <form class="" action="<?= base_url().'admin/User/Edituser/'.$user[0]->id_user ?>" method="post">
+          <form class="" action="<?= base_url().'admin/Profile/editProfile/'.$user[0]->id_user ?>" method="post">
             <div class="panel-body">
               <div class="form-group">
                 <input type="text" name="name" class="form-control" value="<?= $user[0]->name ?>">
@@ -34,17 +34,6 @@
               <div class="form-group">
                 <textarea name="address" rows="2" class="form-control"><?= $user[0]->address ?></textarea>
               </div>
-
-              <div class="radio">
-                Admin &nbsp;
-                <label>
-                  <input type="radio" name="admin"  value="1" <?php if($user[0]->admin == 1) echo "checked" ?>> Yes
-                </label>
-                <label>
-                  <input type="radio" name="admin"  value="0" <?php if($user[0]->admin == 0) echo "checked" ?>> No
-                </label>
-              </div>
-
               <div class="form-group">
                 <input type="text" name="phone" class="form-control" value="<?= $user[0]->phone ?>">
               </div>

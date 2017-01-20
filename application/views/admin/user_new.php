@@ -30,6 +30,7 @@
                   <input type="radio" name="gender"  value="0"> Female
                 </label>
               </div>
+
               <div class="form-group">
                 <div class="input-group date" id="datepicker" data-date="" data-date-format="yyyy-dd-mm" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
                   <input class="form-control" size="16" type="text" name="birth" placeholder="Birth">
@@ -40,6 +41,17 @@
               <div class="form-group">
                 <textarea name="address" rows="2" class="form-control" placeholder="Address..."></textarea>
               </div>
+
+              <div class="radio">
+                Admin &nbsp;
+                <label>
+                  <input type="radio" name="admin"  value="1" checked> Yes
+                </label>
+                <label>
+                  <input type="radio" name="admin"  value="0"> No
+                </label>
+              </div>
+
               <div class="form-group">
                 <input type="text" name="phone" class="form-control"  placeholder="Phone">
               </div>
