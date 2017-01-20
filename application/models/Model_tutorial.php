@@ -13,7 +13,12 @@ class Model_tutorial extends CI_Model
 
   public function select_all()
   {
-    $query = $this->db->get($this->table);
+    $this->db->order_by('date', 'DESC');
+		$this->db->from($this->table);
+		$this->db->join('category', 'tutorial.id_category = category.id_category');
+		$this->db->join('user', 'tutorial.id_user = user.id_user');
+
+    $query = $this->db->get();
 
     if($query->num_rows() > 0)
     {
@@ -27,8 +32,12 @@ class Model_tutorial extends CI_Model
 
   public function select_by_id($id)
   {
-    $this->db->where('id_tutorial', $id);
-    $query = $this->db->get($this->table);
+    $this->db->from($this->table);
+		$this->db->join('category', 'tutorial.id_category = category.id_category');
+		$this->db->join('user', 'tutorial.id_user = user.id_user');
+		$this->db->where('tutorial.id_tutorial', $id);
+
+    $query = $this->db->get();
 
     if($query->num_rows() == 1)
     {
