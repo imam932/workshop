@@ -13,7 +13,7 @@ class Home extends CI_Controller{
   function index()
   {
     // load data
-    $data['article']   = $this->Model_article->select_all(3);
+    $data['article']   = $this->Model_article->select_all(8);
     $data['gallery']   = $this->Model_gallery->select_all(5);
 
     $data['content']   = $this->load->view('home', $data, TRUE);

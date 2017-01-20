@@ -3378,7 +3378,7 @@ hr.pattern.pattern-2:after, .divider.pattern.pattern-2:after {
 }
 
 .sort-destination.full-width .isotope-item {
-	width: 20%;
+	width: 19%;
 	float: left;
 }
 
@@ -4722,7 +4722,6 @@ html.boxed .pricing-table .plan, html.boxed .pricing-table h3 {
 .thumb-info.thumb-info-no-borders, .thumb-info.thumb-info-no-borders img {
 	border: 0;
 	padding: 0;
-	margin: 0;
 	border-radius: 0;
 }
 
