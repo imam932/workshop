@@ -170,80 +170,80 @@
           </li>
 
           <?php if($this->session->userdata('logged_in')['admin']) { ?>
-          <li>
-            <a href="<?= base_url().'admin/User' ?>"><i class="fa fa-fw fa-user"></i> User </a>
-          </li>
-          <?php } ?>
-        </ul>
-      </div>
-      <!-- /.navbar-collapse -->
-    </nav>
-
-    <div id="page-wrapper">
-
-      <div class="container-fluid">
-
-        <!-- Page Heading -->
-        <div class="row">
-          <div class="col-lg-12">
-            <h1 class="page-header">
-              <?= $title; ?> <small><?= $desc; ?></small>
-            </h1>
-          </div>
+            <li>
+              <a href="<?= base_url().'admin/User' ?>"><i class="fa fa-fw fa-user"></i> User </a>
+            </li>
+            <?php } ?>
+          </ul>
         </div>
-        <!-- /.row -->
+        <!-- /.navbar-collapse -->
+      </nav>
 
-        <!-- breadcrumb -->
-        <ol class="breadcrumb">
-          <?php
-          $i = 0;
-          $size = sizeof($breadcrumb);
-          foreach ($breadcrumb as $value)
-          {
-            if($i == $size - 1)
+      <div id="page-wrapper">
+
+        <div class="container-fluid">
+
+          <!-- Page Heading -->
+          <div class="row">
+            <div class="col-lg-12">
+              <h1 class="page-header">
+                <?= $title; ?> <small><?= $desc; ?></small>
+              </h1>
+            </div>
+          </div>
+          <!-- /.row -->
+
+          <!-- breadcrumb -->
+          <ol class="breadcrumb">
+            <?php
+            $i = 0;
+            $size = sizeof($breadcrumb);
+            foreach ($breadcrumb as $value)
             {
-              echo "<li class='active'>$value</li>";
-            }
-            else
-            {
-              $url = base_url() . "admin/" . $value;
-              echo "<li><a href='$url'>$value</a></li>";
-            }
+              if($i == $size - 1)
+              {
+                echo "<li class='active'>$value</li>";
+              }
+              else
+              {
+                $url = base_url() . "admin/" . $value;
+                echo "<li><a href='$url'>$value</a></li>";
+              }
 
-            $i++;
-          }
-          ?>
-        </ol>
+              $i++;
+            }
+            ?>
+          </ol>
 
-        <!-- ADD YOUR CONTENT HERE -->
-        <?= $content; ?>
-        <!-- END OF CONTENT -->
+          <!-- ADD YOUR CONTENT HERE -->
+          <?= $content; ?>
+          <!-- END OF CONTENT -->
+
+        </div>
+        <!-- /.container-fluid -->
 
       </div>
-      <!-- /.container-fluid -->
+      <!-- /#page-wrapper -->
 
     </div>
-    <!-- /#page-wrapper -->
+    <!-- /#wrapper -->
 
-  </div>
-  <!-- /#wrapper -->
+    <!-- Include JS -->
+    <!-- Vendor -->
+    <script src="<?= base_url() ?>assets/admin/js/jquery.js"></script>
 
-  <!-- Include JS -->
-  <!-- Vendor -->
-  <script src="<?= base_url() ?>assets/vendor/jquery/jquery.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="<?= base_url() ?>assets/admin/js/bootstrap.min.js"></script>
 
-  <!-- Bootstrap Core JavaScript -->
-  <script src="<?= base_url() ?>assets/admin/js/bootstrap.min.js"></script>
+    <script src="<?= base_url() ?>assets/admin/dist/summernote.js"></script>
+    <script src="<?= base_url() ?>assets/admin/js/admin.js"></script>
+    <script src="<?= base_url() ?>assets/admin/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="<?= base_url() ?>assets/admin/js/dataTables.min.js"></script>
+    <script src="<?= base_url() ?>assets/admin/js/dataTables.bootstrap.min.js"></script>
+    <script src="<?= base_url() ?>assets/admin/js/bootstrap-switch.min.js"></script>
+    <script src="<?= base_url() ?>assets/admin/js/bootstrap-filestyle.min.js"></script>
+    <script src="<?= base_url() ?>assets/admin/js/list.min.js"></script>
+    <script src="<?= base_url() ?>assets/admin/js/list.pagination.min.js"></script>
+  </body>
 
-  <script src="<?= base_url() ?>assets/admin/dist/summernote.js"></script>
-  <script src="<?= base_url() ?>assets/admin/js/admin.js"></script>
-  <script src="<?= base_url() ?>assets/admin/js/bootstrap-datetimepicker.min.js"></script>
-  <script src="<?= base_url() ?>assets/admin/js/dataTables.min.js"></script>
-  <script src="<?= base_url() ?>assets/admin/js/dataTables.bootstrap.min.js"></script>
-  <script src="<?= base_url() ?>assets/admin/js/bootstrap-switch.min.js"></script>
-  <script src="<?= base_url() ?>assets/admin/js/bootstrap-filestyle.min.js"></script>
-  <script src="<?= base_url() ?>assets/admin/js/list.min.js"></script>
-  <script src="<?= base_url() ?>assets/admin/js/list.pagination.min.js"></script>
-</body>
-
-</html>
+  </html>

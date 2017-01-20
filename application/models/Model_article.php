@@ -10,8 +10,9 @@ class Model_article extends CI_Model
 		parent::__construct();
 	}
 
-	public function select_all()
+	public function select_all($limit=null)
 	{
+		$this->db->limit($limit);
 		$this->db->order_by('date', 'DESC');
 		$this->db->from($this->table);
 		$this->db->join('category', 'article.id_category = category.id_category');

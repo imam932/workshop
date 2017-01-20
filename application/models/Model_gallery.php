@@ -11,8 +11,9 @@ class Model_gallery extends CI_Model
     parent::__construct();
   }
 
-  public function select_all()
+  public function select_all($limit=null)
   {
+    $this->db->limit($limit);
     $this->db->order_by('date', 'DESC');
     $query = $this->db->get($this->table);
 
