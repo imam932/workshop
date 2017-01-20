@@ -58,8 +58,13 @@ $(document).ready(function() {
 		}, 500);
 	});
 
-	$('#paginate').paginate({
-		scope: $('div'),
-		perPage: 5
-	});
+	var options = {
+    valueNames: [ 'title'],
+    page: 5,
+    plugins: [
+      ListPagination({})
+    ]
+  };
+
+	var article = new List('article', options);
 });

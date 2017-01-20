@@ -9,8 +9,15 @@
 		<?php if(isset($message)) { ?>
 			<div class="alert alert-success alert-link"><?=$message?></div>
 			<?php } ?>
-			<div class="col-lg-9">
-				<div id="paginate">
+
+
+			<div class="col-lg-9" id="article">
+
+				<div class="form-group row">
+					<input class="search form-control" placeholder="search article" onkey="alert('reset')">
+				</div>
+
+				<div class="list">
 					<?php foreach ($article as $row) {
 						$time = new DateTime($row->date);
 						?>
@@ -62,8 +69,10 @@
 						</div>
 						<?php } ?>
 					</div>
-				</div>
+					<ul class="pagination">
 
+					</ul>
+				</div>
 				<!-- panel left -->
 				<div class="col-lg-3">
 					<div class="panel panel-default">
