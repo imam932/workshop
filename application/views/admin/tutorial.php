@@ -18,7 +18,7 @@
 				</div>
 
 				<div class="list">
-					<?php foreach ($article as $row) {
+					<?php foreach ($tutorial as $row) {
 						$time = new DateTime($row->date);
 						?>
 						<div class="row">
@@ -28,11 +28,11 @@
 										<div class="col-lg-12">
 											<span class="title"><?= $row->title; ?></span>
 											<div class="pull-right">
-												<a href="<?= base_url() ?>admin/Article/editArticle/<?= $row->id_article ?>">
+												<a href="<?= base_url() ?>admin/Tutorial/editTutorial/<?= $row->id_tutorial ?>">
 													<i class="fa fa-edit"></i>
 												</a>
 												&nbsp;
-												<a href="<?= base_url() ?>admin/Article/deleteArticle/<?= $row->id_article ?>" onclick="return confirm('Delete Article ?')">
+												<a href="<?= base_url() ?>admin/Tutorial/deleteTutorial/<?= $row->id_tutorial ?>" onclick="return confirm('Delete Article ?')">
 													<i class="fa fa-trash-o"></i>
 												</a>
 											</div>
@@ -61,7 +61,7 @@
 									</span>
 
 									<div class="pull-right">
-										<input type="checkbox" name="publish-article" class="switch-art" id="<?= $row->id_article ?>" <?php if($row->publish == true) echo "checked" ?>>
+										<input type="checkbox" name="publish-tutorial" class="switch-art" id="<?= $row->id_tutorial ?>" <?php if($row->publish == true) echo "checked" ?>>
 									</div>
 
 								</div>

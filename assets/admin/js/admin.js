@@ -79,4 +79,23 @@ $(document).ready(function() {
   };
 
 	var gallery = new List('gallery', optionsGallery);
+
+
+	$('[name="publish-tutorial"]').on('switchChange.bootstrapSwitch', function(event, state) {
+		var id = this.id;
+// alert(state);
+		// sql bug, change true/false to 1/0
+		if(state == true)
+		{
+			state = 1;
+		}
+		else if(state == false)
+		{
+			state = 0;
+		}
+
+		setTimeout(function () {
+			location='Tutorial/publish/' + id + '/' + state;
+		}, 500);
+	});
 });
