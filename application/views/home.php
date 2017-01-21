@@ -143,7 +143,7 @@
           </div>
           <div class="row">
             <div class="col-md-12">
-              <h2>Artikel</h2>
+              <h2>Article</h2>
 
               <div class="owl-carousel owl-theme" data-plugin-options='{"responsive": {"0": {"items": 1}, "479": {"items": 1}, "768": {"items": 2}, "979": {"items": 3}, "1199": {"items": 4}}, "items": 4, "margin": 10, "loop": false, "nav": false, "dots": true}'>
                 <?php

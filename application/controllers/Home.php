@@ -17,7 +17,9 @@ class Home extends CI_Controller{
     $data['gallery']   = $this->Model_gallery->select_all(5);
 
     $data['content']   = $this->load->view('home', $data, TRUE);
-// print_r($data);
+    $data['title'] = "Home";
+    $data['desc'] = "desc";
+    $data['breadcrumb'] = array("Home");
     $this->load->view('template', $data);
   }
 

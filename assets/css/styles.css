@@ -20,3 +20,14 @@
 .image-gallery .isotope-item{
   margin: 0 3px 0 3px;
 }
+
+.content-wrapper {
+  padding-top: 30px;
+}
+
+.web-title small {
+  text-transform: none;
+  display: block;
+  margin-top: 15px;
+  font-size: 14px;
+}

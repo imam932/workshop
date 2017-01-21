@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-  <title>WRI | Home</title>
+  <title>WRI | <?= $title ?></title>
 
   <meta name="keywords" content="HTML5 Template"/>
   <meta name="description" content="Porto - Responsive HTML5 Template">
@@ -105,215 +105,204 @@
                   <div class="header-nav-main header-nav-main-effect-1 header-nav-main-sub-effect-1 collapse">
                     <nav>
                       <ul class="nav nav-pills" id="mainNav">
-                        <li class="">
-                          <a class="" href="#">
+                        <li>
+                          <a href=".">
                             Home
                           </a>
                         </li>
-                        <li class="dropdown">
-                          <a class="dropdown-toggle" href="#">
-                            Profile
+
+                        <li>
+                          <a href="<?= base_url() ?>Article">
+                            Article
                           </a>
-
-                          <ul class="dropdown-menu">
-                            <li class="">
-                              <a href="#">Workshop Riset Informatika</a>
-                            </li>
-                            <li class="">
-                              <a href="#">Visi Misi</a>
-                            </li>
-                            <li class="">
-                              <a href="#">Divisi</a>
-                            </li>
-                            <li class="dropdown-submenu">
-                              <a href="#">Struktur Organisasi</a>
-                              <ul class="dropdown-menu">
-                                <li>
-                                  <a href="index-classic.html#footer">Angkatan 2013</a>
-                                </li>
-                                <li>
-                                  <a href="index-footer-advanced.html#footer">Angkatan
-                                    2014
-                                  </a>
-                                </li>
-                                <li>
-                                  <a href="index-footer-simple.html#footer">Angkatan
-                                    2015
-                                  </a>
-                                </li>
-                              </ul>
-                            </li>
-
-                          </ul>
                         </li>
-                        <li class="dropdown">
-                          <a class="" href="#">
-                            Events
+
+                        <li>
+                          <a href="<?= base_url() ?>Tutorial">
+                            Tutorial
                           </a>
-                          <li class="dropdown">
-                            <a class="dropdown-toggle" href="#">
-                              Artikel
-                            </a>
-                            <ul class="dropdown-menu">
-                              <li><a href="portfolio-4-columns.html">PHP</a>
-                              </li>
-                              <li><a href="portfolio-3-columns.html">Unity</a>
-                              </li>
-                            </ul>
-                          </li>
-                          <li class="dropdown">
-                            <a class="" href="#">
-                              Galeri
-                            </a>
-                          </li>
-                          <li class="dropdown">
-                            <a class="" href="#">
-                              Contact Us
-                            </a>
-                          </li>
-                        </ul>
-                      </nav>
-                    </div>
+                        </li>
+
+                        <li>
+                          <a href="<?= base_url() ?>Gallery">
+                            Gallery
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            Contact Us
+                          </a>
+                        </li>
+                      </ul>
+                    </nav>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </header>
+      </div>
+    </header>
 
-      <!-- content here -->
-      <?= $content ?>
-      <!-- end of content -->
+    <div class="container content-wrapper">
+      <div class="web-title">
+        <h3><?= $title ?> <small><?= $desc ?></small></h3>
+      </div>
+        <!-- breadcrumb -->
+        <ol class="breadcrumb">
+          <?php
+          $i = 0;
+          $size = sizeof($breadcrumb);
+          foreach ($breadcrumb as $value)
+          {
+            if($i == $size - 1)
+            {
+              echo "<li class='active'>$value</li>";
+            }
+            else
+            {
+              $url = base_url() . $value;
+              echo "<li><a href='$url'>$value</a></li>";
+            }
 
-      <footer id="footer">
-        <div class="container">
-          <div class="row">
-            <div class="footer-ribbon">
-              <span>WRI</span>
-            </div>
-            <div class="col-md-3">
-              <div class="newsletter">
-                <h4>Newsletter</h4>
-                <p>Ayo masukkan email kamu biar update.</p>
+            $i++;
+          }
+          ?>
+        </ol>
+        <hr>
+        <!-- content here -->
+        <?= $content ?>
+        <!-- end of content -->
+    </div>
 
-                <div class="alert alert-success hidden" id="newsletterSuccess">
-                  <strong>Success!</strong> You've been added to our email list.
+    <footer id="footer">
+      <div class="container">
+        <div class="row">
+          <div class="footer-ribbon">
+            <span>WRI</span>
+          </div>
+          <div class="col-md-3">
+            <div class="newsletter">
+              <h4>Newsletter</h4>
+              <p>Ayo masukkan email kamu biar update.</p>
+
+              <div class="alert alert-success hidden" id="newsletterSuccess">
+                <strong>Success!</strong> You've been added to our email list.
+              </div>
+
+              <div class="alert alert-danger hidden" id="newsletterError"></div>
+
+              <form id="newsletterForm" action="php/newsletter-subscribe.php" method="POST">
+                <div class="input-group">
+                  <input class="form-control" placeholder="Email Address" name="newsletterEmail"
+                  id="newsletterEmail" type="text">
+                  <span class="input-group-btn">
+                    <button class="btn btn-default" type="submit">Go!</button>
+                  </span>
                 </div>
-
-                <div class="alert alert-danger hidden" id="newsletterError"></div>
-
-                <form id="newsletterForm" action="php/newsletter-subscribe.php" method="POST">
-                  <div class="input-group">
-                    <input class="form-control" placeholder="Email Address" name="newsletterEmail"
-                    id="newsletterEmail" type="text">
-                    <span class="input-group-btn">
-                      <button class="btn btn-default" type="submit">Go!</button>
-                    </span>
-                  </div>
-                </form>
-              </div>
+              </form>
             </div>
-            <div class="col-md-3">
-              <h4>Tweets terakhir</h4>
-              <div id="tweet" class="twitter" data-plugin-tweets data-plugin-options='{"username": "", "count": 2}'>
-                <p>Please wait...</p>
-              </div>
+          </div>
+          <div class="col-md-3">
+            <h4>Tweets terakhir</h4>
+            <div id="tweet" class="twitter" data-plugin-tweets data-plugin-options='{"username": "", "count": 2}'>
+              <p>Please wait...</p>
             </div>
-            <div class="col-md-4">
-              <div class="contact-details">
-                <h4>Contact Us</h4>
-                <ul class="contact">
-                  <li>
-                    <p>
-                      <i class="fa fa-map-marker"></i>
-                      <strong>Address:</strong>
-                      Politeknik Negeri Malang
-                    </p>
-                  </li>
-                  <li>
-                    <p>
-                      <i class="fa fa-phone"></i>
-                      <strong>Phone:</strong>
-                      (123) 456-789
-                    </p>
-                  </li>
-                  <li>
-                    <p>
-                      <i class="fa fa-envelope"></i>
-                      <strong>Email:</strong>
-                      <a href="mailto:mail@example.com">mail@apajaa.com</a>
-                    </p>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-md-2">
-              <h4>Follow Us</h4>
-              <ul class="social-icons">
-                <li class="social-icons-facebook">
-                  <a href="http://www.facebook.com/" target="_blank" title="Facebook">
-                    <i class="fa fa-facebook"></i>
-                  </a>
+          </div>
+          <div class="col-md-4">
+            <div class="contact-details">
+              <h4>Contact Us</h4>
+              <ul class="contact">
+                <li>
+                  <p>
+                    <i class="fa fa-map-marker"></i>
+                    <strong>Address:</strong>
+                    Politeknik Negeri Malang
+                  </p>
                 </li>
-                <li class="social-icons-twitter">
-                  <a href="http://www.twitter.com/" target="_blank" title="Twitter">
-                    <i class="fa fa-twitter"></i></a>
-                  </li>
-                  <li class="social-icons-linkedin"><a href="http://www.linkedin.com/" target="_blank" title="Linkedin">
-                    <i class="fa fa-linkedin"></i>
-                  </a>
+                <li>
+                  <p>
+                    <i class="fa fa-phone"></i>
+                    <strong>Phone:</strong>
+                    (123) 456-789
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <i class="fa fa-envelope"></i>
+                    <strong>Email:</strong>
+                    <a href="mailto:mail@example.com">mail@apajaa.com</a>
+                  </p>
                 </li>
               </ul>
             </div>
           </div>
+          <div class="col-md-2">
+            <h4>Follow Us</h4>
+            <ul class="social-icons">
+              <li class="social-icons-facebook">
+                <a href="http://www.facebook.com/" target="_blank" title="Facebook">
+                  <i class="fa fa-facebook"></i>
+                </a>
+              </li>
+              <li class="social-icons-twitter">
+                <a href="http://www.twitter.com/" target="_blank" title="Twitter">
+                  <i class="fa fa-twitter"></i></a>
+                </li>
+                <li class="social-icons-linkedin"><a href="http://www.linkedin.com/" target="_blank" title="Linkedin">
+                  <i class="fa fa-linkedin"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
-        <div class="footer-copyright">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-2">
-                <!--<a href="index.html" class="logo">
-                <!--<img alt="Porto Website Template" class="img-responsive" width="1000" src="img/g3392.png">-->
-                <!--</a>-->
-                <!--</div>-->
-                <div class="col-md-8">
-                  <p>© Copyright 2015. All Rights Reserved.</p>
-                </div>
-                <div class="col-md-4">
-                  <nav id="sub-menu">
-                    <ul>
-                      <li>
-                        <a href="page-faq.html">FAQ's</a>
-                      </li>
-                      <li>
-                        <a href="sitemap.html">Sitemap</a>
-                      </li>
-                      <li>
-                        <a href="contact-us.html">Contact</a>
-                      </li>
-                    </ul>
-                  </nav>
-                </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-2">
+              <!--<a href="index.html" class="logo">
+              <!--<img alt="Porto Website Template" class="img-responsive" width="1000" src="img/g3392.png">-->
+              <!--</a>-->
+              <!--</div>-->
+              <div class="col-md-8">
+                <p>© Copyright 2015. All Rights Reserved.</p>
+              </div>
+              <div class="col-md-4">
+                <nav id="sub-menu">
+                  <ul>
+                    <li>
+                      <a href="page-faq.html">FAQ's</a>
+                    </li>
+                    <li>
+                      <a href="sitemap.html">Sitemap</a>
+                    </li>
+                    <li>
+                      <a href="contact-us.html">Contact</a>
+                    </li>
+                  </ul>
+                </nav>
               </div>
             </div>
           </div>
-        </footer>
-      </div>
+        </div>
+      </footer>
+    </div>
 
-      <!-- Vendor -->
-      <script src="<?= base_url() ?>assets/vendor/jquery/jquery.js"></script>
-      <script src="<?= base_url() ?>assets/vendor/jquery.appear/jquery.appear.js"></script>
-      <script src="<?= base_url() ?>assets/vendor/jquery.easing/jquery.easing.js"></script>
-      <script src="<?= base_url() ?>assets/vendor/bootstrap/js/bootstrap.min.js"></script>
-      <script src="<?= base_url() ?>assets/vendor/jquery.validation/jquery.validation.js"></script>
-      <script src="<?= base_url() ?>assets/vendor/jquery.gmap/jquery.gmap.js"></script>
-      <script src="<?= base_url() ?>assets/vendor/jquery.lazyload/jquery.lazyload.js"></script>
-      <script src="<?= base_url() ?>assets/vendor/owl.carousel/owl.carousel.js"></script>
-      <script src="<?= base_url() ?>assets/vendor/magnific-popup/jquery.magnific-popup.js"></script>
+    <!-- Vendor -->
+    <script src="<?= base_url() ?>assets/vendor/jquery/jquery.js"></script>
+    <script src="<?= base_url() ?>assets/vendor/jquery.appear/jquery.appear.js"></script>
+    <script src="<?= base_url() ?>assets/vendor/jquery.easing/jquery.easing.js"></script>
+    <script src="<?= base_url() ?>assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="<?= base_url() ?>assets/vendor/jquery.validation/jquery.validation.js"></script>
+    <script src="<?= base_url() ?>assets/vendor/jquery.gmap/jquery.gmap.js"></script>
+    <script src="<?= base_url() ?>assets/vendor/jquery.lazyload/jquery.lazyload.js"></script>
+    <script src="<?= base_url() ?>assets/vendor/owl.carousel/owl.carousel.js"></script>
+    <script src="<?= base_url() ?>assets/vendor/magnific-popup/jquery.magnific-popup.js"></script>
 
-      <script src="<?= base_url() ?>assets/js/theme.js"></script>
-      <script src="<?= base_url() ?>assets/vendor/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
-      <script src="<?= base_url() ?>assets/vendor/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
-      <script src="<?= base_url() ?>assets/js/theme.init.js"></script>
-    </body>
-    </html>
+    <script src="<?= base_url() ?>assets/js/theme.js"></script>
+    <script src="<?= base_url() ?>assets/vendor/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
+    <script src="<?= base_url() ?>assets/vendor/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+    <script src="<?= base_url() ?>assets/js/theme.init.js"></script>
+  </body>
+  </html>
