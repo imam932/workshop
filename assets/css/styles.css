@@ -31,3 +31,25 @@
   margin-top: 15px;
   font-size: 14px;
 }
+
+p {
+    color: #777;
+    line-height: 24px;
+    margin: 0 0 20px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+html .heading-primary {
+  height: 3.6em; /* exactly three lines */
+text-overflow: -o-ellipsis-lastline;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.thumb-info .thumb-info-inner {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
