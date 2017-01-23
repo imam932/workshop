@@ -6,7 +6,7 @@
 			<div class="alert alert-danger alert-link"><?=$error?></div>
 			<?php } ?>
 
-			<form method="post" action="<?=base_url()?>admin/Article/New">
+			<form method="post" action="<?=base_url()?>admin/Article/New" enctype="multipart/form-data">
 				<div class="row">
 					<div class="col-lg-9">
 
@@ -22,12 +22,18 @@
 									<select class="form-control" name="id_category">
 										<option selected disabled>Select Category</option>
 										<?php foreach ($category as $row) { ?>
-											<<option value="<?= $row->id_category ?>"><?= $row->category ?></option>
-											<?php } ?>
-										</select>
-									</div>
+										<option value="<?= $row->id_category ?>"><?= $row->category ?></option>
+										<?php } ?>
+									</select>
 								</div>
 							</div>
+
+							<div class="col-xs-12 col-sm-12 col-md-4">
+								<div class="form-group">
+								  <input type="file" class="form-control" name="image">
+								</div>
+							</div>
+						</div>
 
 							<div class="form-group">
 								<textarea name="posting" class="form-control summernote"></textarea>

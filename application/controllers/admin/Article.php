@@ -52,10 +52,28 @@ class Article extends Admin_Controller {
 				$data['posting'] = $this->input->post('posting');
 				$data['id_user'] = $this->session->userdata('logged_in')['id_user'];
 				$data['publish'] = 1;
-				$this->Model_article->insert($data);
 
-				$this->session->set_flashdata('message', 'Success ! Article has been created');
-				redirect('admin/Article', 'refresh');
+				//upload file config
+	      $path = 'assets/upload/article';
+	      $config['upload_path'] = $path;
+	      $config['allowed_types'] = 'jpg|png';
+	      $config['max_size'] = 5000;
+	      $config['encrypt_name'] = TRUE;
+				$this->load->library('upload', $config);
+
+				//uploading File
+	      if(!$this->upload->do_upload('image'))
+	      {
+	        $this->session->set_flashdata('error', $this->upload->display_errors());
+					redirect('admin/Article/New', 'refresh');
+	      }
+	      else
+	      {
+	        $data['image'] = $this->upload->data()['file_name'];
+	        $this->Model_article->insert($data);
+	        $this->session->set_flashdata('message', 'Success ! Article has been created');
+					redirect('admin/Article', 'refresh');
+	      }
 			}
 		}
 
@@ -79,6 +97,12 @@ class Article extends Admin_Controller {
 
 	function deleteArticle($id)
 	{
+		// delete image File
+    $path = "assets/upload/article/";
+    $record = $this->Model_article->select_by_id($id);
+    $filename = $record[0]->image;
+    unlink($path . $filename);
+
 		$this->Model_article->delete($id);
 		$this->session->set_flashdata('message', 'Success ! Article has been deleted');
 		redirect('admin/Article', 'refresh');
@@ -102,6 +126,36 @@ class Article extends Admin_Controller {
 				$data['id_category'] = $this->input->post('id_category');
 				$data['posting'] = $this->input->post('posting');
 				$data['id_user'] = $this->session->userdata('logged_in')['id_user'];
+
+				if(!$_FILES['image']['name'] == '')
+        {
+          //upload file config
+          $path = 'assets/upload/article';
+          $config['upload_path'] = $path;
+          $config['allowed_types'] = 'jpg|png';
+          $config['max_size'] = 5000;
+          $config['encrypt_name'] = TRUE;
+
+          $this->load->library('upload', $config);
+
+          //uploading File
+          if(!$this->upload->do_upload('image'))
+          {
+            $this->session->set_flashdata('error', $this->upload->display_errors());
+            redirect('admin/Article/editArticle/' . $id, 'refresh');
+          }
+          else
+          {
+            // delete image File
+            $path = "assets/upload/article/";
+            $record = $this->Model_article->select_by_id($id);
+            $filename = $record[0]->image;
+            unlink($path . $filename);
+
+            $data['image'] = $this->upload->data()['file_name'];
+          }
+        }
+
 				$this->Model_article->update($data, $id);
 
 				$this->session->set_flashdata('message', 'Success ! Article has been edited');
