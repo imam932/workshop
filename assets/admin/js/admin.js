@@ -30,12 +30,12 @@ $(document).ready(function() {
 		$('.alert').slideToggle('fast');
 	});
 
-	// $(":file").filestyle({
-	// 	buttonBefore: true,
-	// 	icon: false,
-	// 	placeholder: "No file"
-	// });
-	//
+	$(":file").filestyle({
+		buttonBefore: true,
+		icon: false,
+		placeholder: "No file"
+	});
+
 	$('[name="publish-article"]').on('switchChange.bootstrapSwitch', function(event, state) {
 
 		var id = this.id;
