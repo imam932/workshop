@@ -46,16 +46,34 @@ class Tutorial extends Admin_Controller {
       else
       {
         $data['id_tutorial'] = random_string('alnum', 6) . date('my') . random_string('alnum', 5);
-        $data['date']        = date('Y-m-d k:i:s');
+        $data['date']        = date('Y-m-d h:i:s');
         $data['title']       = $this->input->post('title');
         $data['description'] = $this->input->post('description');
         $data['id_user']     = $this->session->userdata('logged_in')['id_user'];
         $data['id_category'] = $this->input->post('id_category');
         $data['publish']     = 1;
-        $this->Model_tutorial->insert($data);
 
-        $this->session->set_flashdata('message', 'Success ! Tutorial has been created');
-        redirect('admin/Tutorial', 'refresh');
+        //upload file config
+	      $path = 'assets/upload/tutorial';
+	      $config['upload_path'] = $path;
+	      $config['allowed_types'] = 'jpg|png';
+	      $config['max_size'] = 5000;
+	      $config['encrypt_name'] = TRUE;
+				$this->load->library('upload', $config);
+
+				//uploading File
+	      if(!$this->upload->do_upload('image'))
+	      {
+	        $this->session->set_flashdata('error', $this->upload->display_errors());
+					redirect('admin/Tutorial/New', 'refresh');
+	      }
+	      else
+	      {
+	        $data['image'] = $this->upload->data()['file_name'];
+	        $this->Model_tutorial->insert($data);
+	        $this->session->set_flashdata('message', 'Success ! Tutorial has been created');
+					redirect('admin/Tutorial', 'refresh');
+	      }
       }
     }
         // // load data
@@ -95,6 +113,36 @@ class Tutorial extends Admin_Controller {
 				$data['id_category']    = $this->input->post('id_category');
 				$data['description']    = $this->input->post('description');
 				$data['id_user']        = $this->session->userdata('logged_in')['id_user'];
+
+        if(!$_FILES['image']['name'] == '')
+        {
+          //upload file config
+          $path = 'assets/upload/tutorial';
+          $config['upload_path'] = $path;
+          $config['allowed_types'] = 'jpg|png';
+          $config['max_size'] = 5000;
+          $config['encrypt_name'] = TRUE;
+
+          $this->load->library('upload', $config);
+
+          //uploading File
+          if(!$this->upload->do_upload('image'))
+          {
+            $this->session->set_flashdata('error', $this->upload->display_errors());
+            redirect('admin/Tutorial/editTutorial/' . $id, 'refresh');
+          }
+          else
+          {
+            // delete image File
+            $path = "assets/upload/tutorial/";
+            $record = $this->Model_tutorial->select_by_id($id);
+            $filename = $record[0]->image;
+            unlink($path . $filename);
+
+            $data['image'] = $this->upload->data()['file_name'];
+          }
+        }
+
 				$this->Model_tutorial->update($data, $id);
 
 				$this->session->set_flashdata('message', 'Success ! Tutorial has been edited');
@@ -131,6 +179,12 @@ class Tutorial extends Admin_Controller {
 
   public function deleteTutorial($id)
   {
+    // delete image File
+    $path = "assets/upload/tutorial/";
+    $record = $this->Model_tutorial->select_by_id($id);
+    $filename = $record[0]->image;
+    unlink($path . $filename);
+
     $this->Model_tutorial->delete($id);
     $this->session->set_flashdata('message', 'Success ! Tutorial has been deleted');
 		redirect('admin/Tutorial', 'refresh');
