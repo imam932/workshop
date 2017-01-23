@@ -53,9 +53,11 @@ $(document).ready(function() {
 			state = 0;
 		}
 
-		setTimeout(function () {
-			location='Article/publish/' + id + '/' + state;
-		}, 500);
+		$.get('Article/publish/' + id + '/' + state);
+
+		// setTimeout(function () {
+		// 	location='Article/publish/' + id + '/' + state;
+		// }, 500);
 	});
 
 	// Paging search article
@@ -94,8 +96,10 @@ $(document).ready(function() {
 			state = 0;
 		}
 
-		setTimeout(function () {
-			location='Tutorial/publish/' + id + '/' + state;
-		}, 500);
+		$.get('Tutorial/publish/' + id + '/' + state);
+
+		// setTimeout(function () {
+		// 	location='Tutorial/publish/' + id + '/' + state;
+		// }, 500);
 	});
 });
