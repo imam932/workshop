@@ -3,9 +3,6 @@ $(document).ready(function() {
 		height : 185
 	});
 	$('#example').DataTable();
-	// $('#datepicker').datetimepicker({
-	// 	// pickTime: false
-	// });
 
 	$('#datepicker').datetimepicker({
 		language:  'fr',
@@ -33,12 +30,12 @@ $(document).ready(function() {
 		$('.alert').slideToggle('fast');
 	});
 
-	$(":file").filestyle({
-		buttonBefore: true,
-		icon: false,
-		placeholder: "No file"
-	});
-
+	// $(":file").filestyle({
+	// 	buttonBefore: true,
+	// 	icon: false,
+	// 	placeholder: "No file"
+	// });
+	//
 	$('[name="publish-article"]').on('switchChange.bootstrapSwitch', function(event, state) {
 
 		var id = this.id;
@@ -62,30 +59,30 @@ $(document).ready(function() {
 
 	// Paging search article
 	var options = {
-    valueNames: [ 'title'],
-    page: 5,
-    plugins: [
-      ListPagination({})
-    ]
-  };
+		valueNames: [ 'title'],
+		page: 5,
+		plugins: [
+			ListPagination({})
+		]
+	};
 
 	var article = new List('article', options);
 
 	// Paging search gallery
 	var optionsGallery = {
-    valueNames: [ 'title'],
-    page: 9,
-    plugins: [
-      ListPagination({})
-    ]
-  };
+		valueNames: [ 'title'],
+		page: 9,
+		plugins: [
+			ListPagination({})
+		]
+	};
 
 	var gallery = new List('gallery', optionsGallery);
 
 
 	$('[name="publish-tutorial"]').on('switchChange.bootstrapSwitch', function(event, state) {
 		var id = this.id;
-// alert(state);
+		// alert(state);
 		// sql bug, change true/false to 1/0
 		if(state == true)
 		{
