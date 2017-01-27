@@ -25,7 +25,7 @@
                 <div class="col-md-4">
                   <div class="image-gallery-item">
                     <span class="thumb-info thumb-info-centered-info thumb-info-no-borders">
-                      <a href="<?= $row->id_gallery ?>" data-toggle="modal" data-target="#modal-show-<?= $row->id_gallery ?>">
+                      <a href="<?= $row->id_gallery ?>" data-toggle="modal" data-target="#modal-show-<?= $row->id_gallery ?>" data-whatever="@fat">
                         <span class="thumb-info-wrapper">
                           <div class="image-container">
                             <img src="<?= base_url().'assets/upload/'.$row->image ?>" class="img-responsive" alt="">
@@ -49,11 +49,19 @@
                   <div class="modal fade" id="modal-show-<?= $row->id_gallery ?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
                     <div class="modal-dialog modal-lg" role="document">
                       <div class="modal-content">
-                        <h2><?= $row->title ?></h2>
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                          <h4 class="modal-title" id="exampleModalLabel"><?= $row->title ?></h4>
+                        </div>
+                        <div class="modal-body">
+                          <img src="<?= base_url().'assets/upload/'.$row->image ?>" class="img-responsive">
 
-                        <img src="<?= base_url().'assets/upload/'.$row->image ?>" class="img-responsive">
-
-                        <p><?= $row->description ?></p>
+                          <p><?= $row->description ?></p>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                          <button type="button" class="btn btn-primary">Send message</button>
+                        </div>
                       </div>
                     </div>
                   </div>
