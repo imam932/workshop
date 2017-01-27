@@ -110,102 +110,153 @@
               <h4 class="text-uppercase">Progamming</h4>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum..</p>
               <!-- <p><a href="/" class="lnk-primary learn-more">Learn More <i class="fa fa-angle-right"></i></a></p> -->
-              </div>
             </div>
           </div>
-          <div class="col-md-4 col-sm-6">
-            <div class="featured-box featured-box-primary">
-              <div class="box-content" align="center">
-                <img src="<?= base_url() ?>assets/img/divisi_multimedia.png" class="img-responsive" width="50%"  alt="">
-                <h4 class="text-uppercase">Multimedia</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum..</p>
-                <!-- <p><a href="/" class="lnk-primary learn-more">Learn More <i class="fa fa-angle-right"></i></a></p> -->
-                </div>
-              </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+          <div class="featured-box featured-box-primary">
+            <div class="box-content" align="center">
+              <img src="<?= base_url() ?>assets/img/divisi_multimedia.png" class="img-responsive" width="50%"  alt="">
+              <h4 class="text-uppercase">Multimedia</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum..</p>
+              <!-- <p><a href="/" class="lnk-primary learn-more">Learn More <i class="fa fa-angle-right"></i></a></p> -->
             </div>
-            <div class="col-md-4 col-sm-6">
-              <div class="featured-box featured-box-primary featured-box-effect-1">
-                <div class="box-content" align="center">
-                  <img src="<?= base_url() ?>assets/img/divisi_network.png" class="img-responsive" width="50%"  alt="">
-                  <h4 class="text-uppercase">Networking</h4>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum..</p>
-                  <!-- <p><a href="/" class="lnk-primary learn-more">Learn More <i class="fa fa-angle-right"></i></a></p> -->
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+          <div class="featured-box featured-box-primary featured-box-effect-1">
+            <div class="box-content" align="center">
+              <img src="<?= base_url() ?>assets/img/divisi_network.png" class="img-responsive" width="50%"  alt="">
+              <h4 class="text-uppercase">Networking</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum..</p>
+              <!-- <p><a href="/" class="lnk-primary learn-more">Learn More <i class="fa fa-angle-right"></i></a></p> -->
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <hr class="tall">
+      </div>
+    </div>
+    <!-- start article -->
+    <div class="row">
+      <div class="col-md-12">
+        <h2>Article</h2>
+
+        <div class="owl-carousel owl-theme" data-plugin-options='{"responsive": {"0": {"items": 1}, "479": {"items": 1}, "768": {"items": 2}, "979": {"items": 3}, "1199": {"items": 4}}, "items": 4, "margin": 10, "loop": false, "nav": false, "dots": true}'>
+          <?php
+          foreach ($article as $row) {
+            $time = new DateTime($row->date);
+            ?>
+            <div class="recent-posts">
+              <article class="post">
+                <div class="date">
+                  <span class="day"><?= $time->format('d') ?></span>
+                  <span class="month"><?= $time->format('H:i') ?></span>
+                </div>
+                <h4 class="heading-primary">
+                  <a href="#"><?= $row->title ?></a>
+                </h4>
+                <div class="multilineEllipseText readmore">
+                  <a href="/" class="">read more
+
+                    <?= $row->posting ?>
+                    <i class="fa fa-angle-right"></i>
+                    </a>
+
+                </div>
+              </article>
+            </div>
+            <?php } ?>
+          </div>
+
+        </div>
+      </div>
+      <!-- end article -->
+      <div class="row">
+        <div class="col-md-12">
+          <hr class="tall">
+        </div>
+      </div>
+      <!-- start tutorial -->
+      <div class="row">
+        <div class="col-md-12">
+          <h2>Tutorial</h2>
+
+          <div class="owl-carousel owl-theme" data-plugin-options='{"responsive": {"0": {"items": 1}, "479": {"items": 1}, "768": {"items": 2}, "979": {"items": 3}, "1199": {"items": 4}}, "items": 4, "margin": 10, "loop": false, "nav": false, "dots": true}'>
+            <?php
+            foreach ($tutorial as $row) {
+              $time = new DateTime($row->date);
+              ?>
+              <div class="recent-posts">
+                <article class="post">
+                  <div class="date">
+                    <span class="day"><?= $time->format('d') ?></span>
+                    <span class="month"><?= $time->format('H:i') ?></span>
                   </div>
-                </div>
-              </div>
+                  <h4 class="heading-primary">
+                    <a href="#"><?= $row->title ?></a>
+                  </h4>
 
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-12">
-              <hr class="tall">
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-12">
-              <h2>Article</h2>
+                    <div class="multilineEllipseText readmore">
+                      <a href="/" class="">read more
 
-              <div class="owl-carousel owl-theme" data-plugin-options='{"responsive": {"0": {"items": 1}, "479": {"items": 1}, "768": {"items": 2}, "979": {"items": 3}, "1199": {"items": 4}}, "items": 4, "margin": 10, "loop": false, "nav": false, "dots": true}'>
-                <?php
-                foreach ($article as $row) {
-                  $time = new DateTime($row->date);
-                  ?>
-                  <div class="recent-posts">
-                    <article class="post">
-                      <div class="date">
-                        <span class="day"><?= $time->format('d') ?></span>
-                        <span class="month"><?= $time->format('H:i') ?></span>
-                      </div>
-                      <h4 class="heading-primary">
-                        <a href="#"><?= $row->title ?></a>
-                      </h4>
-                      <p>
-                        <?= $row->posting ?>
-                        <a href="/" class="read-more">read more
-                          <i class="fa fa-angle-right"></i>
+                        <?= $row->description ?>
+                        <i class="fa fa-angle-right"></i>
                         </a>
-                      </p>
-                    </article>
-                  </div>
-                  <?php } ?>
-                </div>
 
+                    </div>
+                </article>
               </div>
+              <?php } ?>
             </div>
-            <!-- blog -->
+
+          </div>
+        </div>
+        <!-- end tutorial -->
+        <div class="row">
+          <div class="col-md-12">
+            <hr class="tall">
+          </div>
+        </div>
+        <!-- start gallery -->
+        <div class="row">
+          <div class="col-md-12">
+
+            <h2>Gallery</h2>
             <div class="row">
-              <div class="col-md-12">
-
-                <h2>Gallery</h2>
-                <div class="row">
-                  <ul class="image-gallery sort-destination full-width">
-                    <?php
-                    foreach ($gallery as $row) {
-                      ?>
-                      <li class="isotope-item">
-                        <div class="image-gallery-item">
-                          <a href="portfolio-single-project.html">
-                            <span class="thumb-info thumb-info-centered-info thumb-info-no-borders">
-                              <span class="thumb-info-wrapper">
-                                <div class="image-container">
-                                  <img src="<?= base_url().'assets/upload/'.$row->image ?>" class="img-responsive" alt="">
-                                </div>
-                                <span class="thumb-info-title">
-                                  <span class="thumb-info-inner"><?= $row->title ?></span>
-                                </span>
-                                <span class="thumb-info-action">
-                                  <span class="thumb-info-action-icon"><i class="fa fa-link"></i></span>
-                                </span>
-                              </span>
+              <ul class="image-gallery sort-destination full-width">
+                <?php
+                foreach ($gallery as $row) {
+                  ?>
+                  <li class="isotope-item">
+                    <div class="image-gallery-item">
+                      <a href="portfolio-single-project.html">
+                        <span class="thumb-info thumb-info-centered-info thumb-info-no-borders">
+                          <span class="thumb-info-wrapper">
+                            <div class="image-container">
+                              <img src="<?= base_url().'assets/upload/'.$row->image ?>" class="img-responsive" alt="">
+                            </div>
+                            <span class="thumb-info-title">
+                              <span class="thumb-info-inner"><?= $row->title ?></span>
                             </span>
-                          </a>
-                        </div>
-                      </li>
-                      <?php } ?>
-                    </ul>
+                            <span class="thumb-info-action">
+                              <span class="thumb-info-action-icon"><i class="fa fa-link"></i></span>
+                            </span>
+                          </span>
+                        </span>
+                      </a>
+                    </div>
+                  </li>
+                  <?php } ?>
+                </ul>
 
-                  </div>
-                </div>
               </div>
             </div>
           </div>
+          <!-- end gallery -->
+        </div>
+      </div>
