@@ -7,7 +7,7 @@ class Tutorial extends Admin_Controller {
   {
     parent::__construct();
     $this->load->model('Model_tutorial');
-    $this->load->model('Model_category');
+    $this->load->model('Model_division');
   }
 
   public function index()
@@ -36,7 +36,7 @@ class Tutorial extends Admin_Controller {
     {
       //form validation
       $this->form_validation->set_rules('title', 'Title', 'trim|required|xss_clean');
-      $this->form_validation->set_rules('id_category', 'Category', 'required');
+      $this->form_validation->set_rules('id_division', 'Division', 'required');
 
       if(!$this->form_validation->run())
       {
@@ -50,7 +50,7 @@ class Tutorial extends Admin_Controller {
         $data['title']       = $this->input->post('title');
         $data['description'] = $this->input->post('description');
         $data['id_user']     = $this->session->userdata('logged_in')['id_user'];
-        $data['id_category'] = $this->input->post('id_category');
+        $data['id_division'] = $this->input->post('id_division');
         $data['publish']     = 1;
 
         //upload file config
@@ -77,7 +77,7 @@ class Tutorial extends Admin_Controller {
       }
     }
         // // load data
-    $data['category'] = $this->Model_category->select_all();
+    $data['division'] = $this->Model_division->select_all();
     // error handling
     if(!empty($this->session->flashdata('error')))
     {
@@ -110,7 +110,7 @@ class Tutorial extends Admin_Controller {
 			else
 			{
 				$data['title']          = $this->input->post('title');
-				$data['id_category']    = $this->input->post('id_category');
+				$data['id_division']    = $this->input->post('id_division');
 				$data['description']    = $this->input->post('description');
 				$data['id_user']        = $this->session->userdata('logged_in')['id_user'];
 
@@ -151,7 +151,7 @@ class Tutorial extends Admin_Controller {
 		}
 
 		// load data
-		$data['category'] = $this->Model_category->select_all();
+		$data['division'] = $this->Model_division->select_all();
 		$data['tutorial'] = $this->Model_tutorial->select_by_id($id);
 		// error handling
 		if(!empty($this->session->flashdata('error')))

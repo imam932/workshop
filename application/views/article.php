@@ -26,10 +26,15 @@
                     <i class="fa fa-calendar"></i>
                     <?= $time->format('d/m/Y') ?>
                   </span>
-                  &nbsp;
+
                   <span>
                     <i class="fa fa-clock-o"></i>
                     <?= $time->format('h:i') ?>
+                  </span>
+
+                  <span>
+                    <i class="fa fa-tag"></i>
+                    <?= $row->category ?>
                   </span>
                 </div>
                 <p class="text-preview">

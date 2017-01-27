@@ -21,6 +21,11 @@
       </span>
 
       <span>
+        <i class="fa fa-shield"></i>
+        <?= $tutorial[0]->division ?>
+      </span>
+
+      <span>
         <i class="fa fa-pencil"></i>
         <?= $tutorial[0]->name ?>
       </span>

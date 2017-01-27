@@ -16,7 +16,7 @@ class Model_tutorial extends CI_Model
     $this->db->limit($limit);
     $this->db->order_by('date', 'DESC');
 		$this->db->from($this->table);
-		$this->db->join('category', 'tutorial.id_category = category.id_category');
+		$this->db->join('division', 'tutorial.id_division = division.id_division');
 		$this->db->join('user', 'tutorial.id_user = user.id_user');
 
     $query = $this->db->get();
@@ -34,7 +34,7 @@ class Model_tutorial extends CI_Model
   public function select_by_id($id)
   {
     $this->db->from($this->table);
-		$this->db->join('category', 'tutorial.id_category = category.id_category');
+		$this->db->join('division', 'tutorial.id_division = division.id_division');
 		$this->db->join('user', 'tutorial.id_user = user.id_user');
 		$this->db->where('tutorial.id_tutorial', $id);
 

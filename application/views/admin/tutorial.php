@@ -51,8 +51,8 @@
 									</span>
 
 									<span>
-										<i class="fa fa-tag"></i>
-										<?= $row->category ?>
+										<i class="fa fa-shield"></i>
+										<?= $row->division ?>
 									</span>
 
 									<span>

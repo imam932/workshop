@@ -21,6 +21,11 @@
       </span>
 
       <span>
+        <i class="fa fa-tag"></i>
+        <?= $article[0]->category ?>
+      </span>
+
+      <span>
         <i class="fa fa-pencil"></i>
         <?= $article[0]->name ?>
       </span>

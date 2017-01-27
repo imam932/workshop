@@ -1,10 +1,10 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
+-- version 4.5.2
 -- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: 27 Jan 2017 pada 02.59
--- Versi Server: 10.1.19-MariaDB
+-- Host: localhost
+-- Generation Time: Jan 27, 2017 at 04:42 
+-- Server version: 10.1.19-MariaDB
 -- PHP Version: 7.0.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -23,7 +23,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `article`
+-- Table structure for table `article`
 --
 
 CREATE TABLE `article` (
@@ -38,7 +38,7 @@ CREATE TABLE `article` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `article`
+-- Dumping data for table `article`
 --
 
 INSERT INTO `article` (`id_article`, `date`, `title`, `posting`, `image`, `id_category`, `id_user`, `publish`) VALUES
@@ -57,7 +57,7 @@ INSERT INTO `article` (`id_article`, `date`, `title`, `posting`, `image`, `id_ca
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `auth`
+-- Table structure for table `auth`
 --
 
 CREATE TABLE `auth` (
@@ -68,7 +68,7 @@ CREATE TABLE `auth` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `auth`
+-- Dumping data for table `auth`
 --
 
 INSERT INTO `auth` (`id_auth`, `username`, `password`, `id_user`) VALUES
@@ -84,7 +84,7 @@ INSERT INTO `auth` (`id_auth`, `username`, `password`, `id_user`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `category`
+-- Table structure for table `category`
 --
 
 CREATE TABLE `category` (
@@ -93,7 +93,7 @@ CREATE TABLE `category` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `category`
+-- Dumping data for table `category`
 --
 
 INSERT INTO `category` (`id_category`, `category`) VALUES
@@ -105,7 +105,27 @@ INSERT INTO `category` (`id_category`, `category`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `gallery`
+-- Table structure for table `division`
+--
+
+CREATE TABLE `division` (
+  `id_division` varchar(15) NOT NULL,
+  `division` varchar(15) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `division`
+--
+
+INSERT INTO `division` (`id_division`, `division`) VALUES
+('jfi39gu89gu20jv', 'programming'),
+('kgplg23QsG9j4e0', 'multimedia'),
+('ngieAogJu498qej', 'networking');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `gallery`
 --
 
 CREATE TABLE `gallery` (
@@ -117,7 +137,7 @@ CREATE TABLE `gallery` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `gallery`
+-- Dumping data for table `gallery`
 --
 
 INSERT INTO `gallery` (`id_gallery`, `date`, `title`, `image`, `description`) VALUES
@@ -136,7 +156,7 @@ INSERT INTO `gallery` (`id_gallery`, `date`, `title`, `image`, `description`) VA
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tag`
+-- Table structure for table `tag`
 --
 
 CREATE TABLE `tag` (
@@ -147,7 +167,7 @@ CREATE TABLE `tag` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tutorial`
+-- Table structure for table `tutorial`
 --
 
 CREATE TABLE `tutorial` (
@@ -157,25 +177,22 @@ CREATE TABLE `tutorial` (
   `description` text NOT NULL,
   `image` text NOT NULL,
   `id_user` varchar(15) NOT NULL,
-  `id_category` int(11) NOT NULL,
+  `id_division` varchar(15) NOT NULL,
   `publish` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tutorial`
+-- Dumping data for table `tutorial`
 --
 
-INSERT INTO `tutorial` (`id_tutorial`, `date`, `title`, `description`, `image`, `id_user`, `id_category`, `publish`) VALUES
-('6mWG8t0117ZXHNb', '2017-01-23 00:00:00', 'tes baru', '<p><span style="color: rgb(119, 119, 119); font-family: &quot;Open Sans&quot;, Arial, sans-serif; text-align: -webkit-center;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum..</span></p><p><span style="color: rgb(119, 119, 119); font-family: &quot;Open Sans&quot;, Arial, sans-serif; text-align: -webkit-center;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum..</span><span style="color: rgb(119, 119, 119); font-family: &quot;Open Sans&quot;, Arial, sans-serif; text-align: -webkit-center;"><br></span><br></p>', '', '1', 6, 1),
-('Hs6pBD011790bgm', '2017-01-27 02:54:10', 'yolo', '<p><span style="color: rgb(119, 119, 119); font-family: &quot;Open Sans&quot;, Arial, sans-serif; text-align: -webkit-center;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum..</span></p><p><span style="color: rgb(119, 119, 119); font-family: &quot;Open Sans&quot;, Arial, sans-serif; text-align: -webkit-center;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum..</span><span style="color: rgb(119, 119, 119); font-family: &quot;Open Sans&quot;, Arial, sans-serif; text-align: -webkit-center;"><br></span><br></p>', '2b668b62e2770c514aef643a2ebeeabb.png', '1', 6, 1),
-('sEx3qo011736sOI', '2017-01-27 02:55:29', 'mehong', '<p><span style="color: rgb(119, 119, 119); font-family: &quot;Open Sans&quot;, Arial, sans-serif; text-align: -webkit-center;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum..</span></p><p><span style="color: rgb(119, 119, 119); font-family: &quot;Open Sans&quot;, Arial, sans-serif; text-align: -webkit-center;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum..</span><span style="color: rgb(119, 119, 119); font-family: &quot;Open Sans&quot;, Arial, sans-serif; text-align: -webkit-center;"><br></span><br></p>', '08322cc0eb7648c5ef4a9e9104b533a8.jpg', '1', 6, 1),
-('sfASPY0117xwsgu', '2017-01-27 02:55:51', 'tes', '<p><span style="color: rgb(119, 119, 119); font-family: &quot;Open Sans&quot;, Arial, sans-serif; text-align: -webkit-center;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum..</span></p><p><span style="color: rgb(119, 119, 119); font-family: &quot;Open Sans&quot;, Arial, sans-serif; text-align: -webkit-center;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum..</span><span style="color: rgb(119, 119, 119); font-family: &quot;Open Sans&quot;, Arial, sans-serif; text-align: -webkit-center;"><br></span><br></p>', 'd5348e0d26953734cb5f0f4a90325d3e.png', '1', 6, 1),
-('ujP68U0117EaYN6', '2017-01-26 02:06:25', 'coba', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>', 'f12a157597bc712d29010fae5b0665d9.png', '1', 8, 1);
+INSERT INTO `tutorial` (`id_tutorial`, `date`, `title`, `description`, `image`, `id_user`, `id_division`, `publish`) VALUES
+('Md9NF70117pfNH0', '2017-01-27 03:59:29', 'Tutorial Codeigniter', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\r\n tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim \r\nveniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea \r\ncommodo consequat. Duis aute irure dolor in reprehenderit in voluptate \r\nvelit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint \r\noccaecat cupidatat non proident, sunt in culpa qui officia deserunt \r\nmollit anim id est laborumLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\r\n tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim \r\nveniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea \r\ncommodo consequat. Duis aute irure dolor in reprehenderit in voluptate \r\nvelit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint \r\noccaecat cupidatat non proident, sunt in culpa qui officia deserunt \r\nmollit anim id est laborumLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\r\n tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim \r\nveniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea \r\ncommodo consequat. Duis aute irure dolor in reprehenderit in voluptate \r\nvelit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint \r\noccaecat cupidatat non proident, sunt in culpa qui officia deserunt \r\nmollit anim id est laborumLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\r\n tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim \r\nveniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea \r\ncommodo consequat. Duis aute irure dolor in reprehenderit in voluptate \r\nvelit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint \r\noccaecat cupidatat non proident, sunt in culpa qui officia deserunt \r\nmollit anim id est laborumLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\r\n tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim \r\nveniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea \r\ncommodo consequat. Duis aute irure dolor in reprehenderit in voluptate \r\nvelit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint \r\noccaecat cupidatat non proident, sunt in culpa qui officia deserunt \r\nmollit anim id est laborumLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\r\n tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim \r\nveniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea \r\ncommodo consequat. Duis aute irure dolor in reprehenderit in voluptate \r\nvelit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint \r\noccaecat cupidatat non proident, sunt in culpa qui officia deserunt \r\nmollit anim id est laborum<br></p>', 'c794cb28b270e614335f8fabfee594ce.jpg', '1', 'jfi39gu89gu20jv', 1),
+('YKEP070117nALSp', '2017-01-27 04:22:16', 'Cisco packet tracer', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\r\n tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim \r\nveniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea \r\ncommodo consequat. Duis aute irure dolor in reprehenderit in voluptate \r\nvelit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint \r\noccaecat cupidatat non proident, sunt in culpa qui officia deserunt \r\nmollit anim id est laborum</p><p><br></p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\r\n tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim \r\nveniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea \r\ncommodo consequat. Duis aute irure dolor in reprehenderit in voluptate \r\nvelit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint \r\noccaecat cupidatat non proident, sunt in culpa qui officia deserunt \r\nmollit anim id est laborum</p><p><br></p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\r\n tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim \r\nveniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea \r\ncommodo consequat. Duis aute irure dolor in reprehenderit in voluptate \r\nvelit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint \r\noccaecat cupidatat non proident, sunt in culpa qui officia deserunt \r\nmollit anim id est laborum</p><p><br></p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\r\n tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim \r\nveniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea \r\ncommodo consequat. Duis aute irure dolor in reprehenderit in voluptate \r\nvelit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint \r\noccaecat cupidatat non proident, sunt in culpa qui officia deserunt \r\nmollit anim id est laborum<br></p>', '680d550fc3591a4565c7fa1150e4ebb5.jpg', '1', 'ngieAogJu498qej', 1);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `user`
+-- Table structure for table `user`
 --
 
 CREATE TABLE `user` (
@@ -189,7 +206,7 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `user`
+-- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`id_user`, `name`, `gender`, `birth`, `address`, `phone`, `admin`) VALUES
@@ -221,6 +238,12 @@ ALTER TABLE `auth`
 --
 ALTER TABLE `category`
   ADD PRIMARY KEY (`id_category`);
+
+--
+-- Indexes for table `division`
+--
+ALTER TABLE `division`
+  ADD PRIMARY KEY (`id_division`);
 
 --
 -- Indexes for table `gallery`

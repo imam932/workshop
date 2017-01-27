@@ -19,14 +19,14 @@
 
 						<div class="col-xs-12 col-sm-12 col-md-3">
 							<div class="form-group">
-								<select class="form-control" name="id_category">
-									<option selected disabled>Select Category</option>
-									<?php foreach ($category as $row) {
+								<select class="form-control" name="id_division">
+									<option selected disabled>Select Division</option>
+									<?php foreach ($division as $row) {
 										$selected = "";
-										if($row->id_category == $tutorial[0]->id_category)
+										if($row->id_division == $tutorial[0]->id_division)
 										$selected = "selected";
 										?>
-										<option value="<?= $row->id_category ?>" <?= $selected ?>><?= $row->category ?></option>
+										<option value="<?= $row->id_division ?>" <?= $selected ?>><?= $row->division ?></option>
 										<?php } ?>
 									</select>
 								</div>
