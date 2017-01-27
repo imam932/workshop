@@ -158,14 +158,15 @@
                   <span class="month"><?= $time->format('H:i') ?></span>
                 </div>
                 <h4 class="heading-primary">
-                  <a href="#"><?= $row->title ?></a>
+                  <a href="<?= base_url() ?>Article/view/<?= $row->id_article ?>"><?= $row->title ?></a>
                 </h4>
-                <div class="multilineEllipseText readmore">
-                  <a href="<?= base_url() ?>Article/view/<?= $row->id_article ?>" class="">read more</a>
-                    <?= $row->posting ?>
-                    <i class="fa fa-angle-right"></i>
 
-                </div>
+                <p class="text-preview-home">
+                  <?= strip_tags($row->posting) ?>
+                </p>
+                  <a href="<?= base_url() ?>Article/view/<?= $row->id_article ?>" class="">read more</a>
+                  <i class="fa fa-angle-right"></i>
+
               </article>
             </div>
             <?php } ?>
@@ -196,15 +197,15 @@
                     <span class="month"><?= $time->format('H:i') ?></span>
                   </div>
                   <h4 class="heading-primary">
-                    <a href="#"><?= $row->title ?></a>
+                    <a href="<?= base_url() ?>Tutorial/view/<?= $row->id_tutorial ?>"><?= $row->title ?></a>
                   </h4>
 
-                    <div class="multilineEllipseText readmore">
-                      <a href="<?= base_url() ?>Tutorial/view/<?= $row->id_tutorial ?>" class="">read more</a>
-                        <?= $row->description ?>
-                        <i class="fa fa-angle-right"></i>
-
-                    </div>
+                  <p class="text-preview-home">
+                    <?= strip_tags($row->description) ?>
+                  </p>
+                  <a href="<?= base_url() ?>Tutorial/view/<?= $row->id_tutorial ?>" class="">read more
+                    <i class="fa fa-angle-right"></i>
+                  </a>
                 </article>
               </div>
               <?php } ?>

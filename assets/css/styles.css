@@ -44,14 +44,7 @@
   max-height: 250px;
 }
 
-html .heading-primary {
-  height: 3.6em; /* exactly three lines */
-  text-overflow: -o-ellipsis-lastline;
-  white-space: nowrap;
-  overflow: hidden;
-}
-
-.thumb-info .thumb-info-inner {
+.thumb-info .thumb-info-inner , .heading-primary{
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
@@ -75,6 +68,7 @@ html .heading-primary {
   display: inline-block;
 }
 
+/*ellipsis*/
 .text-preview {
   overflow: hidden;
   position: relative;
@@ -93,6 +87,34 @@ html .heading-primary {
 }
 
 .text-preview:after {
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 1em;
+  height: 1em;
+  margin-top: 0.2em;
+  background: white;
+}
+
+.text-preview-home {
+  overflow: hidden;
+  position: relative;
+  line-height: 1.3em;
+  max-height: 14.6em;
+  text-align: justify;
+  margin-right: -1em;
+  padding-right: 1em;
+  padding-top: 10px;
+}
+
+.text-preview-home:before {
+  content: '...';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.text-preview-home:after {
   content: '';
   position: absolute;
   right: 0;
