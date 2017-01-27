@@ -25,7 +25,7 @@
                 <div class="col-md-4">
                   <div class="image-gallery-item">
                     <span class="thumb-info thumb-info-centered-info thumb-info-no-borders">
-                      <a href="<?= $row->id_gallery ?>" data-toggle="modal" data-target="#modal-show-<?= $row->id_gallery ?>" data-whatever="@fat">
+                      <a href="" data-toggle="modal" data-target="#modal-show-<?= $row->id_gallery ?>" data-whatever="@fat">
                         <span class="thumb-info-wrapper">
                           <div class="image-container">
                             <img src="<?= base_url().'assets/upload/'.$row->image ?>" class="img-responsive" alt="">
@@ -56,11 +56,9 @@
                         <div class="modal-body">
                           <img src="<?= base_url().'assets/upload/'.$row->image ?>" class="img-responsive">
 
-                          <p><?= $row->description ?></p>
                         </div>
                         <div class="modal-footer">
-                          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                          <button type="button" class="btn btn-primary">Send message</button>
+                          <p><?= $row->description ?></p>
                         </div>
                       </div>
                     </div>

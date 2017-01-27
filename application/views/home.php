@@ -234,7 +234,7 @@
                   ?>
                   <li class="isotope-item">
                     <div class="image-gallery-item">
-                      <a href="portfolio-single-project.html">
+                      <a href="" data-toggle="modal" data-target="#modal-show-<?= $row->id_gallery ?>" data-whatever="@fat">
                         <span class="thumb-info thumb-info-centered-info thumb-info-no-borders">
                           <span class="thumb-info-wrapper">
                             <div class="image-container">
@@ -250,6 +250,27 @@
                         </span>
                       </a>
                     </div>
+                    <!-- Modal Structure -->
+
+                    <div class="modal fade" id="modal-show-<?= $row->id_gallery ?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                      <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="exampleModalLabel"><?= $row->title ?></h4>
+                          </div>
+                          <div class="modal-body">
+                            <img src="<?= base_url().'assets/upload/'.$row->image ?>" class="img-responsive">
+
+                          </div>
+                          <div class="modal-footer">
+                            <p><?= $row->description ?></p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- end modal -->
+
                   </li>
                   <?php } ?>
                 </ul>

@@ -21,11 +21,5 @@ class Gallery extends CI_Controller{
     $this->load->view('template', $data);
   }
 
-  public function gallery_show($id){
-    $data['gallery_show'] = $this->Model_gallery->select_by_id($id);
-
-    // $data['content'] = $this->load->view('gallery', $data, TRUE);
-
-  }
 }
 ?>
