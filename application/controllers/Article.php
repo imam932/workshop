@@ -12,10 +12,29 @@ class Article extends CI_Controller
 
   function index()
   {
-    $data['content'] = $this->load->view('article', array(), TRUE);
+    // load data
+    $data['article'] = $this->Model_article->select_all();
+    $data['content'] = $this->load->view('article', $data, TRUE);
+
+    //load template
     $data['title'] = "Article";
     $data['desc'] = "Article, News, Event, etc";
     $data['breadcrumb'] = array('Home', 'Article');
+
+    $this->load->view('template', $data);
+  }
+
+  function view($id)
+  {
+    // load data
+    $data['article'] = $this->Model_article->select_by_id($id);
+    $data['content'] = $this->load->view('article_view', $data, TRUE);
+
+    //load template
+    $title = $data['article'][0]->title;
+    $data['title'] = "Article";
+    $data['desc'] = "Article, News, Event, etc";
+    $data['breadcrumb'] = array('Home', 'Article', $title);
 
     $this->load->view('template', $data);
   }

@@ -7,7 +7,7 @@ $(document).ready(function() {
 	$('.alert').click(function() {
 		$('.alert').slideToggle('fast');
 	});
-  
+
 	// Paging search article
 	var options = {
     valueNames: [ 'title'],

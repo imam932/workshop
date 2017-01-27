@@ -517,12 +517,12 @@ html.boxed .nav-secondary.sticky-active {
 	margin-left: 10px;
 }
 
+/*
 .btn-primary {
 	border-color: #CCC;
 	background-color: #CCC;
 	border-color: #CCC #CCC #b3b3b3;
 	color: #FFF;
-	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 }
 
 .btn-primary:hover {
@@ -666,6 +666,8 @@ html.boxed .nav-secondary.sticky-active {
 	background-color: #b0e1ef;
 	color: #CCC;
 }
+
+*/
 
 .btn-dark {
 	border-color: #1d2127;

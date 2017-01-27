@@ -169,7 +169,6 @@
           }
           ?>
         </ol>
-        <hr>
         <!-- content here -->
         <?= $content ?>
         <!-- end of content -->
@@ -304,9 +303,8 @@
     <script src="<?= base_url() ?>assets/vendor/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
     <script src="<?= base_url() ?>assets/vendor/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
     <script src="<?= base_url() ?>assets/js/theme.init.js"></script>
-    <script src="<?= base_url() ?>assets/js/default.js"></script>
-    <script src="<?= base_url() ?>assets/js/list.min.js"></script>
     <script src="<?= base_url() ?>assets/js/list.pagination.min.js"></script>
-    <script src="<?= base_url() ?>assets/js/jquery.dotdotdot.js"></script>
+    <script src="<?= base_url() ?>assets/js/list.min.js"></script>
+    <script src="<?= base_url() ?>assets/js/default.js"></script>
   </body>
   </html>

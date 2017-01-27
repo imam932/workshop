@@ -67,3 +67,56 @@ text-overflow: -o-ellipsis-lastline;
     white-space: nowrap;
     overflow: hidden;
 }
+
+.article-row {
+  margin-bottom: 10px;
+}
+
+.article-row .title {
+  margin-bottom: 8px;
+}
+
+.article-row .detail {
+  margin-bottom: 8px;
+}
+
+.text-preview {
+  overflow: hidden;
+  position: relative;
+  line-height: 1.3em;
+  max-height: 3.9em;
+  text-align: justify;
+  margin-right: -1em;
+  padding-right: 1em;
+}
+
+.text-preview:before {
+  content: '...';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.text-preview:after {
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 1em;
+  height: 1em;
+  margin-top: 0.2em;
+  background: white;
+}
+
+img {
+  max-width: 100%;
+}
+
+.article-view h1 + img {
+  max-width: 300px;
+  margin-right: 15px;
+}
+
+.article-view .breadcrumb span {
+  margin-right: 10px;
+  display: inline-block;
+}
