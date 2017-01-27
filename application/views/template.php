@@ -106,7 +106,7 @@
                     <nav>
                       <ul class="nav nav-pills" id="mainNav">
                         <li>
-                          <a href=".">
+                          <a href="<?= base_url() ?>">
                             Home
                           </a>
                         </li>
