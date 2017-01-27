@@ -32,7 +32,6 @@
   <link rel="stylesheet" href="<?= base_url() ?>assets/css/theme.css">
   <link rel="stylesheet" href="<?= base_url() ?>assets/css/theme-elements.css">
   <link rel="stylesheet" href="<?= base_url() ?>assets/css/theme-blog.css">
-
   <link rel="stylesheet" href="<?= base_url() ?>assets/css/theme-animate.css">
 
   <!-- Current Page CSS -->

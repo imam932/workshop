@@ -44,17 +44,6 @@
     max-height: 250px;
 }
 
-/*.module{
-  width: 250px;
-  overflow: hidden;
-}
-
-.line-clamp{
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-}*/
-
 html .heading-primary {
   height: 3.6em; /* exactly three lines */
 text-overflow: -o-ellipsis-lastline;
@@ -119,4 +108,20 @@ img {
 .article-view .breadcrumb span {
   margin-right: 10px;
   display: inline-block;
+}
+
+/*modal*/
+.modal-content h2{
+  border-bottom: 1px solid #ddd;
+  margin: .5em;
+  padding-bottom: 5px;
+}
+
+.modal-content img, p{
+  margin: 1em;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1em;
+  border-bottom: 1px solid #ddd;
 }

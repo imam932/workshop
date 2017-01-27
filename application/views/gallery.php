@@ -24,8 +24,8 @@
                 ?>
                 <div class="col-md-4">
                   <div class="image-gallery-item">
-                    <a href="portfolio-single-project.html">
-                      <span class="thumb-info thumb-info-centered-info thumb-info-no-borders">
+                    <span class="thumb-info thumb-info-centered-info thumb-info-no-borders">
+                      <a href="<?= $row->id_gallery ?>" data-toggle="modal" data-target="#modal-show-<?= $row->id_gallery ?>">
                         <span class="thumb-info-wrapper">
                           <div class="image-container">
                             <img src="<?= base_url().'assets/upload/'.$row->image ?>" class="img-responsive" alt="">
@@ -37,14 +37,29 @@
                               <?= $time->format('d/m/Y'); ?>
                             </span>
                           </span>
-                          <span class="thumb-info-action">
-                            <span class="thumb-info-action-icon"><i class="fa fa-link"></i></span>
-                          </span>
+                        </a>
+                        <span class="thumb-info-action">
+                          <span class="thumb-info-action-icon"><i class="fa fa-link"></i></span>
                         </span>
                       </span>
-                    </a>
+                    </span>
                   </div>
+                  <!-- Modal Structure -->
+
+                  <div class="modal fade" id="modal-show-<?= $row->id_gallery ?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                    <div class="modal-dialog modal-lg" role="document">
+                      <div class="modal-content">
+                        <h2><?= $row->title ?></h2>
+
+                        <img src="<?= base_url().'assets/upload/'.$row->image ?>" class="img-responsive">
+
+                        <p><?= $row->description ?></p>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- end modal -->
                 </div>
+
                 <?php } ?>
               </div>
 
@@ -58,13 +73,13 @@
                 <div class="panel-heading">
                   <b>Side Menu</b>
                 </div>
-                  <div class="panel-body">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                    labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                    nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+                <div class="panel-body">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                  labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                  nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>

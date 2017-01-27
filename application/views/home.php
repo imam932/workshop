@@ -161,7 +161,7 @@
                   <a href="#"><?= $row->title ?></a>
                 </h4>
                 <div class="multilineEllipseText readmore">
-                  <a href="/" class="">read more
+                  <a href="<?= base_url() ?>Article/view/<?= $row->id_article ?>" class="">read more
 
                     <?= $row->posting ?>
                     <i class="fa fa-angle-right"></i>
@@ -202,7 +202,7 @@
                   </h4>
 
                     <div class="multilineEllipseText readmore">
-                      <a href="/" class="">read more
+                      <a href="<?= base_url() ?>Tutorial/view/<?= $row->id_tutorial ?>" class="">read more
 
                         <?= $row->description ?>
                         <i class="fa fa-angle-right"></i>
