@@ -99,4 +99,14 @@ $(document).ready(function() {
 		// 	location='Tutorial/publish/' + id + '/' + state;
 		// }, 500);
 	});
+
+	$('.message-show').on('click', function() {
+		var id = $(this).attr("id");
+
+		// delete badge new
+		$('#badge' + id).fadeOut('fast');
+
+		// update readed on db
+		$.get('Message/read/' + id);
+	});
 });

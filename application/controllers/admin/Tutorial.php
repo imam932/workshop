@@ -8,6 +8,7 @@ class Tutorial extends Admin_Controller {
     parent::__construct();
     $this->load->model('Model_tutorial');
     $this->load->model('Model_division');
+    $this->load->model('Model_message');
   }
 
   public function index()
@@ -26,6 +27,8 @@ class Tutorial extends Admin_Controller {
     $data['title'] = "Tutorial";
     $data['desc'] = "Create or Manage Tutorial";
     $data['breadcrumb'] = array('Dashboard', 'Tutorial');
+    $data['unread_message'] = $this->Model_message->unread_num();
+    $data['message'] = $this->Model_message->select_all(3);
 
     $this->load->view('admin/template', $data);
   }
@@ -91,7 +94,8 @@ class Tutorial extends Admin_Controller {
     $data['title']        = "Tutorial";
     $data['desc']         = "Create New Tutorial";
     $data['breadcrumb']   = array('Dashboard', 'Tutorial', 'New');
-
+    $data['unread_message'] = $this->Model_message->unread_num();
+    $data['message'] = $this->Model_message->select_all(3);
     $this->load->view('admin/template', $data);
   }
 
@@ -166,7 +170,8 @@ class Tutorial extends Admin_Controller {
     $data['title']        = "Tutorial";
     $data['desc']         = "Edit Tutorial";
     $data['breadcrumb']   = array('Dashboard', 'Tutorial', 'Edit');
-
+    $data['unread_message'] = $this->Model_message->unread_num();
+    $data['message'] = $this->Model_message->select_all(3);
     $this->load->view('admin/template', $data);
   }
 

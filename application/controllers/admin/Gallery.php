@@ -7,6 +7,7 @@ class Gallery extends Admin_Controller
   {
     parent::__construct();
     $this->load->model('Model_gallery');
+    $this->load->model('Model_message');
   }
 
   function index()
@@ -29,6 +30,8 @@ class Gallery extends Admin_Controller
     $data['title']         = "Gallery";
     $data['desc']		       = "Gallery Event WRI";
     $data['breadcrumb']    = array('Dashboard', 'Gallery');
+    $data['unread_message'] = $this->Model_message->unread_num();
+    $data['message'] = $this->Model_message->select_all(3);
     $this->load->view('admin/template', $data);
   }
 
@@ -156,6 +159,8 @@ class Gallery extends Admin_Controller
     $data['title']         = "Gallery";
     $data['desc']		       = "Edit Gallery";
     $data['breadcrumb']    = array('Dashboard', 'Gallery', 'Edit');
+    $data['unread_message'] = $this->Model_message->unread_num();
+    $data['message'] = $this->Model_message->select_all(3);
     $this->load->view('admin/template', $data);
   }
 

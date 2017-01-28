@@ -13,6 +13,7 @@ class User extends Admin_Controller{
 
     $this->load->model('Model_user');
     $this->load->model('Model_auth');
+    $this->load->model('Model_message');
   }
 
   function index()
@@ -30,6 +31,8 @@ class User extends Admin_Controller{
     $data['title']         = "Users";
     $data['desc']		       = "Admin Users";
     $data['breadcrumb']    = array('Dashboard', 'User');
+    $data['unread_message'] = $this->Model_message->unread_num();
+    $data['message'] = $this->Model_message->select_all(3);
     $this->load->view('admin/template', $data);
   }
 
@@ -95,7 +98,8 @@ class User extends Admin_Controller{
     $data['title']          = "Users";
     $data['desc']		        = "New User";
     $data['breadcrumb']     = array('Dashboard', 'User', 'New');
-
+    $data['unread_message'] = $this->Model_message->unread_num();
+    $data['message'] = $this->Model_message->select_all(3);
     $this->load->view('admin/template', $data);
   }
 
@@ -144,6 +148,8 @@ class User extends Admin_Controller{
     $data['title']          = "Users";
     $data['desc']		        = "Edir User";
     $data['breadcrumb']     = array('Dashboard', 'User', 'Edit');
+    $data['unread_message'] = $this->Model_message->unread_num();
+    $data['message'] = $this->Model_message->select_all(3);
     $this->load->view('admin/template', $data);
     // $data['user']  = $this->input->post('user');
   }

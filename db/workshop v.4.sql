@@ -1,10 +1,10 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
+-- version 4.5.2
 -- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: 28 Jan 2017 pada 04.55
--- Versi Server: 10.1.19-MariaDB
+-- Host: localhost
+-- Generation Time: Jan 28, 2017 at 02:15 
+-- Server version: 10.1.19-MariaDB
 -- PHP Version: 7.0.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -23,7 +23,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `article`
+-- Table structure for table `article`
 --
 
 CREATE TABLE `article` (
@@ -38,7 +38,7 @@ CREATE TABLE `article` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `article`
+-- Dumping data for table `article`
 --
 
 INSERT INTO `article` (`id_article`, `date`, `title`, `posting`, `image`, `id_category`, `id_user`, `publish`) VALUES
@@ -57,7 +57,7 @@ INSERT INTO `article` (`id_article`, `date`, `title`, `posting`, `image`, `id_ca
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `auth`
+-- Table structure for table `auth`
 --
 
 CREATE TABLE `auth` (
@@ -68,7 +68,7 @@ CREATE TABLE `auth` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `auth`
+-- Dumping data for table `auth`
 --
 
 INSERT INTO `auth` (`id_auth`, `username`, `password`, `id_user`) VALUES
@@ -85,7 +85,7 @@ INSERT INTO `auth` (`id_auth`, `username`, `password`, `id_user`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `category`
+-- Table structure for table `category`
 --
 
 CREATE TABLE `category` (
@@ -94,7 +94,7 @@ CREATE TABLE `category` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `category`
+-- Dumping data for table `category`
 --
 
 INSERT INTO `category` (`id_category`, `category`) VALUES
@@ -106,7 +106,7 @@ INSERT INTO `category` (`id_category`, `category`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `division`
+-- Table structure for table `division`
 --
 
 CREATE TABLE `division` (
@@ -115,7 +115,7 @@ CREATE TABLE `division` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `division`
+-- Dumping data for table `division`
 --
 
 INSERT INTO `division` (`id_division`, `division`) VALUES
@@ -126,7 +126,7 @@ INSERT INTO `division` (`id_division`, `division`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `gallery`
+-- Table structure for table `gallery`
 --
 
 CREATE TABLE `gallery` (
@@ -138,7 +138,7 @@ CREATE TABLE `gallery` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `gallery`
+-- Dumping data for table `gallery`
 --
 
 INSERT INTO `gallery` (`id_gallery`, `date`, `title`, `image`, `description`) VALUES
@@ -157,28 +157,33 @@ INSERT INTO `gallery` (`id_gallery`, `date`, `title`, `image`, `description`) VA
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `message`
+-- Table structure for table `message`
 --
 
 CREATE TABLE `message` (
   `id_message` varchar(15) NOT NULL,
   `name` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
-  `date` date NOT NULL,
-  `message` text NOT NULL
+  `date` datetime NOT NULL,
+  `message` text NOT NULL,
+  `readed` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `message`
+-- Dumping data for table `message`
 --
 
-INSERT INTO `message` (`id_message`, `name`, `email`, `date`, `message`) VALUES
-('hlG280117tua', 'imam', 'coba@gmail.vom', '2017-01-28', 'yolo');
+INSERT INTO `message` (`id_message`, `name`, `email`, `date`, `message`, `readed`) VALUES
+('3aAD2801176Ok8', 'haha', 'haha@gmail.com', '2017-01-28 01:59:26', 'Kami akan merasa sengang apabila anda berkenan memberikan masukan, saran, ataupun kritikan yang bersifat membangun yang berkaitan dengan Workshop Riset Informatika, untuk memberikan masukan, saran, maupun kritikan, anda dapat menuliskan pada kotak form di bawah ini. Silahkan tuliskan identitas anda seperti Nama, E-mail, dan pesan yang ingin di sampaikan.\r\nApabila ada pertanyaan seputar Workshop Riset Informatika dapat menghubungi contant yang tertera di samping.', 1),
+('4tw12801178VbM', 'nindra', 'mnindrazaka@gmail.com', '2017-01-28 00:00:00', 'keep going wri', 1),
+('hlG280117tua', 'imam', 'coba@gmail.vom', '2017-01-28 00:00:00', 'yolo', 1),
+('tOSq280117XMD1', 'raka', 'raka@gmail.com', '2017-01-28 01:56:11', 'wri go go go', 1),
+('VMvZ280117kfyt', 'nindra', 'nindra@gmail.com', '2017-01-28 01:49:12', 'lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum', 1);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tag`
+-- Table structure for table `tag`
 --
 
 CREATE TABLE `tag` (
@@ -189,7 +194,7 @@ CREATE TABLE `tag` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tutorial`
+-- Table structure for table `tutorial`
 --
 
 CREATE TABLE `tutorial` (
@@ -204,7 +209,7 @@ CREATE TABLE `tutorial` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tutorial`
+-- Dumping data for table `tutorial`
 --
 
 INSERT INTO `tutorial` (`id_tutorial`, `date`, `title`, `description`, `image`, `id_user`, `id_division`, `publish`) VALUES
@@ -212,12 +217,13 @@ INSERT INTO `tutorial` (`id_tutorial`, `date`, `title`, `description`, `image`, 
 ('Md9NF70117pfNH0', '2017-01-27 03:59:29', 'Tutorial Codeigniter', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\r\n tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim \r\nveniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea \r\ncommodo consequat. Duis aute irure dolor in reprehenderit in voluptate \r\nvelit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint \r\noccaecat cupidatat non proident, sunt in culpa qui officia deserunt \r\nmollit anim id est laborumLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\r\n tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim \r\nveniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea \r\ncommodo consequat. Duis aute irure dolor in reprehenderit in voluptate \r\nvelit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint \r\noccaecat cupidatat non proident, sunt in culpa qui officia deserunt \r\nmollit anim id est laborumLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\r\n tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim \r\nveniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea \r\ncommodo consequat. Duis aute irure dolor in reprehenderit in voluptate \r\nvelit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint \r\noccaecat cupidatat non proident, sunt in culpa qui officia deserunt \r\nmollit anim id est laborumLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\r\n tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim \r\nveniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea \r\ncommodo consequat. Duis aute irure dolor in reprehenderit in voluptate \r\nvelit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint \r\noccaecat cupidatat non proident, sunt in culpa qui officia deserunt \r\nmollit anim id est laborumLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\r\n tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim \r\nveniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea \r\ncommodo consequat. Duis aute irure dolor in reprehenderit in voluptate \r\nvelit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint \r\noccaecat cupidatat non proident, sunt in culpa qui officia deserunt \r\nmollit anim id est laborumLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\r\n tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim \r\nveniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea \r\ncommodo consequat. Duis aute irure dolor in reprehenderit in voluptate \r\nvelit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint \r\noccaecat cupidatat non proident, sunt in culpa qui officia deserunt \r\nmollit anim id est laborum<br></p>', 'c794cb28b270e614335f8fabfee594ce.jpg', '1', 'jfi39gu89gu20jv', 1),
 ('p8y5JV0117IuMgo', '2017-01-27 05:27:09', 'PHP Concatenation', '<p style="font-family: Arial, Helvetica, sans-serif; font-size: 16px;">You can join together direct text, and whatever is in your variable. The full stop (period or dot, to some) is used for this. Suppose you want to print out the following "My variable contains the value of 10". In PHP, you can do it like this:</p><p class="TextIndent2" style="margin-left: 2em; font-family: Arial, Helvetica, sans-serif; font-size: 16px;">&lt;?php</p><p class="TextIndent3" style="margin-left: 4em; font-family: Arial, Helvetica, sans-serif; font-size: 16px;">$first_number = 10;<br>$direct_text = ''My variable contains the value of '';</p><p class="TextIndent3" style="margin-left: 4em; font-family: Arial, Helvetica, sans-serif; font-size: 16px;">print($direct_text . $first_number);</p><p class="TextIndent2" style="margin-left: 2em; font-family: Arial, Helvetica, sans-serif; font-size: 16px;">?&gt;</p><p style="font-family: Arial, Helvetica, sans-serif; font-size: 16px;">So now we have two variables. The new variable holds our direct text. When we''re printing the contents of both variables, a full stop is used to separate the two. Try out the above script, and see what happens. Now delete the dot and then try the code again. Any errors?</p><p style="font-family: Arial, Helvetica, sans-serif; font-size: 16px;">You can also do this sort of thing:</p><p class="TextIndent2" style="margin-left: 2em; font-family: Arial, Helvetica, sans-serif; font-size: 16px;">&lt;?php</p><p class="TextIndent3" style="margin-left: 4em; font-family: Arial, Helvetica, sans-serif; font-size: 16px;">$first_number = 10;</p><p class="TextIndent3" style="margin-left: 4em; font-family: Arial, Helvetica, sans-serif; font-size: 16px;">print (''My variable contains the value of '' . $first_number);</p><p class="TextIndent2" style="margin-left: 2em; font-family: Arial, Helvetica, sans-serif; font-size: 16px;">?&gt;</p><p style="font-family: Arial, Helvetica, sans-serif; font-size: 16px;">This time, the direct text is not inside a variable, but just included in the Print statement. Again a full stop is used to separate the direct text from the variable name. What you''ve just done is called concatenation. Try the new script and see what happens.</p>', 'f9138cb592e96253752b39fe4cbf0883.jpg', 'rYHeXL2701thdDR', 'jfi39gu89gu20jv', 1),
 ('YKEP070117nALSp', '2017-01-27 04:22:16', 'Cisco packet tracer (desain Jaringan)', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\r\n tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim \r\nveniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea \r\ncommodo consequat. Duis aute irure dolor in reprehenderit in voluptate \r\nvelit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint \r\noccaecat cupidatat non proident, sunt in culpa qui officia deserunt \r\nmollit anim id est laborum</p><p><br></p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\r\n tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim \r\nveniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea \r\ncommodo consequat. Duis aute irure dolor in reprehenderit in voluptate \r\nvelit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint \r\noccaecat cupidatat non proident, sunt in culpa qui officia deserunt \r\nmollit anim id est laborum</p><p><br></p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\r\n tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim \r\nveniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea \r\ncommodo consequat. Duis aute irure dolor in reprehenderit in voluptate \r\nvelit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint \r\noccaecat cupidatat non proident, sunt in culpa qui officia deserunt \r\nmollit anim id est laborum</p><p><br></p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\r\n tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim \r\nveniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea \r\ncommodo consequat. Duis aute irure dolor in reprehenderit in voluptate \r\nvelit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint \r\noccaecat cupidatat non proident, sunt in culpa qui officia deserunt \r\nmollit anim id est laborum<br></p>', '680d550fc3591a4565c7fa1150e4ebb5.jpg', 'rYHeXL2701thdDR', 'ngieAogJu498qej', 1),
-('Z6YbND01173PzCR', '2017-01-27 05:25:58', 'PHP Variable', '<p>A variable is just a storage area. You put things into your storage areas (variables) so that you can use and manipulate them in your programmes. Things you''ll want to store are numbers and text.</p><p><br></p><p>If you''re ok with the idea of variables, then you can move on. If not, think of them like this. Suppose you want to catalogue your clothing collection. You enlist two people to help you, a man and a woman. These two people are going to be your storage areas. They are going to hold things for you, while you tally up what you own. The man and the woman, then, are variables.</p><p><br></p><p>You count how many coats you have, and then give these to the man. You count how many shoes you have, and give these to the woman. Unfortunately, you have a bad memory. The question is, which one of your people (variables) holds the coats and which one holds the shoes? To help you remember, you can give your people names! You could call them something like this:</p><p><br></p><p style="text-align: center; "><b>mr_coats</b></p><p style="text-align: center; "><b>mrs_shoes</b></p><p><br></p><p>But it''s entirely up to you what names you give your people (variables). If you like, they could be called this:</p><p><br></p><p style="text-align: center; "><b>man_coats</b></p><p style="text-align: center; "><b>woman_shoes</b></p><p style="text-align: center; "><b><br></b></p><p style="text-align: center; "><b>Or</b></p><p style="text-align: center; "><b><br></b></p><p style="text-align: center; "><b>HimCoats</b></p><p style="text-align: center; "><b>HerShoes</b></p><p><br></p><p>But because your memory is bad, it''s best to give them names that help you remember what it is they are holding for you. (There are some things your people balk at being called. You can''t begin their names with an underscore (_), or a number. But most other characters are fine.)</p><p><br></p><p>OK, so your people (variables) now have name. But it''s no good just giving them a name. They are going to be doing some work for you, so you need to tell them what they will be doing. The man is going to be holding the coats. But we can specify how many coats he will be holding. If you have ten coats to give him, then you do the "telling" like this:</p><p><br></p><p><b>mr_coats = 10</b></p><p><br></p><p>So, the variable name comes first, then an equals sign. After the equals sign, you tell your variable what it will be doing. Holding the number 10, in our case. (The equals sign, by the way, is not really an equals sign. It''s called an assignment operator. But don''t worry about it, at this stage. Just remember that you need the equals sign to store things in your variables.)</p><p><br></p><p>However, you''re learning PHP, so there''s something missing. Two things, actually. First, your people (variables) need a dollar sign at the beginning (people are like that). So it would be this:</p><p><br></p><p style="text-align: center; "><b>$mr_coats = 10</b></p><p><br></p><p>If you miss the dollar sign out, then your people will refuse to work! But the other thing missing is something really picky and fussy - a semi-colon. Lines of code in PHP need a semi-colon at the end:</p><p><br></p><p style="text-align: center; "><b>$mr_coats = 10;</b></p><p><br></p><p>If you get any parse errors when you try to run your code, the first thing to check is if you''ve missed the semi-colon off the end. It''s very easy to do, and can be frustrating. The next thing to check is if you''ve missed out a dollar sign. But back to our people (variables).</p><p><br></p><p>So the man is holding ten coats. We can do the same thing with the other person (variable):</p><p><br></p><p style="text-align: center; "><b>$mrs_shoes = 25;</b></p><p><br></p><p>So, $mrs_shoes is holding a value of 25. If we then wanted to add up how many items of clothes we have so far, we could set up a new variable (Note the dollar sign at the begining of the new variable):</p><p><br></p><p style="text-align: center; "><b>$total_clothes</b></p><p><br></p><p>We can then add up the coats and the shoes. You add up in PHP like this:</p><p><br></p><p style="text-align: center; "><b>$total_clothes = $mr_coats + $mrs_shoes;</b></p><p><br></p><p>Remember, $mr_coats is holding a value of 10, and $mrs_shoes is holding a value of 25. If you use a plus sign, PHP thinks you want to add up. So it will work out the total for you. The answer will then get stored in our new variable, the one we''ve called $total_clothes. You can also add up like this:</p><p><br></p><p style="text-align: center; "><b>$total_clothes = 10 + 35;</b></p><p><br></p><p>Again, PHP will see the plus sign and add the two together for you. Of course, you can add up more than two items:</p><p><br></p><p style="text-align: center; "><b>$total_clothes = 10 + 35 + 7 + 38 + 1250;</b></p><p><br></p><p>But the idea is the same - PHP will see plus signs and then add things up. The answer is then stored in your variable name, the one to the left of the equals sign.</p><p><br></p><p>&nbsp;</p><p><br></p><p>In the next part, we''ll take a look at how to put text into variables.</p>', '7a0506481beb39823d875302c4aa614c.jpg', 'rYHeXL2701thdDR', 'jfi39gu89gu20jv', 1);
+('Z6YbND01173PzCR', '2017-01-27 05:25:58', 'PHP Variable', '<p>A variable is just a storage area. You put things into your storage areas (variables) so that you can use and manipulate them in your programmes. Things you''ll want to store are numbers and text.</p><p><br></p><p>If you''re ok with the idea of variables, then you can move on. If not, think of them like this. Suppose you want to catalogue your clothing collection. You enlist two people to help you, a man and a woman. These two people are going to be your storage areas. They are going to hold things for you, while you tally up what you own. The man and the woman, then, are variables.</p><p><br></p><p>You count how many coats you have, and then give these to the man. You count how many shoes you have, and give these to the woman. Unfortunately, you have a bad memory. The question is, which one of your people (variables) holds the coats and which one holds the shoes? To help you remember, you can give your people names! You could call them something like this:</p><p><br></p><p style="text-align: center; "><b>mr_coats</b></p><p style="text-align: center; "><b>mrs_shoes</b></p><p><br></p><p>But it''s entirely up to you what names you give your people (variables). If you like, they could be called this:</p><p><br></p><p style="text-align: center; "><b>man_coats</b></p><p style="text-align: center; "><b>woman_shoes</b></p><p style="text-align: center; "><b><br></b></p><p style="text-align: center; "><b>Or</b></p><p style="text-align: center; "><b><br></b></p><p style="text-align: center; "><b>HimCoats</b></p><p style="text-align: center; "><b>HerShoes</b></p><p><br></p><p>But because your memory is bad, it''s best to give them names that help you remember what it is they are holding for you. (There are some things your people balk at being called. You can''t begin their names with an underscore (_), or a number. But most other characters are fine.)</p><p><br></p><p>OK, so your people (variables) now have name. But it''s no good just giving them a name. They are going to be doing some work for you, so you need to tell them what they will be doing. The man is going to be holding the coats. But we can specify how many coats he will be holding. If you have ten coats to give him, then you do the "telling" like this:</p><p><br></p><p><b>mr_coats = 10</b></p><p><br></p><p>So, the variable name comes first, then an equals sign. After the equals sign, you tell your variable what it will be doing. Holding the number 10, in our case. (The equals sign, by the way, is not really an equals sign. It''s called an assignment operator. But don''t worry about it, at this stage. Just remember that you need the equals sign to store things in your variables.)</p><p><br></p><p>However, you''re learning PHP, so there''s something missing. Two things, actually. First, your people (variables) need a dollar sign at the beginning (people are like that). So it would be this:</p><p><br></p><p style="text-align: center; "><b>$mr_coats = 10</b></p><p><br></p><p>If you miss the dollar sign out, then your people will refuse to work! But the other thing missing is something really picky and fussy - a semi-colon. Lines of code in PHP need a semi-colon at the end:</p><p><br></p><p style="text-align: center; "><b>$mr_coats = 10;</b></p><p><br></p><p>If you get any parse errors when you try to run your code, the first thing to check is if you''ve missed the semi-colon off the end. It''s very easy to do, and can be frustrating. The next thing to check is if you''ve missed out a dollar sign. But back to our people (variables).</p><p><br></p><p>So the man is holding ten coats. We can do the same thing with the other person (variable):</p><p><br></p><p style="text-align: center; "><b>$mrs_shoes = 25;</b></p><p><br></p><p>So, $mrs_shoes is holding a value of 25. If we then wanted to add up how many items of clothes we have so far, we could set up a new variable (Note the dollar sign at the begining of the new variable):</p><p><br></p><p style="text-align: center; "><b>$total_clothes</b></p><p><br></p><p>We can then add up the coats and the shoes. You add up in PHP like this:</p><p><br></p><p style="text-align: center; "><b>$total_clothes = $mr_coats + $mrs_shoes;</b></p><p><br></p><p>Remember, $mr_coats is holding a value of 10, and $mrs_shoes is holding a value of 25. If you use a plus sign, PHP thinks you want to add up. So it will work out the total for you. The answer will then get stored in our new variable, the one we''ve called $total_clothes. You can also add up like this:</p><p><br></p><p style="text-align: center; "><b>$total_clothes = 10 + 35;</b></p><p><br></p><p>Again, PHP will see the plus sign and add the two together for you. Of course, you can add up more than two items:</p><p><br></p><p style="text-align: center; "><b>$total_clothes = 10 + 35 + 7 + 38 + 1250;</b></p><p><br></p><p>But the idea is the same - PHP will see plus signs and then add things up. The answer is then stored in your variable name, the one to the left of the equals sign.</p><p><br></p><p>&nbsp;</p><p><br></p><p>In the next part, we''ll take a look at how to put text into variables.</p>', '7a0506481beb39823d875302c4aa614c.jpg', 'rYHeXL2701thdDR', 'jfi39gu89gu20jv', 1),
+('zHtPyC01171zFbP', '2017-01-28 05:54:06', 'Tutorial Yolo', '<p><br></p><p>lorem ipsum dolor sit amet <br></p><p>lorem ipsum dolor sit amet <br></p><p>lorem ipsum dolor sit amet <br></p><p>lorem ipsum dolor sit amet <br></p><p>lorem ipsum dolor sit amet <br></p><p>lorem ipsum dolor sit amet <br></p><p>lorem ipsum dolor sit amet <br></p><p>lorem ipsum dolor sit amet <br></p><p>lorem ipsum dolor sit amet <br></p><p>lorem ipsum dolor sit amet <br></p><p>lorem ipsum dolor sit amet <br></p><p>lorem ipsum dolor sit amet </p><p>lorem ipsum dolor sit amet <br></p><p>lorem ipsum dolor sit amet <br></p><p><br></p><p><br></p><p>lorem ipsum dolor sit amet <br></p><p>lorem ipsum dolor sit amet <br></p><p>lorem ipsum dolor sit amet <br></p><p>lorem ipsum dolor sit amet <br></p><p><br></p><p><br></p><p><br></p><p><br></p><p><br></p><p><br></p><p><br></p><p><br></p><p><br></p><p><br></p><p><br></p><p><br></p><p><br></p><p><br></p><p><br></p><p><br></p>', 'd85bfc3cda2005ad86f3c46f44828e47.png', '1', 'jfi39gu89gu20jv', 1);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `user`
+-- Table structure for table `user`
 --
 
 CREATE TABLE `user` (
@@ -231,7 +237,7 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `user`
+-- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`id_user`, `name`, `gender`, `birth`, `address`, `phone`, `admin`) VALUES

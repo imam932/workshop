@@ -45,8 +45,9 @@ class Contact extends CI_Controller{
       $data['id_message'] = random_string('alnum', 4) . date('dmy') . random_string('alnum', 4);
       $data['name']       = $this->input->post('name');
       $data['email']      = $this->input->post('email');
-      $data['date']       = date('Y-m-d');
+      $data['date']       = date('Y-m-d h:i:s');
       $data['message']    = $this->input->post('message');
+      $data['readed'] = FALSE;
 
       $this->Model_message->insert($data);
       $this->session->set_flashdata('message', 'Sukses ! Pesan telah terkirim');

@@ -8,6 +8,7 @@ class Article extends Admin_Controller {
     parent::__construct();
 		$this->load->model('Model_article');
 		$this->load->model('Model_category');
+		$this->load->model('Model_message');
   }
 
 	public function index()
@@ -26,6 +27,8 @@ class Article extends Admin_Controller {
 		$data['title'] = "Article";
 		$data['desc'] = "Create or Manage Articles";
 		$data['breadcrumb'] = array('Dashboard', 'Article');
+		$data['unread_message'] = $this->Model_message->unread_num();
+    $data['message'] = $this->Model_message->select_all(3);
 
 		$this->load->view('admin/template', $data);
 	}
@@ -91,6 +94,8 @@ class Article extends Admin_Controller {
 		$data['title'] = "Article";
 		$data['desc'] = "Create New Article";
 		$data['breadcrumb'] = array('Dashboard', 'Article', 'New');
+		$data['unread_message'] = $this->Model_message->unread_num();
+    $data['message'] = $this->Model_message->select_all(3);
 
 		$this->load->view('admin/template', $data);
 	}
@@ -178,6 +183,8 @@ class Article extends Admin_Controller {
 		$data['title'] = "Article";
 		$data['desc'] = "Edit Article";
 		$data['breadcrumb'] = array('Dashboard', 'Article', 'Edit');
+		$data['unread_message'] = $this->Model_message->unread_num();
+    $data['message'] = $this->Model_message->select_all(3);
 
 		$this->load->view('admin/template', $data);
 	}

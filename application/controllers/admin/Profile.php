@@ -7,7 +7,7 @@ class Profile extends CI_Controller
   public function __construct()
   {
     parent::__construct();
-    $this->load->model(array('Model_user', 'Model_auth'));
+    $this->load->model(array('Model_user', 'Model_auth', 'Model_message'));
   }
 
   function index()
@@ -31,6 +31,8 @@ class Profile extends CI_Controller
     $data['title']          = "Profile";
     $data['desc']		        = "View your profile";
     $data['breadcrumb']     = array('Dashboard', 'Profile');
+    $data['unread_message'] = $this->Model_message->unread_num();
+    $data['message'] = $this->Model_message->select_all(3);
     $this->load->view('admin/template', $data);
   }
 
@@ -117,6 +119,8 @@ class Profile extends CI_Controller
     $data['title']          = "Profile";
     $data['desc']		        = "Edit your profile";
     $data['breadcrumb']     = array('Dashboard', 'Profile', 'Edit');
+    $data['unread_message'] = $this->Model_message->unread_num();
+    $data['message'] = $this->Model_message->select_all(3);
     $this->load->view('admin/template', $data);
   }
 }

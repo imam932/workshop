@@ -51,9 +51,15 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
             <i class="fa fa-envelope"></i>
+            <?php if($unread_message > 0) { ?>
+            <span class="badge"><?= $unread_message ?></span>
+            <?php } ?>
             <b class="caret"></b>
           </a>
           <ul class="dropdown-menu message-dropdown">
+            <?php foreach ($message as $row) {
+              $time = new DateTime($row->date);
+            ?>
             <li class="message-preview">
               <a href="#">
                 <div class="media">
@@ -61,46 +67,23 @@
                     <img class="media-object" src="" alt="">
                   </span>
                   <div class="media-body">
-                    <h5 class="media-heading"><strong>John Smith</strong>
+                    <h5 class="media-heading"><strong><?= $row->name ?></strong>
+                    <?php if(!$row->readed) { ?>
+                    <span class="badge pull-right">new</span>
+                    <?php } ?>
                     </h5>
-                    <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur...</p>
+                    <p class="small text-muted">
+                      <i class="fa fa-clock-o"></i>
+                      <?= $time->format('d/m/Y') ?> at <?= $time->format('h:i') ?>
+                    </p>
+                    <p class="text-preview"><?= $row->message ?></p>
                   </div>
                 </div>
               </a>
             </li>
-            <li class="message-preview">
-              <a href="#">
-                <div class="media">
-                  <span class="pull-left">
-                    <img class="media-object" src="" alt="">
-                  </span>
-                  <div class="media-body">
-                    <h5 class="media-heading"><strong>John Smith</strong>
-                    </h5>
-                    <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur...</p>
-                  </div>
-                </div>
-              </a>
-            </li>
-            <li class="message-preview">
-              <a href="#">
-                <div class="media">
-                  <span class="pull-left">
-                    <img class="media-object" src="" alt="">
-                  </span>
-                  <div class="media-body">
-                    <h5 class="media-heading"><strong>John Smith</strong>
-                    </h5>
-                    <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur...</p>
-                  </div>
-                </div>
-              </a>
-            </li>
+            <?php } ?>
             <li class="message-footer">
-              <a href="#">Read All New Messages</a>
+              <a href="<?= base_url() ?>admin/Message">Read All New Messages</a>
             </li>
           </ul>
         </li>
@@ -174,6 +157,16 @@
               <a href="<?= base_url().'admin/User' ?>"><i class="fa fa-fw fa-user"></i> User </a>
             </li>
             <?php } ?>
+            <li>
+              <a href="<?= base_url().'admin/Message' ?>">
+                <i class="fa fa-fw fa-envelope"></i>
+                Message
+
+                <?php if($unread_message > 0) { ?>
+                <span class="badge"><?= $unread_message ?></span>
+                <?php } ?>
+              </a>
+            </li>
           </ul>
         </div>
         <!-- /.navbar-collapse -->
