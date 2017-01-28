@@ -100,7 +100,7 @@
   overflow: hidden;
   position: relative;
   line-height: 1.2em;
-  max-height: 9.6em;
+  max-height: 27.4em;
   text-align: justify;
   margin-right: -1em;
   padding-right: 1em;
@@ -162,4 +162,12 @@ img {
 .list-group-item.header {
   background-color: #f5f5f5;
   color: #494949;
+}
+
+.red{
+  color: #d44950;
+}
+
+.contact{
+  color: #FACC2E;
 }
