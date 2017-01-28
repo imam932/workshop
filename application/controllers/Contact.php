@@ -6,7 +6,7 @@ class Contact extends CI_Controller{
   public function __construct()
   {
     parent::__construct();
-    $this->load->model('Model_message');
+    $this->load->model(array('Model_article', 'Model_message'));
   }
 
   function index()
@@ -28,6 +28,7 @@ class Contact extends CI_Controller{
     $data['title'] = "Contact Us";
     $data['desc'] = "Contact , info";
     $data['breadcrumb'] = array('Home','Contact');
+    $data['article_footer']   = $this->Model_article->select_all(4);
 
     $this->load->view('template', $data);
   }

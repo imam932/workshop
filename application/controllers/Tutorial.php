@@ -7,7 +7,7 @@ class Tutorial extends CI_Controller
   public function __construct()
   {
     parent::__construct();
-    $this->load->model(array('Model_tutorial', 'Model_division'));
+    $this->load->model(array('Model_tutorial', 'Model_division', 'Model_article'));
   }
 
   function index()
@@ -21,6 +21,7 @@ class Tutorial extends CI_Controller
     $data['title'] = "Tutorial";
     $data['desc'] = "Tutorial of each division";
     $data['breadcrumb'] = array('Home', 'Tutorial');
+    $data['article_footer']   = $this->Model_article->select_all(4);
 
     $this->load->view('template', $data);
   }
@@ -36,6 +37,7 @@ class Tutorial extends CI_Controller
     $data['title'] = "tutorial";
     $data['desc'] = "Tutorial of each division";
     $data['breadcrumb'] = array('Home', 'Tutorial', $title);
+    $data['article_footer']   = $this->Model_article->select_all(4);
 
     $this->load->view('template', $data);
   }

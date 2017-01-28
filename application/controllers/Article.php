@@ -21,6 +21,7 @@ class Article extends CI_Controller
     $data['title'] = "Article";
     $data['desc'] = "Article, News, Event, etc";
     $data['breadcrumb'] = array('Home', 'Article');
+    $data['article_footer']   = $this->Model_article->select_all(4);
 
     $this->load->view('template', $data);
   }
@@ -36,6 +37,7 @@ class Article extends CI_Controller
     $data['title'] = "Article";
     $data['desc'] = "Article, News, Event, etc";
     $data['breadcrumb'] = array('Home', 'Article', $title);
+    $data['article_footer']   = $this->Model_article->select_all(4);
 
     $this->load->view('template', $data);
   }

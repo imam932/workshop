@@ -202,7 +202,7 @@
             </div>
           </div>
           <div class="col-md-3">
-            <h4>Artikel terakhir</h4>
+            <h4>Newest Article</h4>
             <div id="tweet" class="twitter" data-plugin-tweets data-plugin-options='{"username": "", "count": 2}'>
               <?php foreach ($article_footer as $row) { ?>
                 <a href="<?= base_url().'Article/view/'.$row->id_article ?>">

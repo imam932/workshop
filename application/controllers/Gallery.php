@@ -6,7 +6,7 @@ class Gallery extends CI_Controller{
   public function __construct()
   {
     parent::__construct();
-    $this->load->model(array('Model_gallery'));
+    $this->load->model(array('Model_gallery', 'Model_article'));
   }
 
   function index()
@@ -17,6 +17,7 @@ class Gallery extends CI_Controller{
     $data['title'] = 'Gallery';
     $data['desc'] = 'View Gallery';
     $data['breadcrumb'] = array('Home', 'Gallery');
+    $data['article_footer']   = $this->Model_article->select_all(4);
 
     $this->load->view('template', $data);
   }
