@@ -55,7 +55,7 @@
   data-y="0"
   data-start="2600"
   data-transform_in="z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;s:500;e:Power2.easeOut;">
-  <img src="<?= base_url() ?>assets/img/divisi_pemograman.jpg"  alt=""></div>
+  <img src="<?= base_url() ?>assets/img/divisi_pemograman.jpg"  alt="" style="padding-top: 15px"></div>
 
   <!--<div class="tp-caption"-->
   <!--data-x="630"-->
@@ -233,6 +233,7 @@
               <ul class="image-gallery sort-destination full-width">
                 <?php
                 foreach ($gallery as $row) {
+                  $time = new DateTime($row->date);
                   ?>
                   <li class="isotope-item">
                     <div class="image-gallery-item">
@@ -244,6 +245,10 @@
                             </div>
                             <span class="thumb-info-title">
                               <span class="thumb-info-inner"><?= $row->title ?></span>
+                              <span class="thumb-info-inner date">
+                                <i class="fa fa-calendar"></i>
+                                <?= $time->format('d/m/Y'); ?>
+                              </span>
                             </span>
                             <span class="thumb-info-action">
                               <span class="thumb-info-action-icon"><i class="fa fa-link"></i></span>

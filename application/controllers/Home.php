@@ -23,7 +23,8 @@ class Home extends CI_Controller{
     $data['title'] = "Home";
     $data['desc'] = "desc";
     $data['breadcrumb'] = array("Home");
+    $data['home'] = true;
     $this->load->view('template', $data);
   }
-  
+
 }

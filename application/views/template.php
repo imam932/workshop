@@ -50,14 +50,14 @@
           <div class="header-row">
             <div class="header-column">
               <div class="header-logo">
-                <a href="index.html">
+                <a href="<?= base_url() ?>">
                   <img alt="Porto" width="200" height="65" data-sticky-width="120" data-sticky-height="38" data-sticky-top="40" src="<?= base_url() ?>assets/img/putih.png">
                 </a>
               </div>
             </div>
             <div class="header-column">
               <div class="header-row">
-                <div class="header-search hidden-xs">
+                <!-- <div class="header-search hidden-xs">
                   <form id="searchForm" action="page-search-results.html" method="get">
                     <div class="input-group">
                       <input type="text" class="form-control" name="q" id="q" placeholder="Search..."
@@ -69,7 +69,7 @@
                       </span>
                     </div>
                   </form>
-                </div>
+                </div> -->
                 <nav class="header-nav-top">
                   <ul class="nav nav-pills">
 
@@ -148,6 +148,7 @@
       </div>
     </header>
 
+    <?php if(!isset($home)) { ?>
     <div class="container content-wrapper">
       <div class="web-title">
         <h3><?= $title ?> <small><?= $desc ?></small></h3>
@@ -173,6 +174,8 @@
         }
         ?>
       </ol>
+    <?php } ?>
+
       <!-- content here -->
       <?= $content ?>
       <!-- end of content -->
@@ -269,27 +272,14 @@
           <div class="container">
             <div class="row">
               <div class="col-md-2">
-                <a href="index.html" class="logo">
+                <a href="<?= base_url() ?>" class="logo">
                   <img alt="Porto Website Template" class="img-responsive" width="1000" src="<?= base_url() ?>assets/img/wri.png">
                 </a>
               </div>
               <div class="col-md-8">
-                <p>© Copyright 2017. All Rights Reserved.</p>
+                <p>&copy; Copyright 2017. All Rights Reserved.</p>
               </div>
               <div class="col-md-4">
-                <nav id="sub-menu">
-                  <ul>
-                    <li>
-                      <a href="/">FAQ's</a>
-                    </li>
-                    <li>
-                      <a href="/">Sitemap</a>
-                    </li>
-                    <li>
-                      <a href="/">Contact</a>
-                    </li>
-                  </ul>
-                </nav>
               </div>
             </div>
           </div>
