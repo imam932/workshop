@@ -8,11 +8,11 @@
   <div class="row about col-lg-6 col-sm-12">
     <div class="about__title">
       <h2>Sekilas Tentang WRI</h2>
-      <div class="about_content">
-        <b>Workshop Riset Informatika</b> adalah komunitas yang memiliki tujuan
-        bersama untuk membina dan mengembangkan kreatifitas mahasiswa
-        dalam bidang ilmu pengetahuan dan teknologi.
-      </div>
+    </div>
+    <div class="about_content">
+      <b>Workshop Riset Informatika</b> adalah komunitas yang memiliki tujuan
+      bersama untuk membina dan mengembangkan kreatifitas mahasiswa
+      dalam bidang ilmu pengetahuan dan teknologi.
     </div>
 
   </div>

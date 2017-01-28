@@ -9,7 +9,7 @@
       dapat menghubungi contant yang tertera di samping.
     </p>
     <hr>
-    
+
     <?php if(isset($message)) { ?>
     <div class="alert alert-success"><?= $message ?></div>
     <?php } ?>
@@ -41,7 +41,7 @@
   </div>
 
   <div class="row col-lg-4 col-md-4 col-sm-4">
-    <div class="container-fluid">
+    <div class="container-fluid contact_panel">
       <label for="email" class="contact">E-Mail</label>
       <p>wripolinema@gmail.com</p>
       <hr>
