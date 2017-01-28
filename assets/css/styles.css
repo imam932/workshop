@@ -99,12 +99,11 @@
 .text-preview-home {
   overflow: hidden;
   position: relative;
-  line-height: 1.3em;
-  max-height: 14.6em;
+  line-height: 1.2em;
+  max-height: 9.6em;
   text-align: justify;
   margin-right: -1em;
   padding-right: 1em;
-  padding-top: 10px;
 }
 
 .text-preview-home:before {

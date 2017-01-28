@@ -152,7 +152,7 @@
             $time = new DateTime($row->date);
             ?>
             <div class="recent-posts">
-              <article class="post">
+              <article class="post clearfix">
                 <div class="date">
                   <span class="day"><?= $time->format('d') ?></span>
                   <span class="month"><?= $time->format('H:i') ?></span>
@@ -164,9 +164,12 @@
                 <p class="text-preview-home">
                   <?= strip_tags($row->posting) ?>
                 </p>
-                  <a href="<?= base_url() ?>Article/view/<?= $row->id_article ?>" class="">read more</a>
-                  <i class="fa fa-angle-right"></i>
-
+                <div class="pull-right">
+                  <a href="<?= base_url() ?>Article/view/<?= $row->id_article ?>" class="">
+                    read more
+                    <i class="fa fa-angle-right"></i>
+                  </a>
+                </div>
               </article>
             </div>
             <?php } ?>
@@ -191,7 +194,7 @@
               $time = new DateTime($row->date);
               ?>
               <div class="recent-posts">
-                <article class="post">
+                <article class="post clearfix">
                   <div class="date">
                     <span class="day"><?= $time->format('d') ?></span>
                     <span class="month"><?= $time->format('H:i') ?></span>
@@ -203,9 +206,11 @@
                   <p class="text-preview-home">
                     <?= strip_tags($row->description) ?>
                   </p>
-                  <a href="<?= base_url() ?>Tutorial/view/<?= $row->id_tutorial ?>" class="">read more
-                    <i class="fa fa-angle-right"></i>
-                  </a>
+                  <div class="pull-right">
+                    <a href="<?= base_url() ?>Tutorial/view/<?= $row->id_tutorial ?>" class="">read more
+                      <i class="fa fa-angle-right"></i>
+                    </a>
+                  </div>
                 </article>
               </div>
               <?php } ?>
