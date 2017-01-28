@@ -7,12 +7,13 @@ class Article extends CI_Controller
   public function __construct()
   {
     parent::__construct();
-    $this->load->model(array('Model_article'));
+    $this->load->model(array('Model_article', 'Model_category'));
   }
 
   function index()
   {
     // load data
+    $data['category'] = $this->Model_category->select_all();
     $data['article'] = $this->Model_article->select_all();
     $data['content'] = $this->load->view('article', $data, TRUE);
 

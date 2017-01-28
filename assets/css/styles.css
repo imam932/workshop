@@ -158,3 +158,8 @@ img {
 .modal-content .modal-footer {
     text-align: left;
 }
+
+.list-group-item.header {
+  background-color: #f5f5f5;
+  color: #494949;
+}
