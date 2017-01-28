@@ -2,30 +2,33 @@
   <div class="row col-lg-8">
     <div class="container-fluid">
       <p>
-        Kami akan merasa senang apabila anda berkenan memberikan masukan, saran,
+        Kami akan merasa sengang apabila anda berkenan memberikan masukan, saran,
         ataupun kritikan yang bersifat membangun yang berkaitan dengan <b>Workshop Riset Informatika</b>,
         untuk memberikan masukan, saran, maupun kritikan, anda dapat menuliskan pada kotak form di bawah ini.
         Silahkan tuliskan identitas anda seperti Nama, E-mail, dan pesan yang ingin di sampaikan.<br>
         Apabila ada pertanyaan seputar <b>Workshop Riset Informatika</b>
         dapat menghubungi contant yang tertera di samping.
       </p>
-      <hr>
-      <form class="" action="" method="post">
+      <div class="row col-lg-12">
+
+      <hr class="tall">
+    </div>
+      <form class="" action="<?= base_url() ?>Contact/sendMessage" method="post">
         <div class="form-group">
           <div class="form-inline">
             <div class="form-group">
               <label for="Nama">Nama <b class="red">*</b></label>
-              <input type="text" class="form-control" id="" placeholder="Nama Lengkap">
+              <input type="text" name="name" class="form-control" id="" placeholder="Nama Lengkap">
             </div>
             <div class="form-group">
               <label for="E-mail">E-Mail <b class="red">*</b></label>
-              <input type="email" class="form-control" id="" placeholder="example@gmail.com">
+              <input type="email" name="email" class="form-control" id="" placeholder="example@gmail.com">
             </div>
           </div>
         </div>
         <div class="form-group">
           <label for="Pesan">Pesan <b class="red">*</b></label>
-          <textarea name="" class="form-control" rows="4" cols="80" placeholder="Pesan yang ingin di sampaikan"></textarea>
+          <textarea name="message" class="form-control" rows="4" cols="80" placeholder="Pesan yang ingin di sampaikan"></textarea>
         </div>
 
         <button type="submit" class="btn btn-primary">KIRIM</button>
