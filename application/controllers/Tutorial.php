@@ -7,12 +7,13 @@ class Tutorial extends CI_Controller
   public function __construct()
   {
     parent::__construct();
-    $this->load->model(array('Model_tutorial'));
+    $this->load->model(array('Model_tutorial', 'Model_division'));
   }
 
   function index()
   {
     // load data
+    $data['division'] = $this->Model_division->select_all();
     $data['tutorial'] = $this->Model_tutorial->select_all();
     $data['content'] = $this->load->view('tutorial', $data, TRUE);
 

@@ -28,7 +28,7 @@ $(document).ready(function() {
 		// filtering
 		var category = this.text;
 
-		if(category == "all category")
+		if(category == "all category" || category == "all division")
 		{
 			article.filter();
 		}

@@ -22,19 +22,21 @@
               <div class="col-md-8">
                 <h4 class="title"><?= $row->title ?></h4>
                 <div class="detail">
-                  <span>
-                    <i class="fa fa-calendar"></i>
-                    <?= $time->format('d/m/Y') ?>
-                  </span>
-                  
-                  <span>
-                    <i class="fa fa-clock-o"></i>
-                    <?= $time->format('h:i') ?>
-                  </span>
+                  <time class="date">
+                    <span>
+                      <i class="fa fa-calendar"></i>
+                      <?= $time->format('d/m/Y') ?>
+                    </span>
+
+                    <span>
+                      <i class="fa fa-clock-o"></i>
+                      <?= $time->format('h:i') ?>
+                    </span>
+                  </time>
 
                   <span>
                     <i class="fa fa-shield"></i>
-                    <?= $row->division ?>
+                    <span class="category"><?= $row->division ?></span>
                   </span>
                 </div>
                 <p class="text-preview">
@@ -53,6 +55,26 @@
     </div>
 
     <div class="col-md-4">
-      sidebar
+      <div class="list-group">
+        <h5 class="list-group-item header">View By Division</h5>
+        <a href="#" class="list-group-item filter-article-category active">all division</a>
+        <?php foreach ($division as $row) { ?>
+          <a href="#" class="list-group-item filter-article-category"><?= $row->division ?></a>
+        <?php } ?>
+      </div>
+
+      <div class="list-group">
+        <h5 class="list-group-item header">Order By</h5>
+        <a href="#" class="list-group-item sort-article active">date</a>
+        <a href="#" class="list-group-item sort-article">title</a>
+        <a href="#" class="list-group-item sort-article">category</a>
+      </div>
+
+      <div class="form-group">
+        <select class="form-control" id="select-orderArticle">
+          <option value="asc">Ascending</option>
+          <option value="desc" selected>Descending</option>
+        </select>
+      </div>
     </div>
   </div>
