@@ -26,12 +26,12 @@
         data-transform_in="y:[-300%];opacity:0;s:500;">pengen belajar
       </div>
 
-      <!--<div class="tp-caption"-->
-      <!--data-x="480"-->
-      <!--data-y="180"-->
-      <!--data-start="1000"-->
-      <!--data-transform_in="x:[300%];opacity:0;s:500;"><img-->
-      <!--src="img/divisi_multimedia.png" alt=""></div>-->
+      <!-- <div class="tp-caption"
+      data-x="480"
+      data-y="180"
+      data-start="1000"
+      data-transform_in="x:[300%];opacity:0;s:500;"><img
+      src="img/divisi_multimedia.png" alt=""></div> -->
 
       <div class="tp-caption main-label"
       data-x="0"

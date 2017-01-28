@@ -132,6 +132,11 @@
                             Contact Us
                           </a>
                         </li>
+                        <li>
+                          <a href="<?= base_url() ?>About">
+                            About Us
+                          </a>
+                        </li>
                       </ul>
                     </nav>
                   </div>
