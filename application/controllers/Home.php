@@ -14,9 +14,10 @@ class Home extends CI_Controller{
   function index()
   {
     // load data
-    $data['article']   = $this->Model_article->select_all(8);
-    $data['gallery']   = $this->Model_gallery->select_all(5);
-    $data['tutorial']  = $this->Model_tutorial->select_all(8);
+    $data['article']          = $this->Model_article->select_all(8);
+    $data['gallery']          = $this->Model_gallery->select_all(5);
+    $data['tutorial']         = $this->Model_tutorial->select_all(8);
+    $data['article_footer']   = $this->Model_article->select_all(4);
 
     $data['content']   = $this->load->view('home', $data, TRUE);
     $data['title'] = "Home";
@@ -24,9 +25,5 @@ class Home extends CI_Controller{
     $data['breadcrumb'] = array("Home");
     $this->load->view('template', $data);
   }
-
-  public function select_article_all()
-  {
-    # code...
-  }
+  
 }

@@ -8,7 +8,8 @@
       Apabila ada pertanyaan seputar <b>Workshop Riset Informatika</b>
       dapat menghubungi contant yang tertera di samping.
     </p>
-
+    <hr>
+    
     <?php if(isset($message)) { ?>
     <div class="alert alert-success"><?= $message ?></div>
     <?php } ?>
@@ -54,5 +55,3 @@
       </div>
     </div>
   </div>
-
-

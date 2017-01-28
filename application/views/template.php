@@ -202,109 +202,113 @@
             </div>
           </div>
           <div class="col-md-3">
-            <h4>Tweets terakhir</h4>
+            <h4>Artikel terakhir</h4>
             <div id="tweet" class="twitter" data-plugin-tweets data-plugin-options='{"username": "", "count": 2}'>
-              <p>Please wait...</p>
+              <?php foreach ($article_footer as $row) { ?>
+                <a href="<?= base_url().'Article/view/'.$row->id_article ?>">
+                  <p><?= $row->title ?></p>
+                </a>
+                <?php } ?>
+              </div>
             </div>
-          </div>
-          <div class="col-md-4">
-            <div class="contact-details">
-              <h4>Contact Us</h4>
-              <ul class="contact">
-                <li>
-                  <p>
-                    <i class="fa fa-map-marker"></i>
-                    <strong>Address:</strong>
-                    Jl. Soekarno Hatta No. 9 Malang <br>
-                    <b>Politeknik Negeri Malang</b>
-                  </p>
+            <div class="col-md-4">
+              <div class="contact-details">
+                <h4>Contact Us</h4>
+                <ul class="contact">
+                  <li>
+                    <p>
+                      <i class="fa fa-map-marker"></i>
+                      <strong>Address:</strong>
+                      Jl. Soekarno Hatta No. 9 Malang <br>
+                      <b>Politeknik Negeri Malang</b>
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <i class="fa fa-phone"></i>
+                      <strong>Phone:</strong>
+                      (123) 456-789
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <i class="fa fa-envelope"></i>
+                      <strong>Email:</strong>
+                      <a href="mailto:wripolinema@gmail.com">wripolinema@gmail.com</a>
+                    </p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md-2">
+              <h4>Follow Us</h4>
+              <ul class="social-icons">
+                <li class="social-icons-facebook">
+                  <a href="https://www.facebook.com/WRIPolinema" target="_blank" title="Facebook">
+                    <i class="fa fa-facebook"></i>
+                  </a>
                 </li>
-                <li>
-                  <p>
-                    <i class="fa fa-phone"></i>
-                    <strong>Phone:</strong>
-                    (123) 456-789
-                  </p>
-                </li>
-                <li>
-                  <p>
-                    <i class="fa fa-envelope"></i>
-                    <strong>Email:</strong>
-                    <a href="mailto:wripolinema@gmail.com">wripolinema@gmail.com</a>
-                  </p>
+                <li class="social-icons-twitter">
+                  <a href="http://www.twitter.com/" target="_blank" title="Twitter">
+                    <i class="fa fa-twitter"></i></a>
+                  </li>
+                  <li class="social-icons-linkedin"><a href="http://www.linkedin.com/" target="_blank" title="Linkedin">
+                    <i class="fa fa-linkedin"></i>
+                  </a>
                 </li>
               </ul>
             </div>
           </div>
-          <div class="col-md-2">
-            <h4>Follow Us</h4>
-            <ul class="social-icons">
-              <li class="social-icons-facebook">
-                <a href="https://www.facebook.com/WRIPolinema" target="_blank" title="Facebook">
-                  <i class="fa fa-facebook"></i>
-                </a>
-              </li>
-              <li class="social-icons-twitter">
-                <a href="http://www.twitter.com/" target="_blank" title="Twitter">
-                  <i class="fa fa-twitter"></i></a>
-                </li>
-                <li class="social-icons-linkedin"><a href="http://www.linkedin.com/" target="_blank" title="Linkedin">
-                  <i class="fa fa-linkedin"></i>
-                </a>
-              </li>
-            </ul>
-          </div>
         </div>
-      </div>
-      <div class="footer-copyright">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-2">
-              <a href="index.html" class="logo">
-                <img alt="Porto Website Template" class="img-responsive" width="1000" src="<?= base_url() ?>assets/img/wri.png">
-              </a>
-            </div>
-            <div class="col-md-8">
-              <p>© Copyright 2017. All Rights Reserved.</p>
-            </div>
-            <div class="col-md-4">
-              <nav id="sub-menu">
-                <ul>
-                  <li>
-                    <a href="/">FAQ's</a>
-                  </li>
-                  <li>
-                    <a href="/">Sitemap</a>
-                  </li>
-                  <li>
-                    <a href="/">Contact</a>
-                  </li>
-                </ul>
-              </nav>
+        <div class="footer-copyright">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-2">
+                <a href="index.html" class="logo">
+                  <img alt="Porto Website Template" class="img-responsive" width="1000" src="<?= base_url() ?>assets/img/wri.png">
+                </a>
+              </div>
+              <div class="col-md-8">
+                <p>© Copyright 2017. All Rights Reserved.</p>
+              </div>
+              <div class="col-md-4">
+                <nav id="sub-menu">
+                  <ul>
+                    <li>
+                      <a href="/">FAQ's</a>
+                    </li>
+                    <li>
+                      <a href="/">Sitemap</a>
+                    </li>
+                    <li>
+                      <a href="/">Contact</a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </footer>
-  </div>
+      </footer>
+    </div>
 
-  <!-- Vendor -->
-  <script src="<?= base_url() ?>assets/vendor/jquery/jquery.js"></script>
-  <script src="<?= base_url() ?>assets/vendor/jquery.appear/jquery.appear.js"></script>
-  <script src="<?= base_url() ?>assets/vendor/jquery.easing/jquery.easing.js"></script>
-  <script src="<?= base_url() ?>assets/vendor/bootstrap/js/bootstrap.min.js"></script>
-  <script src="<?= base_url() ?>assets/vendor/jquery.validation/jquery.validation.js"></script>
-  <script src="<?= base_url() ?>assets/vendor/jquery.gmap/jquery.gmap.js"></script>
-  <script src="<?= base_url() ?>assets/vendor/jquery.lazyload/jquery.lazyload.js"></script>
-  <script src="<?= base_url() ?>assets/vendor/owl.carousel/owl.carousel.js"></script>
-  <script src="<?= base_url() ?>assets/vendor/magnific-popup/jquery.magnific-popup.js"></script>
+    <!-- Vendor -->
+    <script src="<?= base_url() ?>assets/vendor/jquery/jquery.js"></script>
+    <script src="<?= base_url() ?>assets/vendor/jquery.appear/jquery.appear.js"></script>
+    <script src="<?= base_url() ?>assets/vendor/jquery.easing/jquery.easing.js"></script>
+    <script src="<?= base_url() ?>assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="<?= base_url() ?>assets/vendor/jquery.validation/jquery.validation.js"></script>
+    <script src="<?= base_url() ?>assets/vendor/jquery.gmap/jquery.gmap.js"></script>
+    <script src="<?= base_url() ?>assets/vendor/jquery.lazyload/jquery.lazyload.js"></script>
+    <script src="<?= base_url() ?>assets/vendor/owl.carousel/owl.carousel.js"></script>
+    <script src="<?= base_url() ?>assets/vendor/magnific-popup/jquery.magnific-popup.js"></script>
 
-  <script src="<?= base_url() ?>assets/js/theme.js"></script>
-  <script src="<?= base_url() ?>assets/vendor/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
-  <script src="<?= base_url() ?>assets/vendor/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
-  <script src="<?= base_url() ?>assets/js/theme.init.js"></script>
-  <script src="<?= base_url() ?>assets/js/list.pagination.min.js"></script>
-  <script src="<?= base_url() ?>assets/js/list.min.js"></script>
-  <script src="<?= base_url() ?>assets/js/default.js"></script>
-</body>
-</html>
+    <script src="<?= base_url() ?>assets/js/theme.js"></script>
+    <script src="<?= base_url() ?>assets/vendor/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
+    <script src="<?= base_url() ?>assets/vendor/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+    <script src="<?= base_url() ?>assets/js/theme.init.js"></script>
+    <script src="<?= base_url() ?>assets/js/list.pagination.min.js"></script>
+    <script src="<?= base_url() ?>assets/js/list.min.js"></script>
+    <script src="<?= base_url() ?>assets/js/default.js"></script>
+  </body>
+  </html>
