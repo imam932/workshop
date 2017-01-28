@@ -128,7 +128,7 @@
                           </a>
                         </li>
                         <li>
-                          <a href="#">
+                          <a href="<?= base_url() ?>Contact">
                             Contact Us
                           </a>
                         </li>
