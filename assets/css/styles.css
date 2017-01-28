@@ -217,7 +217,9 @@ anggota h4{
   font-family: "Open Sans", Arial, sans-serif;
   font-weight: 400;
   font-size: 1em;
-  padding: 1em;
+  padding-left: 3em;
+  padding-right: 3em;
+  padding-top: 1.5em;
 }
 
 .organisasi, .about__title, .contact_panel{

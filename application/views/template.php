@@ -79,14 +79,14 @@
                         <i class="fa fa-facebook"></i>
                       </a>
                     </li>
-                    <li class="social-icons-twitter">
-                      <a href="http://www.twitter.com/" target="_blank" title="Twitter">
-                        <i class="fa fa-twitter"></i>
+                    <li class="social-icons-google-plus">
+                      <a href="https://plus.google.com/u/0/106221484184732111240" target="_blank" title="Google +">
+                        <i class="fa fa-google-plus"></i>
                       </a>
                     </li>
-                    <li class="social-icons-linkedin">
-                      <a href="http://www.linkedin.com/" target="_blank" title="Linkedin">
-                        <i class="fa fa-linkedin"></i>
+                    <li class="social-icons-github">
+                      <a href="https://github.com/wridev" target="_blank" title="Github">
+                        <i class="fa fa-github"></i>
                       </a>
                     </li>
 
@@ -256,12 +256,14 @@
                     <i class="fa fa-facebook"></i>
                   </a>
                 </li>
-                <li class="social-icons-twitter">
-                  <a href="http://www.twitter.com/" target="_blank" title="Twitter">
-                    <i class="fa fa-twitter"></i></a>
-                  </li>
-                  <li class="social-icons-linkedin"><a href="http://www.linkedin.com/" target="_blank" title="Linkedin">
-                    <i class="fa fa-linkedin"></i>
+                <li class="social-icons-google-plus">
+                  <a href="https://plus.google.com/u/0/106221484184732111240" target="_blank" title="Google +">
+                    <i class="fa fa-google-plus"></i>
+                  </a>
+                </li>
+                  <li class="social-icons-github">
+                    <a href="https://github.com/wridev" target="_blank" title="Github">
+                      <i class="fa fa-github"></i>
                   </a>
                 </li>
               </ul>

@@ -12,12 +12,14 @@
     <div class="about_content">
       <b>Workshop Riset Informatika</b> adalah komunitas yang memiliki tujuan
       bersama untuk membina dan mengembangkan kreatifitas mahasiswa
-      dalam bidang ilmu pengetahuan dan teknologi.
+      dalam bidang ilmu pengetahuan dan teknologi. Untuk mewujudkan tujuan tersebut,
+      WRI memiliki pertemuan rutin setiap hari sabtu dengan kegiatan <b>Riset dan Sharing</b>.
+
     </div>
 
   </div>
   <div class="row about col-lg-12 col-md-12">
-    <hr class="tall">
+    <hr>
     <div class="about__title">
       <h2>Struktur Organisasi</h2>
     </div>
@@ -26,7 +28,7 @@
     <div class="organisasi col-lg-12 col-md-12">
       <anggota>
         <h4>Hilal</h4>
-        <i><p>Ketua umum</p></i>
+        <i><p>Ketua Umum</p></i>
         <img src="<?= base_url() ?>assets/img/avatar-2.jpg" alt="" class="img-circle">
       </anggota>
     </div>
@@ -34,22 +36,22 @@
     <!-- 2 -->
     <div class="organisasi col-lg-4 col-md-12">
       <anggota>
-        <h4>Hilal</h4>
-        <i><p>Ketua divisi</p></i>
+        <h4>Imam</h4>
+        <i><p>Ketua Divisi Pemrograman</p></i>
         <img src="<?= base_url() ?>assets/img/avatar-2.jpg" alt="" class="img-circle">
       </anggota>
     </div>
     <div class="organisasi col-lg-4 col-md-12">
       <anggota>
-        <h4>Hilal</h4>
-        <i><p>Ketua divisi</p></i>
+        <h4>Bima</h4>
+        <i><p>Ketua Divisi Multimedia</p></i>
         <img src="<?= base_url() ?>assets/img/avatar-2.jpg" alt="" class="img-circle">
       </anggota>
     </div>
     <div class="organisasi col-lg-4 col-md-12">
       <anggota>
-        <h4>Hilal</h4>
-        <i><p>Ketua divisi</p></i>
+        <h4>Iko</h4>
+        <i><p>Ketua Divisi Networking</p></i>
         <img src="<?= base_url() ?>assets/img/avatar-2.jpg" alt="" class="img-circle">
       </anggota>
     </div>
@@ -57,14 +59,14 @@
     <!-- 3 -->
     <div class="organisasi col-lg-6 col-md-12">
       <anggota>
-        <h4>Hilal</h4>
+        <h4>Nadia</h4>
         <i><p>Sekretaris</p></i>
         <img src="<?= base_url() ?>assets/img/avatar-2.jpg" alt="" class="img-circle">
       </anggota>
     </div>
     <div class="organisasi col-lg-6 col-md-12">
       <anggota>
-        <h4>Hilal</h4>
+        <h4>Aidha</h4>
         <i><p>Bendahara</p></i>
         <img src="<?= base_url() ?>assets/img/avatar-2.jpg" alt="" class="img-circle">
       </anggota>
