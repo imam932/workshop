@@ -67,7 +67,7 @@ $(document).ready(function() {
 
 	// Paging search gallery
 	var optionsGallery = {
-		valueNames: [ 'title'],
+		valueNames: [ 'title', 'date'],
 		page: 9,
 		plugins: [
 			ListPagination({})
@@ -75,5 +75,22 @@ $(document).ready(function() {
 	};
 
 	var gallery = new List('gallery', optionsGallery);
+
+	$('.sort-gallery').on('click', function() {
+		// add class active
+		$('.sort-gallery').removeClass('active');
+		$(this).addClass("active");
+
+		var sort = this.text;
+		var orders = $('#select-orderGallery').val();
+
+		gallery.sort(sort, {order: orders});
+	});
+
+	$('#select-orderGallery').on('change', function() {
+		var sort = $('.sort-gallery.active').text();
+		var order = $(this).val();
+		gallery.sort(sort, {order: order});
+	});
 
 });

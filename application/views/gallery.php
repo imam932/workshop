@@ -75,15 +75,17 @@
             </div>
             <!-- panel right -->
             <div class="col-lg-4">
-              <div class="panel panel-default">
-                <div class="panel-heading">
-                  <b>Side Menu</b>
-                </div>
-                <div class="panel-body">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                  labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                  nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
-                </div>
+              <div class="list-group">
+                <h5 class="list-group-item header">Order By</h5>
+                <a href="#" class="list-group-item sort-gallery active">date</a>
+                <a href="#" class="list-group-item sort-gallery">title</a>
+              </div>
+
+              <div class="form-group">
+                <select class="form-control" id="select-orderGallery">
+                  <option value="asc">Ascending</option>
+                  <option value="desc" selected>Descending</option>
+                </select>
               </div>
             </div>
           </div>
