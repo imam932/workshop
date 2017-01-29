@@ -55,7 +55,7 @@
 
                 <div class="col-md-8 col-sm-8 col-xs-12">
                   <h6 class="title"><?= $row->title ?></h6>
-                  <!-- <div class="detail">
+                  <div class="detail">
 
                     <time class="date">
                       <span>
@@ -68,12 +68,7 @@
                         <?= $time->format('H:i') ?>
                       </span>
                     </time>
-
-                    <span>
-                      <i class="fa fa-tag"></i>
-                      <span class="category"><?= $row->category ?></span>
-                    </span>
-                  </div> -->
+                  </div>
                   <p class="text-preview">
                     <?= strip_tags($row->posting) ?>
                   </p>

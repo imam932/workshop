@@ -50,6 +50,28 @@ class Model_tutorial extends CI_Model
     }
   }
 
+  public function select_related($id_tutorial, $id_division, $limit=null)
+	{
+		$this->db->limit($limit);
+		$this->db->from($this->table);
+		$this->db->join('division', 'tutorial.id_division = division.id_division');
+		$this->db->join('user', 'tutorial.id_user = user.id_user');
+		$this->db->where('tutorial.id_division', $id_division);
+		$this->db->where('tutorial.id_tutorial !=', $id_tutorial);
+		$this->db->order_by('tutorial.id_tutorial', 'RANDOM');
+
+		$q = $this->db->get();
+
+		if ($q->num_rows() > 0)
+		{
+			return $q->result();
+		}
+		else
+		{
+			return array();
+		}
+	}
+
   public function insert($data)
   {
     $this->db->insert($this->table, $data);

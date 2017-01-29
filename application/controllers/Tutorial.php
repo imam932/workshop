@@ -30,11 +30,13 @@ class Tutorial extends CI_Controller
   {
     // load data
     $data['tutorial'] = $this->Model_tutorial->select_by_id($id);
+    $id_division = $data['tutorial'][0]->id_division;
+    $data['related'] = $this->Model_tutorial->select_related($id, $id_division, 4);
     $data['content'] = $this->load->view('tutorial_view', $data, TRUE);
 
     //load template
     $title = $data['tutorial'][0]->title;
-    $data['title'] = "tutorial";
+    $data['title'] = "Tutorial";
     $data['desc'] = "Tutorial of each division";
     $data['breadcrumb'] = array('Home', 'Tutorial', $title);
     $data['article_footer']   = $this->Model_article->select_all(4);
