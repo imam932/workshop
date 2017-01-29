@@ -17,7 +17,7 @@
 
       <span>
         <i class="fa fa-clock-o"></i>
-        <?= $time->format('h:i') ?>
+        <?= $time->format('H:i') ?>
       </span>
 
       <span>
@@ -33,6 +33,12 @@
   </div>
 
   <div class="col-md-4">
-    sidebar
+    <div class="list-group">
+      <h5 class="list-group-item header">Related Article</h5>
+      <a href="#" class="list-group-item filter-article-category active">category</a>
+      <?php foreach ($related as $row) { ?>
+        <!-- <a href="#" class="list-group-item filter-article-category"><?= $row->category ?></a> -->
+      <?php } ?>
+    </div>
   </div>
 </div>

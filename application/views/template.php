@@ -7,11 +7,11 @@
 
   <title>WRI | <?= $title ?></title>
 
-  <meta name="keywords" content="HTML5 Template"/>
-  <meta name="description" content="Porto - Responsive HTML5 Template">
-  <meta name="author" content="okler.net">
-  <link rel="shortcut icon" href="<?= base_url() ?> assets/img/favicon.ico" type="image/x-icon"/>
-  <link rel="apple-touch-icon" href="<?= base_url() ?>assets/img/apple-touch-icon.png">
+  <link rel="shortcut icon" href="<?= base_url() ?>assets/img/title.png" type="image/x-icon">
+
+  <meta name="keywords" content="WRI Polinema"/>
+  <meta name="description" content="Workshop Riset Informatika">
+  <meta name="author" content="WRI">
 
   <!-- Mobile Metas -->
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">

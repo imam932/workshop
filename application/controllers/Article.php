@@ -30,6 +30,8 @@ class Article extends CI_Controller
   {
     // load data
     $data['article'] = $this->Model_article->select_by_id($id);
+    $data['related'] = $this->Model_article->select_related($id_category, 5);
+    print_r($data['related']);
     $data['content'] = $this->load->view('article_view', $data, TRUE);
 
     //load template

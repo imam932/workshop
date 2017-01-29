@@ -49,6 +49,27 @@ class Model_article extends CI_Model
 		}
 	}
 
+	public function select_related($id_category=null, $limit=null)
+	{
+		$this->db->limit($limit);
+		$this->db->from($this->table);
+		$this->db->join('category', 'article.id_category = category.id_category');
+		$this->db->join('user', 'article.id_user = user.id_user');
+		$this->db->where('article.id_category', $id_category);
+		$this->db->order_by('article.id_article', 'RANDOM');
+
+		$q = $this->db->get();
+
+		if ($q->num_rows() == 0)
+		{
+			return $q->result();
+		}
+		else
+		{
+			return false;
+		}
+	}
+
 	public function insert($data)
 	{
 		$this->db->insert($this->table, $data);

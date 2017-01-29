@@ -30,7 +30,7 @@
 
                     <span>
                       <i class="fa fa-clock-o"></i>
-                      <?= $time->format('h:i') ?>
+                      <?= $time->format('H:i') ?>
                     </span>
                   </time>
 
@@ -67,7 +67,6 @@
         <h5 class="list-group-item header">Order By</h5>
         <a href="#" class="list-group-item sort-article active">date</a>
         <a href="#" class="list-group-item sort-article">title</a>
-        <a href="#" class="list-group-item sort-article">category</a>
       </div>
 
       <div class="form-group">

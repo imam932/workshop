@@ -4,13 +4,13 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="">
+  <meta name="description" content="Admin Page WRI">
+  <meta name="description" content="Workshop Riset Informatika">
   <meta name="author" content="">
 
   <title>Admin Page</title>
   <!-- Favicon -->
-  <link rel="shortcut icon" href="<?= base_url() ?> assets/img/favicon.ico" type="image/x-icon"/>
-  <link rel="apple-touch-icon" href="<?= base_url() ?>assets/img/apple-touch-icon.png">
+  <link rel="shortcut icon" href="<?= base_url() ?>assets/img/title.png" type="image/x-icon">
 
   <!-- Mobile Metas -->
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">

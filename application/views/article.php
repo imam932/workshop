@@ -31,7 +31,7 @@
 
                     <span>
                       <i class="fa fa-clock-o"></i>
-                      <?= $time->format('h:i') ?>
+                      <?= $time->format('H:i') ?>
                     </span>
                   </time>
 
