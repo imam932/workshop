@@ -21,6 +21,7 @@ class Tutorial extends Admin_Controller {
       $data['message'] = $this->session->flashdata('message');
     }
     //load page
+    $data['division'] = $this->Model_division->select_all();
     $data['content'] = $this->load->view('admin/tutorial', $data, TRUE);
 
     // load template

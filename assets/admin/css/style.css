@@ -49,7 +49,7 @@ p {
 	display: inline-block;
 }
 
-.panel.article .panel-footer > span {
+.panel.article .panel-footer > span, .panel.article .panel-footer time span {
 	display: inline-block;
 	margin-right: 10px;
 	line-height: 30px;

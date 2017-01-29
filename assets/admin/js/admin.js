@@ -82,7 +82,7 @@ $(document).ready(function() {
 
 	// Paging search article
 	var options = {
-		valueNames: [ 'title'],
+		valueNames: [ 'title', 'date', 'category'],
 		page: 5,
 		plugins: [
 			ListPagination({})
@@ -91,6 +91,55 @@ $(document).ready(function() {
 
 	// object paging article
 	var article = new List('article', options);
+
+	// filtering article
+	$('.filter-article-category').on('click', function() {
+
+		// add class active
+		$('.filter-article-category').removeClass('active');
+		$(this).addClass("active");
+
+		// filtering
+		var category = this.text;
+
+		if(category == "all category" || category == "all division")
+		{
+			article.filter();
+		}
+		else
+		{
+			article.filter(function(item)
+			{
+				if (item.values().category == category)
+				{
+					return true;
+				}
+				else
+				{
+					return false;
+				}
+			});
+		}
+	});
+
+	// sort article by
+	$('.sort-article').on('click', function() {
+		// add class active
+		$('.sort-article').removeClass('active');
+		$(this).addClass("active");
+
+		var sort = this.text;
+		var orders = $('#select-orderArticle').val();
+
+		article.sort(sort, {order: orders});
+	});
+
+	// sort article asc /desc
+	$('#select-orderArticle').on('change', function() {
+		var sort = $('.sort-article.active').text();
+		var order = $(this).val();
+		article.sort(sort, {order: order});
+	});
 
 
 	// Paging search gallery
