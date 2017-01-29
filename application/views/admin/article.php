@@ -40,10 +40,13 @@
 									</div>
 								</div>
 								<div class="panel-footer clearfix">
-									<span>
-										<i class="fa fa-calendar"></i>
-										<?= $time->format('d/m/Y') ?>
-									</span>
+
+									<time class="date">
+										<span>
+											<i class="fa fa-calendar"></i>
+											<?= $time->format('d/m/Y') ?>
+										</span>
+									</time>
 
 									<span>
 										<i class="fa fa-clock-o"></i>
@@ -52,7 +55,7 @@
 
 									<span>
 										<i class="fa fa-tag"></i>
-										<?= $row->category ?>
+										<span class="category"><?= $row->category ?></span>
 									</span>
 
 									<span>
@@ -75,11 +78,27 @@
 				</div>
 				<!-- panel Right -->
 				<div class="col-lg-3">
-					<div class="panel panel-default">
-						<div class="panel-body">
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium voluptatibus necessitatibus nesciunt vero, ea omnis eveniet veniam accusamus magni consequuntur officiis ipsum repellat cum, neque optio aut harum pariatur earum.
-						</div>
-					</div>
+					<div class="list-group">
+		        <h5 class="list-group-item header">View By Category</h5>
+		        <a href="#" class="list-group-item filter-article-category active">all category</a>
+		        <?php foreach ($category as $row) { ?>
+		          <a href="#" class="list-group-item filter-article-category"><?= $row->category ?></a>
+		        <?php } ?>
+		      </div>
+
+		      <div class="list-group">
+		        <h5 class="list-group-item header">Order By</h5>
+		        <a href="#" class="list-group-item sort-article active">date</a>
+		        <a href="#" class="list-group-item sort-article">title</a>
+		        <a href="#" class="list-group-item sort-article">category</a>
+		      </div>
+
+		      <div class="form-group">
+		        <select class="form-control" id="select-orderArticle">
+		          <option value="asc">Ascending</option>
+		          <option value="desc" selected>Descending</option>
+		        </select>
+		      </div>
 				</div>
 			</div>
 		</div>

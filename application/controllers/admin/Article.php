@@ -21,6 +21,7 @@ class Article extends Admin_Controller {
 			$data['message'] = $this->session->flashdata('message');
 		}
 		// load page
+		$data['category'] = $this->Model_category->select_all();
 		$data['content'] = $this->load->view('admin/article', $data, TRUE);
 
 		//load template
