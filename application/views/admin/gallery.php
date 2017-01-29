@@ -15,7 +15,7 @@
           <div class="col-lg-8" id="gallery">
 
             <div class="form-group">
-              <input class="search form-control" placeholder="search gallery" onkey="alert('reset')">
+              <input class="search form-control" placeholder="search gallery">
             </div>
 
             <div class="list row">
@@ -28,14 +28,16 @@
                   </div>
                   <div class="panel-footer">
                     <div class="gallery-description">
-                      <span>
-                        <i class="fa fa-calendar"></i>
-                        <?= $time->format('d/m/Y') ?>
-                      </span>
-                      <span>
-                        <i class="fa fa-clock-o"></i>
-                        <?= $time->format('H:i') ?>
-                      </span>
+                      <time class="date">
+                        <span>
+                          <i class="fa fa-calendar"></i>
+                          <?= $time->format('d/m/Y') ?>
+                        </span>
+                        <span>
+                          <i class="fa fa-clock-o"></i>
+                          <?= $time->format('H:i') ?>
+                        </span>
+                      </time>
                     </div>
                     <div class="gallery-name">
                       <span class="title"><?=$row->title;?></span>
@@ -74,6 +76,19 @@
                     <input type="submit" name="" value="Add" class="btn btn-primary">
                   </div>
                 </form>
+              </div>
+
+              <div class="list-group">
+                <h5 class="list-group-item header">Order By</h5>
+                <a href="#" class="list-group-item sort-gallery active">date</a>
+                <a href="#" class="list-group-item sort-gallery">title</a>
+              </div>
+
+              <div class="form-group">
+                <select class="form-control" id="select-orderGallery">
+                  <option value="asc">Ascending</option>
+                  <option value="desc" selected>Descending</option>
+                </select>
               </div>
             </div>
           </div>
