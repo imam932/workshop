@@ -1,6 +1,11 @@
 <div class="row">
-  <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+  <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12" id="message">
+
+    <div class="form-group">
+      <input type="text" class="form-control search" placeholder="Search Message">
+    </div>
+
+    <div class="panel-group list" id="accordion" role="tablist" aria-multiselectable="true">
       <?php
       foreach ($message as $row) {
         $time = new DateTime($row->date);
@@ -11,22 +16,24 @@
 
               <a class="message-show" role="button" data-toggle="collapse" data-parent="#accordion" id="<?= $row->id_message ?>" href="#collapse<?= $row->id_message ?>" aria-controls="collapse<?= $row->id_message ?>">
                 <div class="panel-detail">
-                  <span>
-                    <i class="fa fa-calendar"></i>
-                    <?= $time->format("d/m/Y") ?>
-                  </span>
+                  <time class="date">
+                    <span>
+                      <i class="fa fa-calendar"></i>
+                      <?= $time->format("d/m/Y") ?>
+                    </span>
 
-                  <span>
-                    <i class="fa fa-clock-o"></i>
-                    <?= $time->format("h:i") ?>
-                  </span>
+                    <span>
+                      <i class="fa fa-clock-o"></i>
+                      <?= $time->format("H:i") ?>
+                    </span>
+                  </time>
 
-                  <span>
+                  <span class="name">
                     <i class="fa fa-pencil"></i>
                     <?= $row->name ?>
                   </span>
 
-                  <span>
+                  <span class="email">
                     <i class="fa fa-envelope"></i>
                     <?= $row->email ?>
                   </span>
@@ -48,16 +55,23 @@
         </div>
         <?php } ?>
       </div>
+
+      <ul class="pagination"></ul>
     </div>
 
     <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title">Side Menu</h3>
-        </div>
-        <div class="panel-body">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </div>
+      <div class="list-group">
+        <h5 class="list-group-item header">Order By</h5>
+        <a href="#" class="list-group-item sort-message active">date</a>
+        <a href="#" class="list-group-item sort-message">name</a>
+        <a href="#" class="list-group-item sort-message">email</a>
+      </div>
+
+      <div class="form-group">
+        <select class="form-control" id="select-orderMessage">
+          <option value="asc">Ascending</option>
+          <option value="desc" selected>Descending</option>
+        </select>
       </div>
     </div>
   </div>
