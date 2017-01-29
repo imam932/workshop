@@ -13,13 +13,13 @@
         <div class="row article-row">
           <div class="col-md-12">
             <div class="row">
-              <div class="col-md-4">
+              <div class="col-md-4 col-sm-4 col-xs-12">
                 <div class="image-container">
                   <img src="<?= base_url() ?>assets/upload/article/<?= $row->image ?>" alt="">
                 </div>
               </div>
 
-              <div class="col-md-8">
+              <div class="col-md-8 col-sm-8 col-xs-12">
                 <h4 class="title"><?= $row->title ?></h4>
                 <div class="detail">
 

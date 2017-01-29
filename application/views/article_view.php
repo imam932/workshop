@@ -33,12 +33,61 @@
   </div>
 
   <div class="col-md-4">
-    <div class="list-group">
-      <h5 class="list-group-item header">Related Article</h5>
-      <a href="#" class="list-group-item filter-article-category active">category</a>
-      <?php foreach ($related as $row) { ?>
-        <!-- <a href="#" class="list-group-item filter-article-category"><?= $row->category ?></a> -->
-      <?php } ?>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Related Article</h3>
+      </div>
+      <div class="panel-body">
+        <?php
+        if(sizeof($related) > 0)
+        {
+          $i = 1;
+          foreach ($related as $row) {
+        ?>
+          <div class="row article-row">
+            <div class="col-md-12">
+              <div class="row">
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                    <div class="image-container">
+                      <img src="<?= base_url() ?>assets/upload/article/<?= $row->image ?>" alt="">
+                    </div>
+                </div>
+
+                <div class="col-md-8 col-sm-8 col-xs-12">
+                  <h6 class="title"><?= $row->title ?></h6>
+                  <!-- <div class="detail">
+
+                    <time class="date">
+                      <span>
+                        <i class="fa fa-calendar"></i>
+                        <?= $time->format('d/m/Y') ?>
+                      </span>
+
+                      <span>
+                        <i class="fa fa-clock-o"></i>
+                        <?= $time->format('H:i') ?>
+                      </span>
+                    </time>
+
+                    <span>
+                      <i class="fa fa-tag"></i>
+                      <span class="category"><?= $row->category ?></span>
+                    </span>
+                  </div> -->
+                  <p class="text-preview">
+                    <?= strip_tags($row->posting) ?>
+                  </p>
+
+                  <a href="<?= base_url() ?>Article/view/<?= $row->id_article ?>" class="btn btn-primary">Read more</a>
+                </div>
+              </div>
+              <?php if($i < sizeof($related)) { ?>
+              <hr>
+              <?php } ?>
+            </div>
+          </div>
+        <?php $i++; } } else { echo "No Related Article"; } ?>
+      </div>
     </div>
   </div>
 </div>
