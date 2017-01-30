@@ -108,7 +108,9 @@
             <div class="box-content" align="center">
               <img src="<?= base_url() ?>assets/img/divisi_pemograman.jpg" class="img-responsive" width="50%"  alt="">
               <h4 class="text-uppercase">Progamming</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum..</p>
+              <p>Dimana disini dikembangkan berbagai cabang ilmu yang berfokus pada proses pengembangan program suatu
+                 perangkat lunak, yang menggunakan berbagai bahasa pemrograman, seperti : C++, Java, Html, Php, Css, Javascript,
+                 dan bahasa pemrograman lainnya.</p>
               <!-- <p><a href="/" class="lnk-primary learn-more">Learn More <i class="fa fa-angle-right"></i></a></p> -->
             </div>
           </div>
@@ -118,7 +120,9 @@
             <div class="box-content" align="center">
               <img src="<?= base_url() ?>assets/img/divisi_multimedia.png" class="img-responsive" width="50%"  alt="">
               <h4 class="text-uppercase">Multimedia</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum..</p>
+              <p>Divisi ini berfokus pada penyampaian informasi yang menggunakan berbagai media digital, mecakup desain
+                grafis, audio, video, serta bidang multimedia lainnya. Divisi ini juga memiliki peran penting dalam proses
+                pengembangan game, terutama dalam bidang desain.</p>
               <!-- <p><a href="/" class="lnk-primary learn-more">Learn More <i class="fa fa-angle-right"></i></a></p> -->
             </div>
           </div>
@@ -128,7 +132,10 @@
             <div class="box-content" align="center">
               <img src="<?= base_url() ?>assets/img/divisi_network.png" class="img-responsive" width="50%"  alt="">
               <h4 class="text-uppercase">Networking</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum..</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                 nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum..</p>
               <!-- <p><a href="/" class="lnk-primary learn-more">Learn More <i class="fa fa-angle-right"></i></a></p> -->
             </div>
           </div>
