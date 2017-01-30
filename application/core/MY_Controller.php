@@ -7,7 +7,7 @@ class Admin_Controller extends CI_Controller
 	public function __construct()
 	{
 		parent::__construct();
-
+		date_default_timezone_set('Asia/Jakarta');
 		if(!$this->session->has_userdata('logged_in'))
 		{
 			redirect('admin/Login','refresh');
@@ -21,7 +21,7 @@ class User_Controller extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->model(array('Model_log'));
-
+		date_default_timezone_set('Asia/Jakarta');
 		$data['ip'] = $this->input->server('REMOTE_ADDR');
 		$data['ref'] = $this->input->server('HTTP_REFERER');
 		$data['url'] = $this->input->server('REQUEST_URI');
