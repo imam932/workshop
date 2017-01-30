@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 30, 2017 at 08:51 
+-- Generation Time: Jan 30, 2017 at 03:35 
 -- Server version: 10.1.19-MariaDB
 -- PHP Version: 7.0.9
 
@@ -163,7 +163,7 @@ INSERT INTO `gallery` (`id_gallery`, `date`, `title`, `image`, `description`) VA
 CREATE TABLE `log` (
   `id_log` int(11) NOT NULL,
   `ip` varchar(15) NOT NULL,
-  `ref` text NOT NULL,
+  `ref` text,
   `url` text NOT NULL,
   `date` datetime NOT NULL,
   `agent` text NOT NULL,
@@ -188,7 +188,9 @@ INSERT INTO `log` (`id_log`, `ip`, `ref`, `url`, `date`, `agent`, `location`) VA
 (11, '127.0.0.1', 'http://localhost/workshop/Tutorial', '/workshop/Article', '2017-01-30 14:25:26', 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:51.0) Gecko/20100101 Firefox/51.0', ''),
 (12, '127.0.0.1', 'http://localhost/workshop/Article', '/workshop/Tutorial', '2017-01-30 14:25:34', 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:51.0) Gecko/20100101 Firefox/51.0', ''),
 (13, '127.0.0.1', 'http://localhost/workshop/Tutorial', '/workshop/', '2017-01-30 14:26:49', 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:51.0) Gecko/20100101 Firefox/51.0', ''),
-(14, '127.0.0.1', 'http://localhost/workshop/', '/workshop/Article', '2017-01-30 14:49:40', 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:51.0) Gecko/20100101 Firefox/51.0', '//');
+(14, '127.0.0.1', 'http://localhost/workshop/', '/workshop/Article', '2017-01-30 14:49:40', 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:51.0) Gecko/20100101 Firefox/51.0', '//'),
+(15, '127.0.0.1', NULL, '/workshop/', '2017-01-30 20:11:08', 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:51.0) Gecko/20100101 Firefox/51.0', '//'),
+(16, '127.0.0.1', NULL, '/workshop/', '2017-01-30 21:32:30', 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:51.0) Gecko/20100101 Firefox/51.0', 'unknown');
 
 -- --------------------------------------------------------
 
@@ -357,7 +359,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `log`
 --
 ALTER TABLE `log`
-  MODIFY `id_log` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_log` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
