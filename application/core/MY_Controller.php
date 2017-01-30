@@ -28,6 +28,13 @@ class User_Controller extends CI_Controller
 		$data['date'] = date('Y-m-d H:i:s');
 		$data['agent'] = $this->input->server('HTTP_USER_AGENT');
 
+		// get Location
+		$detail = json_decode(file_get_contents("http://www.geoplugin.net/json.gp?ip=" . $data['ip'] ));
+		$country = $detail->geoplugin_countryName;
+		$region = $detail->geoplugin_region;
+		$city = $detail->geoplugin_city;
+		$data['location'] = $country . "/" . $region . "/" . $city;
+
 		$this->Model_log->insert($data);
 	}
 }
