@@ -50,7 +50,7 @@ class Article extends Admin_Controller {
 			else
 			{
 				$data['id_article'] = random_string('alnum', 6) . date('my') . random_string('alnum', 5);
-				$data['date'] = date('Y-m-d h:i:s');
+				$data['date'] = date('Y-m-d H:i:s');
 				$data['title'] = $this->input->post('title');
 				$data['id_category'] = $this->input->post('id_category');
 				$data['posting'] = $this->input->post('posting');

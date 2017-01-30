@@ -45,7 +45,7 @@ class Contact extends User_Controller{
       $data['id_message'] = random_string('alnum', 4) . date('dmy') . random_string('alnum', 4);
       $data['name']       = $this->input->post('name');
       $data['email']      = $this->input->post('email');
-      $data['date']       = date('Y-m-d h:i:s');
+      $data['date']       = date('Y-m-d H:i:s');
       $data['message']    = $this->input->post('message');
       $data['readed'] = FALSE;
 

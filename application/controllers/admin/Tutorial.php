@@ -50,7 +50,7 @@ class Tutorial extends Admin_Controller {
       else
       {
         $data['id_tutorial'] = random_string('alnum', 6) . date('my') . random_string('alnum', 5);
-        $data['date']        = date('Y-m-d h:i:s');
+        $data['date']        = date('Y-m-d H:i:s');
         $data['title']       = $this->input->post('title');
         $data['description'] = $this->input->post('description');
         $data['id_user']     = $this->session->userdata('logged_in')['id_user'];

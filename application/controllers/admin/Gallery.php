@@ -48,7 +48,7 @@ class Gallery extends Admin_Controller
     else
     {
       $data['title'] = $this->input->post('title');
-      $data['date'] = date('Y-m-d h:i:s');
+      $data['date'] = date('Y-m-d H:i:s');
       $data['description'] = $this->input->post('description');
       $data['id_gallery'] = random_string('alnum', 5) . date('my') . random_string('alnum', 6);
 
