@@ -36,7 +36,7 @@
         <h3 class="panel-title">Platform Used</h3>
       </div>
       <div class="panel-body">
-
+        <div id="platformChart"></div>
       </div>
     </div>
   </div>

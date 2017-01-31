@@ -274,11 +274,23 @@ $(document).ready(function() {
 		success: function (data) {
 			var chartData = JSON.parse(data);
 
-			var sum = function(a, b) { return a + b };
 			browserChart = new Chartist.Pie('#browserChart', chartData, {
 				height: 300
 			});
 		}
 	});
 
+	// platform chart
+	var platformChart;
+	$.ajax({
+		type: 'POST',
+		url: 'Log/get_platform',
+		success: function (data) {
+			var chartData = JSON.parse(data);
+
+			platformChart = new Chartist.Pie('#platformChart', chartData, {
+				height: 300
+			});
+		}
+	});
 });
