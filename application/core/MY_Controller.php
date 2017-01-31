@@ -24,13 +24,23 @@ class User_Controller extends CI_Controller
 		// check if cookie is exist
 		if(is_null(get_cookie("visitor")))
 		{
-			// get visitor information
 			$this->load->model(array('Model_log'));
 			date_default_timezone_set('Asia/Jakarta');
+
+			// get visitor IP
 			$data['ip'] = $this->input->server('REMOTE_ADDR');
-			$data['ref'] = $this->input->server('HTTP_REFERER');
+
+			// get visitor referrer
+			$data['ref'] = $this->agent->referrer();
+
+			// when visitor come ?
 			$data['date'] = date('Y-m-d H:i:s');
-			$data['agent'] = $this->input->server('HTTP_USER_AGENT');
+
+			//get visitor browser
+			$data['browser'] = $this->agent->browser();
+
+			//get visitor platform
+			$data['platform'] = $this->agent->platform();
 
 			// get visitor Location
 			$data['location'] = "unknown";
@@ -49,7 +59,7 @@ class User_Controller extends CI_Controller
 
 			// set cookie
 			$expire = 60 * 60 * 24;
-			set_cookie("visitor", $data['agent'], $expire);
+			set_cookie("visitor", $data['browser'], $expire);
 		}
 	}
 }

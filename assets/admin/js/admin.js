@@ -215,4 +215,55 @@ $(document).ready(function() {
 		$.get('Message/read/' + id);
 	});
 
+	// visitor chartData
+	var options = {
+		low: 0,
+		showArea: true,
+		height: 300,
+		plugins: [
+			Chartist.plugins.ctPointLabels({
+				textAnchor: 'middle'
+			})
+		]
+	}
+
+	var visitorChart;
+	$.ajax({
+		type: 'POST',
+		url: 'Log/get_monthly',
+		success: function (data) {
+			var chartData = JSON.parse(data);
+			visitorChart = new Chartist.Line('#visitorChart', chartData, options);
+		}
+	});
+
+	$("#select_visitor").on("change", function() {
+		var url = "";
+		if($(this).val() == "day")
+		{
+			url = "Log/get_daily";
+		}
+		else if($(this).val() == "month")
+		{
+			url = "Log/get_monthly";
+		}
+		else if($(this).val() == "year")
+		{
+			url = "Log/get_yearly";
+		}
+		else
+		{
+			url = "Log/get_all";
+		}
+
+		$.ajax({
+			type: 'POST',
+			url: url,
+			success: function (data) {
+				var chartData = JSON.parse(data);
+				visitorChart.update(chartData, options);
+			}
+		});
+	});
+
 });

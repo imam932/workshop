@@ -159,3 +159,16 @@ a:hover {
   color: #494949;
 	font-weight: bold;
 }
+
+.ct-series-a .ct-line {
+	stroke: #ff971c !important;
+}
+
+.ct-series-a .ct-point {
+  /* Colour of your points */
+  stroke: #ff6b00 !important;
+}
+
+.ct-label {
+	font-size: 13px !important;
+}
