@@ -70,6 +70,15 @@ class Model_log extends CI_Model
     return $query;
   }
 
+  public function select_where($field, $value)
+  {
+    $this->db->order_by("date");
+    $this->db->where($field, $value);
+    $query = $this->db->get($this->table);
+
+    return $query;
+  }
+
   public function insert($data)
   {
     $this->db->insert($this->table, $data);

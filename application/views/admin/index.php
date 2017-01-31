@@ -17,4 +17,27 @@
       </div>
     </div>
   </div>
+  <div class="col-md-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Browser Used</h3>
+      </div>
+      <div class="panel-body">
+        <div id="browserChart"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Platform Used</h3>
+      </div>
+      <div class="panel-body">
+
+      </div>
+    </div>
+  </div>
 </div>

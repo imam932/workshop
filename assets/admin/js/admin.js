@@ -266,4 +266,19 @@ $(document).ready(function() {
 		});
 	});
 
+	// browser chart
+	var browserChart;
+	$.ajax({
+		type: 'POST',
+		url: 'Log/get_browser',
+		success: function (data) {
+			var chartData = JSON.parse(data);
+
+			var sum = function(a, b) { return a + b };
+			browserChart = new Chartist.Pie('#browserChart', chartData, {
+				height: 300
+			});
+		}
+	});
+
 });
