@@ -20,27 +20,37 @@ class User_Controller extends CI_Controller
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->model(array('Model_log'));
-		date_default_timezone_set('Asia/Jakarta');
-		$data['ip'] = $this->input->server('REMOTE_ADDR');
-		$data['ref'] = $this->input->server('HTTP_REFERER');
-		$data['url'] = $this->input->server('REQUEST_URI');
-		$data['date'] = date('Y-m-d H:i:s');
-		$data['agent'] = $this->input->server('HTTP_USER_AGENT');
 
-		// get Location
-		$data['location'] = "unknown";
-		$detail = json_decode(file_get_contents("http://www.geoplugin.net/json.gp?ip=" . $data['ip'] ));
-
-		if($detail->geoplugin_status == 200)
+		// check if cookie is exist
+		if(is_null(get_cookie("visitor")))
 		{
-			$country = $detail->geoplugin_countryName;
-			$region = $detail->geoplugin_region;
-			$city = $detail->geoplugin_city;
-			$data['location'] = $country . "/" . $region . "/" . $city;
+			// get visitor information
+			$this->load->model(array('Model_log'));
+			date_default_timezone_set('Asia/Jakarta');
+			$data['ip'] = $this->input->server('REMOTE_ADDR');
+			$data['ref'] = $this->input->server('HTTP_REFERER');
+			$data['date'] = date('Y-m-d H:i:s');
+			$data['agent'] = $this->input->server('HTTP_USER_AGENT');
+
+			// get visitor Location
+			$data['location'] = "unknown";
+			$detail = json_decode(file_get_contents("http://www.geoplugin.net/json.gp?ip=" . $data['ip'] ));
+
+			if($detail->geoplugin_status == 200)
+			{
+				$country = $detail->geoplugin_countryName;
+				$region = $detail->geoplugin_region;
+				$city = $detail->geoplugin_city;
+				$data['location'] = $country . "/" . $region . "/" . $city;
+			}
+
+			// insert visitor to db
+			$this->Model_log->insert($data);
+
+			// set cookie
+			$expire = 60 * 60 * 24;
+			set_cookie("visitor", $data['agent'], $expire);
 		}
-		
-		$this->Model_log->insert($data);
 	}
 }
 

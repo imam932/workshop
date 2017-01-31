@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 30, 2017 at 03:35 
+-- Generation Time: Jan 31, 2017 at 05:05 
 -- Server version: 10.1.19-MariaDB
 -- PHP Version: 7.0.9
 
@@ -164,7 +164,6 @@ CREATE TABLE `log` (
   `id_log` int(11) NOT NULL,
   `ip` varchar(15) NOT NULL,
   `ref` text,
-  `url` text NOT NULL,
   `date` datetime NOT NULL,
   `agent` text NOT NULL,
   `location` text NOT NULL
@@ -174,23 +173,30 @@ CREATE TABLE `log` (
 -- Dumping data for table `log`
 --
 
-INSERT INTO `log` (`id_log`, `ip`, `ref`, `url`, `date`, `agent`, `location`) VALUES
-(1, '127.0.0.1', 'http://localhost/workshop/', '/workshop/About', '2017-01-30 04:37:29', 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:51.0) Gecko/20100101 Firefox/51.0', ''),
-(2, '127.0.0.1', 'http://localhost/workshop/', '/workshop/About', '2017-01-30 04:38:32', 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:51.0) Gecko/20100101 Firefox/51.0', ''),
-(3, '127.0.0.1', 'http://localhost/workshop/', '/workshop/About', '2017-01-30 04:42:42', 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:51.0) Gecko/20100101 Firefox/51.0', ''),
-(4, '127.0.0.1', 'http://localhost/workshop/', '/workshop/About', '2017-01-30 04:45:06', 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:51.0) Gecko/20100101 Firefox/51.0', ''),
-(5, '127.0.0.1', 'http://localhost/workshop/About', '/workshop/', '2017-01-30 04:45:08', 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:51.0) Gecko/20100101 Firefox/51.0', ''),
-(6, '127.0.0.1', 'http://localhost/workshop/', '/workshop/Article', '2017-01-30 04:45:55', 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:51.0) Gecko/20100101 Firefox/51.0', ''),
-(7, '127.0.0.1', 'http://localhost/workshop/Article', '/workshop/Article/view/XDeLCf011737UCl', '2017-01-30 04:46:13', 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:51.0) Gecko/20100101 Firefox/51.0', ''),
-(8, '127.0.0.1', 'http://localhost/workshop/Article/view/XDeLCf011737UCl', '/workshop/', '2017-01-30 04:47:18', 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:51.0) Gecko/20100101 Firefox/51.0', ''),
-(9, '127.0.0.1', 'http://localhost/workshop/', '/workshop/Gallery', '2017-01-30 07:31:03', 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:51.0) Gecko/20100101 Firefox/51.0', ''),
-(10, '127.0.0.1', 'http://localhost/workshop/Gallery', '/workshop/Tutorial', '2017-01-30 13:34:11', 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:51.0) Gecko/20100101 Firefox/51.0', ''),
-(11, '127.0.0.1', 'http://localhost/workshop/Tutorial', '/workshop/Article', '2017-01-30 14:25:26', 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:51.0) Gecko/20100101 Firefox/51.0', ''),
-(12, '127.0.0.1', 'http://localhost/workshop/Article', '/workshop/Tutorial', '2017-01-30 14:25:34', 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:51.0) Gecko/20100101 Firefox/51.0', ''),
-(13, '127.0.0.1', 'http://localhost/workshop/Tutorial', '/workshop/', '2017-01-30 14:26:49', 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:51.0) Gecko/20100101 Firefox/51.0', ''),
-(14, '127.0.0.1', 'http://localhost/workshop/', '/workshop/Article', '2017-01-30 14:49:40', 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:51.0) Gecko/20100101 Firefox/51.0', '//'),
-(15, '127.0.0.1', NULL, '/workshop/', '2017-01-30 20:11:08', 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:51.0) Gecko/20100101 Firefox/51.0', '//'),
-(16, '127.0.0.1', NULL, '/workshop/', '2017-01-30 21:32:30', 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:51.0) Gecko/20100101 Firefox/51.0', 'unknown');
+INSERT INTO `log` (`id_log`, `ip`, `ref`, `date`, `agent`, `location`) VALUES
+(1, '127.0.0.1', 'http://localhost/workshop/', '2017-01-30 04:37:29', 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:51.0) Gecko/20100101 Firefox/51.0', ''),
+(2, '127.0.0.1', 'http://localhost/workshop/', '2017-01-30 04:38:32', 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:51.0) Gecko/20100101 Firefox/51.0', ''),
+(3, '127.0.0.1', 'http://localhost/workshop/', '2017-01-30 04:42:42', 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:51.0) Gecko/20100101 Firefox/51.0', ''),
+(4, '127.0.0.1', 'http://localhost/workshop/', '2017-01-30 04:45:06', 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:51.0) Gecko/20100101 Firefox/51.0', ''),
+(5, '127.0.0.1', 'http://localhost/workshop/About', '2017-01-30 04:45:08', 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:51.0) Gecko/20100101 Firefox/51.0', ''),
+(6, '127.0.0.1', 'http://localhost/workshop/', '2017-01-30 04:45:55', 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:51.0) Gecko/20100101 Firefox/51.0', ''),
+(7, '127.0.0.1', 'http://localhost/workshop/Article', '2017-01-30 04:46:13', 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:51.0) Gecko/20100101 Firefox/51.0', ''),
+(8, '127.0.0.1', 'http://localhost/workshop/Article/view/XDeLCf011737UCl', '2017-01-30 04:47:18', 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:51.0) Gecko/20100101 Firefox/51.0', ''),
+(9, '127.0.0.1', 'http://localhost/workshop/', '2017-01-30 07:31:03', 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:51.0) Gecko/20100101 Firefox/51.0', ''),
+(10, '127.0.0.1', 'http://localhost/workshop/Gallery', '2017-01-30 13:34:11', 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:51.0) Gecko/20100101 Firefox/51.0', ''),
+(11, '127.0.0.1', 'http://localhost/workshop/Tutorial', '2017-01-30 14:25:26', 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:51.0) Gecko/20100101 Firefox/51.0', ''),
+(12, '127.0.0.1', 'http://localhost/workshop/Article', '2017-01-30 14:25:34', 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:51.0) Gecko/20100101 Firefox/51.0', ''),
+(13, '127.0.0.1', 'http://localhost/workshop/Tutorial', '2017-01-30 14:26:49', 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:51.0) Gecko/20100101 Firefox/51.0', ''),
+(14, '127.0.0.1', 'http://localhost/workshop/', '2017-01-30 14:49:40', 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:51.0) Gecko/20100101 Firefox/51.0', '//'),
+(15, '127.0.0.1', NULL, '2017-01-30 20:11:08', 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:51.0) Gecko/20100101 Firefox/51.0', '//'),
+(16, '127.0.0.1', NULL, '2017-01-30 21:32:30', 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:51.0) Gecko/20100101 Firefox/51.0', 'unknown'),
+(17, '127.0.0.1', NULL, '2017-01-30 21:37:25', 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:51.0) Gecko/20100101 Firefox/51.0', 'unknown'),
+(18, '127.0.0.1', NULL, '2017-01-31 10:05:00', 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:51.0) Gecko/20100101 Firefox/51.0', 'unknown'),
+(19, '127.0.0.1', NULL, '2017-01-31 10:07:03', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.90 Safari/537.36', 'unknown'),
+(20, '127.0.0.1', NULL, '2017-01-31 10:12:22', 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:51.0) Gecko/20100101 Firefox/51.0', 'unknown'),
+(21, '127.0.0.1', NULL, '2017-01-31 10:21:51', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.90 Safari/537.36', 'unknown'),
+(22, '127.0.0.1', NULL, '2017-01-31 10:43:12', 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:51.0) Gecko/20100101 Firefox/51.0', 'unknown'),
+(23, '::1', NULL, '2017-01-31 10:56:06', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36 OPR/42.0.2393.94', 'unknown');
 
 -- --------------------------------------------------------
 
@@ -359,7 +365,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `log`
 --
 ALTER TABLE `log`
-  MODIFY `id_log` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id_log` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
