@@ -21,7 +21,14 @@
     </div>
   </div>
   <div class="col-md-6">
-
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Visitor Location</h3>
+      </div>
+      <div class="panel-body">
+        <div id="locationChart"></div>
+      </div>
+    </div>
   </div>
 </div>
 

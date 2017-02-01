@@ -195,4 +195,32 @@ class Log extends CI_Controller
 
     print(json_encode($array_return));
   }
+
+  function get_location()
+  {
+    $data = $this->Model_log->select_all()->result();
+
+    $array_label = array();
+
+    foreach ($data as $row)
+    {
+      if(!in_array($row->location, $array_label))
+      {
+        array_push($array_label, $row->location);
+      }
+    }
+
+    $array_data = array();
+
+    foreach ($array_label as $row)
+    {
+      $count = $this->Model_log->select_where("location", $row)->num_rows();
+      array_push($array_data, $count);
+    }
+
+    $array_return = array('labels' => $array_label, 'series' => $array_data);
+
+    print(json_encode($array_return));
+  }
+
 }

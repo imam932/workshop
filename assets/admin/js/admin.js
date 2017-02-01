@@ -303,4 +303,16 @@ $(document).ready(function() {
 			platformChart = new Chartist.Pie('#platformChart', chartData, optionsPie);
 		}
 	});
+
+	// location chart
+	var locationChart;
+	$.ajax({
+		type: 'POST',
+		url: 'Log/get_location',
+		success: function (data) {
+			var chartData = JSON.parse(data);
+
+			locationChart = new Chartist.Pie('#locationChart', chartData, optionsPie);
+		}
+	});
 });
