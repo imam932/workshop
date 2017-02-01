@@ -29,6 +29,7 @@
   <link rel="stylesheet" href="<?= base_url( )?>assets/admin/css/loadimg.min.css">
   <link rel="stylesheet" href="<?= base_url( )?>assets/admin/css/jquery.paginate.css">
   <link rel="stylesheet" href="<?= base_url( )?>assets/admin/css/chartist.min.css">
+  <link rel="stylesheet" href="<?= base_url( )?>assets/admin/css/chartist-plugin-tooltip.css">
 </head>
 
 <body>
@@ -240,6 +241,7 @@
     <script src="<?= base_url() ?>assets/admin/js/list.pagination.min.js"></script>
     <script src="<?= base_url() ?>assets/admin/js/chartist.min.js"></script>
     <script src="<?= base_url() ?>assets/admin/js/chartist-plugin-pointlabels.min.js"></script>
+    <script src="<?= base_url() ?>assets/admin/js/chartist-plugin-tooltip.min.js"></script>
   </body>
 
   </html>

@@ -35,7 +35,7 @@ class Log extends CI_Controller
     foreach ($array_label as $row)
     {
       $count = $this->Model_log->select_daily($row)->num_rows();
-      array_push($array_data, $count);
+      array_push($array_data, array('meta' => 'Visitor', 'value' => $count));
     }
 
     // edit label to add :00
@@ -70,7 +70,7 @@ class Log extends CI_Controller
     foreach ($array_label as $row)
     {
       $count = $this->Model_log->select_monthly($row)->num_rows();
-      array_push($array_data, $count);
+      array_push($array_data, array('meta' => 'Visitor', 'value' => $count));
     }
 
     // edit label to add month name
@@ -105,7 +105,7 @@ class Log extends CI_Controller
     foreach ($array_label as $row)
     {
       $count = $this->Model_log->select_yearly($row)->num_rows();
-      array_push($array_data, $count);
+      array_push($array_data, array('meta' => 'Visitor', 'value' => $count));
     }
 
     $array_return = array('labels' => $array_label, 'series' => [$array_data]);
@@ -134,7 +134,7 @@ class Log extends CI_Controller
     foreach ($array_label as $row)
     {
       $count = $this->Model_log->select_all($row)->num_rows();
-      array_push($array_data, $count);
+      array_push($array_data,  array('meta' => 'Visitor', 'value' => $count));
     }
 
     $array_return = array('labels' => $array_label, 'series' => [$array_data]);

@@ -223,7 +223,8 @@ $(document).ready(function() {
 		plugins: [
 			Chartist.plugins.ctPointLabels({
 				textAnchor: 'middle'
-			})
+			}),
+			Chartist.plugins.tooltip()
 		]
 	}
 
