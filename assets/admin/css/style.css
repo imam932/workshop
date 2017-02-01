@@ -173,6 +173,10 @@ a:hover {
 	font-size: 13px !important;
 }
 
+.ct-chart-pie .ct-label {
+ 	fill: white !important;
+}
+
 .ct-series-a .ct-slice-pie {
 	fill: #00BCD4 !important;
 }

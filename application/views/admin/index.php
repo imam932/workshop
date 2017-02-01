@@ -2,7 +2,10 @@
   <div class="col-md-6">
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3 class="panel-title">Visitor Traffic</h3>
+        <h3 style="line-height:35px" class="panel-title clearfix">
+          <span>Visitor Traffic</span>
+          <a href="<?= base_url() ?>admin/Visitor" class="btn btn-default pull-right">Detail</a>
+        </h3>
       </div>
       <div class="panel-body">
         <div id="visitorChart"></div>
@@ -18,14 +21,7 @@
     </div>
   </div>
   <div class="col-md-6">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h3 class="panel-title">Browser Used</h3>
-      </div>
-      <div class="panel-body">
-        <div id="browserChart"></div>
-      </div>
-    </div>
+
   </div>
 </div>
 
@@ -37,6 +33,16 @@
       </div>
       <div class="panel-body">
         <div id="platformChart"></div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Browser Used</h3>
+      </div>
+      <div class="panel-body">
+        <div id="browserChart"></div>
       </div>
     </div>
   </div>

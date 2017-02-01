@@ -220,6 +220,13 @@ $(document).ready(function() {
 		low: 0,
 		showArea: true,
 		height: 300,
+		chartPadding: {
+			top: 20,
+			right: 30,
+			bottom: 5,
+			left: 10
+		},
+		fullWidth: true,
 		plugins: [
 			Chartist.plugins.ctPointLabels({
 				textAnchor: 'middle'
@@ -267,6 +274,12 @@ $(document).ready(function() {
 		});
 	});
 
+	// pie chart option
+	var optionsPie = {
+		labelPosition: 'inside',
+		height: 300
+	}
+
 	// browser chart
 	var browserChart;
 	$.ajax({
@@ -275,9 +288,7 @@ $(document).ready(function() {
 		success: function (data) {
 			var chartData = JSON.parse(data);
 
-			browserChart = new Chartist.Pie('#browserChart', chartData, {
-				height: 300
-			});
+			browserChart = new Chartist.Pie('#browserChart', chartData, optionsPie);
 		}
 	});
 
@@ -289,9 +300,7 @@ $(document).ready(function() {
 		success: function (data) {
 			var chartData = JSON.parse(data);
 
-			platformChart = new Chartist.Pie('#platformChart', chartData, {
-				height: 300
-			});
+			platformChart = new Chartist.Pie('#platformChart', chartData, optionsPie);
 		}
 	});
 });

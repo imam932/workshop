@@ -160,6 +160,9 @@
             </li>
             <?php } ?>
             <li>
+              <a href="<?= base_url().'admin/Visitor' ?>"><i class="fa fa-fw fa-arrow-right"></i> Visitor</a>
+            </li>
+            <li>
               <a href="<?= base_url().'admin/Message' ?>">
                 <i class="fa fa-fw fa-envelope"></i>
                 Message
