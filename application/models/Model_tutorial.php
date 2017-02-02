@@ -11,13 +11,18 @@ class Model_tutorial extends CI_Model
     parent::__construct();
   }
 
-  public function select_all($limit=null)
+  public function select_all($limit=null, $publish_only = FALSE)
   {
     $this->db->limit($limit);
     $this->db->order_by('date', 'DESC');
 		$this->db->from($this->table);
 		$this->db->join('division', 'tutorial.id_division = division.id_division');
 		$this->db->join('user', 'tutorial.id_user = user.id_user');
+
+    if($publish_only)
+    {
+      $this->db->where('tutorial.publish', TRUE);
+    }
 
     $query = $this->db->get();
 
@@ -58,6 +63,7 @@ class Model_tutorial extends CI_Model
 		$this->db->join('user', 'tutorial.id_user = user.id_user');
 		$this->db->where('tutorial.id_division', $id_division);
 		$this->db->where('tutorial.id_tutorial !=', $id_tutorial);
+    $this->db->where('tutorial.publish', TRUE);
 		$this->db->order_by('tutorial.id_tutorial', 'RANDOM');
 
 		$q = $this->db->get();

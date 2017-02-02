@@ -10,13 +10,18 @@ class Model_article extends CI_Model
 		parent::__construct();
 	}
 
-	public function select_all($limit=null)
+	public function select_all($limit=null, $publish_only = FALSE)
 	{
 		$this->db->limit($limit);
 		$this->db->order_by('date', 'DESC');
 		$this->db->from($this->table);
 		$this->db->join('category', 'article.id_category = category.id_category');
 		$this->db->join('user', 'article.id_user = user.id_user');
+
+		if($publish_only)
+		{
+			$this->db->where('article.publish', TRUE);
+		}
 
 		$q = $this->db->get();
 
@@ -57,6 +62,7 @@ class Model_article extends CI_Model
 		$this->db->join('user', 'article.id_user = user.id_user');
 		$this->db->where('article.id_category', $id_category);
 		$this->db->where('article.id_article !=', $id_article);
+		$this->db->where('article.publish', TRUE);
 		$this->db->order_by('article.id_article', 'RANDOM');
 
 		$q = $this->db->get();

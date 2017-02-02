@@ -14,7 +14,7 @@ class Tutorial extends User_Controller
   {
     // load data
     $data['division'] = $this->Model_division->select_all();
-    $data['tutorial'] = $this->Model_tutorial->select_all();
+    $data['tutorial'] = $this->Model_tutorial->select_all(null, TRUE);
     $data['content'] = $this->load->view('tutorial', $data, TRUE);
 
     //load template

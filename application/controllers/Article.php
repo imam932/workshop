@@ -14,7 +14,7 @@ class Article extends User_Controller
   {
     // load data
     $data['category'] = $this->Model_category->select_all();
-    $data['article'] = $this->Model_article->select_all();
+    $data['article'] = $this->Model_article->select_all(null, TRUE);
     $data['content'] = $this->load->view('article', $data, TRUE);
 
     //load template

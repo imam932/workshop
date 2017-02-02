@@ -43,6 +43,7 @@
         {
           $i = 1;
           foreach ($related as $row) {
+            $time = new DateTime($row->date);
         ?>
           <div class="row article-row">
             <div class="col-md-12">
