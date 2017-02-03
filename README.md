@@ -17,3 +17,14 @@
 = git commit -m "pesan"
 = git pull [remote] [branch]
 = git push -u [remote] [branch]
+
+# Menampilkan beberapa commit terakhir
+= git log
+(perintah ini akan menampilkan semua commit baik yang sudah dipush, maupun yang belum)
+tekan q untuk exit
+
+# Mengambil commit dari branch lain
+= git cherry-pick "id_commit"
+
+# Menghapus semua commit yang belum dipush
+= git reset --hard origin/<branch_name>
