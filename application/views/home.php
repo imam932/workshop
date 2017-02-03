@@ -108,9 +108,9 @@
             <div class="box-content" align="center">
               <img src="<?= base_url() ?>assets/img/divisi_pemograman.jpg" class="img-responsive" width="50%"  alt="">
               <h4 class="text-uppercase">Progamming</h4>
-              <p>Dimana disini dikembangkan berbagai cabang ilmu yang berfokus pada proses pengembangan program suatu
-                 perangkat lunak, yang menggunakan berbagai bahasa pemrograman, seperti : C++, Java, Html, Php, Css, Javascript,
-                 dan bahasa pemrograman lainnya.</p>
+              <p>Divisi Programming adalah divisi yang mengembangkan berbagai cabang ilmu yang difokuskan pada proses pembuatan atau pengembangan program / aplikasi
+                 yang menggunakan berbagai bahasa pemrograman, seperti : <b>C++, Java, Html, Php, Css, Javascript,
+                 dan bahasa pemrograman lainnya.</b></p>
               <!-- <p><a href="/" class="lnk-primary learn-more">Learn More <i class="fa fa-angle-right"></i></a></p> -->
             </div>
           </div>
@@ -120,9 +120,9 @@
             <div class="box-content" align="center">
               <img src="<?= base_url() ?>assets/img/divisi_multimedia.png" class="img-responsive" width="50%"  alt="">
               <h4 class="text-uppercase">Multimedia</h4>
-              <p>Divisi ini berfokus pada penyampaian informasi yang menggunakan berbagai media digital, mecakup desain
+              <p>Divisi Multimedia adalah divisi yang berfokus pada penyampaian informasi yang menggunakan berbagai media digital, media tersebut mecakup desain
                 grafis, audio, video, serta bidang multimedia lainnya. Divisi ini juga memiliki peran penting dalam proses
-                pengembangan game, terutama dalam bidang desain.</p>
+                pembuatan atau pengembangan game, terutama dalam bidang desain, seperti : karakter, assets, animasi dan komponen lainnya pada game.</p>
               <!-- <p><a href="/" class="lnk-primary learn-more">Learn More <i class="fa fa-angle-right"></i></a></p> -->
             </div>
           </div>
@@ -132,10 +132,7 @@
             <div class="box-content" align="center">
               <img src="<?= base_url() ?>assets/img/divisi_network.png" class="img-responsive" width="50%"  alt="">
               <h4 class="text-uppercase">Networking</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-                et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                 nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum..</p>
+              <p>Divisi Networking atau biasa disebut jaringan adalah divisi yang terfokus pada bidang jaringan. </p>
               <!-- <p><a href="/" class="lnk-primary learn-more">Learn More <i class="fa fa-angle-right"></i></a></p> -->
             </div>
           </div>
@@ -169,6 +166,10 @@
                 </h4>
 
                 <p class="text-preview-home">
+                  <div class="image-container">
+
+                  <img src="assets/upload/article/<?= $row->image ?>" alt="Image Article">
+                </div>
                   <?= strip_tags($row->posting) ?>
                 </p>
                 <div class="pull-right">
