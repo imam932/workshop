@@ -40,6 +40,10 @@ h1 {
   transform: translateY(-50%);
 }
 
+.login-form img {
+  max-width: 100%;
+}
+
 .form-group {
   position: relative;
   margin-bottom: 15px;

@@ -8,6 +8,7 @@ class Admin_Controller extends CI_Controller
 	{
 		parent::__construct();
 		date_default_timezone_set('Asia/Jakarta');
+
 		if(!$this->session->has_userdata('logged_in'))
 		{
 			redirect('admin/Login','refresh');

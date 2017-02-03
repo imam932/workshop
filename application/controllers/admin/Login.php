@@ -3,15 +3,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Login extends CI_Controller
 {
-
 	public function index()
 	{
 		$data['error_message'] = $this->session->flashdata('error_message');
+
 		$this->load->view("admin/login", $data);
 	}
 
 	public function process_login()
 	{
+
 		$this->load->model('Login_admin');
 		$this->load->model('Model_user');
 
@@ -57,7 +58,6 @@ class Login extends CI_Controller
 			{
 				$message['username'] = form_error('username');
 			}
-
 			if(form_error('password') != "")
 			{
 				$message['password'] = form_error('password');
@@ -71,10 +71,10 @@ class Login extends CI_Controller
 	public function process_logout()
 	{
 		$this->session->unset_userdata('logged_in');
-
 		redirect('admin/Login','refresh');
 	}
 }
 
 /* End of file Login.php */
 /* Location: ./application/controllers/admin/Login.php */
+?>

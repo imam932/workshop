@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 15, 2017 at 06:59 
+-- Generation Time: Jan 15, 2017 at 06:59
 -- Server version: 10.1.19-MariaDB
 -- PHP Version: 7.0.9
 

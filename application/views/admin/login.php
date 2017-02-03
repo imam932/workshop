@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <title>Login</title>
-  
+
   <link rel="stylesheet" href="<?= base_url() ?>assets/vendor/font-awesome/css/font-awesome.css">
   <link rel="stylesheet" href="<?= base_url() ?>assets/admin/css/login.css">
 
-  
+
 </head>
 
 <body>
@@ -15,7 +15,6 @@
         <img src="<?= base_url() ?>assets/admin/img/logo.png">
 
         <form method="post" action="Login/process_login">
-
             <!-- Field Username -->
             <?php if(isset($error_message['username'])) { ?>
             <div class="alert"><?= $error_message['username']; ?></div>
