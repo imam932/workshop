@@ -23,7 +23,6 @@ class Login_admin extends CI_Model {
 			return FALSE;
 		}
 	}
-
 }
 
 /* End of file login_admin.php */
