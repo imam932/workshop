@@ -76,26 +76,26 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-md-9">
-      <h1 class="word-rotator-title mb-sm">
-        Workshop Riset Informatika
-      </h1>
-      <h2 class="mt-lg word-rotator-title ">Komunitas yang bertujuan untuk
-        <strong class="inverted">
-          <span class="word-rotate" data-plugin-options='{"delay": 2000}'>
-            <span class="word-rotate-items">
-              <span>membina</span>
-              <span>mengembangkan</span>
-            </span>
-          </span>
-        </strong>
-        kreativitas mahasiswa di bidang ilmu pengetahuan dan teknologi</h2>
-
-      </div>
       <div class="col-md-3">
         <img class="img-responsive" src="<?= base_url() ?>assets/img/Page_profile.png" width="170"
-        data-appear-animation="fadeInRight" alt="">
+        data-appear-animation="fadeInLeft" alt="Logo WRI">
       </div>
+      <div class="col-md-9">
+        <h1 class="word-rotator-title mb-sm">
+          Workshop Riset Informatika
+        </h1>
+        <h2 class="mt-lg word-rotator-title ">Komunitas yang bertujuan untuk
+          <strong class="inverted">
+            <span class="word-rotate" data-plugin-options='{"delay": 2000}'>
+              <span class="word-rotate-items">
+                <span>membina</span>
+                <span>mengembangkan</span>
+              </span>
+            </span>
+          </strong>
+          kreativitas mahasiswa di bidang ilmu pengetahuan dan teknologi</h2>
+
+        </div>
     </div>
   </div>
 
@@ -132,7 +132,8 @@
             <div class="box-content" align="center">
               <img src="<?= base_url() ?>assets/img/divisi_network.png" class="img-responsive" width="50%"  alt="">
               <h4 class="text-uppercase">Networking</h4>
-              <p>Divisi Networking atau biasa disebut jaringan adalah divisi yang terfokus pada bidang jaringan. </p>
+              <p>Divisi Networking atau biasa disebut divisi jaringan adalah divisi yang terfokus pada bidang jaringan. Didalam divisi ini mencakup
+              tentang...</p>
               <!-- <p><a href="/" class="lnk-primary learn-more">Learn More <i class="fa fa-angle-right"></i></a></p> -->
             </div>
           </div>
@@ -165,11 +166,10 @@
                   <a href="<?= base_url() ?>Article/view/<?= $row->id_article ?>"><?= $row->title ?></a>
                 </h4>
 
-                <p class="text-preview-home">
-                  <div class="image-container">
-
-                  <img src="assets/upload/article/<?= $row->image ?>" alt="Image Article">
+                <div class="image-container-post">
+                  <img src="<?= base_url().'assets/upload/article/'.$row->image ?>" alt="Image Article">
                 </div>
+                <p class="text-preview-home">
                   <?= strip_tags($row->posting) ?>
                 </p>
                 <div class="pull-right">
@@ -210,7 +210,9 @@
                   <h4 class="heading-primary">
                     <a href="<?= base_url() ?>Tutorial/view/<?= $row->id_tutorial ?>"><?= $row->title ?></a>
                   </h4>
-
+                  <div class="image-container-post">
+                    <img src="<?= base_url().'assets/upload/tutorial/'.$row->image ?>" alt="Image Article">
+                  </div>
                   <p class="text-preview-home">
                     <?= strip_tags($row->description) ?>
                   </p>

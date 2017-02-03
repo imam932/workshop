@@ -77,7 +77,4 @@ class Login extends CI_Controller
 
 /* End of file Login.php */
 /* Location: ./application/controllers/admin/Login.php */
-<<<<<<< HEAD
-=======
 ?>
->>>>>>> 8960282a8e640a731dd4ae528d642d7ce1ae38f6
