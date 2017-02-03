@@ -22,7 +22,6 @@
   <link href="<?= base_url() ?>assets/admin/css/sb-admin.css" rel="stylesheet">
 
   <link href="<?= base_url() ?>assets/admin/css/style.css" rel="stylesheet">
-  <link href="<?= base_url() ?>assets/admin/dist/summernote.css" rel="stylesheet">
   <link href="<?= base_url() ?>assets/admin/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
   <link rel="stylesheet" href="<?= base_url() ?>assets/admin/css/dataTables.bootstrap.min.css">
   <link rel="stylesheet" href="<?= base_url( )?>assets/admin/css/bootstrap-switch.min.css">
@@ -232,8 +231,6 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="<?= base_url() ?>assets/admin/js/bootstrap.min.js"></script>
-
-    <script src="<?= base_url() ?>assets/admin/dist/summernote.js"></script>
     <script src="<?= base_url() ?>assets/admin/js/admin.js"></script>
     <script src="<?= base_url() ?>assets/admin/js/bootstrap-datetimepicker.min.js"></script>
     <script src="<?= base_url() ?>assets/admin/js/dataTables.min.js"></script>
@@ -245,6 +242,7 @@
     <script src="<?= base_url() ?>assets/admin/js/chartist.min.js"></script>
     <script src="<?= base_url() ?>assets/admin/js/chartist-plugin-pointlabels.min.js"></script>
     <script src="<?= base_url() ?>assets/admin/js/chartist-plugin-tooltip.min.js"></script>
+    <script src="<?= base_url() ?>assets/admin/ckeditor/ckeditor.js"></script>
   </body>
 
   </html>

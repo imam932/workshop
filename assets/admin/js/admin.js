@@ -1,9 +1,7 @@
 $(document).ready(function() {
 
-	// summernote
-	$('.summernote').summernote({
-		height : 185
-	});
+	// uploadcare public key on ckeditor
+	UPLOADCARE_PUBLIC_KEY =	'965dc3be3231b86226a1';
 
 	// data table
 	$('#example').DataTable();

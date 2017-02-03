@@ -45,7 +45,7 @@
 						</div>
 
 						<div class="form-group">
-							<textarea name="description" class="form-control summernote"><?= $tutorial[0]->description ?></textarea>
+							<textarea name="description" class="form-control ckeditor"><?= $tutorial[0]->description ?></textarea>
 						</div>
 
 						<div class="right">
