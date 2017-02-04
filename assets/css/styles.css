@@ -122,10 +122,11 @@
 }
 
 .text-preview-home {
+	margin-top: 8px;
   overflow: hidden;
   position: relative;
-  line-height: 1.2em;
-  max-height: 18.4em;
+  line-height: 1.3em;
+  max-height: 13em;
   text-align: justify;
   margin-right: -1em;
   padding-right: 1em;
