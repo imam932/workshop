@@ -17,6 +17,21 @@
   padding-bottom: 70%;
   overflow: hidden;
 }
+
+.image-container:after {
+	content: 'No Image';
+	position: absolute;
+  right: 0;
+  left: 0;
+	top: 0;
+	bottom: 0;
+	text-align: center;
+	width: 50%;
+	height: 10%;
+	margin: auto;
+	z-index: 0;
+}
+
 .image-container img{
   position: absolute;
   top: 0;
@@ -25,6 +40,7 @@
   left: 0;
   margin: auto;
   width: 100%;
+	z-index: 1;
 }
 .image-container-post{
   position: relative;
@@ -33,6 +49,21 @@
   padding-bottom: 40%;
   overflow: hidden;
 }
+
+.image-container-post:after {
+	content: 'No Image';
+	position: absolute;
+  right: 0;
+  left: 0;
+	top: 0;
+	bottom: 0;
+	text-align: center;
+	width: 50%;
+	height: 10%;
+	margin: auto;
+	z-index: 0;
+}
+
 .image-container-post img{
   position: absolute;
   top: 0;
@@ -41,6 +72,7 @@
   left: 0;
   margin: auto;
   width: 100%;
+	z-index: 1;
 }
 .image-gallery .isotope-item{
   margin: 0 3px 0 3px;
