@@ -36,7 +36,7 @@
 					</div>
 
 					<div class="form-group">
-						<textarea name="posting" class="form-control summernote"></textarea>
+						<textarea name="posting" class="form-control ckeditor"></textarea>
 					</div>
 
 					<div class="right">
