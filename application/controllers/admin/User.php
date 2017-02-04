@@ -151,12 +151,12 @@ class User extends Admin_Controller{
     $data['unread_message'] = $this->Model_message->unread_num();
     $data['message'] = $this->Model_message->select_all(3);
     $this->load->view('admin/template', $data);
-    // $data['user']  = $this->input->post('user');
   }
 
   public function deleteUser($id)
   {
     $this->Model_user->delete($id);
+    $this->Model_auth->delete($id);
     $this->session->set_flashdata('message', 'Success ! User has been deleted');
     redirect('admin/User', 'refresh');
   }
