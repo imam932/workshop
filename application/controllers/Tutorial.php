@@ -19,7 +19,7 @@ class Tutorial extends User_Controller
 
     //load template
     $data['title'] = "Tutorial";
-    $data['desc'] = "Tutorial of each division";
+    $data['desc'] = "Kumpulan tutorial per divisi";
     $data['breadcrumb'] = array('Home', 'Tutorial');
     $data['article_footer']   = $this->Model_article->select_all(4);
 
@@ -37,7 +37,7 @@ class Tutorial extends User_Controller
     //load template
     $title = $data['tutorial'][0]->title;
     $data['title'] = "Tutorial";
-    $data['desc'] = "Tutorial of each division";
+    $data['desc'] = "Kumpulan tutorial per divisi";
     $data['breadcrumb'] = array('Home', 'Tutorial', $title);
     $data['article_footer']   = $this->Model_article->select_all(4);
 

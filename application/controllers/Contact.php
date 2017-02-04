@@ -25,8 +25,8 @@ class Contact extends User_Controller{
     $data['content'] = $this->load->view('contact', $data, TRUE);
 
     //load template
-    $data['title'] = "Contact Us";
-    $data['desc'] = "Contact , info";
+    $data['title'] = "Hubungi Kami";
+    $data['desc'] = "Ingin bergabung, atau ada kritik dan saran ?";
     $data['breadcrumb'] = array('Home','Contact');
     $data['article_footer']   = $this->Model_article->select_all(4);
 

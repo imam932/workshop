@@ -35,7 +35,7 @@
   <div class="col-md-3">
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3 class="panel-title">Related Article</h3>
+        <h3 class="panel-title">Artikel Terkait</h3>
       </div>
       <div class="panel-body">
         <?php
@@ -75,7 +75,7 @@
                     <?= strip_tags($row->posting) ?>
                   </p>
 
-                  <a href="<?= base_url() ?>Article/view/<?= $row->id_article ?>" class="btn btn-primary">Read more</a>
+                  <a href="<?= base_url() ?>Article/view/<?= $row->id_article ?>" class="btn btn-primary">Selengkapnya</a>
                 </div>
               </div>
               <?php if($i < sizeof($related)) { ?>

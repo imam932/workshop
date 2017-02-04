@@ -35,7 +35,7 @@
   <div class="col-md-3">
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3 class="panel-title">Related Tutorial</h3>
+        <h3 class="panel-title">Tutorial Terkait</h3>
       </div>
       <div class="panel-body">
         <?php
@@ -74,7 +74,7 @@
                     <?= strip_tags($row->description) ?>
                   </p>
 
-                  <a href="<?= base_url() ?>Tutorial/view/<?= $row->id_tutorial ?>" class="btn btn-primary">Read more</a>
+                  <a href="<?= base_url() ?>Tutorial/view/<?= $row->id_tutorial ?>" class="btn btn-primary">Selengkapnya</a>
                 </div>
               </div>
               <?php if($i < sizeof($related)) { ?>

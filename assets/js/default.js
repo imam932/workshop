@@ -26,7 +26,7 @@ $(document).ready(function() {
 		$(this).addClass("active");
 
 		// filtering
-		var category = this.text;
+		var category = $(this).attr('data-target');
 
 		if(category == "all category" || category == "all division")
 		{
@@ -53,14 +53,14 @@ $(document).ready(function() {
 		$('.sort-article').removeClass('active');
 		$(this).addClass("active");
 
-		var sort = this.text;
+		var sort = $(this).attr('data-target');
 		var orders = $('#select-orderArticle').val();
 
 		article.sort(sort, {order: orders});
 	});
 
 	$('#select-orderArticle').on('change', function() {
-		var sort = $('.sort-article.active').text();
+		var sort = $('.sort-article.active').attr('data-target');
 		var order = $(this).val();
 		article.sort(sort, {order: order});
 	});
@@ -81,14 +81,14 @@ $(document).ready(function() {
 		$('.sort-gallery').removeClass('active');
 		$(this).addClass("active");
 
-		var sort = this.text;
+		var sort = $(this).attr('data-target');
 		var orders = $('#select-orderGallery').val();
 
 		gallery.sort(sort, {order: orders});
 	});
 
 	$('#select-orderGallery').on('change', function() {
-		var sort = $('.sort-gallery.active').text();
+		var sort = $('.sort-gallery.active').attr('data-target');
 		var order = $(this).val();
 		gallery.sort(sort, {order: order});
 	});

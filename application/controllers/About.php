@@ -14,8 +14,8 @@ class About extends User_Controller{
     $data['content'] = $this->load->view('about', $data, TRUE);
 
     //load template
-    $data['title'] = "About Us";
-    $data['desc'] = "About , info";
+    $data['title'] = "Tentang Kami";
+    $data['desc'] = "Penjelasan WRI";
     $data['breadcrumb'] = array('Home','About');
 
     $this->load->view('template', $data);

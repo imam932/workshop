@@ -15,7 +15,7 @@
           <div class="col-lg-8" id="gallery">
 
             <div class="form-group">
-              <input class="search form-control" placeholder="search gallery" onkey="alert('reset')">
+              <input class="search form-control" placeholder="Cari Galeri">
             </div>
 
             <div class="list row">
@@ -76,9 +76,9 @@
             <!-- panel right -->
             <div class="col-lg-4">
               <div class="list-group">
-                <h5 class="list-group-item header">Order By</h5>
-                <a href="#" class="list-group-item sort-gallery active">date</a>
-                <a href="#" class="list-group-item sort-gallery">title</a>
+                <h5 class="list-group-item header">Urutkan Berdasarkan</h5>
+                <a href="#" class="list-group-item sort-gallery active" data-target="date">tanggal</a>
+                <a href="#" class="list-group-item sort-gallery" data-target="title">judul</a>
               </div>
 
               <div class="form-group">

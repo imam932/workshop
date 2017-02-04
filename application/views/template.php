@@ -106,13 +106,13 @@
                       <ul class="nav nav-pills" id="mainNav">
                         <li>
                           <a href="<?= base_url() ?>">
-                            Home
+                            Beranda
                           </a>
                         </li>
 
                         <li>
                           <a href="<?= base_url() ?>Article">
-                            Article
+                            Artikel
                           </a>
                         </li>
 
@@ -124,17 +124,17 @@
 
                         <li>
                           <a href="<?= base_url() ?>Gallery">
-                            Gallery
+                            Galeri
                           </a>
                         </li>
                         <li>
                           <a href="<?= base_url() ?>Contact">
-                            Contact Us
+                            Hubungi Kami
                           </a>
                         </li>
                         <li>
                           <a href="<?= base_url() ?>About">
-                            About Us
+                            Tentang Kami
                           </a>
                         </li>
                       </ul>
@@ -153,8 +153,9 @@
       <div class="web-title">
         <h3><?= $title ?> <small><?= $desc ?></small></h3>
       </div>
+      <hr>
       <!-- breadcrumb -->
-      <ol class="breadcrumb">
+      <!-- <ol class="breadcrumb">
         <?php
         $i = 0;
         $size = sizeof($breadcrumb);
@@ -173,7 +174,7 @@
           $i++;
         }
         ?>
-      </ol>
+      </ol> -->
     <?php } ?>
 
       <!-- content here -->
@@ -200,7 +201,7 @@
 
               <form id="newsletterForm" action="php/newsletter-subscribe.php" method="POST">
                 <div class="input-group">
-                  <input class="form-control" placeholder="Email Address" name="newsletterEmail"
+                  <input class="form-control" placeholder="Alamat Email" name="newsletterEmail"
                   id="newsletterEmail" type="text">
                   <span class="input-group-btn">
                     <button class="btn btn-default" type="submit">Go!</button>
@@ -210,7 +211,7 @@
             </div>
           </div>
           <div class="col-md-3">
-            <h4>Newest Article</h4>
+            <h4>Artikel Terbaru</h4>
             <div id="tweet" class="twitter" data-plugin-tweets data-plugin-options='{"username": "", "count": 2}'>
               <?php foreach ($article_footer as $row) { ?>
                 <a href="<?= base_url().'Article/view/'.$row->id_article ?>">
@@ -221,12 +222,12 @@
             </div>
             <div class="col-md-4">
               <div class="contact-details">
-                <h4>Contact Us</h4>
+                <h4>Hubungi Kami</h4>
                 <ul class="contact">
                   <li>
                     <p>
                       <i class="fa fa-map-marker"></i>
-                      <strong>Address:</strong>
+                      <strong>Alamat:</strong>
                       Jl. Soekarno Hatta No. 9 Malang <br>
                       <b>Politeknik Negeri Malang</b>
                     </p>
@@ -234,7 +235,7 @@
                   <li>
                     <p>
                       <i class="fa fa-phone"></i>
-                      <strong>Phone:</strong>
+                      <strong>Telp:</strong>
                       (123) 456-789
                     </p>
                   </li>
@@ -249,7 +250,7 @@
               </div>
             </div>
             <div class="col-md-2">
-              <h4>Follow Us</h4>
+              <h4>Ikuti Kami</h4>
               <ul class="social-icons">
                 <li class="social-icons-facebook">
                   <a href="https://www.facebook.com/WRIPolinema" target="_blank" title="Facebook">

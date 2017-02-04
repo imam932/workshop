@@ -2,7 +2,7 @@
   <div class="col-md-8" id="article">
 
     <div class="form-group">
-      <input class="search form-control" placeholder="Search Article" />
+      <input class="search form-control" placeholder="Cari Artikel" />
     </div>
 
 
@@ -44,7 +44,7 @@
                   <?= strip_tags($row->posting) ?>
                 </p>
 
-                <a href="<?= base_url() ?>Article/view/<?= $row->id_article ?>" class="btn btn-primary">Read more</a>
+                <a href="<?= base_url() ?>Article/view/<?= $row->id_article ?>" class="btn btn-primary">Selengkapnya</a>
               </div>
             </div>
             <hr>
@@ -57,18 +57,18 @@
 
     <div class="col-md-4">
       <div class="list-group">
-        <h5 class="list-group-item header">View By Category</h5>
-        <a href="#" class="list-group-item filter-article-category active">all category</a>
+        <h5 class="list-group-item header">Pilih Kategori</h5>
+        <a href="#" class="list-group-item filter-article-category active" data-target="all category">semua kategori</a>
         <?php foreach ($category as $row) { ?>
-          <a href="#" class="list-group-item filter-article-category"><?= $row->category ?></a>
+          <a href="#" class="list-group-item filter-article-category" data-target="<?= $row->category ?>"><?= $row->category ?></a>
         <?php } ?>
       </div>
 
       <div class="list-group">
-        <h5 class="list-group-item header">Order By</h5>
-        <a href="#" class="list-group-item sort-article active">date</a>
-        <a href="#" class="list-group-item sort-article">title</a>
-        <a href="#" class="list-group-item sort-article">category</a>
+        <h5 class="list-group-item header">Urutkan Berdasarkan</h5></h5>
+        <a href="#" class="list-group-item sort-article active" data-target="date">tanggal</a>
+        <a href="#" class="list-group-item sort-article" data-target="title">judul</a>
+        <a href="#" class="list-group-item sort-article" data-target="category">kategori</a>
       </div>
 
       <div class="form-group">

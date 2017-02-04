@@ -18,8 +18,8 @@ class Article extends User_Controller
     $data['content'] = $this->load->view('article', $data, TRUE);
 
     //load template
-    $data['title'] = "Article";
-    $data['desc'] = "Article, News, Event, etc";
+    $data['title'] = "Artikel";
+    $data['desc'] = "Kumpulan artikel, berita, tentang WRI";
     $data['breadcrumb'] = array('Home', 'Article');
     $data['article_footer']   = $this->Model_article->select_all(4);
 
@@ -36,8 +36,8 @@ class Article extends User_Controller
 
     //load template
     $title = $data['article'][0]->title;
-    $data['title'] = "Article";
-    $data['desc'] = "Article, News, Event, etc";
+    $data['title'] = "Artikel";
+    $data['desc'] = "Kumpulan artikel, berita, tentang WRI";
     $data['breadcrumb'] = array('Home', 'Article', $title);
     $data['article_footer']   = $this->Model_article->select_all(4);
 

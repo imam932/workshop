@@ -14,8 +14,8 @@ class Gallery extends User_Controller{
     $data['gallery'] = $this->Model_gallery->select_all();
     $data['content'] = $this->load->view('gallery', $data, TRUE);
 
-    $data['title'] = 'Gallery';
-    $data['desc'] = 'View Gallery';
+    $data['title'] = 'Galeri';
+    $data['desc'] = 'Kumpulan galeri WRI';
     $data['breadcrumb'] = array('Home', 'Gallery');
     $data['article_footer']   = $this->Model_article->select_all(4);
 
