@@ -153,28 +153,29 @@
       <div class="web-title">
         <h3><?= $title ?> <small><?= $desc ?></small></h3>
       </div>
-      <hr>
       <!-- breadcrumb -->
-      <!-- <ol class="breadcrumb">
+      <ol class="breadcrumb">
         <?php
         $i = 0;
         $size = sizeof($breadcrumb);
         foreach ($breadcrumb as $value)
         {
+          $label = $value['label'];
+          $url = $value['url'];
+
           if($i == $size - 1)
           {
-            echo "<li class='active'>$value</li>";
+            echo "<li class='active'>$label</li>";
           }
           else
           {
-            $url = base_url() . $value;
-            echo "<li><a href='$url'>$value</a></li>";
+            echo "<li><a href='$url'>$label</a></li>";
           }
 
           $i++;
         }
         ?>
-      </ol> -->
+      </ol>
     <?php } ?>
 
       <!-- content here -->

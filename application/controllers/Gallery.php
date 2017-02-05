@@ -16,7 +16,10 @@ class Gallery extends User_Controller{
 
     $data['title'] = 'Galeri';
     $data['desc'] = 'Kumpulan galeri WRI';
-    $data['breadcrumb'] = array('Home', 'Gallery');
+    $data['breadcrumb'] = array(
+      ['label' => 'Home', 'url' => base_url()],
+      ['label' => 'Galeri', 'url' => ""]
+    );
     $data['article_footer']   = $this->Model_article->select_all(4);
 
     $this->load->view('template', $data);

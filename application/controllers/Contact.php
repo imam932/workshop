@@ -27,7 +27,10 @@ class Contact extends User_Controller{
     //load template
     $data['title'] = "Hubungi Kami";
     $data['desc'] = "Ingin bergabung, atau ada kritik dan saran ?";
-    $data['breadcrumb'] = array('Home','Contact');
+    $data['breadcrumb'] = array(
+      ['label' => 'Home', 'url' => base_url()],
+      ['label' => 'Hubungi Kami', 'url' => ""]
+    );
     $data['article_footer']   = $this->Model_article->select_all(4);
 
     $this->load->view('template', $data);

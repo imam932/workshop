@@ -16,7 +16,10 @@ class About extends User_Controller{
     //load template
     $data['title'] = "Tentang Kami";
     $data['desc'] = "Penjelasan WRI";
-    $data['breadcrumb'] = array('Home','About');
+    $data['breadcrumb'] = array(
+      ['label' => 'Home', 'url' => base_url()],
+      ['label' => 'Tentang Kami', 'url' => ""],
+    );
 
     $this->load->view('template', $data);
   }
