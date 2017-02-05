@@ -50,9 +50,7 @@ class User_Controller extends CI_Controller
 			if($detail->geoplugin_status == 200)
 			{
 				$country = $detail->geoplugin_countryName;
-				$region = $detail->geoplugin_region;
-				$city = $detail->geoplugin_city;
-				$data['location'] = $country . "/" . $region . "/" . $city;
+				$data['location'] = $country;
 			}
 
 			// insert visitor to db

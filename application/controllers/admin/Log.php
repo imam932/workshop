@@ -161,7 +161,7 @@ class Log extends CI_Controller
     foreach ($array_label as $row)
     {
       $count = $this->Model_log->select_where("browser", $row)->num_rows();
-      array_push($array_data, $count);
+      array_push($array_data, array('meta' => $row, 'value' => $count));
     }
 
     $array_return = array('labels' => $array_label, 'series' => $array_data);
@@ -188,7 +188,7 @@ class Log extends CI_Controller
     foreach ($array_label as $row)
     {
       $count = $this->Model_log->select_where("platform", $row)->num_rows();
-      array_push($array_data, $count);
+      array_push($array_data, array('meta' => $row, 'value' => $count));
     }
 
     $array_return = array('labels' => $array_label, 'series' => $array_data);
@@ -215,10 +215,10 @@ class Log extends CI_Controller
     foreach ($array_label as $row)
     {
       $count = $this->Model_log->select_where("location", $row)->num_rows();
-      array_push($array_data, $count);
+      array_push($array_data, array('meta' => $row, 'value' => $count));
     }
 
-    $array_return = array('labels' => $array_label, 'series' => $array_data);
+    $array_return = array('labels' => $array_label, 'series' => [$array_data]);
 
     print(json_encode($array_return));
   }

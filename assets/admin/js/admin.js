@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
 	// uploadcare public key on ckeditor
-	UPLOADCARE_PUBLIC_KEY =	'965dc3be3231b86226a1';
+	UPLOADCARE_PUBLIC_KEY =	'5aceaad6265140705950';
 
 	// data table
 	$('#example').DataTable();
@@ -275,7 +275,10 @@ $(document).ready(function() {
 	// pie chart option
 	var optionsPie = {
 		labelPosition: 'inside',
-		height: 300
+		height: 300,
+		plugins: [
+			Chartist.plugins.tooltip()
+		]
 	}
 
 	// browser chart
@@ -303,6 +306,19 @@ $(document).ready(function() {
 	});
 
 	// location chart
+	var optionsBar = {
+		chartPadding: {
+			top: 15,
+			right: 15,
+			bottom: 5,
+			left: 35
+		},
+		horizontalBars: true,
+		plugins: [
+			Chartist.plugins.tooltip()
+		]
+	}
+
 	var locationChart;
 	$.ajax({
 		type: 'POST',
@@ -310,7 +326,7 @@ $(document).ready(function() {
 		success: function (data) {
 			var chartData = JSON.parse(data);
 
-			locationChart = new Chartist.Pie('#locationChart', chartData, optionsPie);
+			locationChart = new Chartist.Bar('#locationChart', chartData, optionsBar);
 		}
 	});
 });
