@@ -107,8 +107,8 @@
           <div class="featured-box featured-box-primary">
             <div class="box-content" align="center">
               <img src="<?= base_url() ?>assets/img/divisi_pemograman.jpg" class="img-responsive" width="50%"  alt="">
-              <h4 class="text-uppercase">Progamming</h4>
-              <p>Divisi Programming adalah divisi yang mengembangkan berbagai cabang ilmu yang difokuskan pada proses pembuatan atau pengembangan program / aplikasi
+              <h4 class="text-uppercase">Pemrograman</h4>
+              <p>Divisi Pemrograman adalah divisi yang mengembangkan berbagai cabang ilmu yang difokuskan pada proses pembuatan atau pengembangan program / aplikasi
                  yang menggunakan berbagai bahasa pemrograman, seperti : <b>C++, Java, Html, Php, Css, Javascript,
                  dan bahasa pemrograman lainnya.</b></p>
               <!-- <p><a href="/" class="lnk-primary learn-more">Learn More <i class="fa fa-angle-right"></i></a></p> -->
@@ -131,9 +131,9 @@
           <div class="featured-box featured-box-primary featured-box-effect-1">
             <div class="box-content" align="center">
               <img src="<?= base_url() ?>assets/img/divisi_network.png" class="img-responsive" width="50%"  alt="">
-              <h4 class="text-uppercase">Networking</h4>
-              <p>Divisi Networking atau biasa disebut divisi jaringan adalah divisi yang terfokus pada bidang jaringan. Didalam divisi ini mencakup
-              tentang...</p>
+              <h4 class="text-uppercase">Jaringan</h4>
+              <p>Divisi Jaringan adalah divisi yang terfokus pada bidang jaringan. Didalam divisi ini mencakup
+              tentang berbagai macam jenis pengembangan yang berhubungan dengan suatu jaringan, seperti: setting jaringan, pengalamatan IP, sharing jaringan, dll.</p>
               <!-- <p><a href="/" class="lnk-primary learn-more">Learn More <i class="fa fa-angle-right"></i></a></p> -->
             </div>
           </div>
@@ -251,7 +251,7 @@
                         <span class="thumb-info thumb-info-centered-info thumb-info-no-borders">
                           <span class="thumb-info-wrapper">
                             <div class="image-container">
-                              <img src="<?= base_url().'assets/upload/'.$row->image ?>" class="img-responsive" alt="">
+                              <img src="<?= base_url().'assets/upload/'.$row->image ?>" class="img-responsive" alt="Image Gallery">
                             </div>
                             <span class="thumb-info-title">
                               <span class="thumb-info-inner"><?= $row->title ?></span>

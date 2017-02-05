@@ -190,7 +190,7 @@
           </div>
           <div class="col-md-3">
             <div class="newsletter">
-              <h4>Newsletter</h4>
+              <h4>Surat Kabar</h4>
               <p>Ayo masukkan email kamu biar update.</p>
 
               <div class="alert alert-success hidden" id="newsletterSuccess">
@@ -204,7 +204,7 @@
                   <input class="form-control" placeholder="Alamat Email" name="newsletterEmail"
                   id="newsletterEmail" type="text">
                   <span class="input-group-btn">
-                    <button class="btn btn-default" type="submit">Go!</button>
+                    <button class="btn btn-default" type="submit">Kirim</button>
                   </span>
                 </div>
               </form>
