@@ -22,4 +22,8 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->view('index');
 	}
+
+	public function error(){
+		$this->load->view('errors/errorpage_404');
+	}
 }
