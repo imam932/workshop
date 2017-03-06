@@ -47,7 +47,7 @@ class Login extends CI_Controller
 			{
 				$message['invalid_user'] = 'invalid username or password';
 				$this->session->set_flashdata('error_message', $message);
-				redirect('admin/Login','refresh');
+				redirect('/','refresh');
 			}
 		}
 		else
@@ -64,14 +64,14 @@ class Login extends CI_Controller
 			}
 
 			$this->session->set_flashdata('error_message', $message);
-			redirect('admin/Login','refresh');
+			redirect('/','refresh');
 		}
 	}
 
 	public function process_logout()
 	{
 		$this->session->unset_userdata('logged_in');
-		redirect('admin/Login','refresh');
+		redirect('/','refresh');
 	}
 }
 
