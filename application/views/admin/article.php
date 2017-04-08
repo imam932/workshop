@@ -3,7 +3,7 @@
 	<div class="col-lg-12">
 
 		<p>
-			<a href="<?= base_url().'admin/Article/New' ?>" class="btn btn-primary btn-sm"> Create New</a>
+			<a href="<?= base_url().'admin/Article/new' ?>" class="btn btn-primary btn-sm"> Create New</a>
 		</p> <br>
 
 		<?php if(isset($message)) { ?>
@@ -28,11 +28,11 @@
 										<div class="col-lg-12">
 											<span class="title"><?= $row->title; ?></span>
 											<div class="pull-right">
-												<a href="<?= base_url() ?>admin/Article/editArticle/<?= $row->id_article ?>">
+												<a href="<?= base_url() ?>admin/Article/edit/<?= $row->id_article ?>">
 													<i class="fa fa-edit"></i>
 												</a>
 												&nbsp;
-												<a href="<?= base_url() ?>admin/Article/deleteArticle/<?= $row->id_article ?>" onclick="return confirm('Delete Article ?')">
+												<a href="<?= base_url() ?>admin/Article/delete/<?= $row->id_article ?>" onclick="return confirm('Delete Article ?')">
 													<i class="fa fa-trash-o"></i>
 												</a>
 											</div>

@@ -11,7 +11,7 @@
           <div class="panel-heading">
             <b>Edit Profile</b>
           </div>
-          <form class="" action="<?= base_url().'admin/Profile/editProfile/'.$user[0]->id_user ?>" method="post">
+          <form class="" action="<?= base_url().'admin/Profile/edit/'.$user[0]->id_user ?>" method="post">
             <div class="panel-body">
               <div class="form-group">
                 <input type="text" name="name" class="form-control" value="<?= $user[0]->name ?>">

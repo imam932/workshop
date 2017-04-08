@@ -78,7 +78,7 @@ class Profile extends CI_Controller
     redirect('admin/Profile');
   }
 
-  public function editProfile($id)
+  public function edit($id)
   {
     if ($this->input->server('REQUEST_METHOD') == 'POST')
     {
@@ -92,7 +92,7 @@ class Profile extends CI_Controller
 	    if(!$this->form_validation->run())
 	    {
 	      $this->session->set_flashdata('error', validation_errors());
-				redirect('admin/Profile/editProfile/' . $id, 'refresh');
+				redirect('admin/Profile/edit/' . $id, 'refresh');
 	    }
       else
       {

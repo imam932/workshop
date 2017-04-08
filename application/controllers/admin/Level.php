@@ -37,7 +37,7 @@ class Level extends Admin_Controller {
     $this->load->view('admin/template', $data);
   }
 
-  public function newLevel()
+  public function new()
   {
     // POST METHOD
     if($this->input->server('REQUEST_METHOD') == 'POST')
@@ -48,7 +48,7 @@ class Level extends Admin_Controller {
       if(!$this->form_validation->run())
       {
         $this->session->set_flashdata('error', form_error('level'));
-        redirect('admin/Level/newLevel', 'refresh');
+        redirect('admin/Level/new', 'refresh');
       }
       else
       {
@@ -88,7 +88,7 @@ class Level extends Admin_Controller {
     $this->load->view('admin/template', $data);
   }
 
-  public function editLevel($id)
+  public function edit($id)
   {
     // POST METHOD
     if($this->input->server('REQUEST_METHOD') == 'POST')
@@ -99,7 +99,7 @@ class Level extends Admin_Controller {
       if(!$this->form_validation->run())
       {
         $this->session->set_flashdata('error', form_error('level'));
-        redirect('admin/Level/editLevel/' . $id, 'refresh');
+        redirect('admin/Level/edit/' . $id, 'refresh');
       }
       else
       {
@@ -140,11 +140,11 @@ class Level extends Admin_Controller {
     $data['unread_message'] = $this->Model_message->unread_num();
     $data['message'] = $this->Model_message->select_all(3);
     $data['menu'] = $this->Model_privilege->select_all($this->session->userdata('logged_in')['id_level']);
-    
+
     $this->load->view('admin/template', $data);
   }
 
-  public function deleteLevel($id)
+  public function delete($id)
   {
     $this->Model_level->delete($id);
     $this->session->set_flashdata('message', 'Success ! level has been deleted');

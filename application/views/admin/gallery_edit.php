@@ -5,7 +5,7 @@
 			<div class="alert alert-danger alert-link"><?=$error?></div>
 		<?php } ?>
 
-    <form action="<?= base_url() ?>admin/Gallery/editGallery/<?= $gallery[0]->id_gallery ?>" method="post" enctype="multipart/form-data">
+    <form action="<?= base_url() ?>admin/Gallery/edit/<?= $gallery[0]->id_gallery ?>" method="post" enctype="multipart/form-data">
       <div class="row">
         <div class="col-lg-5">
           <img src="<?=base_url()?>assets/upload/<?= $gallery[0]->image ?>">

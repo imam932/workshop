@@ -6,7 +6,7 @@
 			<div class="alert alert-danger alert-link"><?=$error?></div>
 			<?php } ?>
 
-			<form method="post" action="<?=base_url()?>admin/Article/editArticle/<?= $article[0]->id_article ?>" enctype="multipart/form-data">
+			<form method="post" action="<?=base_url()?>admin/Article/edit/<?= $article[0]->id_article ?>" enctype="multipart/form-data">
 				<div class="row">
 					<div class="col-lg-9 col-xs-12 col-sm-12">
 						<div class="row">

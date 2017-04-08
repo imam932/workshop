@@ -11,7 +11,7 @@
             <div class="panel-heading">
               <b>Add New User</b>
             </div>
-            <form class="" action="<?= base_url().'admin/User/New' ?>" method="post">
+            <form class="" action="<?= base_url().'admin/User/new' ?>" method="post">
               <div class="panel-body">
                 <div class="form-group">
                   <input type="text" name="name" class="form-control" placeholder="Name">

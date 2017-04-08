@@ -2,7 +2,7 @@
 <div class="row">
   <div class="col-lg-12">
     <p>
-      <a href="<?= base_url().'admin/Profile/editProfile/'.$this->session->userdata('logged_in')['id_user'] ?>" class="btn btn-primary btn-sm"> Edit Profil</a>
+      <a href="<?= base_url().'admin/Profile/edit/'.$this->session->userdata('logged_in')['id_user'] ?>" class="btn btn-primary btn-sm"> Edit Profil</a>
     </p> <br>
 
     <?php if(isset($error)) { ?>

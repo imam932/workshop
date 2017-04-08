@@ -36,7 +36,8 @@ class Category extends Admin_Controller {
     $this->load->view('admin/template', $data);
   }
 
-  public function newCategory(){
+  public function new()
+  {
 
     //form validation
     $this->form_validation->set_rules('category', 'Category', 'trim|required|xss_clean');
@@ -57,14 +58,14 @@ class Category extends Admin_Controller {
     redirect('admin/Category', 'refresh');
   }
 
-  public function deleteCategory($id)
+  public function delete($id)
   {
     $this->Model_category->delete($id);
     $this->session->set_flashdata('message', 'Success ! Category has been deleted');
     redirect('admin/Category', 'refresh');
   }
 
-  public function editCategory($id)
+  public function edit($id)
   {
     //form validation
     $this->form_validation->set_rules('category', 'Category', 'trim|required|xss_clean');

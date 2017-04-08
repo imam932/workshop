@@ -29,7 +29,7 @@
 								<tr>
 									<td><?= $no++; ?></td>
 									<td>
-										<form id="form<?=$row->id_category?>" action="<?=base_url()?>admin/Category/editCategory/<?=$row->id_category?>" method="post">
+										<form id="form<?=$row->id_category?>" action="<?=base_url()?>admin/Category/edit/<?=$row->id_category?>" method="post">
 											<div class="form-group">
 												<input type="text" class="form-control" name="category" value="<?= $row->category; ?>">
 												<span class="hidden"><?= $row->category; ?></span>
@@ -39,7 +39,7 @@
 									<td>
 										<div class="btn-group btn-group-sm">
 											<input form="form<?=$row->id_category?>" type="submit" value="Edit" class="btn btn-primary">
-											<a href="<?=base_url()?>admin/Category/deleteCategory/<?=$row->id_category?>" class="btn btn-danger btn-sm" onclick="return confirm('Delete Category ?')">
+											<a href="<?=base_url()?>admin/Category/delete/<?=$row->id_category?>" class="btn btn-danger btn-sm" onclick="return confirm('Delete Category ?')">
 												Delete
 											</a>
 										</div>
@@ -51,7 +51,7 @@
 				</div>
 				<!-- panel left -->
 				<div class="col-lg-6">
-					<form class="" action="<?= base_url(); ?>admin/Category/newCategory" method="post">
+					<form class="" action="<?= base_url(); ?>admin/Category/new" method="post">
 						<div class="input-group">
 							<input type="text" class="form-control" placeholder="Category" name="category">
 							<span class="input-group-btn">

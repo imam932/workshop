@@ -36,7 +36,7 @@ class Article extends Admin_Controller {
 		$this->load->view('admin/template', $data);
 	}
 
-	public function newArticle()
+	public function new()
 	{
 		if ($this->input->server('REQUEST_METHOD') == 'POST')
 		{
@@ -47,7 +47,7 @@ class Article extends Admin_Controller {
 	    if(!$this->form_validation->run())
 	    {
 	      $this->session->set_flashdata('error', validation_errors());
-				redirect('admin/Article/New', 'refresh');
+				redirect('admin/Article/new', 'refresh');
 	    }
 			else
 			{
@@ -71,7 +71,7 @@ class Article extends Admin_Controller {
 	      if(!$this->upload->do_upload('image'))
 	      {
 	        $this->session->set_flashdata('error', $this->upload->display_errors());
-					redirect('admin/Article/New', 'refresh');
+					redirect('admin/Article/new', 'refresh');
 	      }
 	      else
 	      {
@@ -104,7 +104,7 @@ class Article extends Admin_Controller {
 		$this->load->view('admin/template', $data);
 	}
 
-	function deleteArticle($id)
+	function delete($id)
 	{
 		// delete image File
     $path = "assets/upload/article/";
@@ -117,7 +117,7 @@ class Article extends Admin_Controller {
 		redirect('admin/Article', 'refresh');
 	}
 
-	function editArticle($id)
+	function edit($id)
 	{
 		if ($this->input->server('REQUEST_METHOD') == 'POST')
 		{
@@ -127,7 +127,7 @@ class Article extends Admin_Controller {
 	    if(!$this->form_validation->run())
 	    {
 	      $this->session->set_flashdata('error', validation_errors());
-				redirect('admin/Article/editArticle/' . $id, 'refresh');
+				redirect('admin/Article/edit/' . $id, 'refresh');
 	    }
 			else
 			{
@@ -151,7 +151,7 @@ class Article extends Admin_Controller {
           if(!$this->upload->do_upload('image'))
           {
             $this->session->set_flashdata('error', $this->upload->display_errors());
-            redirect('admin/Article/editArticle/' . $id, 'refresh');
+            redirect('admin/Article/edit/' . $id, 'refresh');
           }
           else
           {

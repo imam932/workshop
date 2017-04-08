@@ -38,7 +38,7 @@ class Gallery extends Admin_Controller
     $this->load->view('admin/template', $data);
   }
 
-  function newGallery()
+  function new()
   {
     //form validation
     $this->form_validation->set_rules('title', 'Title', 'trim|required|xss_clean');
@@ -81,7 +81,7 @@ class Gallery extends Admin_Controller
     redirect('admin/Gallery', 'refresh');
   }
 
-  function deleteGallery($id)
+  function delete($id)
   {
     // delete image File
     $path = "assets/upload/";
@@ -95,7 +95,7 @@ class Gallery extends Admin_Controller
     redirect('admin/Gallery', 'refresh');
   }
 
-  function editGallery($id)
+  function edit($id)
   {
     if($this->input->server('REQUEST_METHOD') == 'POST')
     {
@@ -106,7 +106,7 @@ class Gallery extends Admin_Controller
       if(!$this->form_validation->run())
       {
         $this->session->set_flashdata('error', validation_errors());
-        redirect('admin/Gallery/editGallery/' . $id, 'refresh');
+        redirect('admin/Gallery/edit/' . $id, 'refresh');
       }
       else
       {
@@ -128,7 +128,7 @@ class Gallery extends Admin_Controller
           if(!$this->upload->do_upload('image'))
           {
             $this->session->set_flashdata('error', $this->upload->display_errors());
-            redirect('admin/Gallery/editGallery/' . $id, 'refresh');
+            redirect('admin/Gallery/edit/' . $id, 'refresh');
           }
           else
           {

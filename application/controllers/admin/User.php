@@ -33,7 +33,7 @@ class User extends Admin_Controller{
     $this->load->view('admin/template', $data);
   }
 
-  public function newUser()
+  public function new()
   {
     if ($this->input->server('REQUEST_METHOD') == 'POST')
     {
@@ -50,7 +50,7 @@ class User extends Admin_Controller{
 	    if(!$this->form_validation->run())
 	    {
 	      $this->session->set_flashdata('error', validation_errors());
-				redirect('admin/User/New', 'refresh');
+				redirect('admin/User/new', 'refresh');
 	    }
       else
       {
@@ -58,7 +58,7 @@ class User extends Admin_Controller{
         if($username_exist)
         {
           $this->session->set_flashdata('error', 'Username exist, use another');
-          redirect('admin/User/New', 'refresh');
+          redirect('admin/User/new', 'refresh');
         }
         else
         {
@@ -98,7 +98,7 @@ class User extends Admin_Controller{
     $this->load->view('admin/template', $data);
   }
 
-  public function editUser($id)
+  public function edit($id)
   {
     if ($this->input->server('REQUEST_METHOD') == 'POST')
     {
@@ -112,7 +112,7 @@ class User extends Admin_Controller{
 	    if(!$this->form_validation->run())
 	    {
 	      $this->session->set_flashdata('error', validation_errors());
-				redirect('admin/User/editUser/' . $id, 'refresh');
+				redirect('admin/User/edit/' . $id, 'refresh');
 	    }
       else
       {
@@ -151,7 +151,7 @@ class User extends Admin_Controller{
     $this->load->view('admin/template', $data);
   }
 
-  public function deleteUser($id)
+  public function delete($id)
   {
     $this->Model_user->delete($id);
     $this->session->set_flashdata('message', 'Success ! User has been deleted');

@@ -8,7 +8,7 @@
 
 		<div class="row">
 			<div class="col-lg-12">
-				<a href="<?= base_url() ?>admin/Level/NewLevel" class="btn btn-primary">Tambah</a> <br><br>
+				<a href="<?= base_url() ?>admin/Level/new" class="btn btn-primary">Tambah</a> <br><br>
 				<table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
 					<thead>
 						<tr>
@@ -28,8 +28,8 @@
 									<td><?= $row->level; ?></td>
 									<td>
 										<div class="btn-group btn-group-sm">
-											<a href="<?= base_url() ?>admin/Level/editLevel/<?= $row->id_level ?>" class="btn btn-primary">Edit</a>
-											<a href="<?=base_url()?>admin/Level/deleteLevel/<?=$row->id_level?>" class="btn btn-danger btn-sm" onclick="return confirm('Delete Level ?')">
+											<a href="<?= base_url() ?>admin/Level/edit/<?= $row->id_level ?>" class="btn btn-primary">Edit</a>
+											<a href="<?=base_url()?>admin/Level/delete/<?=$row->id_level?>" class="btn btn-danger btn-sm" onclick="return confirm('Delete Level ?')">
 												Delete
 											</a>
 										</div>
