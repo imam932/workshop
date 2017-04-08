@@ -6,23 +6,13 @@ class Tutorial extends Admin_Controller {
   public function __construct()
   {
     parent::__construct();
-    $this->load->model('Model_tutorial');
-    $this->load->model('Model_division');
     $this->load->model('Model_message');
+    $this->load->model('Model_privilege');
   }
 
   public function index()
   {
-    // load data
-    $data['tutorial'] = $this->Model_tutorial->select_all();
-
-    if(!empty($this->session->flashdata('message')))
-    {
-      $data['message'] = $this->session->flashdata('message');
-    }
-    //load page
-    $data['division'] = $this->Model_division->select_all();
-    $data['content'] = $this->load->view('admin/tutorial', $data, TRUE);
+    $data['content'] = $this->load->view('admin/tutorial', array(), TRUE);
 
     // load template
     $data['title'] = "Tutorial";
@@ -30,6 +20,7 @@ class Tutorial extends Admin_Controller {
     $data['breadcrumb'] = array('Dashboard', 'Tutorial');
     $data['unread_message'] = $this->Model_message->unread_num();
     $data['message'] = $this->Model_message->select_all(3);
+    $data['menu'] = $this->Model_privilege->select_all($this->session->userdata('logged_in')['id_level']);
 
     $this->load->view('admin/template', $data);
   }
@@ -97,6 +88,8 @@ class Tutorial extends Admin_Controller {
     $data['breadcrumb']   = array('Dashboard', 'Tutorial', 'New');
     $data['unread_message'] = $this->Model_message->unread_num();
     $data['message'] = $this->Model_message->select_all(3);
+    $data['menu'] = $this->Model_privilege->select_all($this->session->userdata('logged_in')['id_level']);
+
     $this->load->view('admin/template', $data);
   }
 
@@ -173,6 +166,8 @@ class Tutorial extends Admin_Controller {
     $data['breadcrumb']   = array('Dashboard', 'Tutorial', 'Edit');
     $data['unread_message'] = $this->Model_message->unread_num();
     $data['message'] = $this->Model_message->select_all(3);
+    $data['menu'] = $this->Model_privilege->select_all($this->session->userdata('logged_in')['id_level']);
+
     $this->load->view('admin/template', $data);
   }
 

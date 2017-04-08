@@ -7,7 +7,8 @@ class Profile extends CI_Controller
   public function __construct()
   {
     parent::__construct();
-    $this->load->model(array('Model_user', 'Model_auth', 'Model_message'));
+    $this->load->model(array('Model_user', 'Model_message'));
+    $this->load->model(array('Model_user', 'Model_privilege'));
   }
 
   function index()
@@ -33,6 +34,8 @@ class Profile extends CI_Controller
     $data['breadcrumb']     = array('Dashboard', 'Profile');
     $data['unread_message'] = $this->Model_message->unread_num();
     $data['message'] = $this->Model_message->select_all(3);
+    $data['menu'] = $this->Model_privilege->select_all($this->session->userdata('logged_in')['id_level']);
+
     $this->load->view('admin/template', $data);
   }
 
@@ -48,7 +51,7 @@ class Profile extends CI_Controller
     }
     else
     {
-      $auth = $this->Model_auth->select_by_id($id);
+      $auth = $this->Model_user->select_by_id($id);
       $old_password = md5($this->input->post('old_password'));
       $data['password'] = md5($this->input->post('password'));
       $password2 = md5($this->input->post('password2'));
@@ -58,7 +61,7 @@ class Profile extends CI_Controller
       {
         if($data['password'] == $password2)
         {
-          $this->Model_auth->update($data, $id);
+          $this->Model_user->update($data, $id);
           $this->session->set_flashdata('message', 'Success ! Your password has been reseted');
         }
         else
@@ -121,6 +124,8 @@ class Profile extends CI_Controller
     $data['breadcrumb']     = array('Dashboard', 'Profile', 'Edit');
     $data['unread_message'] = $this->Model_message->unread_num();
     $data['message'] = $this->Model_message->select_all(3);
+    $data['menu'] = $this->Model_privilege->select_all($this->session->userdata('logged_in')['id_level']);
+
     $this->load->view('admin/template', $data);
   }
 }

@@ -9,6 +9,7 @@ class Article extends Admin_Controller {
 		$this->load->model('Model_article');
 		$this->load->model('Model_category');
 		$this->load->model('Model_message');
+		$this->load->model('Model_privilege');
   }
 
 	public function index()
@@ -30,6 +31,7 @@ class Article extends Admin_Controller {
 		$data['breadcrumb'] = array('Dashboard', 'Article');
 		$data['unread_message'] = $this->Model_message->unread_num();
     $data['message'] = $this->Model_message->select_all(3);
+		$data['menu'] = $this->Model_privilege->select_all($this->session->userdata('logged_in')['id_level']);
 
 		$this->load->view('admin/template', $data);
 	}
@@ -97,6 +99,7 @@ class Article extends Admin_Controller {
 		$data['breadcrumb'] = array('Dashboard', 'Article', 'New');
 		$data['unread_message'] = $this->Model_message->unread_num();
     $data['message'] = $this->Model_message->select_all(3);
+		$data['menu'] = $this->Model_privilege->select_all($this->session->userdata('logged_in')['id_level']);
 
 		$this->load->view('admin/template', $data);
 	}
@@ -186,6 +189,7 @@ class Article extends Admin_Controller {
 		$data['breadcrumb'] = array('Dashboard', 'Article', 'Edit');
 		$data['unread_message'] = $this->Model_message->unread_num();
     $data['message'] = $this->Model_message->select_all(3);
+		$data['menu'] = $this->Model_privilege->select_all($this->session->userdata('logged_in')['id_level']);
 
 		$this->load->view('admin/template', $data);
 	}

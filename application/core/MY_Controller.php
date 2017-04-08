@@ -3,15 +3,32 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Admin_Controller extends CI_Controller
 {
-
 	public function __construct()
 	{
 		parent::__construct();
 		date_default_timezone_set('Asia/Jakarta');
 
+		// check login
 		if(!$this->session->has_userdata('logged_in'))
 		{
 			redirect('admin/Login','refresh');
+		}
+
+		// check module
+		$this->load->model('Model_privilege');
+		$privilege = $this->Model_privilege->select_all($this->session->userdata('logged_in')['id_level']);
+		$redirect = true;
+		foreach ($privilege as $row)
+		{
+			if($this->router->class == $row->controller)
+			{
+				$redirect = false;
+			}
+		}
+
+		if($redirect)
+		{
+			redirect('admin/','refresh');
 		}
 	}
 }

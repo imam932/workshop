@@ -8,7 +8,7 @@ class Login_admin extends CI_Model {
 		$condition = "username = '" . $data['username'] . "' AND password = '" . $data['password'] . "'";
 
 		$this->db->select("*");
-		$this->db->from("auth");
+		$this->db->from("user");
 		$this->db->where($condition);
 		$this->db->limit(1);
 

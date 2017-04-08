@@ -1,10 +1,10 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Model_tag extends CI_Model
+class Model_level extends CI_Model
 {
 
-  var $table = "tag";
+  var $table = "level";
 
   public function __construct()
   {
@@ -13,6 +13,7 @@ class Model_tag extends CI_Model
 
   public function select_all()
   {
+    $this->db->order_by('level');
     $query = $this->db->get($this->table);
 
     if($query->num_rows() > 0)
@@ -27,12 +28,12 @@ class Model_tag extends CI_Model
 
   public function select_by_id($id)
   {
-    $this->db->where('id_tag', $id);
+    $this->db->where('id_level', $id);
     $query = $this->db->get($this->table);
 
     if($query->num_rows() == 1)
     {
-      return $query->result();
+      return $query->row();
     }
     else
     {
@@ -47,13 +48,19 @@ class Model_tag extends CI_Model
 
   public function update($data, $id)
   {
-    $this->db->where('id_tag', $id);
+    $this->db->where('id_level', $id);
     $this->db->update($this->table, $data);
   }
 
   public function delete($id)
   {
-    $this->db->where('id_tag', $id);
+    $this->db->where('id_level', $id);
     $this->db->delete($this->table);
+  }
+
+  public function num_rows()
+  {
+    $query = $this->db->get($this->table);
+    return $query->num_rows();
   }
 }

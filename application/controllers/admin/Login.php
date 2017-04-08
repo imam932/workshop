@@ -31,12 +31,12 @@ class Login extends CI_Controller
 
 			if($result != FALSE)
 			{
-				$admin = $this->Model_user->select_by_id($result[0]->id_user)[0]->admin;
+				$id_level = $this->Model_user->select_by_id($result[0]->id_user)[0]->id_level;
 
 				$session_data = array(
 					'id_user' => $result[0]->id_user,
 					'username' => $result[0]->username,
-					'admin' => $admin
+					'id_level' => $id_level
 				);
 
 				$this->session->set_userdata('logged_in', $session_data);

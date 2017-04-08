@@ -89,33 +89,6 @@
           </ul>
         </li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell"></i> <b class="caret"></b></a>
-          <ul class="dropdown-menu alert-dropdown">
-            <li>
-              <a href="#">Alert Name <span class="label label-default">Alert Badge</span></a>
-            </li>
-            <li>
-              <a href="#">Alert Name <span class="label label-primary">Alert Badge</span></a>
-            </li>
-            <li>
-              <a href="#">Alert Name <span class="label label-success">Alert Badge</span></a>
-            </li>
-            <li>
-              <a href="#">Alert Name <span class="label label-info">Alert Badge</span></a>
-            </li>
-            <li>
-              <a href="#">Alert Name <span class="label label-warning">Alert Badge</span></a>
-            </li>
-            <li>
-              <a href="#">Alert Name <span class="label label-danger">Alert Badge</span></a>
-            </li>
-            <li class="divider"></li>
-            <li>
-              <a href="#">View All</a>
-            </li>
-          </ul>
-        </li>
-        <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <?= $this->session->userdata('logged_in')['username']; ?><b class="caret"></b></a>
           <ul class="dropdown-menu">
             <li>
@@ -137,40 +110,11 @@
       <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
       <div class="collapse navbar-collapse navbar-ex1-collapse">
         <ul class="nav navbar-nav side-nav">
-          <li>
-            <a href="<?= base_url().'admin/Dashboard' ?>"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
-          </li>
-          <li>
-            <a href="<?= base_url().'admin/Article' ?>"><i class="fa fa-fw fa-file"></i> Article</a>
-          </li>
-          <li>
-            <a href="<?= base_url().'admin/Category' ?>"><i class="fa fa-fw fa-tag"></i> Category</a>
-          </li>
-          <li>
-            <a href="<?= base_url().'admin/Tutorial' ?>"><i class="fa fa-fw fa-files-o"></i> Tutorial</a>
-          </li>
-          <li>
-            <a href="<?= base_url().'admin/Gallery' ?>"><i class="fa fa-fw fa-file-image-o"></i> Gallery</a>
-          </li>
-
-          <?php if($this->session->userdata('logged_in')['admin']) { ?>
+          <?php foreach ($menu as $row) { ?>
             <li>
-              <a href="<?= base_url().'admin/User' ?>"><i class="fa fa-fw fa-user"></i> User </a>
+              <a href="<?= base_url().'admin/' . $row->controller ?>"><i class="fa fa-fw <?= $row->icon ?>"></i> <?= $row->controller ?></a>
             </li>
-            <?php } ?>
-            <li>
-              <a href="<?= base_url().'admin/Visitor' ?>"><i class="fa fa-fw fa-arrow-right"></i> Visitor</a>
-            </li>
-            <li>
-              <a href="<?= base_url().'admin/Message' ?>">
-                <i class="fa fa-fw fa-envelope"></i>
-                Message
-
-                <?php if($unread_message > 0) { ?>
-                <span class="badge"><?= $unread_message ?></span>
-                <?php } ?>
-              </a>
-            </li>
+          <?php } ?>
           </ul>
         </div>
         <!-- /.navbar-collapse -->

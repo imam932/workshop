@@ -13,6 +13,7 @@ class Model_user extends CI_Model
 
   public function select_all()
   {
+    $this->db->join('level', 'user.id_level = level.id_level');
     $query = $this->db->get($this->table);
 
     if($query->num_rows() > 0)
@@ -27,7 +28,23 @@ class Model_user extends CI_Model
 
   public function select_by_id($id)
   {
+    $this->db->join('level', 'user.id_level = level.id_level');
     $this->db->where('id_user', $id);
+    $query = $this->db->get($this->table);
+
+    if($query->num_rows() == 1)
+    {
+      return $query->result();
+    }
+    else
+    {
+      return false;
+    }
+  }
+
+  public function select_by_field($field, $value)
+  {
+    $this->db->where($field, $value);
     $query = $this->db->get($this->table);
 
     if($query->num_rows() == 1)
