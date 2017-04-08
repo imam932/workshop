@@ -1,5 +1,8 @@
 $(document).ready(function() {
 
+	// tooltip enabled
+	$('[data-toggle="tooltip"]').tooltip();
+
 	// uploadcare public key on ckeditor
 	UPLOADCARE_PUBLIC_KEY =	'5aceaad6265140705950';
 

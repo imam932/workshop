@@ -31,7 +31,7 @@
   <link rel="stylesheet" href="<?= base_url( )?>assets/admin/css/chartist-plugin-tooltip.css">
 </head>
 
-<body>
+<body ng-app="myApp">
   <div id="wrapper">
     <!-- Navigation -->
     <nav id="nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -187,6 +187,12 @@
     <script src="<?= base_url() ?>assets/admin/js/chartist-plugin-pointlabels.min.js"></script>
     <script src="<?= base_url() ?>assets/admin/js/chartist-plugin-tooltip.min.js"></script>
     <script src="<?= base_url() ?>assets/admin/ckeditor/ckeditor.js"></script>
+    <script src="<?= base_url() ?>assets/admin/js/angular.min.js"></script>
+    <script src="<?= base_url() ?>assets/admin/js/controller.js"></script>
+    <script src="<?= base_url() ?>assets/admin/js/angular-youtube-api-factory.min.js"></script>
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="<?= base_url() ?>assets/admin/js/angular-youtube-embed.min.js"></script>
+    <script src="<?= base_url() ?>assets/admin/js/ng-youtube-upload.js"></script>
   </body>
 
   </html>
