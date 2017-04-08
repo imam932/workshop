@@ -26,7 +26,7 @@ class Profile extends CI_Controller
       $data['error'] = $this->session->flashdata('error');
     }
     // load page
-    $data['content']        = $this->load->view('admin/profile', $data, TRUE);
+    $data['content']        = $this->load->view('admin/profile/index', $data, TRUE);
 
     // load template
     $data['title']          = "Profile";
@@ -116,7 +116,7 @@ class Profile extends CI_Controller
     // load data
     $data['user'] = $this->Model_user->select_by_id($id);
     // load page
-    $data['content']        = $this->load->view('admin/profile_edit', $data, TRUE);
+    $data['content']        = $this->load->view('admin/profile/edit', $data, TRUE);
 
     // load template
     $data['title']          = "Profile";

@@ -23,7 +23,7 @@ class Article extends Admin_Controller {
 		}
 		// load page
 		$data['category'] = $this->Model_category->select_all();
-		$data['content'] = $this->load->view('admin/article', $data, TRUE);
+		$data['content'] = $this->load->view('admin/article/index', $data, TRUE);
 
 		//load template
 		$data['title'] = "Article";
@@ -91,7 +91,7 @@ class Article extends Admin_Controller {
 			$data['error'] = $this->session->flashdata('error');
 		}
 		// load page
-		$data['content'] = $this->load->view('admin/article_new', $data, TRUE);
+		$data['content'] = $this->load->view('admin/article/new', $data, TRUE);
 
 		//load template
 		$data['title'] = "Article";
@@ -181,7 +181,7 @@ class Article extends Admin_Controller {
 			$data['error'] = $this->session->flashdata('error');
 		}
 		// load page
-		$data['content'] = $this->load->view('admin/article_edit', $data, TRUE);
+		$data['content'] = $this->load->view('admin/article/edit', $data, TRUE);
 
 		// load template
 		$data['title'] = "Article";

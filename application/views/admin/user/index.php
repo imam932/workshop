@@ -2,7 +2,7 @@
 <div class="row">
 	<div class="col-lg-12">
 		<p>
-			<a href="<?= base_url().'admin/User/new' ?>" class="btn btn-primary btn-sm"> New User</a>
+			<a href="<?= base_url().'admin/User/new' ?>" class="btn btn-primary">Create New</a>
 		</p> <br>
 
 		<?php if(isset($message)) { ?>

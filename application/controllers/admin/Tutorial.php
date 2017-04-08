@@ -12,7 +12,7 @@ class Tutorial extends Admin_Controller {
 
   public function index()
   {
-    $data['content'] = $this->load->view('admin/tutorial', array(), TRUE);
+    $data['content'] = $this->load->view('admin/tutorial/index', array(), TRUE);
 
     // load template
     $data['title'] = "Tutorial";

@@ -7,7 +7,7 @@ class Visitor extends Admin_Controller {
 	{
 		$this->load->model(array('Model_message', 'Model_log', 'Model_privilege'));
 		$data['log'] = $this->Model_log->select_all()->result();
-		$data['content'] = $this->load->view('admin/visitor', $data, TRUE);
+		$data['content'] = $this->load->view('admin/visitor/index', $data, TRUE);
 
 		$data['title'] = "Visitor";
 		$data['desc'] = "Detailed view of visitor traffic";

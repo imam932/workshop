@@ -21,7 +21,7 @@ class User extends Admin_Controller{
       $data['message'] = $this->session->flashdata('message');
     }
     // load content
-    $data['content']       = $this->load->view('admin/user', $data, TRUE);
+    $data['content']       = $this->load->view('admin/user/index', $data, TRUE);
     // load template
     $data['title']         = "Users";
     $data['desc']		       = "Admin Users";
@@ -86,7 +86,7 @@ class User extends Admin_Controller{
     }
     // load content
     $data['level'] = $this->Model_level->select_all();
-    $data['content']        = $this->load->view('admin/user_new', $data, TRUE);
+    $data['content']        = $this->load->view('admin/user/new', $data, TRUE);
     // load template
     $data['title']          = "Users";
     $data['desc']		        = "New User";
@@ -138,7 +138,7 @@ class User extends Admin_Controller{
     $data['level'] = $this->Model_level->select_all();
     $data['user'] = $this->Model_user->select_by_id($id);
     // load page
-    $data['content']        = $this->load->view('admin/user_edit', $data, TRUE);
+    $data['content']        = $this->load->view('admin/user/edit', $data, TRUE);
 
     // load template
     $data['title']          = "Users";

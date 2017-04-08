@@ -15,7 +15,7 @@ class Message extends Admin_Controller {
     // load data
     $data['message'] = $this->Model_message->select_all();
     //load page
-    $data['content'] = $this->load->view('admin/message', $data, TRUE);
+    $data['content'] = $this->load->view('admin/message/index', $data, TRUE);
 
     // load template
     $data['title'] = "Message";

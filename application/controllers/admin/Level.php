@@ -24,7 +24,7 @@ class Level extends Admin_Controller {
       $data['message'] = $this->session->flashdata('message');
     }
     //load page
-    $data['content'] = $this->load->view('admin/level', $data, TRUE);
+    $data['content'] = $this->load->view('admin/level/index', $data, TRUE);
 
     //load template
     $data['title'] = "Level";
@@ -77,7 +77,7 @@ class Level extends Admin_Controller {
     {
       $data['error'] = $this->session->flashdata('error');
     }
-    $data['content'] = $this->load->view('admin/level_new', $data, TRUE);
+    $data['content'] = $this->load->view('admin/level/new', $data, TRUE);
     $data['title'] = "Level";
     $data['desc']		= "Create New User Level";
     $data['breadcrumb'] = array('Dashboard', 'Level', 'New');
@@ -133,7 +133,7 @@ class Level extends Admin_Controller {
     {
       $data['error'] = $this->session->flashdata('error');
     }
-    $data['content'] = $this->load->view('admin/level_edit', $data, TRUE);
+    $data['content'] = $this->load->view('admin/level/edit', $data, TRUE);
     $data['title'] = "Level";
     $data['desc']		= "Edit User Level";
     $data['breadcrumb'] = array('Dashboard', 'Level', 'Edit');

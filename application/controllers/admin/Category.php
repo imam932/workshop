@@ -23,7 +23,7 @@ class Category extends Admin_Controller {
       $data['message'] = $this->session->flashdata('message');
     }
     //load page
-    $data['content'] = $this->load->view('admin/category', $data, TRUE);
+    $data['content'] = $this->load->view('admin/category/index', $data, TRUE);
 
     //load template
     $data['title'] = "Category";

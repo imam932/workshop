@@ -25,7 +25,7 @@ class Gallery extends Admin_Controller
       $data['message'] = $this->session->flashdata('message');
     }
     // load page
-    $data['content']       = $this->load->view('admin/gallery', $data, TRUE);
+    $data['content']       = $this->load->view('admin/gallery/index', $data, TRUE);
 
     // load template
     $data['title']         = "Gallery";
@@ -156,7 +156,7 @@ class Gallery extends Admin_Controller
       $data['error'] = $this->session->flashdata('error');
     }
     // load page
-    $data['content'] = $this->load->view('admin/gallery_edit', $data, TRUE);
+    $data['content'] = $this->load->view('admin/gallery/edit', $data, TRUE);
 
     // load template
     $data['title']         = "Gallery";
