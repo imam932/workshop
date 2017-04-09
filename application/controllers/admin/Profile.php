@@ -112,7 +112,7 @@ class Profile extends Admin_Controller
     // load data
     $data['user'] = $this->Model_user->select_by_id($id);
     // load page
-    $data['content']        = $this->load->view('admin/profile/edit', $data, TRUE);
+    $this->render['content']        = $this->load->view('admin/profile/edit', $data, TRUE);
 
     // load template
     $this->render['title']          = "Profile";
