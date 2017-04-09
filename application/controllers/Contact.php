@@ -22,7 +22,7 @@ class Contact extends User_Controller{
       $data['message'] = $this->session->flashdata('message');
     }
     // load page
-    $this->render['content'] = $this->load->view('contact', $data, TRUE);
+    $this->render['content'] = $this->load->view('user/contact/index', $data, TRUE);
 
     //load template
     $this->render['title'] = "Hubungi Kami";
@@ -32,7 +32,7 @@ class Contact extends User_Controller{
       ['label' => 'Hubungi Kami', 'url' => ""]
     );
 
-    $this->load->view('template', $this->render);
+    $this->load->view('user/template', $this->render);
   }
 
   public function sendMessage(){

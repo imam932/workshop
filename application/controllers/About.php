@@ -9,7 +9,7 @@ class About extends User_Controller{
 
   function index(){
     // load data
-    $this->render['content'] = $this->load->view('about', array(), TRUE);
+    $this->render['content'] = $this->load->view('user/about/index', array(), TRUE);
 
     //load template
     $this->render['title'] = "Tentang Kami";
@@ -19,7 +19,7 @@ class About extends User_Controller{
       ['label' => 'Tentang Kami', 'url' => ""],
     );
 
-    $this->load->view('template', $this->render);
+    $this->load->view('user/template', $this->render);
   }
 
 }

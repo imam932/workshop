@@ -16,12 +16,12 @@ class Home extends User_Controller{
     $data['article']          = $this->Model_article->select_all(8);
     $data['gallery']          = $this->Model_gallery->select_all(5);
 
-    $this->render['content']   = $this->load->view('home', $data, TRUE);
+    $this->render['content']   = $this->load->view('user/home/index', $data, TRUE);
     $this->render['title'] = "Home";
     $this->render['desc'] = "desc";
     $this->render['breadcrumb'] = array("Home");
     $this->render['home'] = true;
-    $this->load->view('template', $this->render);
+    $this->load->view('user/template', $this->render);
   }
 
 }

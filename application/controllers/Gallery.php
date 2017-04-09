@@ -12,7 +12,7 @@ class Gallery extends User_Controller{
   function index()
   {
     $data['gallery'] = $this->Model_gallery->select_all();
-    $this->render['content'] = $this->load->view('gallery', $data, TRUE);
+    $this->render['content'] = $this->load->view('user/gallery/index', $data, TRUE);
 
     $this->render['title'] = 'Galeri';
     $this->render['desc'] = 'Kumpulan galeri WRI';
@@ -21,7 +21,7 @@ class Gallery extends User_Controller{
       ['label' => 'Galeri', 'url' => ""]
     );
 
-    $this->load->view('template', $this->render);
+    $this->load->view('user/template', $this->render);
   }
 
 }
