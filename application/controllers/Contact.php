@@ -6,7 +6,7 @@ class Contact extends User_Controller{
   public function __construct()
   {
     parent::__construct();
-    $this->load->model(array('Model_article', 'Model_message'));
+    $this->load->model('Model_message');
   }
 
   function index()
@@ -22,18 +22,17 @@ class Contact extends User_Controller{
       $data['message'] = $this->session->flashdata('message');
     }
     // load page
-    $data['content'] = $this->load->view('contact', $data, TRUE);
+    $this->render['content'] = $this->load->view('contact', $data, TRUE);
 
     //load template
-    $data['title'] = "Hubungi Kami";
-    $data['desc'] = "Ingin bergabung, atau ada kritik dan saran ?";
-    $data['breadcrumb'] = array(
+    $this->render['title'] = "Hubungi Kami";
+    $this->render['desc'] = "Ingin bergabung, atau ada kritik dan saran ?";
+    $this->render['breadcrumb'] = array(
       ['label' => 'Home', 'url' => base_url()],
       ['label' => 'Hubungi Kami', 'url' => ""]
     );
-    $data['article_footer']   = $this->Model_article->select_all(4);
 
-    $this->load->view('template', $data);
+    $this->load->view('template', $this->render);
   }
 
   public function sendMessage(){

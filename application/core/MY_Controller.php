@@ -44,9 +44,14 @@ class Admin_Controller extends CI_Controller
 
 class User_Controller extends CI_Controller
 {
+	protected $render = array();
+
 	public function __construct()
 	{
 		parent::__construct();
+
+		// load model
+		$this->load->model('Model_article');
 
 		// check if cookie is exist
 		if(is_null(get_cookie("visitor")))
@@ -86,6 +91,8 @@ class User_Controller extends CI_Controller
 			$expire = 60 * 60 * 24;
 			set_cookie("visitor", $data['browser'], $expire);
 		}
+
+		$this->render['article_footer']   = $this->Model_article->select_all(4);
 	}
 }
 
