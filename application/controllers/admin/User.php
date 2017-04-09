@@ -6,9 +6,7 @@ class User extends Admin_Controller{
   public function __construct(){
     parent::__construct();
     $this->load->model('Model_user');
-    $this->load->model('Model_message');
     $this->load->model('Model_level');
-    $this->load->model('Model_privilege');
   }
 
   function index()
@@ -21,16 +19,13 @@ class User extends Admin_Controller{
       $data['message'] = $this->session->flashdata('message');
     }
     // load content
-    $data['content']       = $this->load->view('admin/user/index', $data, TRUE);
+    $this->render['content']       = $this->load->view('admin/user/index', $data, TRUE);
     // load template
-    $data['title']         = "Users";
-    $data['desc']		       = "Admin Users";
-    $data['breadcrumb']    = array('Dashboard', 'User');
-    $data['unread_message'] = $this->Model_message->unread_num();
-    $data['message'] = $this->Model_message->select_all(3);
-    $data['menu'] = $this->Model_privilege->select_all($this->session->userdata('logged_in')['id_level']);
+    $this->render['title']         = "Users";
+    $this->render['desc']		       = "Admin Users";
+    $this->render['breadcrumb']    = array('Dashboard', 'User');
 
-    $this->load->view('admin/template', $data);
+    $this->load->view('admin/template', $this->render);
   }
 
   public function new()
@@ -86,16 +81,13 @@ class User extends Admin_Controller{
     }
     // load content
     $data['level'] = $this->Model_level->select_all();
-    $data['content']        = $this->load->view('admin/user/new', $data, TRUE);
+    $this->render['content']        = $this->load->view('admin/user/new', $data, TRUE);
     // load template
-    $data['title']          = "Users";
-    $data['desc']		        = "New User";
-    $data['breadcrumb']     = array('Dashboard', 'User', 'New');
-    $data['unread_message'] = $this->Model_message->unread_num();
-    $data['message'] = $this->Model_message->select_all(3);
-    $data['menu'] = $this->Model_privilege->select_all($this->session->userdata('logged_in')['id_level']);
+    $this->render['title']          = "Users";
+    $this->render['desc']		        = "New User";
+    $this->render['breadcrumb']     = array('Dashboard', 'User', 'New');
 
-    $this->load->view('admin/template', $data);
+    $this->load->view('admin/template', $this->render);
   }
 
   public function edit($id)
@@ -138,17 +130,14 @@ class User extends Admin_Controller{
     $data['level'] = $this->Model_level->select_all();
     $data['user'] = $this->Model_user->select_by_id($id);
     // load page
-    $data['content']        = $this->load->view('admin/user/edit', $data, TRUE);
+    $this->render['content']        = $this->load->view('admin/user/edit', $data, TRUE);
 
     // load template
-    $data['title']          = "Users";
-    $data['desc']		        = "Edir User";
-    $data['breadcrumb']     = array('Dashboard', 'User', 'Edit');
-    $data['unread_message'] = $this->Model_message->unread_num();
-    $data['message'] = $this->Model_message->select_all(3);
-    $data['menu'] = $this->Model_privilege->select_all($this->session->userdata('logged_in')['id_level']);
+    $this->render['title']          = "Users";
+    $this->render['desc']		        = "Edir User";
+    $this->render['breadcrumb']     = array('Dashboard', 'User', 'Edit');
 
-    $this->load->view('admin/template', $data);
+    $this->load->view('admin/template', $this->render);
   }
 
   public function delete($id)

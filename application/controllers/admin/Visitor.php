@@ -5,18 +5,16 @@ class Visitor extends Admin_Controller {
 
 	public function index()
 	{
-		$this->load->model(array('Model_message', 'Model_log', 'Model_privilege'));
+		$this->load->model('Model_log');
+
 		$data['log'] = $this->Model_log->select_all()->result();
-		$data['content'] = $this->load->view('admin/visitor/index', $data, TRUE);
+		$this->render['content'] = $this->load->view('admin/visitor/index', $data, TRUE);
 
-		$data['title'] = "Visitor";
-		$data['desc'] = "Detailed view of visitor traffic";
-		$data['breadcrumb'] = array('Dashboard', 'Visitor');
-		$data['unread_message'] = $this->Model_message->unread_num();
-    $data['message'] = $this->Model_message->select_all(3);
-		$data['menu'] = $this->Model_privilege->select_all($this->session->userdata('logged_in')['id_level']);
+		$this->render['title'] = "Visitor";
+		$this->render['desc'] = "Detailed view of visitor traffic";
+		$this->render['breadcrumb'] = array('Dashboard', 'Visitor');
 
-		$this->load->view('admin/template', $data);
+		$this->load->view('admin/template', $this->render);
 	}
 }
 /* End of file admin.php */

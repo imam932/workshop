@@ -38,6 +38,7 @@ class Admin_Controller extends CI_Controller
 		$this->render['unread_message'] = $this->Model_message->unread_num();
     $this->render['message'] = $this->Model_message->select_all(3);
 		$this->render['menu'] = $this->Model_privilege->select_all($this->session->userdata('logged_in')['id_level']);
+		$this->render['active_menu'] = $this->router->class;
 	}
 }
 

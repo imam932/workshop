@@ -110,8 +110,13 @@
       <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
       <div class="collapse navbar-collapse navbar-ex1-collapse">
         <ul class="nav navbar-nav side-nav">
-          <?php foreach ($menu as $row) { ?>
-            <li>
+          <?php foreach ($menu as $row) {
+            $active = "";
+            if ($row->controller == $active_menu) {
+              $active = "active";
+            }
+          ?>
+            <li class="<?= $active ?>">
               <a href="<?= base_url().'admin/' . $row->controller ?>"><i class="fa fa-fw <?= $row->icon ?>"></i> <?= $row->controller ?></a>
             </li>
           <?php } ?>
