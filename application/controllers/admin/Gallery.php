@@ -7,8 +7,6 @@ class Gallery extends Admin_Controller
   {
     parent::__construct();
     $this->load->model('Model_gallery');
-    $this->load->model('Model_message');
-    $this->load->model('Model_privilege');
   }
 
   function index()
@@ -25,17 +23,14 @@ class Gallery extends Admin_Controller
       $data['message'] = $this->session->flashdata('message');
     }
     // load page
-    $data['content']       = $this->load->view('admin/gallery/index', $data, TRUE);
+    $this->render['content']       = $this->load->view('admin/gallery/index', $data, TRUE);
 
     // load template
-    $data['title']         = "Gallery";
-    $data['desc']		       = "Gallery Event WRI";
-    $data['breadcrumb']    = array('Dashboard', 'Gallery');
-    $data['unread_message'] = $this->Model_message->unread_num();
-    $data['message'] = $this->Model_message->select_all(3);
-    $data['menu'] = $this->Model_privilege->select_all($this->session->userdata('logged_in')['id_level']);
+    $this->render['title']         = "Gallery";
+    $this->render['desc']		       = "Gallery Event WRI";
+    $this->render['breadcrumb']    = array('Dashboard', 'Gallery');
 
-    $this->load->view('admin/template', $data);
+    $this->load->view('admin/template', $this->render);
   }
 
   function new()
@@ -156,17 +151,14 @@ class Gallery extends Admin_Controller
       $data['error'] = $this->session->flashdata('error');
     }
     // load page
-    $data['content'] = $this->load->view('admin/gallery/edit', $data, TRUE);
+    $this->render['content'] = $this->load->view('admin/gallery/edit', $data, TRUE);
 
     // load template
-    $data['title']         = "Gallery";
-    $data['desc']		       = "Edit Gallery";
-    $data['breadcrumb']    = array('Dashboard', 'Gallery', 'Edit');
-    $data['unread_message'] = $this->Model_message->unread_num();
-    $data['message'] = $this->Model_message->select_all(3);
-    $data['menu'] = $this->Model_privilege->select_all($this->session->userdata('logged_in')['id_level']);
+    $this->render['title']         = "Gallery";
+    $this->render['desc']		       = "Edit Gallery";
+    $this->render['breadcrumb']    = array('Dashboard', 'Gallery', 'Edit');
 
-    $this->load->view('admin/template', $data);
+    $this->load->view('admin/template', $this->render);
   }
 
 

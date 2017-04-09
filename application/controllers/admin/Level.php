@@ -8,7 +8,6 @@ class Level extends Admin_Controller {
     $this->load->model('Model_level');
     $this->load->model('Model_module');
     $this->load->model('Model_privilege');
-    $this->load->model('Model_message');
   }
 
   function index(){
@@ -24,17 +23,14 @@ class Level extends Admin_Controller {
       $data['message'] = $this->session->flashdata('message');
     }
     //load page
-    $data['content'] = $this->load->view('admin/level/index', $data, TRUE);
+    $this->render['content'] = $this->load->view('admin/level/index', $data, TRUE);
 
     //load template
-    $data['title'] = "Level";
-    $data['desc']		= "User Level";
-    $data['breadcrumb'] = array('Dashboard', 'Level');
-    $data['unread_message'] = $this->Model_message->unread_num();
-    $data['message'] = $this->Model_message->select_all(3);
-    $data['menu'] = $this->Model_privilege->select_all($this->session->userdata('logged_in')['id_level']);
+    $this->render['title'] = "Level";
+    $this->render['desc']		= "User Level";
+    $this->render['breadcrumb'] = array('Dashboard', 'Level');
 
-    $this->load->view('admin/template', $data);
+    $this->load->view('admin/template', $this->render);
   }
 
   public function new()
@@ -77,15 +73,13 @@ class Level extends Admin_Controller {
     {
       $data['error'] = $this->session->flashdata('error');
     }
-    $data['content'] = $this->load->view('admin/level/new', $data, TRUE);
-    $data['title'] = "Level";
-    $data['desc']		= "Create New User Level";
-    $data['breadcrumb'] = array('Dashboard', 'Level', 'New');
-    $data['unread_message'] = $this->Model_message->unread_num();
-    $data['message'] = $this->Model_message->select_all(3);
-    $data['menu'] = $this->Model_privilege->select_all($this->session->userdata('logged_in')['id_level']);
 
-    $this->load->view('admin/template', $data);
+    $this->render['content'] = $this->load->view('admin/level/new', $data, TRUE);
+    $this->render['title'] = "Level";
+    $this->render['desc']		= "Create New User Level";
+    $this->render['breadcrumb'] = array('Dashboard', 'Level', 'New');
+
+    $this->load->view('admin/template', $this->render);
   }
 
   public function edit($id)
@@ -133,15 +127,12 @@ class Level extends Admin_Controller {
     {
       $data['error'] = $this->session->flashdata('error');
     }
-    $data['content'] = $this->load->view('admin/level/edit', $data, TRUE);
-    $data['title'] = "Level";
-    $data['desc']		= "Edit User Level";
-    $data['breadcrumb'] = array('Dashboard', 'Level', 'Edit');
-    $data['unread_message'] = $this->Model_message->unread_num();
-    $data['message'] = $this->Model_message->select_all(3);
-    $data['menu'] = $this->Model_privilege->select_all($this->session->userdata('logged_in')['id_level']);
+    $this->render['content'] = $this->load->view('admin/level/edit', $data, TRUE);
+    $this->render['title'] = "Level";
+    $this->render['desc']		= "Edit User Level";
+    $this->render['breadcrumb'] = array('Dashboard', 'Level', 'Edit');
 
-    $this->load->view('admin/template', $data);
+    $this->load->view('admin/template', $this->render);
   }
 
   public function delete($id)

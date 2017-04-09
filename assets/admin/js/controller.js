@@ -1,4 +1,4 @@
-var app = angular.module('myApp', ['jtt_youtube', 'youtube-embed', 'youtube-video']);
+var app = angular.module('myApp', ['jtt_youtube', 'youtube-embed']);
 
 app.controller('tutorial', function ($scope, youtubeFactory) {
 

@@ -6,8 +6,6 @@ class Category extends Admin_Controller {
   public function __construct(){
     parent::__construct();
     $this->load->model('Model_category');
-    $this->load->model('Model_message');
-    $this->load->model('Model_privilege');
   }
 
   function index(){
@@ -23,17 +21,14 @@ class Category extends Admin_Controller {
       $data['message'] = $this->session->flashdata('message');
     }
     //load page
-    $data['content'] = $this->load->view('admin/category/index', $data, TRUE);
+    $this->render['content'] = $this->load->view('admin/category/index', $data, TRUE);
 
     //load template
-    $data['title'] = "Category";
-    $data['desc']		= "Category Articles";
-    $data['breadcrumb'] = array('Dashboard', 'Category');
-    $data['unread_message'] = $this->Model_message->unread_num();
-    $data['message'] = $this->Model_message->select_all(3);
-    $data['menu'] = $this->Model_privilege->select_all($this->session->userdata('logged_in')['id_level']);
+    $this->render['title'] = "Category";
+    $this->render['desc']		= "Category Articles";
+    $this->render['breadcrumb'] = array('Dashboard', 'Category');
 
-    $this->load->view('admin/template', $data);
+    $this->load->view('admin/template', $this->render);
   }
 
   public function new()

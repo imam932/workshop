@@ -3,10 +3,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Admin_Controller extends CI_Controller
 {
+
+	protected $render = array();
+
 	public function __construct()
 	{
 		parent::__construct();
 		date_default_timezone_set('Asia/Jakarta');
+
+		// load model
+		$this->load->model(['Model_privilege','Model_message']);
 
 		// check login
 		if(!$this->session->has_userdata('logged_in'))
@@ -15,21 +21,23 @@ class Admin_Controller extends CI_Controller
 		}
 
 		// check module
-		$this->load->model('Model_privilege');
-		$privilege = $this->Model_privilege->select_all($this->session->userdata('logged_in')['id_level']);
-		$redirect = true;
-		foreach ($privilege as $row)
-		{
-			if($this->router->class == $row->controller)
-			{
-				$redirect = false;
+		if ($this->router->class != "Profile") {
+			$privilege = $this->Model_privilege->select_all($this->session->userdata('logged_in')['id_level']);
+			$redirect = true;
+			foreach ($privilege as $row) {
+				if($this->router->class == $row->controller) {
+					$redirect = false;
+				}
+			}
+
+			if($redirect) {
+				redirect('admin/','refresh');
 			}
 		}
 
-		if($redirect)
-		{
-			redirect('admin/','refresh');
-		}
+		$this->render['unread_message'] = $this->Model_message->unread_num();
+    $this->render['message'] = $this->Model_message->select_all(3);
+		$this->render['menu'] = $this->Model_privilege->select_all($this->session->userdata('logged_in')['id_level']);
 	}
 }
 

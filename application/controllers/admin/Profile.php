@@ -1,14 +1,13 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Profile extends CI_Controller
+class Profile extends Admin_Controller
 {
 
   public function __construct()
   {
     parent::__construct();
-    $this->load->model(array('Model_user', 'Model_message'));
-    $this->load->model(array('Model_user', 'Model_privilege'));
+    $this->load->model('Model_user');
   }
 
   function index()
@@ -26,17 +25,14 @@ class Profile extends CI_Controller
       $data['error'] = $this->session->flashdata('error');
     }
     // load page
-    $data['content']        = $this->load->view('admin/profile/index', $data, TRUE);
+    $this->render['content']        = $this->load->view('admin/profile/index', $data, TRUE);
 
     // load template
-    $data['title']          = "Profile";
-    $data['desc']		        = "View your profile";
-    $data['breadcrumb']     = array('Dashboard', 'Profile');
-    $data['unread_message'] = $this->Model_message->unread_num();
-    $data['message'] = $this->Model_message->select_all(3);
-    $data['menu'] = $this->Model_privilege->select_all($this->session->userdata('logged_in')['id_level']);
+    $this->render['title']          = "Profile";
+    $this->render['desc']		        = "View your profile";
+    $this->render['breadcrumb']     = array('Dashboard', 'Profile');
 
-    $this->load->view('admin/template', $data);
+    $this->load->view('admin/template', $this->render);
   }
 
   public function resetPassword($id)
@@ -119,13 +115,10 @@ class Profile extends CI_Controller
     $data['content']        = $this->load->view('admin/profile/edit', $data, TRUE);
 
     // load template
-    $data['title']          = "Profile";
-    $data['desc']		        = "Edit your profile";
-    $data['breadcrumb']     = array('Dashboard', 'Profile', 'Edit');
-    $data['unread_message'] = $this->Model_message->unread_num();
-    $data['message'] = $this->Model_message->select_all(3);
-    $data['menu'] = $this->Model_privilege->select_all($this->session->userdata('logged_in')['id_level']);
+    $this->render['title']          = "Profile";
+    $this->render['desc']		        = "Edit your profile";
+    $this->render['breadcrumb']     = array('Dashboard', 'Profile', 'Edit');
 
-    $this->load->view('admin/template', $data);
+    $this->load->view('admin/template', $this->render);
   }
 }

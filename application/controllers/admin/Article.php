@@ -8,8 +8,6 @@ class Article extends Admin_Controller {
     parent::__construct();
 		$this->load->model('Model_article');
 		$this->load->model('Model_category');
-		$this->load->model('Model_message');
-		$this->load->model('Model_privilege');
   }
 
 	public function index()
@@ -23,17 +21,14 @@ class Article extends Admin_Controller {
 		}
 		// load page
 		$data['category'] = $this->Model_category->select_all();
-		$data['content'] = $this->load->view('admin/article/index', $data, TRUE);
+		$this->render['content'] = $this->load->view('admin/article/index', $data, TRUE);
 
 		//load template
-		$data['title'] = "Article";
-		$data['desc'] = "Create or Manage Articles";
-		$data['breadcrumb'] = array('Dashboard', 'Article');
-		$data['unread_message'] = $this->Model_message->unread_num();
-    $data['message'] = $this->Model_message->select_all(3);
-		$data['menu'] = $this->Model_privilege->select_all($this->session->userdata('logged_in')['id_level']);
+		$this->render['title'] = "Article";
+		$this->render['desc'] = "Create or Manage Articles";
+		$this->render['breadcrumb'] = array('Dashboard', 'Article');
 
-		$this->load->view('admin/template', $data);
+		$this->load->view('admin/template', $this->render);
 	}
 
 	public function new()
@@ -90,18 +85,16 @@ class Article extends Admin_Controller {
 		{
 			$data['error'] = $this->session->flashdata('error');
 		}
+
 		// load page
-		$data['content'] = $this->load->view('admin/article/new', $data, TRUE);
+		$this->render['content'] = $this->load->view('admin/article/new', $data, TRUE);
 
 		//load template
-		$data['title'] = "Article";
-		$data['desc'] = "Create New Article";
-		$data['breadcrumb'] = array('Dashboard', 'Article', 'New');
-		$data['unread_message'] = $this->Model_message->unread_num();
-    $data['message'] = $this->Model_message->select_all(3);
-		$data['menu'] = $this->Model_privilege->select_all($this->session->userdata('logged_in')['id_level']);
+		$this->render['title'] = "Article";
+		$this->render['desc'] = "Create New Article";
+		$this->render['breadcrumb'] = array('Dashboard', 'Article', 'New');
 
-		$this->load->view('admin/template', $data);
+		$this->load->view('admin/template', $this->render);
 	}
 
 	function delete($id)
@@ -181,17 +174,14 @@ class Article extends Admin_Controller {
 			$data['error'] = $this->session->flashdata('error');
 		}
 		// load page
-		$data['content'] = $this->load->view('admin/article/edit', $data, TRUE);
+		$this->render['content'] = $this->load->view('admin/article/edit', $data, TRUE);
 
 		// load template
-		$data['title'] = "Article";
-		$data['desc'] = "Edit Article";
-		$data['breadcrumb'] = array('Dashboard', 'Article', 'Edit');
-		$data['unread_message'] = $this->Model_message->unread_num();
-    $data['message'] = $this->Model_message->select_all(3);
-		$data['menu'] = $this->Model_privilege->select_all($this->session->userdata('logged_in')['id_level']);
+		$this->render['title'] = "Article";
+		$this->render['desc'] = "Edit Article";
+		$this->render['breadcrumb'] = array('Dashboard', 'Article', 'Edit');
 
-		$this->load->view('admin/template', $data);
+		$this->load->view('admin/template', $this->render);
 	}
 
 	function publish($id, $bool)
