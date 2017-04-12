@@ -41,7 +41,7 @@
   <link rel="stylesheet" href="<?= base_url() ?>assets/css/skins/default.css">
   <link rel="stylesheet" href="<?= base_url() ?>assets/css/styles.css">
 </head>
-<body>
+<body ng-app="myApp">
 
   <div class="body">
     <header id="header" data-plugin-options='{"stickyEnabled": true, "stickyEnableOnBoxed": true, "stickyEnableOnMobile": true, "stickyStartAt": 57, "stickySetTop": "-57px", "stickyChangeLogo": true}'>
@@ -309,5 +309,11 @@
     <script src="<?= base_url() ?>assets/js/list.pagination.min.js"></script>
     <script src="<?= base_url() ?>assets/js/list.min.js"></script>
     <script src="<?= base_url() ?>assets/js/default.js"></script>
+    <script src="<?= base_url() ?>assets/js/angular.min.js"></script>
+    <script src="<?= base_url() ?>assets/js/angular-youtube-api-factory.min.js"></script>
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="<?= base_url() ?>assets/js/angular-youtube-embed.min.js"></script>
+    <script src="<?= base_url() ?>assets/js/controller.js"></script>
+    <script src="<?= base_url() ?>assets/js/ui-bootstrap-tpls-0.10.0.js"></script>
   </body>
   </html>

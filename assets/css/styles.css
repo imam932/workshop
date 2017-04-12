@@ -271,3 +271,43 @@ anggota h4{
 .organisasi, .about__title, .contact_panel{
   padding: 1em;
 }
+
+.video-card .panel-heading {
+	padding: 0;
+	position: relative;
+}
+
+.video-card:hover .play, .video-card:hover .blur {
+	opacity: 100;
+	transition: all 0.5s;
+}
+
+.video-card .panel-body {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.video-card .play {
+	position: absolute;
+	z-index: 2;
+	margin: auto;
+	font-size: 50px;
+	color: white;
+	position: absolute;
+	top: 40%;
+	text-align: center;
+	left: 0;
+	right: 0;
+	margin:auto;
+	opacity: 0;
+}
+
+.video-card .blur {
+	height: 100%;
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.6);
+	position: absolute;
+	top: 0;
+	opacity: 0;
+}
