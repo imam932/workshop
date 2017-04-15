@@ -311,3 +311,11 @@ anggota h4{
 	top: 0;
 	opacity: 0;
 }
+
+.modal-body {
+	padding: 5px !important;
+}
+
+.modal-footer {
+	padding: 5px !important;
+}
