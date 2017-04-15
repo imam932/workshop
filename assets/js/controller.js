@@ -193,6 +193,37 @@ app.controller('viewPlaylist', function ($scope, $http) {
 	$scope.playlistId = window.playlistId;
 	$scope.videos = [];
 
+	// mendapatkan info playlist untuk playlist header
+	$scope.getPlaylist = function () {
+
+		// membuat params
+		var query = {
+			id: $scope.playlistId,
+			part: "snippet",
+			key: "AIzaSyAiHtxgSZLXBkb5B_z94XSYrjtXUy7NEi0",
+			maxResults: 1
+		}
+
+		// membuat config untuk method get
+		var config = {
+			params: query
+		};
+
+		$http.get("https://www.googleapis.com/youtube/v3/playlists", config).then(
+
+			// saat berhasil
+			function (response) {
+				$scope.playlist = response.data.items[0];
+				console.log($scope.playlist);
+			},
+
+			// saat gagal
+			function (response) {
+
+			}
+		);
+	};
+
 	// pergi ke halaman selanjutnya
 	$scope.nextPage = function (nextPage) {
 
@@ -258,5 +289,6 @@ app.controller('viewPlaylist', function ($scope, $http) {
 		);
 	};
 
+	$scope.getPlaylist();
 	$scope.search();
 });

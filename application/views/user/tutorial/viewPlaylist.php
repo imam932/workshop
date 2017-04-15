@@ -6,7 +6,19 @@
   <div class="col-md-12">
 
     <!-- Playlist Header  -->
-
+      <div class="row">
+        <div class="col-md-2">
+          <img src="{{ playlist.snippet.thumbnails.high.url }}" class="img-responsive">
+        </div>
+        <div class="col-md-10">
+          <h3>{{ playlist.snippet.title }}</h3>
+          <h5>
+            <i class="fa fa-calendar"></i>
+            {{ playlist.snippet.publishedAt | date:"dd/MM/yyyy" }}
+          </h5>
+          <h6>{{ playlist.snippet.description }}</h6>
+        </div>
+      </div>
     <hr>
 
     <!-- Video Result  -->
