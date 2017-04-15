@@ -1,4 +1,4 @@
-var app = angular.module('myApp', ['jtt_youtube', 'youtube-embed', 'ui.bootstrap']);
+var app = angular.module('myApp', ['youtube-embed', 'ui.bootstrap']);
 
 //membuat filter untuk menentukan posisi start dari ng-repeat
 app.filter('startFrom', function () {
@@ -11,38 +11,91 @@ app.filter('startFrom', function () {
 	};
 });
 
-app.controller('tutorial', function ($scope, youtubeFactory, $filter) {
+app.controller('videos', function ($scope, $http) {
 
-	$scope.orderName = "snippet.publishedAt";
-	$scope.orderDesc = true;
+	$scope.videos = [];
+	$scope.orderName = "date";
 
-	// ambil video dari youtube
-  youtubeFactory.getVideosFromChannelById({
+	// pergi ke halaman selanjutnya
+	$scope.nextPage = function (nextPage) {
 
-    channelId: "UCyU5wkjgQYGRB0hIHMwm2Sg",
-    part: "snippet",
-    key: "AIzaSyAiHtxgSZLXBkb5B_z94XSYrjtXUy7NEi0",
-    maxResults: 50
+		// membuat params
+		var query = {
+			channelId: "UCyU5wkjgQYGRB0hIHMwm2Sg",
+			part: "snippet",
+			key: "AIzaSyAiHtxgSZLXBkb5B_z94XSYrjtXUy7NEi0",
+			maxResults: 12,
+			pageToken: nextPage,
+			q: $scope.cari,
+			order:$scope.orderName,
+			type: "video"
+		}
 
-  }).then(function (_data) {
+		// membuat config untuk method get
+		var config = {
+			params: query
+		};
 
-    console.log(_data);
-    $scope.videos = _data.data.items;
+		$http.get("https://www.googleapis.com/youtube/v3/search", config).then(
 
-		// $watch untuk mengubah pagination saat melakukan pencarian
-		$scope.$watch('cari', function(newValue, oldValue) {
+			// saat berhasil
+			function (response) {
+				$scope.data = response.data;
+				$scope.videos.push(...response.data.items);
+				console.log($scope.videos);
+				console.log($scope.data);
+			},
 
-			// mengatur pagination
-			$scope.filteredVideos = $filter('filter') ($scope.videos, $scope.cari);
-	    $scope.currentPage	= 1;
-	    $scope.entryLimit	= 12;
-			$scope.totalItems = $scope.filteredVideos.length;
-	    $scope.noOfPages	= Math.ceil($scope.totalItems / $scope.entryLimit);
+			// saat gagal
+			function (response) {
 
-		}, true);
+			}
+		);
+	};
 
-  }).catch(function (_data) {
-    console.log(_data);
-  });
+	// cari video
+	$scope.search = function () {
 
+		// membuat params
+		var query = {
+			channelId: "UCyU5wkjgQYGRB0hIHMwm2Sg",
+			part: "snippet",
+			key: "AIzaSyAiHtxgSZLXBkb5B_z94XSYrjtXUy7NEi0",
+			maxResults: 12,
+			q: $scope.cari,
+			order:$scope.orderName,
+			type: "video"
+		}
+
+		// membuat config untuk method get
+		var config = {
+			params: query
+		};
+
+		$http.get("https://www.googleapis.com/youtube/v3/search", config).then(
+
+			// saat berhasil
+			function (response) {
+				$scope.data = response.data;
+				$scope.videos = response.data.items;
+			},
+
+			// saat gagal
+			function (response) {
+
+			}
+		);
+	};
+
+	// lakukan pencarian ketika input cari berubah
+	$scope.$watch('cari', function(newValue, oldValue) {
+	  $scope.search();
+	}, true);
+
+	// lakukan pencarian ketika order berubah
+	$scope.$watch('orderName', function(newValue, oldValue) {
+	  $scope.search();
+	}, true);
+
+	$scope.search();
 });
