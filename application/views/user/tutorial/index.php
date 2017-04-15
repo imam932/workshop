@@ -8,7 +8,7 @@
 
     <!-- Video Result  -->
     <div class="row">
-      <div class="col-md-3" ng-repeat="li in filteredItems = (videos | filter:cari) | startFrom:(currentPage - 1) * entryLimit | limitTo:entryLimit as cariResult">
+      <div class="col-md-3" ng-repeat="li in videos | filter:cari | startFrom:(currentPage - 1) * entryLimit | limitTo:entryLimit">
 
         <!-- Modal Video -->
         <div class="modal fade" id="modal-video{{ li.id.videoId }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -45,7 +45,7 @@
           </div>
         </div>
       </div>
-      <div ng-show="cariResult == 0">
+      <div ng-show="totalItems == 0">
         <br>
         <center>
           <h2>
@@ -56,7 +56,7 @@
       </div>
     </div>
 
-    <pagination page="currentPage" total-items="filteredItems.length" items-per-page="entryLimit"></pagination>
+    <pagination page="currentPage" total-items="totalItems" items-per-page="entryLimit" ng-show="noOfPages > 1"></pagination>
 
   </div>
 </div>

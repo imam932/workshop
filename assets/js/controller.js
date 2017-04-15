@@ -11,8 +11,9 @@ app.filter('startFrom', function () {
 	};
 });
 
-app.controller('tutorial', function ($scope, youtubeFactory, filterFilter) {
+app.controller('tutorial', function ($scope, youtubeFactory, $filter) {
 
+	// ambil video dari youtube
   youtubeFactory.getVideosFromChannelById({
 
     channelId: "UCyU5wkjgQYGRB0hIHMwm2Sg",
@@ -25,11 +26,17 @@ app.controller('tutorial', function ($scope, youtubeFactory, filterFilter) {
     console.log(_data);
     $scope.videos = _data.data.items;
 
-		// mengatur pagination
-    $scope.currentPage	= 1;
-    $scope.entryLimit	= 12;
-		// $scope.totalItems = $scope.filteredItems.length;
-    // $scope.noOfPages	= Math.ceil($scope.totalItems / $scope.entryLimit);
+		// $watch untuk mengubah pagination saat melakukan pencarian
+		$scope.$watch('cari', function(newValue, oldValue) {
+
+			// mengatur pagination
+			$scope.filteredVideos = $filter('filter') ($scope.videos, $scope.cari);
+	    $scope.currentPage	= 1;
+	    $scope.entryLimit	= 12;
+			$scope.totalItems = $scope.filteredVideos.length;
+	    $scope.noOfPages	= Math.ceil($scope.totalItems / $scope.entryLimit);
+
+		}, true);
 
   }).catch(function (_data) {
     console.log(_data);
