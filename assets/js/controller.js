@@ -13,6 +13,9 @@ app.filter('startFrom', function () {
 
 app.controller('tutorial', function ($scope, youtubeFactory, $filter) {
 
+	$scope.orderName = "snippet.publishedAt";
+	$scope.orderDesc = true;
+
 	// ambil video dari youtube
   youtubeFactory.getVideosFromChannelById({
 
