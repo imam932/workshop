@@ -6,57 +6,38 @@
       <div class="col-md-6">
         <div class="form-group">
           <label for="">Pencarian</label>
-          <input class="search form-control" placeholder="Cari Playlist" ng-model="cari.snippet.title" />
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="form-group">
-          <label for="">Urutkan Berdasarkan</label>
-          <select class="form-control" ng-model="orderName">
-            <option value="snippet.publishedAt">Tanggal</option>
-            <option value="snippet.title">Nama</option>
-          </select>
+          <input class="search form-control" placeholder="Cari Playlist" ng-model="cari" />
         </div>
       </div>
 
       <div class="col-md-3">
         <div class="form-group">
-          <label for="">Urutkan Secara</label>
-          <select class="form-control" ng-model="orderDesc" ng-options="item.value as item.label for item in [{label:'Ascending', value:false}, {label:'Descending', value:true}]"></select>
+          <label for="">Urutkan Berdasarkan</label>
+          <select class="form-control" ng-model="orderName">
+            <option value="date">Tanggal</option>
+            <option value="title">Judul</option>
+            <option value="rating">Rating</option>
+            <option value="viewCount">Popularitas</option>
+          </select>
         </div>
       </div>
     </div>
 
     <hr>
 
-    <!-- Video Result  -->
+    <!-- Playlist Result  -->
     <div class="row">
-      <div class="col-md-3" ng-repeat="li in videos | filter:cari | orderBy:orderName:orderDesc | startFrom:(currentPage - 1) * entryLimit | limitTo:entryLimit">
-
-        <!-- Modal Video -->
-        <div class="modal fade" id="modal-video{{ li.id.videoId }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-          <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-              <div class="modal-body">
-                <div class="embed-responsive embed-responsive-16by9">
-        					<youtube-video class="embed-responsive-item" video-id="li.id.videoId" player="videoPlayer"></youtube-video>
-        				</div>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-danger btn-lg" data-dismiss="modal" ng-click="videoPlayer.stopVideo()">Close</button>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="col-md-3" ng-repeat="li in playlist">
 
         <div class="panel panel-default video-card">
 
-          <!-- Modal Video Trigger  -->
+          <!-- Playlist Link  -->
           <div class="panel-heading">
-            <a data-toggle="modal" href="#modal-video{{ li.id.videoId }}">
+            <a data-toggle="modal" href="<?= base_url() ?>Tutorial/viewPlaylist/{{ li.id.playlistId }}">
               <img src="{{ li.snippet.thumbnails.high.url }}" alt="" class="img-responsive">
               <div class="play">
                 <i class="fa fa-play-circle"></i>
+                Play All
               </div>
               <div class="blur"></div>
             </a>
@@ -67,18 +48,24 @@
           </div>
         </div>
       </div>
-      <div ng-show="totalItems == 0">
+
+      <div ng-show="playlist.length == 0">
         <br>
         <center>
           <h2>
             <i class="fa fa-frown-o"></i>
-            Tutorial Tidak Ditemukan
+            Playlist Tidak Ditemukan
           </h2>
         </center>
       </div>
-    </div>
 
-    <pagination page="currentPage" total-items="totalItems" items-per-page="entryLimit" ng-show="noOfPages > 1"></pagination>
+      <center>
+        <button type="button" class="btn btn-primary" ng-click="nextPage(data.nextPageToken)" ng-show="data.hasOwnProperty('nextPageToken')">
+          Tampilkan Lebih Banyak
+        </button>
+      </center>
+
+    </div>
 
   </div>
 </div>

@@ -59,6 +59,24 @@ class Tutorial extends User_Controller
     $this->load->view('user/template', $this->render);
   }
 
+  function viewPlaylist($id)
+  {
+    // load data
+    $data['playlistId'] = $id;
+    $this->render['content'] = $this->load->view('user/tutorial/viewPlaylist', $data, TRUE);
+
+    //load template
+    $this->render['title'] = "Tutorial";
+    $this->render['desc'] = "Kumpulan  Playlist";
+    $this->render['breadcrumb'] = array(
+      ['label' => 'Home', 'url' => base_url()],
+      ['label' => 'Tutorial', 'url' => base_url() . "Tutorial"],
+      ['label' => 'Playlist', 'url' => base_url() . "Tutorial/playlist"],
+      ['label' => 'Lihat Playlist', 'url' => ""]
+    );
+
+    $this->load->view('user/template', $this->render);
+  }
 }
 
 ?>
