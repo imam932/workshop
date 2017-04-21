@@ -3,7 +3,7 @@
 	<div class="col-lg-12">
 
 		<p>
-			<a href="<?= base_url().'admin/Article/new' ?>" class="btn btn-primary"> Create New</a>
+			<a href="<?= base_url().'admin/Article/store' ?>" class="btn btn-primary"> Create New</a>
 		</p> <br>
 
 		<?php if(isset($message)) { ?>

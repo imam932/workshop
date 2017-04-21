@@ -31,7 +31,7 @@ class Category extends Admin_Controller {
     $this->load->view('admin/template', $this->render);
   }
 
-  public function new()
+  public function store()
   {
 
     //form validation

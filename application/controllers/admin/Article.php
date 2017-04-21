@@ -31,7 +31,7 @@ class Article extends Admin_Controller {
 		$this->load->view('admin/template', $this->render);
 	}
 
-	public function new()
+	public function store()
 	{
 		if ($this->input->server('REQUEST_METHOD') == 'POST')
 		{
@@ -42,7 +42,7 @@ class Article extends Admin_Controller {
 	    if(!$this->form_validation->run())
 	    {
 	      $this->session->set_flashdata('error', validation_errors());
-				redirect('admin/Article/new', 'refresh');
+				redirect('admin/Article/store', 'refresh');
 	    }
 			else
 			{
@@ -66,7 +66,7 @@ class Article extends Admin_Controller {
 	      if(!$this->upload->do_upload('image'))
 	      {
 	        $this->session->set_flashdata('error', $this->upload->display_errors());
-					redirect('admin/Article/new', 'refresh');
+					redirect('admin/Article/store', 'refresh');
 	      }
 	      else
 	      {
@@ -87,7 +87,7 @@ class Article extends Admin_Controller {
 		}
 
 		// load page
-		$this->render['content'] = $this->load->view('admin/article/new', $data, TRUE);
+		$this->render['content'] = $this->load->view('admin/article/store', $data, TRUE);
 
 		//load template
 		$this->render['title'] = "Article";

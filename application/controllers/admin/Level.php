@@ -33,7 +33,7 @@ class Level extends Admin_Controller {
     $this->load->view('admin/template', $this->render);
   }
 
-  public function new()
+  public function store()
   {
     // POST METHOD
     if($this->input->server('REQUEST_METHOD') == 'POST')
@@ -44,7 +44,7 @@ class Level extends Admin_Controller {
       if(!$this->form_validation->run())
       {
         $this->session->set_flashdata('error', form_error('level'));
-        redirect('admin/Level/new', 'refresh');
+        redirect('admin/Level/store', 'refresh');
       }
       else
       {
@@ -74,7 +74,7 @@ class Level extends Admin_Controller {
       $data['error'] = $this->session->flashdata('error');
     }
 
-    $this->render['content'] = $this->load->view('admin/level/new', $data, TRUE);
+    $this->render['content'] = $this->load->view('admin/level/store', $data, TRUE);
     $this->render['title'] = "Level";
     $this->render['desc']		= "Create New User Level";
     $this->render['breadcrumb'] = array('Dashboard', 'Level', 'New');

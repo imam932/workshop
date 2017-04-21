@@ -28,7 +28,7 @@ class User extends Admin_Controller{
     $this->load->view('admin/template', $this->render);
   }
 
-  public function new()
+  public function store()
   {
     if ($this->input->server('REQUEST_METHOD') == 'POST')
     {
@@ -45,7 +45,7 @@ class User extends Admin_Controller{
 	    if(!$this->form_validation->run())
 	    {
 	      $this->session->set_flashdata('error', validation_errors());
-				redirect('admin/User/new', 'refresh');
+				redirect('admin/User/store', 'refresh');
 	    }
       else
       {
@@ -53,7 +53,7 @@ class User extends Admin_Controller{
         if($username_exist)
         {
           $this->session->set_flashdata('error', 'Username exist, use another');
-          redirect('admin/User/new', 'refresh');
+          redirect('admin/User/store', 'refresh');
         }
         else
         {
@@ -81,7 +81,7 @@ class User extends Admin_Controller{
     }
     // load content
     $data['level'] = $this->Model_level->select_all();
-    $this->render['content']        = $this->load->view('admin/user/new', $data, TRUE);
+    $this->render['content']        = $this->load->view('admin/user/store', $data, TRUE);
     // load template
     $this->render['title']          = "Users";
     $this->render['desc']		        = "New User";

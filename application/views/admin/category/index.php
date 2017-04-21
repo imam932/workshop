@@ -51,7 +51,7 @@
 				</div>
 				<!-- panel left -->
 				<div class="col-lg-6">
-					<form class="" action="<?= base_url(); ?>admin/Category/new" method="post">
+					<form class="" action="<?= base_url(); ?>admin/Category/store" method="post">
 						<div class="input-group">
 							<input type="text" class="form-control" placeholder="Category" name="category">
 							<span class="input-group-btn">

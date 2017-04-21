@@ -8,7 +8,7 @@
 
 		<div class="row">
 			<div class="col-lg-12">
-				<a href="<?= base_url() ?>admin/Level/new" class="btn btn-primary">Create New</a> <br><br>
+				<a href="<?= base_url() ?>admin/Level/store" class="btn btn-primary">Create New</a> <br><br>
 				<table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
 					<thead>
 						<tr>

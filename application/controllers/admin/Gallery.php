@@ -33,7 +33,7 @@ class Gallery extends Admin_Controller
     $this->load->view('admin/template', $this->render);
   }
 
-  function new()
+  function store()
   {
     //form validation
     $this->form_validation->set_rules('title', 'Title', 'trim|required|xss_clean');

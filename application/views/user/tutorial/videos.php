@@ -69,7 +69,7 @@
         <center>
           <h2>
             <i class="fa fa-frown-o"></i>
-            Tutorial Tidak Ditemukan
+            Video Tidak Ditemukan
           </h2>
         </center>
       </div>
