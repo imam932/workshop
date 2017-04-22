@@ -312,6 +312,19 @@ anggota h4{
 	opacity: 0;
 }
 
+.video-card .detail {
+	background-color: rgba(0, 0, 0, 0.8);
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 100%;
+	width: 30%;
+	text-align: center;
+	padding-top: 25%;
+	font-size: 16px;
+	color: white;
+}
+
 .modal-body {
 	padding: 5px !important;
 }

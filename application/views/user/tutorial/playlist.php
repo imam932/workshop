@@ -27,7 +27,7 @@
 
     <!-- Playlist Result  -->
     <div class="row">
-      <div class="col-md-3" ng-repeat="li in playlist">
+      <div class="col-md-4" ng-repeat="li in playlist">
 
         <div class="panel panel-default video-card">
 
@@ -37,9 +37,13 @@
               <img src="{{ li.snippet.thumbnails.high.url }}" alt="" class="img-responsive">
               <div class="play">
                 <i class="fa fa-play-circle"></i>
-                Play All
               </div>
               <div class="blur"></div>
+              <div class="detail">
+                {{ li.contentDetails.itemCount }} <br>
+                Video <br>
+                <i class="fa fa-list"></i> <br>
+              </div>
             </a>
           </div>
 
@@ -60,7 +64,7 @@
       </div>
 
       <center>
-        <button type="button" class="btn btn-primary" ng-click="nextPage(data.nextPageToken)" ng-show="data.hasOwnProperty('nextPageToken')">
+        <button type="button" class="btn btn-primary" ng-click="search(data.nextPageToken)" ng-show="data.hasOwnProperty('nextPageToken')">
           Tampilkan Lebih Banyak
         </button>
       </center>

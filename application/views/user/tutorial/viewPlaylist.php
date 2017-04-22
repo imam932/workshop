@@ -71,7 +71,7 @@
       </div>
 
       <center>
-        <button type="button" class="btn btn-primary" ng-click="nextPage(data.nextPageToken)" ng-show="data.hasOwnProperty('nextPageToken')">
+        <button type="button" class="btn btn-primary" ng-click="search(data.nextPageToken)" ng-show="data.hasOwnProperty('nextPageToken')">
           Tampilkan Lebih Banyak
         </button>
       </center>
