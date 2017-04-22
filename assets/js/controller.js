@@ -11,10 +11,18 @@ app.filter('startFrom', function () {
 	};
 });
 
+app.filter('durationFormat', function() {
+  return function (input) {
+		var formattedTime = input.replace("PT","").replace("H"," jam ").replace("M"," menit ").replace("S"," detik");
+		return formattedTime;
+  };
+})
+
 app.controller('videos', function ($scope, $http) {
 
 	$scope.videos = [];
 	$scope.orderName = "date";
+	$scope.viewMode = "grid";
 
 	// cari video
 	$scope.search = function (nextPage) {
@@ -46,8 +54,33 @@ app.controller('videos', function ($scope, $http) {
 			} else {
 				$scope.videos = response.data.items;
 			}
+
+			$scope.getVideoDetail();
+
+			console.log($scope.videos);
 		});
 	};
+
+	// mengambil detail informasi dari semua video
+	$scope.getVideoDetail = function () {
+
+		angular.forEach($scope.videos, function(row) {
+
+			var query = {
+				id: row.id.videoId,
+				part: "contentDetails",
+				key: "AIzaSyAiHtxgSZLXBkb5B_z94XSYrjtXUy7NEi0"
+			}
+
+			var config = {
+				params: query
+			}
+
+			$http.get("https://www.googleapis.com/youtube/v3/videos", config).then(function (response) {
+				row.contentDetails = response.data.items[0].contentDetails;
+			});
+		});
+	}
 
 	// lakukan pencarian ketika input cari berubah
 	$scope.$watch('cari', function(newValue, oldValue) {

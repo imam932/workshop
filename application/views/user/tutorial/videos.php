@@ -21,29 +21,41 @@
           </select>
         </div>
       </div>
+
+      <div class="col-md-3">
+        <div class="form-group">
+          <label for="">Mode Tampilan</label>
+          <select class="form-control" ng-model="viewMode">
+            <option value="grid">Grid</option>
+            <option value="list">List</option>
+          </select>
+        </div>
+      </div>
     </div>
 
     <hr>
 
     <!-- Video Result  -->
-    <div class="row">
-      <div class="col-md-3" ng-repeat="li in videos">
 
-        <!-- Modal Video -->
-        <div class="modal fade" id="modal-video{{ li.id.videoId }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-body">
-                <div class="embed-responsive embed-responsive-16by9">
-        					<youtube-video class="embed-responsive-item" video-id="li.id.videoId" player="videoPlayer"></youtube-video>
-        				</div>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal" ng-click="videoPlayer.stopVideo()">Close</button>
-              </div>
+    <!-- Modal Video -->
+    <div class="modal fade" ng-repeat="li in videos" id="modal-video{{ li.id.videoId }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="embed-responsive embed-responsive-16by9">
+              <youtube-video class="embed-responsive-item" video-id="li.id.videoId" player="videoPlayer"></youtube-video>
             </div>
           </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal" ng-click="videoPlayer.stopVideo()">Close</button>
+          </div>
         </div>
+      </div>
+    </div>
+
+    <!-- Grid View  -->
+    <div class="row" ng-show="viewMode == 'grid'">
+      <div class="col-md-3" ng-repeat="li in videos">
 
         <div class="panel panel-default video-card">
 
@@ -63,24 +75,52 @@
           </div>
         </div>
       </div>
+    </div>
 
-      <div ng-show="videos.length == 0">
-        <br>
-        <center>
-          <h2>
-            <i class="fa fa-frown-o"></i>
-            Video Tidak Ditemukan
-          </h2>
-        </center>
+    <!-- List View  -->
+    <div class="row" ng-show="viewMode == 'list'">
+      <div class="col-md-12" ng-repeat="li in videos">
+
+        <div class="row">
+            <div class="col-md-1">
+              <a data-toggle="modal" href="#modal-video{{ li.id.videoId }}">
+                <img src="{{ li.snippet.thumbnails.high.url }}" alt="" class="img-responsive">
+              </a>
+            </div>
+            <div class="col-md-8">
+              <a data-toggle="modal" href="#modal-video{{ li.id.videoId }}">{{ li.snippet.title }}</a> <br>
+              <span>
+                <i class="fa fa-calendar"></i>
+                <span>{{ li.snippet.publishedAt | date:"dd/MM/yyyy" }}</span>
+              </span>
+            </div>
+            <div class="col-md-3">
+              <span class="pull-right">
+                <span>{{ li.contentDetails.duration | durationFormat }}</span>
+              </span>
+            </div>
+        </div>
+        <hr>
+
       </div>
-
-      <center>
-        <button type="button" class="btn btn-primary" ng-click="search(data.nextPageToken)" ng-show="data.hasOwnProperty('nextPageToken')">
-          Tampilkan Lebih Banyak
-        </button>
-      </center>
 
     </div>
 
+    <!-- load more and not found  -->
+    <div ng-show="videos.length == 0">
+      <br>
+      <center>
+        <h2>
+          <i class="fa fa-frown-o"></i>
+          Video Tidak Ditemukan
+        </h2>
+      </center>
+    </div>
+
+    <center>
+      <button type="button" class="btn btn-primary" ng-click="search(data.nextPageToken)" ng-show="data.hasOwnProperty('nextPageToken')">
+        Tampilkan Lebih Banyak
+      </button>
+    </center>
   </div>
 </div>
