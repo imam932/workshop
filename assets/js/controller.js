@@ -171,6 +171,7 @@ app.controller('playlist', function ($scope, $http) {
 app.controller('viewPlaylist', function ($scope, $http) {
 	$scope.playlistId = window.playlistId;
 	$scope.videos = [];
+	$scope.viewMode = "grid";
 
 	// mendapatkan info playlist untuk playlist header
 	$scope.getPlaylist = function () {
@@ -221,8 +222,30 @@ app.controller('viewPlaylist', function ($scope, $http) {
 			} else {
 				$scope.videos = response.data.items;
 			}
+			$scope.getVideoDetail();
 		});
 	};
+
+	// mengambil detail informasi dari semua video
+	$scope.getVideoDetail = function () {
+
+		angular.forEach($scope.videos, function(row) {
+
+			var query = {
+				id: row.snippet.resourceId.videoId,
+				part: "contentDetails",
+				key: "AIzaSyAiHtxgSZLXBkb5B_z94XSYrjtXUy7NEi0"
+			}
+
+			var config = {
+				params: query
+			}
+
+			$http.get("https://www.googleapis.com/youtube/v3/videos", config).then(function (response) {
+				row.contentDetails = response.data.items[0].contentDetails;
+			});
+		});
+	}
 
 	$scope.getPlaylist();
 	$scope.search();

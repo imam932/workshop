@@ -27,7 +27,7 @@
 
     <!-- Playlist Result  -->
     <div class="row">
-      <div class="col-md-4" ng-repeat="li in playlist">
+      <div class="col-md-3" ng-repeat="li in playlist">
 
         <div class="panel panel-default video-card">
 
