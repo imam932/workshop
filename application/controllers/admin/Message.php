@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Message extends Admin_Controller {
+class Message extends CI_Controller {
 
   public function __construct()
   {
@@ -24,9 +24,24 @@ class Message extends Admin_Controller {
     $this->load->view('admin/template', $this->render);
   }
 
-  public function read($id)
+  public function detail($id)
   {
-    $this->Model_message->read($id);
+    $data['message'] = $this->Model_message->selectById($id);
+    print_r($data['message']);
+    $this->reader['content'] = $this->load->view('admin/message/detail', $data, TRUE);
+
+    $this->render['title'] = "Message";
+    $this->render['desc'] = "Detail View incoming message";
+    $this->render['breadcrumb'] = array('Dashboard', 'Message');
+
+    // $this->load->view('admin/template', $this->render);
+  }
+
+  function delete($id)
+  {
+    $this->Model_message->delete($id);
+    // $this->session->set_flashdata('message', 'Success ! Message has been deleted');
+    // redirect('admin/message', 'refresh');
   }
 }
 
