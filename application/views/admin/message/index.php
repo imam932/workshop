@@ -22,11 +22,11 @@
             <td><?= $no++; ?></td>
             <td><?= $row->name; ?></td>
             <td><?= $row->email; ?></td>
-            <td><?= $time->format('d/m/Y'); ?></td>
+            <td><?= $time->format('d-m-Y'); ?></td>
             <td>
               <div class="btn-group btn-group-sm">
-                <a href="<?=base_url()?>admin/message/detail/<?=$row->id_message?>" class="btn btn-primary btn-sm">Details </a>
-                <a href="<?=base_url()?>admin/message/delete/<?=$row->id_message?>" class="btn btn-danger btn-sm"> Delete
+                <a href="<?=base_url()?>admin/Message/detail/<?=$row->id_message?>" class="btn btn-primary btn-sm">Details </a>
+                <a href="<?=base_url()?>admin/Message/delete/<?=$row->id_message?>" class="btn btn-danger btn-sm"  onclick="return confirm('Delete Message ?')"> Delete
                 </a>
               </div>
             </td>

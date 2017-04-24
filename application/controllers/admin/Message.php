@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Message extends CI_Controller {
+class Message extends Admin_Controller {
 
   public function __construct()
   {
@@ -12,13 +12,13 @@ class Message extends CI_Controller {
   public function index()
   {
     // load data
-    $data['message'] = $this->Model_message->select_all();
+    $data['message']            = $this->Model_message->select_all();
     //load page
-    $this->render['content'] = $this->load->view('admin/message/index', $data, TRUE);
+    $this->render['content']    = $this->load->view('admin/message/index', $data, TRUE);
 
     // load template
-    $this->render['title'] = "Message";
-    $this->render['desc'] = "View incoming message";
+    $this->render['title']      = "Message";
+    $this->render['desc']       = "View incoming message";
     $this->render['breadcrumb'] = array('Dashboard', 'Message');
 
     $this->load->view('admin/template', $this->render);
@@ -26,22 +26,21 @@ class Message extends CI_Controller {
 
   public function detail($id)
   {
-    $data['message'] = $this->Model_message->selectById($id);
-    print_r($data['message']);
-    $this->reader['content'] = $this->load->view('admin/message/detail', $data, TRUE);
-
-    $this->render['title'] = "Message";
-    $this->render['desc'] = "Detail View incoming message";
+    $data['message']            = $this->Model_message->selectById($id);
+    $this->render['content']    = $this->load->view('admin/message/detail', $data, TRUE);
+print_r($data);
+    $this->render['title']      = "Message";
+    $this->render['desc']       = "Detail View incoming message";
     $this->render['breadcrumb'] = array('Dashboard', 'Message');
 
-    // $this->load->view('admin/template', $this->render);
+    $this->load->view('admin/template', $this->render);
   }
 
   function delete($id)
   {
     $this->Model_message->delete($id);
-    // $this->session->set_flashdata('message', 'Success ! Message has been deleted');
-    // redirect('admin/message', 'refresh');
+    $this->session->set_flashdata('message', 'Success ! Message has been deleted');
+    redirect('admin/Message', 'refresh');
   }
 }
 
