@@ -88,12 +88,12 @@
               <h2>{{ $index + 1 }}</h2>
             </div>
             <div class="col-md-1">
-              <a data-toggle="modal" href="#modal-video{{ li.id.videoId }}">
+              <a data-toggle="modal" href="#modal-video{{ li.snippet.resourceId.videoId }}">
                 <img src="{{ li.snippet.thumbnails.high.url }}" alt="" class="img-responsive">
               </a>
             </div>
             <div class="col-md-7">
-              <a data-toggle="modal" href="#modal-video{{ li.id.videoId }}">{{ li.snippet.title }}</a> <br>
+              <a data-toggle="modal" href="#modal-video{{ li.snippet.resourceId.videoId }}">{{ li.snippet.title }}</a> <br>
               <span>
                 <i class="fa fa-calendar"></i>
                 <span>{{ li.snippet.publishedAt | date:"dd/MM/yyyy" }}</span>
