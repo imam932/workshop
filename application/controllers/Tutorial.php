@@ -12,16 +12,16 @@ class Tutorial extends User_Controller
   function index()
   {
     // load data
-    $this->render['content'] = $this->load->view('user/tutorial/index', array(), TRUE);
+    $this->render['content'] = $this->load->view('user/tutorial/playlist', array(), TRUE);
 
     //load template
     $this->render['title'] = "Tutorial";
     $this->render['desc'] = "Kumpulan tutorial per divisi";
     $this->render['breadcrumb'] = array(
       ['label' => 'Home', 'url' => base_url()],
-      ['label' => 'Tutorial', 'url' => ""]
+      ['label' => 'Tutorial', 'url' => base_url() . "Tutorial"],
+      ['label' => 'Playlist', 'url' => ""],
     );
-
     $this->load->view('user/template', $this->render);
   }
 

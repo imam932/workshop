@@ -3,6 +3,26 @@
 
     <!-- Pencarian  -->
     <div class="row">
+
+      <div class="col-md-3">
+        <label for="">Menu</label>
+        <ul class="nav nav-pills">
+          <li id="playlist-menu">
+            <a href="<?= base_url() ?>Tutorial/">
+              <i class="fa fa-th-list"></i>
+              Playlist
+            </a>
+          </li>
+          <li id="video-menu">
+            <a href="<?= base_url() ?>Tutorial/videos">
+              <i class="fa fa-file-video-o"></i>
+              Video
+            </a>
+          </li>
+        </ul>
+
+      </div>
+
       <div class="col-md-6">
         <div class="form-group">
           <label for="">Pencarian</label>
@@ -73,3 +93,7 @@
 
   </div>
 </div>
+
+<script type="text/javascript">
+  document.getElementById('playlist-menu').className = "active";
+</script>
