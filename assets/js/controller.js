@@ -12,15 +12,35 @@ app.filter('startFrom', function () {
 });
 
 app.filter('durationFormat', function() {
-  return function (input) {
+	return function (input) {
 		var formattedTime = input.replace("PT","").replace("H"," jam ").replace("M"," menit ").replace("S"," detik");
 		return formattedTime;
-  };
-})
+	};
+});
 
 app.controller('home', function ($scope, $http) {
 
 	$scope.featuredVideoId = "EEXtWKMWEg4";
+
+	// mengambil video tutorial terbaru
+	// membuat params
+	var query = {
+		channelId: "UCyU5wkjgQYGRB0hIHMwm2Sg",
+		part: "snippet",
+		key: "AIzaSyAiHtxgSZLXBkb5B_z94XSYrjtXUy7NEi0",
+		maxResults: 4,
+		order: "date",
+		type: "video"
+	}
+	// membuat config untuk method get
+	var config = {
+		params: query
+	};
+
+	$http.get("https://www.googleapis.com/youtube/v3/search", config).then(function (response) {
+		$scope.videos = response.data.items;
+		console.log($scope.videos);
+	});
 
 });
 
