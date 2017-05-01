@@ -332,3 +332,8 @@ anggota h4{
 .modal-footer {
 	padding: 5px !important;
 }
+
+#featuredVideo {
+	border: solid 5px white;
+	margin: 50px 50px;
+}

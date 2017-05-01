@@ -18,6 +18,12 @@ app.filter('durationFormat', function() {
   };
 })
 
+app.controller('home', function ($scope, $http) {
+
+	$scope.featuredVideoId = "EEXtWKMWEg4";
+
+});
+
 app.controller('videos', function ($scope, $http) {
 
 	$scope.videos = [];
@@ -25,8 +31,8 @@ app.controller('videos', function ($scope, $http) {
 	$scope.viewMode = "grid";
 
 	// cari video
-	$scope.search = function (nextPage) {
 
+	$scope.search = function (nextPage) {
 		// membuat params
 		var query = {
 			channelId: "UCyU5wkjgQYGRB0hIHMwm2Sg",
