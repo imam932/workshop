@@ -1,3 +1,5 @@
+var channel = "UCyU5wkjgQYGRB0hIHMwm2Sg";
+var key = "AIzaSyAiHtxgSZLXBkb5B_z94XSYrjtXUy7NEi0";
 var app = angular.module('myApp', ['youtube-embed', 'ui.bootstrap']);
 
 //membuat filter untuk menentukan posisi start dari ng-repeat
@@ -25,9 +27,9 @@ app.controller('home', function ($scope, $http) {
 	// mengambil video tutorial terbaru
 	// membuat params
 	var query = {
-		channelId: "UCyU5wkjgQYGRB0hIHMwm2Sg",
+		channelId: channel,
 		part: "snippet",
-		key: "AIzaSyAiHtxgSZLXBkb5B_z94XSYrjtXUy7NEi0",
+		key: key,
 		maxResults: 4,
 		order: "date",
 		type: "video"
@@ -55,9 +57,9 @@ app.controller('videos', function ($scope, $http) {
 	$scope.search = function (nextPage) {
 		// membuat params
 		var query = {
-			channelId: "UCyU5wkjgQYGRB0hIHMwm2Sg",
+			channelId: channel,
 			part: "snippet",
-			key: "AIzaSyAiHtxgSZLXBkb5B_z94XSYrjtXUy7NEi0",
+			key: key,
 			maxResults: 12,
 			q: $scope.cari,
 			order:$scope.orderName,
@@ -95,7 +97,7 @@ app.controller('videos', function ($scope, $http) {
 			var query = {
 				id: row.id.videoId,
 				part: "contentDetails",
-				key: "AIzaSyAiHtxgSZLXBkb5B_z94XSYrjtXUy7NEi0"
+				key: key
 			}
 
 			var config = {
@@ -131,9 +133,9 @@ app.controller('playlist', function ($scope, $http) {
 
 		// membuat params
 		var query = {
-			channelId: "UCyU5wkjgQYGRB0hIHMwm2Sg",
+			channelId: channel,
 			part: "snippet",
-			key: "AIzaSyAiHtxgSZLXBkb5B_z94XSYrjtXUy7NEi0",
+			key: key,
 			maxResults: 12,
 			q: $scope.cari,
 			order:$scope.orderName,
@@ -168,7 +170,7 @@ app.controller('playlist', function ($scope, $http) {
 			var query = {
 				id: row.id.playlistId,
 				part: "contentDetails",
-				key: "AIzaSyAiHtxgSZLXBkb5B_z94XSYrjtXUy7NEi0"
+				key: key
 			}
 
 			var config = {
@@ -206,7 +208,7 @@ app.controller('viewPlaylist', function ($scope, $http) {
 		var query = {
 			id: $scope.playlistId,
 			part: "snippet",
-			key: "AIzaSyAiHtxgSZLXBkb5B_z94XSYrjtXUy7NEi0",
+			key: key,
 			maxResults: 1
 		}
 
@@ -228,7 +230,7 @@ app.controller('viewPlaylist', function ($scope, $http) {
 		var query = {
 			playlistId: $scope.playlistId,
 			part: "snippet",
-			key: "AIzaSyAiHtxgSZLXBkb5B_z94XSYrjtXUy7NEi0",
+			key: key,
 			maxResults: 12
 		}
 
@@ -260,7 +262,7 @@ app.controller('viewPlaylist', function ($scope, $http) {
 			var query = {
 				id: row.snippet.resourceId.videoId,
 				part: "contentDetails",
-				key: "AIzaSyAiHtxgSZLXBkb5B_z94XSYrjtXUy7NEi0"
+				key: key
 			}
 
 			var config = {
