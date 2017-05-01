@@ -40,7 +40,7 @@
       data-whitespace="nowrap"
       data-transform_in="y:[100%];s:500;"
       data-transform_out="opacity:0;s:500;"
-      data-mask_in="x:0px;y:0px;">PEMOGRAMAN
+      data-mask_in="x:0px;y:0px;">PEMROGRAMAN
     </div>
 
     <div class="tp-caption bottom-label"

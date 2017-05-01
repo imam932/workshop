@@ -43,4 +43,22 @@ class Model_message extends CI_Model{
     $q = $this->db->get($this->table);
     return $q->num_rows();
   }
+
+  function selectById($id)
+  {
+    $this->db->where('id_message', $id);
+    $query = $this->db->get($this->table);
+
+    if ($query->num_rows() == 1) {
+      return $query->row();
+    }else {
+      return FALSE;
+    }
+  }
+
+  function delete($id)
+  {
+    $this->db->where('id_message', $id);
+    $this->db->delete($this->table);
+  }
 }
