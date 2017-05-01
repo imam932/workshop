@@ -117,7 +117,7 @@
                         </li>
 
                         <li>
-                          <a href="<?= base_url() ?>Tutorial">
+                          <a href="<?= base_url() ?>Tutorial/playlist">
                             Tutorial
                           </a>
                         </li>

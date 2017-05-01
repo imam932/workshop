@@ -7,7 +7,7 @@
         <label for="">Menu</label>
         <ul class="nav nav-pills">
           <li id="playlist-menu">
-            <a href="<?= base_url() ?>Tutorial/">
+            <a href="<?= base_url() ?>Tutorial/playlist">
               <i class="fa fa-th-list"></i>
               Playlist
             </a>
