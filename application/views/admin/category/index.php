@@ -17,7 +17,7 @@
 						<tr>
 							<th>#</th>
 							<th>Category</th>
-							<th>Aksi</th>
+							<th>Action</th>
 						</tr>
 					</thead>
 
@@ -51,11 +51,12 @@
 				</div>
 				<!-- panel left -->
 				<div class="col-lg-6">
+					<h4>Create New Category</h4>
 					<form class="" action="<?= base_url(); ?>admin/Category/store" method="post">
 						<div class="input-group">
 							<input type="text" class="form-control" placeholder="Category" name="category">
 							<span class="input-group-btn">
-								<button class="btn btn-primary" name="submit">Add</button>
+								<button class="btn btn-primary" name="submit">Submit</button>
 							</span>
 						</div>
 					</form>

@@ -8,7 +8,7 @@
           <th>Name</th>
           <th>E-mail</th>
           <th>Date</th>
-          <th>Aksi</th>
+          <th>Action</th>
         </tr>
       </thead>
 

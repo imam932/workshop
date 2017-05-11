@@ -73,7 +73,7 @@
                       <textarea name="description" rows="5" class="form-control" placeholder="Description..."></textarea>
                     </div>
 
-                    <input type="submit" name="" value="Add" class="btn btn-primary">
+                    <input type="submit" name="" value="Submit" class="btn btn-primary">
                   </div>
                 </form>
               </div>

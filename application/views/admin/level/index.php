@@ -14,7 +14,7 @@
 						<tr>
 							<th>#</th>
 							<th>Level</th>
-							<th>Aksi</th>
+							<th>Action</th>
 						</tr>
 					</thead>
 
