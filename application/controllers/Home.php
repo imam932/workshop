@@ -8,6 +8,7 @@ class Home extends User_Controller{
     parent::__construct();
     $this->load->model('Model_article');
     $this->load->model('Model_gallery');
+    $this->load->model('Model_division');
   }
 
   function index()
@@ -15,6 +16,7 @@ class Home extends User_Controller{
     // load data
     $data['article']          = $this->Model_article->select_all(8);
     $data['gallery']          = $this->Model_gallery->select_all(5);
+    $data['division']          = $this->Model_division->select_all();
 
     $this->render['content']   = $this->load->view('user/home/index', $data, TRUE);
     $this->render['title'] = "Home";

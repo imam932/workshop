@@ -111,7 +111,7 @@
             }
           ?>
             <li class="<?= $active ?>">
-              <a href="<?= base_url().'admin/' . $row->controller ?>"><i class="fa fa-fw <?= $row->icon ?>"></i> <?= $row->controller ?></a>
+              <a href="<?= base_url().'admin/' . $row->controller ?>"><i class="fa fa-fw <?= $row->icon ?>"></i> <?= $row->module ?></a>
             </li>
           <?php } ?>
           </ul>

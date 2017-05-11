@@ -69,43 +69,18 @@
   <div class="container">
     <div class="featured-boxes">
       <div class="row">
+        <?php foreach ($division as $row) { ?>
         <div class="col-md-4 col-sm-6">
           <div class="featured-box featured-box-primary">
             <div class="box-content" align="center">
-              <img src="<?= base_url() ?>assets/img/divisi_pemograman.jpg" class="img-responsive" width="50%"  alt="">
-              <h4 class="text-uppercase">Pemrograman</h4>
-              <p>Divisi Pemrograman adalah divisi yang mengembangkan berbagai cabang ilmu yang difokuskan pada proses pembuatan atau pengembangan program / aplikasi
-                yang menggunakan berbagai bahasa pemrograman, seperti : <b>C++, Java, Html, Php, Css, Javascript,
-                  dan bahasa pemrograman lainnya.</b></p>
+              <img src="<?= base_url() ?>assets/upload/division/<?= $row->image ?>" class="img-responsive" width="50%"  alt="">
+              <h4 class="text-uppercase"><?= $row->division ?></h4>
+              <p><?= $row->description ?></p>
                   <!-- <p><a href="/" class="lnk-primary learn-more">Learn More <i class="fa fa-angle-right"></i></a></p> -->
                 </div>
               </div>
             </div>
-            <div class="col-md-4 col-sm-6">
-              <div class="featured-box featured-box-primary">
-                <div class="box-content" align="center">
-                  <img src="<?= base_url() ?>assets/img/divisi_multimedia.png" class="img-responsive" width="50%"  alt="">
-                  <h4 class="text-uppercase">Multimedia</h4>
-                  <p>Divisi Multimedia adalah divisi yang berfokus pada penyampaian informasi yang menggunakan berbagai media digital, media tersebut mecakup desain
-                    grafis, audio, video, serta bidang multimedia lainnya. Divisi ini juga memiliki peran penting dalam proses
-                    pembuatan atau pengembangan game, terutama dalam bidang desain, seperti : karakter, assets, animasi dan komponen lainnya pada game.</p>
-                    <!-- <p><a href="/" class="lnk-primary learn-more">Learn More <i class="fa fa-angle-right"></i></a></p> -->
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4 col-sm-6">
-                <div class="featured-box featured-box-primary featured-box-effect-1">
-                  <div class="box-content" align="center">
-                    <img src="<?= base_url() ?>assets/img/divisi_network.png" class="img-responsive" width="50%"  alt="">
-                    <h4 class="text-uppercase">Jaringan</h4>
-                    <p>Divisi Jaringan adalah divisi yang terfokus pada bidang jaringan. Didalam divisi ini mencakup
-                      tentang berbagai macam jenis pengembangan yang berhubungan dengan suatu jaringan, seperti: setting jaringan, pengalamatan IP, sharing jaringan, dll.</p>
-                      <!-- <p><a href="/" class="lnk-primary learn-more">Learn More <i class="fa fa-angle-right"></i></a></p> -->
-                    </div>
-                  </div>
-                </div>
-
-              </div>
+            <?php } ?>
             </div>
             <div class="row">
               <div class="col-md-12">

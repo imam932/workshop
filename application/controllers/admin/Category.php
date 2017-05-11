@@ -25,7 +25,7 @@ class Category extends Admin_Controller {
 
     //load template
     $this->render['title'] = "Category";
-    $this->render['desc']		= "Category Articles";
+    $this->render['desc']		= "Article Categories";
     $this->render['breadcrumb'] = array('Dashboard', 'Category');
 
     $this->load->view('admin/template', $this->render);

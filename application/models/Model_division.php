@@ -13,7 +13,6 @@ class Model_division extends CI_Model
 
   public function select_all()
   {
-    $this->db->order_by('division');
     $query = $this->db->get($this->table);
 
     if($query->num_rows() > 0)
