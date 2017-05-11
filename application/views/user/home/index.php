@@ -211,7 +211,7 @@
                           <span class="thumb-info thumb-info-centered-info thumb-info-no-borders">
                             <span class="thumb-info-wrapper">
                               <div class="image-container">
-                                <img src="<?= base_url().'assets/upload/'.$row->image ?>" class="img-responsive" alt="Image Gallery">
+                                <img src="<?= base_url().'assets/upload/gallery/'.$row->image ?>" class="img-responsive" alt="Image Gallery">
                               </div>
                               <span class="thumb-info-title">
                                 <span class="thumb-info-inner"><?= $row->title ?></span>
@@ -237,7 +237,7 @@
                               <h4 class="modal-title" id="exampleModalLabel"><?= $row->title ?></h4>
                             </div>
                             <div class="modal-body">
-                              <img src="<?= base_url().'assets/upload/'.$row->image ?>" class="img-responsive">
+                              <img src="<?= base_url().'assets/upload/gallery/'.$row->image ?>" class="img-responsive">
 
                             </div>
                             <div class="modal-footer">

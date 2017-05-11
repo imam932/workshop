@@ -28,7 +28,7 @@
                       <a href="" data-toggle="modal" data-target="#modal-show-<?= $row->id_gallery ?>" data-whatever="@fat">
                         <span class="thumb-info-wrapper">
                           <div class="image-container">
-                            <img src="<?= base_url().'assets/upload/'.$row->image ?>" class="img-responsive" alt="">
+                            <img src="<?= base_url().'assets/upload/gallery/'.$row->image ?>" class="img-responsive" alt="">
                           </div>
                           <span class="thumb-info-title">
                             <span class="thumb-info-inner title"><?= $row->title ?></span>
@@ -54,7 +54,7 @@
                           <h4 class="modal-title" id="exampleModalLabel"><?= $row->title ?></h4>
                         </div>
                         <div class="modal-body">
-                          <img src="<?= base_url().'assets/upload/'.$row->image ?>" class="img-responsive">
+                          <img src="<?= base_url().'assets/upload/gallery/'.$row->image ?>" class="img-responsive">
 
                         </div>
                         <div class="modal-footer">

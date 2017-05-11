@@ -51,7 +51,7 @@ class Gallery extends Admin_Controller
       $data['id_gallery'] = random_string('alnum', 5) . date('my') . random_string('alnum', 6);
 
       //upload file config
-      $path = 'assets/upload';
+      $path = 'assets/upload/gallery';
       $config['upload_path'] = $path;
       $config['allowed_types'] = 'jpg|png';
       $config['max_size'] = 5000;
@@ -79,7 +79,7 @@ class Gallery extends Admin_Controller
   function delete($id)
   {
     // delete image File
-    $path = "assets/upload/";
+    $path = "assets/upload/gallery/";
     $record = $this->Model_gallery->select_by_id($id);
     $filename = $record[0]->image;
     unlink($path . $filename);
@@ -111,7 +111,7 @@ class Gallery extends Admin_Controller
         if(!$_FILES['image']['name'] == '')
         {
           //upload file config
-          $path = 'assets/upload';
+          $path = 'assets/upload/gallery';
           $config['upload_path'] = $path;
           $config['allowed_types'] = 'jpg|png';
           $config['max_size'] = 5000;
@@ -128,7 +128,7 @@ class Gallery extends Admin_Controller
           else
           {
             // delete image File
-            $path = "assets/upload/";
+            $path = "assets/upload/gallery/";
             $record = $this->Model_gallery->select_by_id($id);
             $filename = $record[0]->image;
             unlink($path . $filename);

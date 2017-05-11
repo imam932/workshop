@@ -24,7 +24,7 @@
                 ?>
                 <div class="col-md-4">
                   <div class="image-container">
-                    <img src="<?= base_url() ?>assets/upload/<?=$row->image;?>" alt="">
+                    <img src="<?= base_url() ?>assets/upload/gallery/<?=$row->image;?>" alt="">
                   </div>
                   <div class="panel-footer">
                     <div class="gallery-description">
@@ -63,7 +63,7 @@
                 </div>
                 <div class="panel-body">
                   <form class="" action="<?=base_url()?>admin/Gallery/store" method="post" enctype="multipart/form-data">
-                    
+
                     <div class="form-group">
                       <input type="text" name="title" class="form-control" id="" placeholder="Title Gallery">
                     </div>
