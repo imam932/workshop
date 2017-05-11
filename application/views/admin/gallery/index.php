@@ -61,8 +61,9 @@
                 <div class="panel-heading">
                   <b>Add New Image Gallery</b>
                 </div>
-                <form class="" action="<?=base_url()?>admin/Gallery/store" method="post" enctype="multipart/form-data">
-                  <div class="panel-body">
+                <div class="panel-body">
+                  <form class="" action="<?=base_url()?>admin/Gallery/store" method="post" enctype="multipart/form-data">
+                    
                     <div class="form-group">
                       <input type="text" name="title" class="form-control" id="" placeholder="Title Gallery">
                     </div>
@@ -74,8 +75,8 @@
                     </div>
 
                     <input type="submit" name="" value="Submit" class="btn btn-primary">
-                  </div>
-                </form>
+                  </form>
+                </div>
               </div>
 
               <div class="list-group">
@@ -94,4 +95,3 @@
           </div>
         </div>
       </div>
-    </div>
