@@ -36,7 +36,7 @@ class Level extends Admin_Controller {
   public function store()
   {
     // POST METHOD
-    if($this->input->server('REQUEST_METHOD') == 'POST')
+    if($this->input->post())
     {
       //form validation
       $this->form_validation->set_rules('level', 'Level', 'trim|required|xss_clean');
@@ -85,7 +85,7 @@ class Level extends Admin_Controller {
   public function edit($id)
   {
     // POST METHOD
-    if($this->input->server('REQUEST_METHOD') == 'POST')
+    if($this->input->post())
     {
       //form validation
       $this->form_validation->set_rules('level', 'Level', 'trim|required|xss_clean');

@@ -54,7 +54,7 @@
                   </div>
 
                   <input type="submit" value="Submit" class="btn btn-primary">
-                  <a href="<?= base_url() ?>admin/User" class="btn btn-danger">Cancel</a>
+                  <a href="#" onclick="history.go(-1)" class="btn btn-danger">Cancel</a>
                 </div>
               </form>
             </div>

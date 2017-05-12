@@ -62,7 +62,7 @@
                   <b>Add New Image Gallery</b>
                 </div>
                 <div class="panel-body">
-                  <form class="" action="<?=base_url()?>admin/Gallery/store" method="post" enctype="multipart/form-data">
+                  <form action="<?=base_url()?>admin/Gallery/store" method="post" enctype="multipart/form-data">
 
                     <div class="form-group">
                       <input type="text" name="title" class="form-control" id="" placeholder="Title Gallery">

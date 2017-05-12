@@ -36,7 +36,7 @@
 
 					<div class="form-group">
 					  <input type="submit" class="btn btn-primary" value="submit">
-					  <button type="button" class="btn btn-danger" onclick="location='<?= base_url() ?>admin/Level'">cancel</button>
+					  <button type="button" class="btn btn-danger" onclick="history.go(-1)">cancel</button>
 					</div>
 				</div>
 			</div>

@@ -30,7 +30,7 @@ class User extends Admin_Controller{
 
   public function store()
   {
-    if ($this->input->server('REQUEST_METHOD') == 'POST')
+    if ($this->input->post())
     {
       //form validation
 	    $this->form_validation->set_rules('name', 'Name', 'trim|required|xss_clean');
@@ -92,7 +92,7 @@ class User extends Admin_Controller{
 
   public function edit($id)
   {
-    if ($this->input->server('REQUEST_METHOD') == 'POST')
+    if ($this->input->post())
     {
       //form validation
 	    $this->form_validation->set_rules('name', 'Name', 'trim|required|xss_clean');

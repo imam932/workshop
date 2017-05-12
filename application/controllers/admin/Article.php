@@ -33,7 +33,7 @@ class Article extends Admin_Controller {
 
 	public function store()
 	{
-		if ($this->input->server('REQUEST_METHOD') == 'POST')
+		if ($this->input->post())
 		{
 			//form validation
 	    $this->form_validation->set_rules('title', 'Title', 'trim|required|xss_clean');
@@ -112,7 +112,7 @@ class Article extends Admin_Controller {
 
 	function edit($id)
 	{
-		if ($this->input->server('REQUEST_METHOD') == 'POST')
+		if ($this->input->post())
 		{
 			//form validation
 	    $this->form_validation->set_rules('title', 'Title', 'trim|required|xss_clean');

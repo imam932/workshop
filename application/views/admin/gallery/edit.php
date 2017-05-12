@@ -34,7 +34,7 @@
           </div>
 
           <input type="submit" class="btn btn-primary" value="Save">
-          <a href="<?= base_url() ?>admin/Gallery" class="btn btn-danger">Cancel</a>
+          <a onclick="history.go(-1)" class="btn btn-danger">Cancel</a>
         </div>
       </div>
     </form>

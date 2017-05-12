@@ -34,7 +34,7 @@
 
 							<div class="right">
 								<input type="submit" name="simpan" id="input" class="btn btn-primary" value="Submit">
-								<a href="<?= base_url() ?>admin/Activity" class="btn btn-danger">Cancel</a>
+								<a href="#" onclick="history.go(-1)" class="btn btn-danger">Cancel</a>
 							</div>
 						</div>
 
