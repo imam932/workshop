@@ -11,7 +11,7 @@
           <img src="<?=base_url()?>assets/upload/gallery/<?= $gallery[0]->image ?>">
         </div>
 
-        <div class="col-lg-5">
+        <div class="col-lg-4">
           <div class="form-group">
             <label for="title">Title</label>
             <input type="text" id="title" class="form-control" value="<?= $gallery[0]->title ?>" placeholder="Title" name="title">
