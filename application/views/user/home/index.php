@@ -26,7 +26,7 @@
           </div>
 
           <div class="tp-caption" data-x="500" data-y="0" data-start="2600" data-transform_in="z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;s:500;e:Power2.easeOut;">
-            <youtube-video class="embed-responsive-item" video-id="featuredVideoId" player="videoPlayer" id="featuredVideo"></youtube-video>
+            <youtube-video class="embed-responsive-item" video-id="featuredVideoId" id="featuredVideo"></youtube-video>
           </div>
         </li>
       </ul>
@@ -117,144 +117,176 @@
                     </div>
                   </div>
                 </li>
-              <?php $i++; } ?>
-            </ul>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-md-12">
-            <hr class="tall">
-          </div>
-        </div>
-
-        <!-- start article -->
-        <div class="row">
-          <div class="col-md-12">
-            <h2>Artikel Terbaru</h2>
-
-            <div class="owl-carousel owl-theme" data-plugin-options='{"responsive": {"0": {"items": 1}, "479": {"items": 1}, "768": {"items": 2}, "979": {"items": 3}, "1199": {"items": 4}}, "items": 4, "margin": 10, "loop": false, "nav": false, "dots": true}'>
-              <?php
-              foreach ($article as $row) {
-                $time = new DateTime($row->date);
-                ?>
-                <div class="recent-posts">
-                  <article class="post clearfix">
-                    <div class="date">
-                      <span class="day"><?= $time->format('d') ?></span>
-                      <span class="month"><?= $time->format('H:i') ?></span>
-                    </div>
-                    <h4 class="heading-primary">
-                      <a href="<?= base_url() ?>Article/view/<?= $row->id_article ?>"><?= $row->title ?></a>
-                    </h4>
-
-                    <div class="image-container-post">
-                      <img src="<?= base_url().'assets/upload/article/'.$row->image ?>" alt="Image Article">
-                    </div>
-                    <p class="text-preview-home">
-                      <?= strip_tags($row->posting) ?>
-                    </p>
-                    <div class="pull-right">
-                      <a href="<?= base_url() ?>Article/view/<?= $row->id_article ?>" class="">
-                        selengkapnya
-                        <i class="fa fa-angle-right"></i>
-                      </a>
-                    </div>
-                  </article>
-                </div>
-                <?php } ?>
-              </div>
-
+                <?php $i++; } ?>
+              </ul>
             </div>
           </div>
-          <!-- end article -->
+
           <div class="row">
             <div class="col-md-12">
               <hr class="tall">
             </div>
           </div>
-          <!-- start tutorial -->
+
+          <!-- start article -->
           <div class="row">
             <div class="col-md-12">
-              <h2>Tutorial Terbaru</h2>
+              <h2>Artikel Terbaru</h2>
 
-              <div class="row">
-                <div class="col-md-3" ng-repeat="li in videos">
-                  <div class="embed-responsive embed-responsive-16by9">
-                    <youtube-video class="embed-responsive-item" video-id="li.id.videoId"></youtube-video>
-                  </div>
-                </div>
-              </div>
-            </div>
+              <div class="owl-carousel owl-theme" data-plugin-options='{"responsive": {"0": {"items": 1}, "479": {"items": 1}, "768": {"items": 2}, "979": {"items": 3}, "1199": {"items": 4}}, "items": 4, "margin": 10, "loop": false, "nav": false, "dots": true}'>
+                <?php
+                foreach ($article as $row) {
+                  $time = new DateTime($row->date);
+                  ?>
+                  <div class="recent-posts">
+                    <article class="post clearfix">
+                      <div class="date">
+                        <span class="day"><?= $time->format('d') ?></span>
+                        <span class="month"><?= $time->format('H:i') ?></span>
+                      </div>
+                      <h4 class="heading-primary">
+                        <a href="<?= base_url() ?>Article/view/<?= $row->id_article ?>"><?= $row->title ?></a>
+                      </h4>
 
-          </div>
-          <!-- end tutorial -->
-          <div class="row">
-            <div class="col-md-12">
-              <hr class="tall">
-            </div>
-          </div>
-          <!-- start gallery -->
-          <div class="row">
-            <div class="col-md-12">
-
-              <h2>Galeri</h2>
-              <div class="row">
-                <ul class="image-gallery sort-destination full-width">
-                  <?php
-                  foreach ($gallery as $row) {
-                    $time = new DateTime($row->date);
-                    ?>
-                    <li class="isotope-item">
-                      <div class="image-gallery-item">
-                        <a href="" data-toggle="modal" data-target="#modal-show-<?= $row->id_gallery ?>" data-whatever="@fat">
-                          <span class="thumb-info thumb-info-centered-info thumb-info-no-borders">
-                            <span class="thumb-info-wrapper">
-                              <div class="image-container">
-                                <img src="<?= base_url().'assets/upload/gallery/'.$row->image ?>" class="img-responsive" alt="Image Gallery">
-                              </div>
-                              <span class="thumb-info-title">
-                                <span class="thumb-info-inner"><?= $row->title ?></span>
-                                <span class="thumb-info-inner date">
-                                  <i class="fa fa-calendar"></i>
-                                  <?= $time->format('d/m/Y'); ?>
-                                </span>
-                              </span>
-                              <span class="thumb-info-action">
-                                <span class="thumb-info-action-icon"><i class="fa fa-link"></i></span>
-                              </span>
-                            </span>
-                          </span>
+                      <div class="image-container-post">
+                        <img src="<?= base_url().'assets/upload/article/'.$row->image ?>" alt="Image Article">
+                      </div>
+                      <p class="text-preview-home">
+                        <?= strip_tags($row->posting) ?>
+                      </p>
+                      <div class="pull-right">
+                        <a href="<?= base_url() ?>Article/view/<?= $row->id_article ?>" class="">
+                          selengkapnya
+                          <i class="fa fa-angle-right"></i>
                         </a>
                       </div>
-                      <!-- Modal Structure -->
+                    </article>
+                  </div>
+                  <?php } ?>
+                </div>
 
-                      <div class="modal fade" id="modal-show-<?= $row->id_gallery ?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-                        <div class="modal-dialog modal-lg" role="document">
-                          <div class="modal-content">
-                            <div class="modal-header">
-                              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                              <h4 class="modal-title" id="exampleModalLabel"><?= $row->title ?></h4>
-                            </div>
-                            <div class="modal-body">
-                              <img src="<?= base_url().'assets/upload/gallery/'.$row->image ?>" class="img-responsive">
+              </div>
+            </div>
+            <!-- end article -->
+            <div class="row">
+              <div class="col-md-12">
+                <hr class="tall">
+              </div>
+            </div>
+            <!-- start tutorial -->
+            <div class="row">
+              <div class="col-md-12">
+                <h2>Tutorial Terbaru</h2>
 
-                            </div>
-                            <div class="modal-footer">
-                              <p><?= $row->description ?></p>
+                <!-- Modal Video -->
+                <div class="modal fade" ng-repeat="li in videos" id="modal-video{{ li.id.videoId }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-body">
+                        <div class="embed-responsive embed-responsive-16by9">
+                          <youtube-video class="embed-responsive-item" video-id="li.id.videoId" player="videoPlayer"></youtube-video>
+                        </div>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal" ng-click="videoPlayer.stopVideo()">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-3" ng-repeat="li in videos">
+
+                    <div class="panel panel-default video-card">
+
+                      <!-- Modal Video Trigger  -->
+                      <div class="panel-heading">
+                        <a data-toggle="modal" href="#modal-video{{ li.id.videoId }}">
+                          <img src="{{ li.snippet.thumbnails.high.url }}" alt="" class="img-responsive">
+                          <div class="play">
+                            <i class="fa fa-play-circle"></i>
+                          </div>
+                          <div class="blur"></div>
+                        </a>
+                      </div>
+
+                      <div class="panel-body">
+                        <b>{{ li.snippet.title }}</b>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+            <!-- end tutorial -->
+            <div class="row">
+              <div class="col-md-12">
+                <hr class="tall">
+              </div>
+            </div>
+            <!-- start gallery -->
+            <div class="row">
+              <div class="col-md-12">
+
+                <h2>Galeri</h2>
+                <div class="row">
+                  <ul class="image-gallery sort-destination full-width">
+                    <?php
+                    foreach ($gallery as $row) {
+                      $time = new DateTime($row->date);
+                      ?>
+                      <li class="isotope-item">
+                        <div class="image-gallery-item">
+                          <a href="" data-toggle="modal" data-target="#modal-show-<?= $row->id_gallery ?>" data-whatever="@fat">
+                            <span class="thumb-info thumb-info-centered-info thumb-info-no-borders">
+                              <span class="thumb-info-wrapper">
+                                <div class="image-container">
+                                  <img src="<?= base_url().'assets/upload/gallery/'.$row->image ?>" class="img-responsive" alt="Image Gallery">
+                                </div>
+                                <span class="thumb-info-title">
+                                  <span class="thumb-info-inner"><?= $row->title ?></span>
+                                  <span class="thumb-info-inner date">
+                                    <i class="fa fa-calendar"></i>
+                                    <?= $time->format('d/m/Y'); ?>
+                                  </span>
+                                </span>
+                                <span class="thumb-info-action">
+                                  <span class="thumb-info-action-icon"><i class="fa fa-link"></i></span>
+                                </span>
+                              </span>
+                            </span>
+                          </a>
+                        </div>
+                        <!-- Modal Structure -->
+
+                        <div class="modal fade" id="modal-show-<?= $row->id_gallery ?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                          <div class="modal-dialog modal-lg" role="document">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title" id="exampleModalLabel"><?= $row->title ?></h4>
+                              </div>
+                              <div class="modal-body">
+                                <img src="<?= base_url().'assets/upload/gallery/'.$row->image ?>" class="img-responsive">
+
+                              </div>
+                              <div class="modal-footer">
+                                <p><?= $row->description ?></p>
+                              </div>
                             </div>
                           </div>
                         </div>
-                      </div>
-                      <!-- end modal -->
+                        <!-- end modal -->
 
-                    </li>
-                    <?php } ?>
-                  </ul>
+                      </li>
+                      <?php } ?>
+                    </ul>
 
+                  </div>
                 </div>
               </div>
+              <!-- end gallery -->
             </div>
-            <!-- end gallery -->
           </div>
-        </div>

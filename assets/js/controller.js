@@ -1,5 +1,6 @@
 var channel = "UCyU5wkjgQYGRB0hIHMwm2Sg";
 var key = "AIzaSyAiHtxgSZLXBkb5B_z94XSYrjtXUy7NEi0";
+
 var app = angular.module('myApp', ['youtube-embed', 'ui.bootstrap']);
 
 //membuat filter untuk menentukan posisi start dari ng-repeat
@@ -43,6 +44,7 @@ app.controller('home', function ($scope, $http) {
 		$scope.videos = response.data.items;
 		console.log($scope.videos);
 	});
+
 
 });
 

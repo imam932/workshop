@@ -189,7 +189,7 @@
           <div class="footer-ribbon">
             <span>WRI</span>
           </div>
-          <div class="col-md-3">
+          <!-- <div class="col-md-3">
             <div class="newsletter">
               <h4>Surat Kabar</h4>
               <p>Ayo masukkan email kamu biar update.</p>
@@ -210,8 +210,8 @@
                 </div>
               </form>
             </div>
-          </div>
-          <div class="col-md-3">
+          </div> -->
+          <div class="col-md-4">
             <h4>Artikel Terbaru</h4>
             <div id="tweet" class="twitter" data-plugin-tweets data-plugin-options='{"username": "", "count": 2}'>
               <?php foreach ($article_footer as $row) { ?>
@@ -250,7 +250,7 @@
                 </ul>
               </div>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-4">
               <h4>Ikuti Kami</h4>
               <ul class="social-icons">
                 <li class="social-icons-facebook">
