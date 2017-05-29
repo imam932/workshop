@@ -84,43 +84,6 @@
           <?php } ?>
         </div>
 
-        <div class="row">
-          <div class="col-md-12">
-            <hr class="tall">
-          </div>
-        </div>
-
-        <div class="row">
-
-          <center>
-            <h2>Kegiatan Kami</h2>
-          </center>
-
-          <div class="col-md-12">
-            <ul class="timeline">
-              <?php $i = 1; foreach ($activity as $row) {
-                if ($i % 2 == 0) {
-                  $inverted = "timeline-inverted";
-                } else {
-                  $inverted = "";
-                }
-                ?>
-                <li class="<?= $inverted ?>">
-                  <div class="timeline-badge"></div>
-                  <div class="timeline-panel">
-                    <div class="timeline-heading">
-                      <h4 class="timeline-title"><?= $row->activity ?></h4>
-                    </div>
-                    <div class="timeline-body">
-                      <img class="img-responsive pull-left" src="<?= base_url() ?>assets/upload/activity/<?= $row->image ?>" width="200px" style="margin-right:15px">
-                      <p><?= $row->description ?></p>
-                    </div>
-                  </div>
-                </li>
-                <?php $i++; } ?>
-              </ul>
-            </div>
-          </div>
 
           <div class="row">
             <div class="col-md-12">
@@ -131,7 +94,10 @@
           <!-- start article -->
           <div class="row">
             <div class="col-md-12">
-              <h2>Artikel Terbaru</h2>
+
+              <center>
+                <h2>Artikel Terbaru</h2>
+              </center>
 
               <div class="owl-carousel owl-theme" data-plugin-options='{"responsive": {"0": {"items": 1}, "479": {"items": 1}, "768": {"items": 2}, "979": {"items": 3}, "1199": {"items": 4}}, "items": 4, "margin": 10, "loop": false, "nav": false, "dots": true}'>
                 <?php
@@ -176,7 +142,10 @@
             <!-- start tutorial -->
             <div class="row">
               <div class="col-md-12">
-                <h2>Tutorial Terbaru</h2>
+
+                <center>
+                  <h2>Tutorial Terbaru</h2>
+                </center>
 
                 <!-- Modal Video -->
                 <div class="modal fade" ng-repeat="li in videos" id="modal-video{{ li.id.videoId }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -230,7 +199,10 @@
             <div class="row">
               <div class="col-md-12">
 
-                <h2>Galeri</h2>
+                <center>
+                  <h2>Galeri Terbaru</h2>
+                </center>
+
                 <div class="row">
                   <ul class="image-gallery sort-destination full-width">
                     <?php
@@ -288,5 +260,45 @@
                 </div>
               </div>
               <!-- end gallery -->
+
+              <div class="row">
+                <div class="col-md-12">
+                  <hr class="tall">
+                </div>
+              </div>
+
+              <!-- start activity  -->
+              <div class="row">
+
+                <center>
+                  <h2>Kegiatan Kami</h2>
+                </center>
+
+                <div class="col-md-12">
+                  <ul class="timeline">
+                    <?php $i = 1; foreach ($activity as $row) {
+                      if ($i % 2 == 0) {
+                        $inverted = "timeline-inverted";
+                      } else {
+                        $inverted = "";
+                      }
+                      ?>
+                      <li class="<?= $inverted ?>">
+                        <div class="timeline-badge warning"></div>
+                        <div class="timeline-panel">
+                          <div class="timeline-heading">
+                            <h4 class="timeline-title"><?= $row->activity ?></h4>
+                          </div>
+                          <div class="timeline-body">
+                            <img class="img-responsive pull-left" src="<?= base_url() ?>assets/upload/activity/<?= $row->image ?>" width="200px" style="margin-right:15px">
+                            <p><?= $row->description ?></p>
+                          </div>
+                        </div>
+                      </li>
+                      <?php $i++; } ?>
+                    </ul>
+                  </div>
+                </div>
+                <!-- end activity  -->
             </div>
           </div>
