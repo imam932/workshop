@@ -79,6 +79,12 @@
                         <i class="fa fa-facebook"></i>
                       </a>
                     </li>
+
+                    <li class="social-icons-youtube">
+                      <a href="https://www.youtube.com/channel/UCRDuxyMCKmyaX5rRDFo-RCQ" target="_blank" title="Youtube">
+                        <i class="fa fa-youtube"></i>
+                      </a>
+                    </li>
                     <!-- <li class="social-icons-google-plus">
                       <a href="https://plus.google.com/u/0/106221484184732111240" target="_blank" title="Google +">
                         <i class="fa fa-google-plus"></i>
@@ -256,6 +262,12 @@
                 <li class="social-icons-facebook">
                   <a href="https://www.facebook.com/WRIPolinema" target="_blank" title="Facebook">
                     <i class="fa fa-facebook"></i>
+                  </a>
+                </li>
+
+                <li class="social-icons-youtube">
+                  <a href="https://www.youtube.com/channel/UCRDuxyMCKmyaX5rRDFo-RCQ" target="_blank" title="Youtube">
+                    <i class="fa fa-youtube"></i>
                   </a>
                 </li>
                 <!-- <li class="social-icons-google-plus">
