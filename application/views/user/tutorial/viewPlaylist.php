@@ -73,7 +73,7 @@
           </div>
 
           <div class="panel-body">
-            <b>{{ li.snippet.title }}</b>
+            <b data-toggle="tooltip" data-placement="bottom" title="{{ li.snippet.title }}">{{ li.snippet.title }}</b>
           </div>
         </div>
       </div>

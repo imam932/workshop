@@ -1,5 +1,7 @@
 $(document).ready(function() {
 
+	$("body").tooltip({ selector: '[data-toggle=tooltip]' });
+
 	$('#clearImage').click(function() {
 		$("#image").filestyle('clear');
 	});
