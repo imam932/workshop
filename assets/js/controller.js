@@ -1,5 +1,5 @@
-var channel = "UCyU5wkjgQYGRB0hIHMwm2Sg";
-var key = "AIzaSyAiHtxgSZLXBkb5B_z94XSYrjtXUy7NEi0";
+var channel = "UCRDuxyMCKmyaX5rRDFo-RCQ";
+var key = "AIzaSyCEFnhqYRdnmWn0-rvVLFTr8UOCdivVvDE";
 
 var app = angular.module('myApp', ['youtube-embed', 'ui.bootstrap']);
 
@@ -11,7 +11,7 @@ app.filter('startFrom', function () {
 			return input.slice(start);
 		}
 		return [];
-	};
+ 	};
 });
 
 app.filter('durationFormat', function() {
@@ -155,6 +155,7 @@ app.controller('playlist', function ($scope, $http) {
 
 		$http.get("https://www.googleapis.com/youtube/v3/search", config).then(function (response) {
 			$scope.data = response.data;
+			console.log(response);
 			if (nextPage) {
 				$scope.playlist.push(...response.data.items);
 			} else {
