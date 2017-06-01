@@ -131,6 +131,12 @@
                   <?php } ?>
                 </div>
 
+                <center>
+                  <a href="<?= base_url() ?>Article" class="btn btn-primary">
+                    Lihat Semua Artikel
+                  </a>
+                </center>
+
               </div>
             </div>
             <!-- end article -->
@@ -185,6 +191,12 @@
                     </div>
                   </div>
                 </div>
+
+                <center>
+                  <a href="<?= base_url() ?>Tutorial" class="btn btn-primary">
+                    Lihat Semua Tutorial
+                  </a>
+                </center>
 
               </div>
 
@@ -257,6 +269,13 @@
                     </ul>
 
                   </div>
+
+                  <center>
+                    <a href="<?= base_url() ?>Gallery" class="btn btn-primary">
+                      Lihat Semua Galeri
+                    </a>
+                  </center>
+
                 </div>
               </div>
               <!-- end gallery -->
