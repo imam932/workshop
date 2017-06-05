@@ -33,6 +33,9 @@ print_r($data);
     $this->render['desc']       = "Detail View incoming message";
     $this->render['breadcrumb'] = array('Dashboard', 'Message');
 
+    // update message readed
+    $this->Model_message->read($id);
+
     $this->load->view('admin/template', $this->render);
   }
 

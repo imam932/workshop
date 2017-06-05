@@ -62,7 +62,7 @@
               $time = new DateTime($row->date);
             ?>
             <li class="message-preview">
-              <a href="#">
+              <a href="<?= base_url() ?>admin/Message/detail/<?= $row->id_message ?>">
                 <div class="media">
                   <span class="pull-left">
                     <img class="media-object" src="" alt="">
@@ -74,7 +74,7 @@
                     <?php } ?>
                     </h5>
                     <p class="small text-muted">
-                      <i class="fa fa-clock-o"></i>
+                      <i class="fa fa-calendar"></i>
                       <?= $time->format('d/m/Y') ?> at <?= $time->format('h:i') ?>
                     </p>
                     <p class="text-preview"><?= $row->message ?></p>
