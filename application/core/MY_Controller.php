@@ -49,7 +49,7 @@ class User_Controller extends CI_Controller
 	public function __construct()
 	{
 		parent::__construct();
-
+		error_reporting(0);
 		// load model
 		$this->load->model('Model_article');
 
