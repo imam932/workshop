@@ -38,16 +38,13 @@
     <hr>
 
     <!-- Modal Video -->
-    <div class="modal fade" ng-repeat="li in videos" id="modal-video{{ li.snippet.resourceId.videoId }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-      <div class="modal-dialog" role="document">
+    <div class="modal fade" ng-click="videoPlayer.stopVideo()" ng-repeat="li in videos" id="modal-video{{ li.snippet.resourceId.videoId }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
           <div class="modal-body">
             <div class="embed-responsive embed-responsive-16by9">
               <youtube-video class="embed-responsive-item" video-id="li.snippet.resourceId.videoId" player="videoPlayer"></youtube-video>
             </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-danger" data-dismiss="modal" ng-click="videoPlayer.stopVideo()">Close</button>
           </div>
         </div>
       </div>

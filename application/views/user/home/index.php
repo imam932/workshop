@@ -154,16 +154,13 @@
                 </center>
 
                 <!-- Modal Video -->
-                <div class="modal fade" ng-repeat="li in videos" id="modal-video{{ li.id.videoId }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                  <div class="modal-dialog" role="document">
+                <div class="modal fade" ng-click="videoPlayer.stopVideo()" ng-repeat="li in videos" id="modal-video{{ li.id.videoId }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                  <div class="modal-dialog modal-lg" role="document">
                     <div class="modal-content">
                       <div class="modal-body">
                         <div class="embed-responsive embed-responsive-16by9">
                           <youtube-video class="embed-responsive-item" video-id="li.id.videoId" player="videoPlayer"></youtube-video>
                         </div>
-                      </div>
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" data-dismiss="modal" ng-click="videoPlayer.stopVideo()">Close</button>
                       </div>
                     </div>
                   </div>
@@ -248,16 +245,8 @@
                         <div class="modal fade" id="modal-show-<?= $row->id_gallery ?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
                           <div class="modal-dialog modal-lg" role="document">
                             <div class="modal-content">
-                              <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                <h4 class="modal-title" id="exampleModalLabel"><?= $row->title ?></h4>
-                              </div>
                               <div class="modal-body">
                                 <img src="<?= base_url().'assets/upload/gallery/'.$row->image ?>" class="img-responsive">
-
-                              </div>
-                              <div class="modal-footer">
-                                <p><?= $row->description ?></p>
                               </div>
                             </div>
                           </div>
