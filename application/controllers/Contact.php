@@ -21,6 +21,10 @@ class Contact extends User_Controller{
     {
       $data['message'] = $this->session->flashdata('message');
     }
+
+    // load old value
+    $data['old'] = $this->session->flashdata('old');
+
     // load page
     $this->render['content'] = $this->load->view('user/contact/index', $data, TRUE);
 
@@ -36,6 +40,7 @@ class Contact extends User_Controller{
   }
 
   public function sendMessage(){
+
     // form_validation
     $this->form_validation->set_rules('name', 'Name', 'trim|required|min_length[4]|xss_clean');
     $this->form_validation->set_rules('email', 'Email', 'trim|required|xss_clean');
@@ -43,6 +48,7 @@ class Contact extends User_Controller{
 
     if (!$this->form_validation->run()) {
       $this->session->set_flashdata('error', validation_errors());
+      $this->session->set_flashdata('old', $this->getOldValue());
     }else{
       $data['id_message'] = random_string('alnum', 4) . date('dmy') . random_string('alnum', 4);
       $data['name']       = $this->input->post('name');

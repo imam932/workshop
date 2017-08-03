@@ -23,17 +23,17 @@
         <div class="form-inline">
           <div class="form-group">
             <label for="Nama">Nama <b class="red">*</b></label>
-            <input type="text" name="name" class="form-control" id="" placeholder="Nama Lengkap">
+            <input type="text" name="name" class="form-control" id="" placeholder="Nama Lengkap" value="<?= $old['name'] ?>">
           </div>
           <div class="form-group">
             <label for="E-mail">E-Mail <b class="red">*</b></label>
-            <input type="email" name="email" class="form-control" id="" placeholder="example@gmail.com">
+            <input type="email" name="email" class="form-control" id="" placeholder="example@gmail.com" value="<?= $old['email'] ?>">
           </div>
         </div>
       </div>
       <div class="form-group">
         <label for="Pesan">Pesan <b class="red">*</b></label>
-        <textarea name="message" class="form-control" rows="4" cols="80" placeholder="Pesan yang ingin di sampaikan"></textarea>
+        <textarea name="message" class="form-control" rows="4" cols="80" placeholder="Pesan yang ingin di sampaikan"><?= $old['message'] ?></textarea>
       </div>
 
       <button type="submit" class="btn btn-primary">KIRIM</button>
