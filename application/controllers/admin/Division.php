@@ -42,6 +42,7 @@ class Division extends Admin_Controller{
 
 	    if(!$this->form_validation->run())
 	    {
+	      $this->session->set_flashdata('old', $this->getOldValue());
 	      $this->session->set_flashdata('error', validation_errors());
 				redirect('admin/Division/store', 'refresh');
 	    }
@@ -62,7 +63,8 @@ class Division extends Admin_Controller{
 				//uploading File
 	      if(!$this->upload->do_upload('image'))
 	      {
-	        $this->session->set_flashdata('error', $this->upload->display_errors());
+          $this->session->set_flashdata('old', $this->getOldValue());
+          $this->session->set_flashdata('error', $this->upload->display_errors());
 					redirect('admin/Division/store', 'refresh');
 	      }
 	      else
@@ -81,6 +83,8 @@ class Division extends Admin_Controller{
 		{
 			$data['error'] = $this->session->flashdata('error');
 		}
+		// load old value
+    $data['old'] = $this->session->flashdata('old');
 
 		// load page
 		$this->render['content'] = $this->load->view('admin/division/store', $data, TRUE);
@@ -102,6 +106,7 @@ class Division extends Admin_Controller{
 
 	    if(!$this->form_validation->run())
 	    {
+	      $this->session->set_flashdata('old', $this->getOldValue());
 	      $this->session->set_flashdata('error', validation_errors());
 				redirect('admin/Division/edit/' . $id, 'refresh');
 	    }
@@ -124,6 +129,7 @@ class Division extends Admin_Controller{
           //uploading File
           if(!$this->upload->do_upload('image'))
           {
+            $this->session->set_flashdata('old', $this->getOldValue());
             $this->session->set_flashdata('error', $this->upload->display_errors());
             redirect('admin/Division/edit/' . $id, 'refresh');
           }
@@ -148,6 +154,8 @@ class Division extends Admin_Controller{
 
     // load data
 		$data['division'] = $this->Model_division->select_by_id($id);
+    // load old value
+    $data['old'] = $this->session->flashdata('old');
 		// error handling
 		if(!empty($this->session->flashdata('error')))
 		{

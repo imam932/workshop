@@ -43,6 +43,7 @@ class Activity extends Admin_Controller{
 
 	    if(!$this->form_validation->run())
 	    {
+	      $this->session->set_flashdata('old', $this->getOldValue());
 	      $this->session->set_flashdata('error', validation_errors());
 				redirect('admin/Activity/store', 'refresh');
 	    }
@@ -63,6 +64,7 @@ class Activity extends Admin_Controller{
 				//uploading File
 	      if(!$this->upload->do_upload('image'))
 	      {
+	        $this->session->set_flashdata('old', $this->getOldValue());
 	        $this->session->set_flashdata('error', $this->upload->display_errors());
 					redirect('admin/Activity/store', 'refresh');
 	      }
@@ -82,6 +84,8 @@ class Activity extends Admin_Controller{
 		{
 			$data['error'] = $this->session->flashdata('error');
 		}
+    // load old value
+    $data['old'] = $this->session->flashdata('old');
 
 		// load page
 		$this->render['content'] = $this->load->view('admin/activity/store', $data, TRUE);
@@ -103,6 +107,7 @@ class Activity extends Admin_Controller{
 
 	    if(!$this->form_validation->run())
 	    {
+	      $this->session->set_flashdata('old', $this->getOldValue());
 	      $this->session->set_flashdata('error', validation_errors());
 				redirect('admin/Activity/edit/' . $id, 'refresh');
 	    }
@@ -125,6 +130,7 @@ class Activity extends Admin_Controller{
           //uploading File
           if(!$this->upload->do_upload('image'))
           {
+            $this->session->set_flashdata('old', $this->getOldValue());
             $this->session->set_flashdata('error', $this->upload->display_errors());
             redirect('admin/Activity/edit/' . $id, 'refresh');
           }
@@ -149,11 +155,14 @@ class Activity extends Admin_Controller{
 
     // load data
 		$data['activity'] = $this->Model_activity->select_by_id($id);
-		// error handling
+    // load old value
+    $data['old'] = $this->session->flashdata('old');
+    // error handling
 		if(!empty($this->session->flashdata('error')))
 		{
 			$data['error'] = $this->session->flashdata('error');
 		}
+
 		// load page
 		$this->render['content'] = $this->load->view('admin/activity/edit', $data, TRUE);
 

@@ -43,6 +43,7 @@ class Level extends Admin_Controller {
 
       if(!$this->form_validation->run())
       {
+        $this->session->set_flashdata('old', $this->getOldValue());
         $this->session->set_flashdata('error', form_error('level'));
         redirect('admin/Level/store', 'refresh');
       }
@@ -68,6 +69,8 @@ class Level extends Admin_Controller {
 
     // GET METHOD
     $data['module'] = $this->Model_module->select_all();
+    // load old value
+    $data['old'] = $this->session->flashdata('old');
     //cek error
     if (!empty($this->session->flashdata('error')))
     {
@@ -92,6 +95,7 @@ class Level extends Admin_Controller {
 
       if(!$this->form_validation->run())
       {
+        $this->session->set_flashdata('old', $this->getOldValue());
         $this->session->set_flashdata('error', form_error('level'));
         redirect('admin/Level/edit/' . $id, 'refresh');
       }
@@ -121,6 +125,8 @@ class Level extends Admin_Controller {
     $data['module'] = $this->Model_module->select_all();
     $data['level'] = $this->Model_level->select_by_id($id);
     $data['privilege'] = $this->Model_privilege->select_all($id);
+    // get old value
+    $data['old'] = $this->session->flashdata('old');
 
     //cek error
     if (!empty($this->session->flashdata('error')))

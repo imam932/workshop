@@ -14,12 +14,12 @@
         <div class="col-lg-4">
           <div class="form-group">
             <label for="title">Title</label>
-            <input type="text" id="title" class="form-control" value="<?= $gallery[0]->title ?>" placeholder="Title" name="title">
+            <input type="text" id="title" class="form-control" value="<?= is_null($old['title']) ? $gallery[0]->title : $old['title'] ?>" placeholder="Title" name="title">
           </div>
 
           <div class="form-group">
             <label for="description">Description</label>
-            <textarea id="description" class="form-control" name="description"><?= $gallery[0]->description ?></textarea>
+            <textarea id="description" class="form-control" name="description"><?= is_null($old['description']) ? $gallery[0]->description : $old['description'] ?></textarea>
           </div>
 
           <div class="form-group">

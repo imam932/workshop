@@ -13,7 +13,7 @@
 					<div class="row">
 						<div class="col-xs-12 col-sm-12 col-md-5">
 							<div class="form-group">
-								<input type="text" name="title" class="form-control" id="" placeholder="Title">
+								<input type="text" name="title" class="form-control" id="" placeholder="Title" value="<?= $old['title'] ?>">
 							</div>
 						</div>
 
@@ -21,8 +21,10 @@
 							<div class="form-group">
 								<select class="form-control" name="id_category">
 									<option selected disabled>Select Category</option>
-									<?php foreach ($category as $row) { ?>
-									<option value="<?= $row->id_category ?>"><?= $row->category ?></option>
+									<?php foreach ($category as $row) {
+                    $selected = $row->id_category == $old['id_category'] ? "selected" : "";
+                    ?>
+									<option value="<?= $row->id_category ?>" <?= $selected ?>><?= $row->category ?></option>
 									<?php } ?>
 								</select>
 							</div>
@@ -36,7 +38,7 @@
 					</div>
 
 					<div class="form-group">
-						<textarea name="posting" class="form-control ckeditor"></textarea>
+						<textarea name="posting" class="form-control ckeditor"><?= $old['posting'] ?></textarea>
 					</div>
 
 					<div class="right">

@@ -11,15 +11,16 @@
 				<div class="col-lg-9">
 					<div class="form-group">
 						<label for="level">Level</label>
-						<input type="text" class="form-control" id="level" name="level" placeholder="Level" value="<?= $level->level ?>">
+						<input type="text" class="form-control" id="level" name="level" placeholder="Level" value="<?= is_null($old['level']) ? $level->level : $old['level'] ?>">
 					</div>
 
 					<div class="form-group">
 						<label>Allow to Access</label> <br>
 						<?php foreach ($module as $row_module) {
 							$checked = "";
+
 							foreach ($privilege as $row_privilege) {
-								if($row_privilege->id_module == $row_module->id_module) {
+							  if($row_privilege->id_module == $row_module->id_module) {
 									$checked = "checked";
 									break;
 								}

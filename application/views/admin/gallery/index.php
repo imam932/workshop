@@ -65,13 +65,13 @@
                   <form action="<?=base_url()?>admin/Gallery/store" method="post" enctype="multipart/form-data">
 
                     <div class="form-group">
-                      <input type="text" name="title" class="form-control" id="" placeholder="Title Gallery">
+                      <input type="text" name="title" class="form-control" id="" placeholder="Title Gallery" value="<?= $old['title'] ?>">
                     </div>
                     <div class="form-group">
                       <input type="file" name="image" class="form-control" id="" placeholder="Image Gallery">
                     </div>
                     <div class="form-group">
-                      <textarea name="description" rows="5" class="form-control" placeholder="Description..."></textarea>
+                      <textarea name="description" rows="5" class="form-control" placeholder="Description..."><?= $old['description'] ?></textarea>
                     </div>
 
                     <input type="submit" name="" value="Submit" class="btn btn-primary">

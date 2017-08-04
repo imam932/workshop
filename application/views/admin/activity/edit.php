@@ -12,7 +12,7 @@
 						<div class="row">
 							<div class="col-xs-12 col-sm-12 col-md-5">
 								<div class="form-group">
-									<input type="text" name="activity" class="form-control" id="" placeholder="Activity Name" value="<?= $activity[0]->activity ?>">
+									<input type="text" name="activity" class="form-control" id="" placeholder="Activity Name" value="<?= is_null($old['activity']) ? $activity[0]->activity : $old['activity'] ?>">
 								</div>
 							</div>
 
@@ -29,7 +29,7 @@
 							</div>
 
 							<div class="form-group">
-								<textarea name="description" class="form-control ckeditor"><?= $activity[0]->description ?></textarea>
+								<textarea name="description" class="form-control ckeditor"><?= is_null($old['description']) ? $activity[0]->description : $old['description'] ?></textarea>
 							</div>
 
 							<div class="right">

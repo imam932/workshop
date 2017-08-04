@@ -44,7 +44,8 @@ class User extends Admin_Controller{
 
 	    if(!$this->form_validation->run())
 	    {
-	      $this->session->set_flashdata('error', validation_errors());
+        $this->session->set_flashdata('old', $this->getOldValue());
+        $this->session->set_flashdata('error', validation_errors());
 				redirect('admin/User/store', 'refresh');
 	    }
       else
@@ -52,6 +53,7 @@ class User extends Admin_Controller{
         $username_exist = $this->Model_user->select_by_field('username', $this->input->post('username'));
         if($username_exist)
         {
+          $this->session->set_flashdata('old', $this->getOldValue());
           $this->session->set_flashdata('error', 'Username exist, use another');
           redirect('admin/User/store', 'refresh');
         }
@@ -79,6 +81,9 @@ class User extends Admin_Controller{
     {
       $data['error'] = $this->session->flashdata('error');
     }
+    // load old value
+    $data['old'] = $this->session->flashdata('old');
+
     // load content
     $data['level'] = $this->Model_level->select_all();
     $this->render['content']        = $this->load->view('admin/user/store', $data, TRUE);
@@ -103,6 +108,7 @@ class User extends Admin_Controller{
 
 	    if(!$this->form_validation->run())
 	    {
+	      $this->session->set_flashdata('old', $this->getOldValue());
 	      $this->session->set_flashdata('error', validation_errors());
 				redirect('admin/User/edit/' . $id, 'refresh');
 	    }
@@ -126,6 +132,9 @@ class User extends Admin_Controller{
     {
       $data['error'] = $this->session->flashdata('error');
     }
+    // load old value
+    $data['old'] = $this->session->flashdata('old');
+
     // load data
     $data['level'] = $this->Model_level->select_all();
     $data['user'] = $this->Model_user->select_by_id($id);

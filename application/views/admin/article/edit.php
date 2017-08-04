@@ -12,7 +12,7 @@
 						<div class="row">
 							<div class="col-xs-12 col-sm-12 col-md-5">
 								<div class="form-group">
-									<input type="text" name="title" class="form-control" id="" placeholder="Title" value="<?= $article[0]->title ?>">
+									<input type="text" name="title" class="form-control" id="" placeholder="Title" value="<?= is_null($old['title']) ? $article[0]->title : $old['title'] ?>">
 								</div>
 							</div>
 
@@ -20,13 +20,12 @@
 								<div class="form-group">
 									<select class="form-control" name="id_category">
 										<option selected disabled>Select Category</option>
-										<?php foreach ($category as $row) {
-											$selected = "";
-											if($row->id_category == $article[0]->id_category)
-											$selected = "selected";
-											?>
+										<?php
+                    $id_category = is_null($old['id_category']) ? $article[0]->id_category : $old['id_category'];
+                    foreach ($category as $row) {
+                      $selected = $row->id_category == $id_category ? "selected" : "" ?>
 											<option value="<?= $row->id_category ?>" <?= $selected ?>><?= $row->category ?></option>
-											<?php } ?>
+                    <?php } ?>
 										</select>
 									</div>
 								</div>
@@ -44,7 +43,7 @@
 							</div>
 
 							<div class="form-group">
-								<textarea name="posting" class="form-control ckeditor"><?= $article[0]->posting ?></textarea>
+								<textarea name="posting" class="form-control ckeditor"><?= is_null($old['posting']) ? $article[0]->posting : $old['posting'] ?></textarea>
 							</div>
 
 							<div class="right">

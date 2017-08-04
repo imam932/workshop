@@ -54,7 +54,7 @@
 					<h4>Create New Category</h4>
 					<form class="" action="<?= base_url(); ?>admin/Category/store" method="post">
 						<div class="input-group">
-							<input type="text" class="form-control" placeholder="Category" name="category">
+							<input type="text" class="form-control" placeholder="Category" name="category" value="<?= $old['category'] ?>">
 							<span class="input-group-btn">
 								<button class="btn btn-primary" name="submit">Submit</button>
 							</span>

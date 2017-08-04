@@ -20,6 +20,9 @@ class Category extends Admin_Controller {
     {
       $data['message'] = $this->session->flashdata('message');
     }
+    // get old value
+    $data['old'] = $this->session->flashdata('old');
+
     //load page
     $this->render['content'] = $this->load->view('admin/category/index', $data, TRUE);
 
@@ -33,13 +36,13 @@ class Category extends Admin_Controller {
 
   public function store()
   {
-
     //form validation
     $this->form_validation->set_rules('category', 'Category', 'trim|required|xss_clean');
 
     if(!$this->form_validation->run())
     {
       $this->session->set_flashdata('error', form_error('category'));
+      $this->session->set_flashdata('old', $this->getOldValue());
     }
     else
     {

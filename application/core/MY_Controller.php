@@ -43,7 +43,7 @@ class Admin_Controller extends CI_Controller
 
 	protected function getOldValue() {
 		$ret = array();
-		foreach ($_POST as $key) {
+		foreach ($_POST as $key => $val) {
 			$ret[$key] = $this->input->post($key);
 		}
 		return $ret;

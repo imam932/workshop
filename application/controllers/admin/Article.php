@@ -42,6 +42,7 @@ class Article extends Admin_Controller {
 	    if(!$this->form_validation->run())
 	    {
 	      $this->session->set_flashdata('error', validation_errors());
+	      $this->session->set_flashdata('old', $this->getOldValue());
 				redirect('admin/Article/store', 'refresh');
 	    }
 			else
@@ -66,7 +67,8 @@ class Article extends Admin_Controller {
 	      if(!$this->upload->do_upload('image'))
 	      {
 	        $this->session->set_flashdata('error', $this->upload->display_errors());
-					redirect('admin/Article/store', 'refresh');
+          $this->session->set_flashdata('old', $this->getOldValue());
+          redirect('admin/Article/store', 'refresh');
 	      }
 	      else
 	      {
@@ -85,6 +87,9 @@ class Article extends Admin_Controller {
 		{
 			$data['error'] = $this->session->flashdata('error');
 		}
+
+    // get old value
+    $data['old'] = $this->session->flashdata('old');
 
 		// load page
 		$this->render['content'] = $this->load->view('admin/article/store', $data, TRUE);
@@ -120,6 +125,7 @@ class Article extends Admin_Controller {
 	    if(!$this->form_validation->run())
 	    {
 	      $this->session->set_flashdata('error', validation_errors());
+	      $this->session->set_flashdata('old', $this->getOldValue());
 				redirect('admin/Article/edit/' . $id, 'refresh');
 	    }
 			else
@@ -143,6 +149,7 @@ class Article extends Admin_Controller {
           //uploading File
           if(!$this->upload->do_upload('image'))
           {
+          	$this->session->set_flashdata('old', $this->getOldValue());
             $this->session->set_flashdata('error', $this->upload->display_errors());
             redirect('admin/Article/edit/' . $id, 'refresh');
           }
@@ -168,6 +175,9 @@ class Article extends Admin_Controller {
 		// load data
 		$data['category'] = $this->Model_category->select_all();
 		$data['article'] = $this->Model_article->select_by_id($id);
+		// load old value
+		$data['old'] = $this->session->flashdata('old');
+
 		// error handling
 		if(!empty($this->session->flashdata('error')))
 		{
