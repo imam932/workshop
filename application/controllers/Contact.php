@@ -11,19 +11,11 @@ class Contact extends User_Controller{
 
   function index()
   {
-    //error handling
     $data = array();
-    if(!empty($this->session->flashdata('error')))
-    {
-      $data['error'] = $this->session->flashdata('error');
-    }
-    else if(!empty($this->session->flashdata('message')))
+    if(!empty($this->session->flashdata('message')))
     {
       $data['message'] = $this->session->flashdata('message');
     }
-
-    // load old value
-    $data['old'] = $this->session->flashdata('old');
 
     // load page
     $this->render['content'] = $this->load->view('user/contact/index', $data, TRUE);
@@ -46,10 +38,7 @@ class Contact extends User_Controller{
     $this->form_validation->set_rules('email', 'Email', 'trim|required|xss_clean');
     $this->form_validation->set_rules('message', 'Message', 'trim|required|xss_clean');
 
-    if (!$this->form_validation->run()) {
-      $this->session->set_flashdata('error', validation_errors());
-      $this->session->set_flashdata('old', $this->getOldValue());
-    }else{
+    if ($this->form_validation->run()) {
       $data['id_message'] = random_string('alnum', 4) . date('dmy') . random_string('alnum', 4);
       $data['name']       = $this->input->post('name');
       $data['email']      = $this->input->post('email');
@@ -59,9 +48,10 @@ class Contact extends User_Controller{
 
       $this->Model_message->insert($data);
       $this->session->set_flashdata('message', 'Sukses ! Pesan telah terkirim');
+      redirect('Contact');
     }
 
-    redirect('Contact', 'refresh');
+    $this->index();
   }
 
 }

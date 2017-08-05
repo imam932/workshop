@@ -514,3 +514,7 @@ anggota h4{
 		right: auto;
 	}
 }
+
+.form-error p {
+	color: #f6533b;
+}
