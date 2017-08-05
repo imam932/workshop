@@ -24,6 +24,6 @@
         </div>
       </div>
     </div>
-    <button type="submit" class="btn btn-primary" onclick="window.history.back()" ><i class="fa fa-arrow-left"></i> Back</button>
+    <button type="submit" class="btn btn-primary" onclick="location='<?= base_url() ?>admin/Message'" ><i class="fa fa-arrow-left"></i> Back</button>
   </div>
 </div>
