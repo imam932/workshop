@@ -13,15 +13,9 @@ class Division extends Admin_Controller{
   {
     //load data
     $data['division'] = $this->Model_division->select_all();
-    //cek error
-    if (!empty($this->session->flashdata('error')))
-    {
-      $data['error'] = $this->session->flashdata('error');
-    }
-    else if(!empty($this->session->flashdata('message')))
-    {
-      $data['message'] = $this->session->flashdata('message');
-    }
+    //success message
+    $data['message'] = $this->session->flashdata('message');
+
     //load page
     $this->render['content'] = $this->load->view('admin/division/index', $data, TRUE);
 
@@ -39,14 +33,9 @@ class Division extends Admin_Controller{
 		{
 			//form validation
 	    $this->form_validation->set_rules('division', 'Division', 'trim|required|xss_clean');
+	    $this->form_validation->set_rules('description', 'Description', 'required|xss_clean');
 
-	    if(!$this->form_validation->run())
-	    {
-	      $this->session->set_flashdata('old', $this->getOldValue());
-	      $this->session->set_flashdata('error', validation_errors());
-				redirect('admin/Division/store', 'refresh');
-	    }
-			else
+	    if($this->form_validation->run())
 			{
 				$data['id_division'] = random_string('alnum', 6) . date('my') . random_string('alnum', 5);
 				$data['division'] = $this->input->post('division');
@@ -63,9 +52,7 @@ class Division extends Admin_Controller{
 				//uploading File
 	      if(!$this->upload->do_upload('image'))
 	      {
-          $this->session->set_flashdata('old', $this->getOldValue());
-          $this->session->set_flashdata('error', $this->upload->display_errors());
-					redirect('admin/Division/store', 'refresh');
+          $this->session->set_flashdata('upload_error', $this->upload->display_errors());
 	      }
 	      else
 	      {
@@ -78,13 +65,7 @@ class Division extends Admin_Controller{
 		}
 
 		// error handling
-    $data = array();
-		if(!empty($this->session->flashdata('error')))
-		{
-			$data['error'] = $this->session->flashdata('error');
-		}
-		// load old value
-    $data['old'] = $this->session->flashdata('old');
+    $data['upload_error'] = $this->session->flashdata('upload_error');
 
 		// load page
 		$this->render['content'] = $this->load->view('admin/division/store', $data, TRUE);
@@ -103,14 +84,9 @@ class Division extends Admin_Controller{
 		{
 			//form validation
 	    $this->form_validation->set_rules('division', 'Division', 'trim|required|xss_clean');
+      $this->form_validation->set_rules('description', 'Description', 'required|xss_clean');
 
-	    if(!$this->form_validation->run())
-	    {
-	      $this->session->set_flashdata('old', $this->getOldValue());
-	      $this->session->set_flashdata('error', validation_errors());
-				redirect('admin/Division/edit/' . $id, 'refresh');
-	    }
-			else
+	    if($this->form_validation->run())
 			{
 				$data['division'] = $this->input->post('division');
 				$data['description'] = $this->input->post('description');
@@ -129,9 +105,8 @@ class Division extends Admin_Controller{
           //uploading File
           if(!$this->upload->do_upload('image'))
           {
-            $this->session->set_flashdata('old', $this->getOldValue());
-            $this->session->set_flashdata('error', $this->upload->display_errors());
-            redirect('admin/Division/edit/' . $id, 'refresh');
+            $this->session->set_flashdata('upload_error', $this->upload->display_errors());
+            goto view;
           }
           else
           {
@@ -146,21 +121,17 @@ class Division extends Admin_Controller{
         }
 
 				$this->Model_division->update($data, $id);
-
 				$this->session->set_flashdata('message', 'Success ! Division has been edited');
 				redirect('admin/Division', 'refresh');
 			}
     }
 
+    view:
+
     // load data
 		$data['division'] = $this->Model_division->select_by_id($id);
-    // load old value
-    $data['old'] = $this->session->flashdata('old');
-		// error handling
-		if(!empty($this->session->flashdata('error')))
-		{
-			$data['error'] = $this->session->flashdata('error');
-		}
+    $data['upload_error'] = $this->session->flashdata('upload_error');
+
 		// load page
 		$this->render['content'] = $this->load->view('admin/division/edit', $data, TRUE);
 

@@ -13,11 +13,8 @@ class User extends Admin_Controller{
   {
     // load data
     $data['user']          = $this->Model_user->select_all();
-    //error handling
-    if(!empty($this->session->flashdata('message')))
-    {
-      $data['message'] = $this->session->flashdata('message');
-    }
+    $data['message'] = $this->session->flashdata('message');
+
     // load content
     $this->render['content']       = $this->load->view('admin/user/index', $data, TRUE);
     // load template
@@ -42,20 +39,13 @@ class User extends Admin_Controller{
       $this->form_validation->set_rules('address', 'Address', 'trim|required|xss_clean');
       $this->form_validation->set_rules('phone', 'Phone', 'trim|required|xss_clean|numeric');
 
-	    if(!$this->form_validation->run())
-	    {
-        $this->session->set_flashdata('old', $this->getOldValue());
-        $this->session->set_flashdata('error', validation_errors());
-				redirect('admin/User/store', 'refresh');
-	    }
-      else
+	    if($this->form_validation->run())
       {
         $username_exist = $this->Model_user->select_by_field('username', $this->input->post('username'));
+
         if($username_exist)
         {
-          $this->session->set_flashdata('old', $this->getOldValue());
-          $this->session->set_flashdata('error', 'Username exist, use another');
-          redirect('admin/User/store', 'refresh');
+          $this->session->set_flashdata('username_error', 'Username exist, use another');
         }
         else
         {
@@ -76,13 +66,7 @@ class User extends Admin_Controller{
       }
     }
     //error handling
-    $data = array();
-    if(!empty($this->session->flashdata('error')))
-    {
-      $data['error'] = $this->session->flashdata('error');
-    }
-    // load old value
-    $data['old'] = $this->session->flashdata('old');
+    $data['username_error'] = $this->session->flashdata('username_error');
 
     // load content
     $data['level'] = $this->Model_level->select_all();
@@ -106,13 +90,7 @@ class User extends Admin_Controller{
       $this->form_validation->set_rules('address', 'Address', 'trim|required|xss_clean');
       $this->form_validation->set_rules('phone', 'Phone', 'trim|required|xss_clean|numeric');
 
-	    if(!$this->form_validation->run())
-	    {
-	      $this->session->set_flashdata('old', $this->getOldValue());
-	      $this->session->set_flashdata('error', validation_errors());
-				redirect('admin/User/edit/' . $id, 'refresh');
-	    }
-      else
+	    if($this->form_validation->run())
       {
         $data['name']    = $this->input->post('name');
         $data['gender']  = $this->input->post('gender');
@@ -126,14 +104,6 @@ class User extends Admin_Controller{
         redirect('admin/User', 'refresh');
       }
     }
-    //error handling
-    $data = array();
-    if(!empty($this->session->flashdata('error')))
-    {
-      $data['error'] = $this->session->flashdata('error');
-    }
-    // load old value
-    $data['old'] = $this->session->flashdata('old');
 
     // load data
     $data['level'] = $this->Model_level->select_all();

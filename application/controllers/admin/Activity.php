@@ -13,15 +13,7 @@ class Activity extends Admin_Controller{
   {
     //load data
     $data['activity'] = $this->Model_activity->select_all();
-    //cek error
-    if (!empty($this->session->flashdata('error')))
-    {
-      $data['error'] = $this->session->flashdata('error');
-    }
-    else if(!empty($this->session->flashdata('message')))
-    {
-      $data['message'] = $this->session->flashdata('message');
-    }
+    $data['message'] = $this->session->flashdata('message');
 
     //load page
     $this->render['content'] = $this->load->view('admin/activity/index', $data, TRUE);
@@ -40,14 +32,9 @@ class Activity extends Admin_Controller{
 		{
 			//form validation
 	    $this->form_validation->set_rules('activity', 'Activity', 'trim|required|xss_clean');
+	    $this->form_validation->set_rules('description', 'Description', 'required|xss_clean');
 
-	    if(!$this->form_validation->run())
-	    {
-	      $this->session->set_flashdata('old', $this->getOldValue());
-	      $this->session->set_flashdata('error', validation_errors());
-				redirect('admin/Activity/store', 'refresh');
-	    }
-			else
+	    if($this->form_validation->run())
 			{
 				$data['id_activity'] = random_string('alnum', 6) . date('my') . random_string('alnum', 5);
 				$data['activity'] = $this->input->post('activity');
@@ -64,9 +51,7 @@ class Activity extends Admin_Controller{
 				//uploading File
 	      if(!$this->upload->do_upload('image'))
 	      {
-	        $this->session->set_flashdata('old', $this->getOldValue());
-	        $this->session->set_flashdata('error', $this->upload->display_errors());
-					redirect('admin/Activity/store', 'refresh');
+	        $this->session->set_flashdata('upload_error', $this->upload->display_errors());
 	      }
 	      else
 	      {
@@ -79,13 +64,7 @@ class Activity extends Admin_Controller{
 		}
 
 		// error handling
-    $data = array();
-		if(!empty($this->session->flashdata('error')))
-		{
-			$data['error'] = $this->session->flashdata('error');
-		}
-    // load old value
-    $data['old'] = $this->session->flashdata('old');
+    $data['upload_error'] = $this->session->flashdata('upload_error');
 
 		// load page
 		$this->render['content'] = $this->load->view('admin/activity/store', $data, TRUE);
@@ -104,14 +83,9 @@ class Activity extends Admin_Controller{
 		{
 			//form validation
 	    $this->form_validation->set_rules('activity', 'Activity', 'trim|required|xss_clean');
+      $this->form_validation->set_rules('description', 'Description', 'required|xss_clean');
 
-	    if(!$this->form_validation->run())
-	    {
-	      $this->session->set_flashdata('old', $this->getOldValue());
-	      $this->session->set_flashdata('error', validation_errors());
-				redirect('admin/Activity/edit/' . $id, 'refresh');
-	    }
-			else
+	    if($this->form_validation->run())
 			{
 				$data['activity'] = $this->input->post('activity');
 				$data['description'] = $this->input->post('description');
@@ -130,9 +104,8 @@ class Activity extends Admin_Controller{
           //uploading File
           if(!$this->upload->do_upload('image'))
           {
-            $this->session->set_flashdata('old', $this->getOldValue());
-            $this->session->set_flashdata('error', $this->upload->display_errors());
-            redirect('admin/Activity/edit/' . $id, 'refresh');
+            $this->session->set_flashdata('upload_error', $this->upload->display_errors());
+            goto view;
           }
           else
           {
@@ -153,15 +126,12 @@ class Activity extends Admin_Controller{
 			}
     }
 
+    view:
+
     // load data
 		$data['activity'] = $this->Model_activity->select_by_id($id);
-    // load old value
-    $data['old'] = $this->session->flashdata('old');
-    // error handling
-		if(!empty($this->session->flashdata('error')))
-		{
-			$data['error'] = $this->session->flashdata('error');
-		}
+    $data['upload_error'] = $this->session->flashdata('upload_error');
+
 
 		// load page
 		$this->render['content'] = $this->load->view('admin/activity/edit', $data, TRUE);

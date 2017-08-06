@@ -13,18 +13,9 @@ class Gallery extends Admin_Controller
   {
     // load data
     $data['gallery'] = $this->Model_gallery->select_all();
-    // load old value
-    $data['old'] = $this->session->flashdata('old');
+    $data['upload_error'] = $this->session->flashdata('upload_error');
+    $data['message'] = $this->session->flashdata('message');
 
-    // error handling
-    if (!empty($this->session->flashdata('error')))
-    {
-      $data['error'] = $this->session->flashdata('error');
-    }
-    else if(!empty($this->session->flashdata('message')))
-    {
-      $data['message'] = $this->session->flashdata('message');
-    }
     // load page
     $this->render['content']       = $this->load->view('admin/gallery/index', $data, TRUE);
 
@@ -42,12 +33,7 @@ class Gallery extends Admin_Controller
     $this->form_validation->set_rules('title', 'Title', 'trim|required|xss_clean');
     $this->form_validation->set_rules('description', 'Description', 'trim|required|xss_clean');
 
-    if(!$this->form_validation->run())
-    {
-      $this->session->set_flashdata('old', $this->getOldValue());
-      $this->session->set_flashdata('error', validation_errors());
-    }
-    else
+    if($this->form_validation->run())
     {
       $data['title'] = $this->input->post('title');
       $data['date'] = date('Y-m-d H:i:s');
@@ -66,8 +52,8 @@ class Gallery extends Admin_Controller
       //uploading File
       if(!$this->upload->do_upload('image'))
       {
-        $this->session->set_flashdata('old', $this->getOldValue());
-        $this->session->set_flashdata('error', $this->upload->display_errors());
+        $this->session->set_flashdata('upload_error', $this->upload->display_errors());
+        $this->index();
       }
       else
       {
@@ -75,10 +61,13 @@ class Gallery extends Admin_Controller
         $this->Model_gallery->insert($data);
 
         $this->session->set_flashdata('message', 'Success ! Gallery has been added');
+        redirect('admin/Gallery', 'refresh');
       }
     }
-
-    redirect('admin/Gallery', 'refresh');
+    else
+    {
+      $this->index();
+    }
   }
 
   function delete($id)
@@ -103,13 +92,7 @@ class Gallery extends Admin_Controller
       $this->form_validation->set_rules('title', 'Title', 'trim|required|xss_clean');
       $this->form_validation->set_rules('description', 'Description', 'trim|required|xss_clean');
 
-      if(!$this->form_validation->run())
-      {
-        $this->session->set_flashdata('old', $this->getOldValue());
-        $this->session->set_flashdata('error', validation_errors());
-        redirect('admin/Gallery/edit/' . $id, 'refresh');
-      }
-      else
+      if($this->form_validation->run())
       {
         $data['title'] = $this->input->post('title');
         $data['description'] = $this->input->post('description');
@@ -128,9 +111,8 @@ class Gallery extends Admin_Controller
           //uploading File
           if(!$this->upload->do_upload('image'))
           {
-            $this->session->set_flashdata('old', $this->getOldValue());
-            $this->session->set_flashdata('error', $this->upload->display_errors());
-            redirect('admin/Gallery/edit/' . $id, 'refresh');
+            $this->session->set_flashdata('upload_error', $this->upload->display_errors());
+            goto view;
           }
           else
           {
@@ -150,15 +132,13 @@ class Gallery extends Admin_Controller
       }
     }
 
+    view:
+
     // load data
     $data['gallery'] = $this->Model_gallery->select_by_id($id);
-    // load old value
-    $data['old'] = $this->session->flashdata('old');
-    // error handling
-    if (!empty($this->session->flashdata('error')))
-    {
-      $data['error'] = $this->session->flashdata('error');
-    }
+    // upload error message
+    $data['upload_error'] = $this->session->flashdata('upload_error');
+
     // load page
     $this->render['content'] = $this->load->view('admin/gallery/edit', $data, TRUE);
 

@@ -12,21 +12,24 @@
 
 					<div class="row">
 						<div class="col-xs-12 col-sm-12 col-md-5">
-							<div class="form-group">
-								<input type="text" name="division" class="form-control" id="" placeholder="Division Name" value="<?= $old['division'] ?>">
-							</div>
+							<div class="form-group <?= empty(form_error('division')) ? '' : 'has-error' ?>">
+								<input type="text" name="division" class="form-control" id="" placeholder="Division Name" value="<?= set_value('division') ?>">
+							  <div class="form-error"><?= form_error('division') ?></div>
+              </div>
 						</div>
 
 						<div class="col-xs-12 col-sm-12 col-md-4">
-							<div class="form-group">
+							<div class="form-group <?= empty($upload_error) ? '' : 'has-error' ?>">
 								<input type="file" class="form-control" name="image">
-							</div>
+                <div class="form-error"><?= $upload_error ?></div>
+              </div>
 						</div>
 					</div>
 
-					<div class="form-group">
-						<textarea name="description" class="form-control ckeditor"><?= $old['description'] ?></textarea>
-					</div>
+					<div class="form-group <?= empty(form_error('description')) ? '' : 'has-error' ?>">
+						<textarea name="description" class="form-control ckeditor"><?= set_value('description') ?></textarea>
+            <div class="form-error"><?= form_error('description') ?></div>
+          </div>
 
 					<div class="right">
 						<input type="submit" name="simpan" id="input" class="btn btn-primary" value="Submit">

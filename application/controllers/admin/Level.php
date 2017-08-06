@@ -13,15 +13,8 @@ class Level extends Admin_Controller {
   function index(){
     //load data
     $data['level'] = $this->Model_level->select_all();
-    //cek error
-    if (!empty($this->session->flashdata('error')))
-    {
-      $data['error'] = $this->session->flashdata('error');
-    }
-    else if(!empty($this->session->flashdata('message')))
-    {
-      $data['message'] = $this->session->flashdata('message');
-    }
+    $data['message'] = $this->session->flashdata('message');
+
     //load page
     $this->render['content'] = $this->load->view('admin/level/index', $data, TRUE);
 
@@ -41,13 +34,7 @@ class Level extends Admin_Controller {
       //form validation
       $this->form_validation->set_rules('level', 'Level', 'trim|required|xss_clean');
 
-      if(!$this->form_validation->run())
-      {
-        $this->session->set_flashdata('old', $this->getOldValue());
-        $this->session->set_flashdata('error', form_error('level'));
-        redirect('admin/Level/store', 'refresh');
-      }
-      else
+      if($this->form_validation->run())
       {
         // Insert Level
         $data['id_level'] = random_string('alnum', 5) . date('my') . random_string('alnum', 6);
@@ -62,20 +49,12 @@ class Level extends Admin_Controller {
         }
 
         $this->session->set_flashdata('message', 'Success ! Level has been added');
+        redirect('admin/Level', 'refresh');
       }
-
-      redirect('admin/Level', 'refresh');
     }
 
     // GET METHOD
     $data['module'] = $this->Model_module->select_all();
-    // load old value
-    $data['old'] = $this->session->flashdata('old');
-    //cek error
-    if (!empty($this->session->flashdata('error')))
-    {
-      $data['error'] = $this->session->flashdata('error');
-    }
 
     $this->render['content'] = $this->load->view('admin/level/store', $data, TRUE);
     $this->render['title'] = "Level";
@@ -93,13 +72,7 @@ class Level extends Admin_Controller {
       //form validation
       $this->form_validation->set_rules('level', 'Level', 'trim|required|xss_clean');
 
-      if(!$this->form_validation->run())
-      {
-        $this->session->set_flashdata('old', $this->getOldValue());
-        $this->session->set_flashdata('error', form_error('level'));
-        redirect('admin/Level/edit/' . $id, 'refresh');
-      }
-      else
+      if($this->form_validation->run())
       {
         // Update Level
         $data['level'] = $this->input->post('level');
@@ -116,23 +89,15 @@ class Level extends Admin_Controller {
         }
 
         $this->session->set_flashdata('message', 'Success ! Level has been edited');
+        redirect('admin/Level', 'refresh');
       }
-
-      redirect('admin/Level', 'refresh');
     }
 
     // GET METHOD
     $data['module'] = $this->Model_module->select_all();
     $data['level'] = $this->Model_level->select_by_id($id);
     $data['privilege'] = $this->Model_privilege->select_all($id);
-    // get old value
-    $data['old'] = $this->session->flashdata('old');
 
-    //cek error
-    if (!empty($this->session->flashdata('error')))
-    {
-      $data['error'] = $this->session->flashdata('error');
-    }
     $this->render['content'] = $this->load->view('admin/level/edit', $data, TRUE);
     $this->render['title'] = "Level";
     $this->render['desc']		= "Edit User Level";

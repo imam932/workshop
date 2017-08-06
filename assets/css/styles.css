@@ -515,6 +515,7 @@ anggota h4{
 	}
 }
 
-.form-error p {
+.form-error {
 	color: #f6533b;
+	padding-top: 5px;
 }

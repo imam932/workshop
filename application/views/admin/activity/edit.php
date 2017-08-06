@@ -11,26 +11,29 @@
 					<div class="col-lg-9 col-xs-12 col-sm-12">
 						<div class="row">
 							<div class="col-xs-12 col-sm-12 col-md-5">
-								<div class="form-group">
-									<input type="text" name="activity" class="form-control" id="" placeholder="Activity Name" value="<?= is_null($old['activity']) ? $activity[0]->activity : $old['activity'] ?>">
-								</div>
+								<div class="form-group <?= empty(form_error('activity')) ? '' : 'has-error' ?>">
+									<input type="text" name="activity" class="form-control" id="" placeholder="Activity Name" value="<?= set_value('activity', $activity[0]->activity) ?>">
+                  <div class="form-error"><?= form_error('activity') ?></div>
+                </div>
 							</div>
 
 								<div class="col-xs-12 col-sm-12 col-md-4">
-									<div class="form-group">
+									<div class="form-group <?= empty($upload_error) ? '' : 'has-error' ?>">
 										<div class="input-group">
 										  <input type="file" class="form-control" name="image" id="image">
 											<span class="input-group-btn">
 				                <button type="button" class="btn btn-danger" id="clearImage">Clear</button>
 				              </span>
 										</div>
+                    <div class="form-error"><?= $upload_error ?></div>
 									</div>
 								</div>
 							</div>
 
-							<div class="form-group">
-								<textarea name="description" class="form-control ckeditor"><?= is_null($old['description']) ? $activity[0]->description : $old['description'] ?></textarea>
-							</div>
+							<div class="form-group <?= empty(form_error('description')) ? '' : 'has-error' ?>">
+								<textarea name="description" class="form-control ckeditor"><?= set_value('description', $activity[0]->description) ?></textarea>
+                <div class="form-error"><?= form_error('description') ?></div>
+              </div>
 
 							<div class="right">
 								<input type="submit" name="simpan" id="input" class="btn btn-primary" value="Submit">

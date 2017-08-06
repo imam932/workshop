@@ -14,11 +14,9 @@ class Article extends Admin_Controller {
 	{
 		//load data
 		$data['article'] = $this->Model_article->select_all();
-		// error handling
-		if(!empty($this->session->flashdata('message')))
-		{
-			$data['message'] = $this->session->flashdata('message');
-		}
+		// success message
+		$data['message'] = $this->session->flashdata('message');
+
 		// load page
 		$data['category'] = $this->Model_category->select_all();
 		$this->render['content'] = $this->load->view('admin/article/index', $data, TRUE);
@@ -38,14 +36,9 @@ class Article extends Admin_Controller {
 			//form validation
 	    $this->form_validation->set_rules('title', 'Title', 'trim|required|xss_clean');
 	    $this->form_validation->set_rules('id_category', 'Category', 'required');
+	    $this->form_validation->set_rules('posting', 'Posting', 'required|xss_clean');
 
-	    if(!$this->form_validation->run())
-	    {
-	      $this->session->set_flashdata('error', validation_errors());
-	      $this->session->set_flashdata('old', $this->getOldValue());
-				redirect('admin/Article/store', 'refresh');
-	    }
-			else
+	    if($this->form_validation->run())
 			{
 				$data['id_article'] = random_string('alnum', 6) . date('my') . random_string('alnum', 5);
 				$data['date'] = date('Y-m-d H:i:s');
@@ -66,9 +59,7 @@ class Article extends Admin_Controller {
 				//uploading File
 	      if(!$this->upload->do_upload('image'))
 	      {
-	        $this->session->set_flashdata('error', $this->upload->display_errors());
-          $this->session->set_flashdata('old', $this->getOldValue());
-          redirect('admin/Article/store', 'refresh');
+	        $this->session->set_flashdata('upload_error', $this->upload->display_errors());
 	      }
 	      else
 	      {
@@ -82,15 +73,8 @@ class Article extends Admin_Controller {
 
 		// load data
 		$data['category'] = $this->Model_category->select_all();
-		// error handling
-		if(!empty($this->session->flashdata('error')))
-		{
-			$data['error'] = $this->session->flashdata('error');
-		}
-
-    // get old value
-    $data['old'] = $this->session->flashdata('old');
-
+		// error handling for upload file
+		$data['upload_error'] = $this->session->flashdata('upload_error');
 		// load page
 		$this->render['content'] = $this->load->view('admin/article/store', $data, TRUE);
 
@@ -121,14 +105,9 @@ class Article extends Admin_Controller {
 		{
 			//form validation
 	    $this->form_validation->set_rules('title', 'Title', 'trim|required|xss_clean');
+	    $this->form_validation->set_rules('posting', 'Posting', 'required|xss_clean');
 
-	    if(!$this->form_validation->run())
-	    {
-	      $this->session->set_flashdata('error', validation_errors());
-	      $this->session->set_flashdata('old', $this->getOldValue());
-				redirect('admin/Article/edit/' . $id, 'refresh');
-	    }
-			else
+	    if ($this->form_validation->run())
 			{
 				$data['title'] = $this->input->post('title');
 				$data['id_category'] = $this->input->post('id_category');
@@ -149,9 +128,8 @@ class Article extends Admin_Controller {
           //uploading File
           if(!$this->upload->do_upload('image'))
           {
-          	$this->session->set_flashdata('old', $this->getOldValue());
-            $this->session->set_flashdata('error', $this->upload->display_errors());
-            redirect('admin/Article/edit/' . $id, 'refresh');
+            $this->session->set_flashdata('upload_error', $this->upload->display_errors());
+            goto view;
           }
           else
           {
@@ -172,17 +150,14 @@ class Article extends Admin_Controller {
 			}
 		}
 
+		view:
+
 		// load data
 		$data['category'] = $this->Model_category->select_all();
 		$data['article'] = $this->Model_article->select_by_id($id);
-		// load old value
-		$data['old'] = $this->session->flashdata('old');
+		// upload error handling
+		$data['upload_error'] = $this->session->flashdata('upload_error');
 
-		// error handling
-		if(!empty($this->session->flashdata('error')))
-		{
-			$data['error'] = $this->session->flashdata('error');
-		}
 		// load page
 		$this->render['content'] = $this->load->view('admin/article/edit', $data, TRUE);
 
