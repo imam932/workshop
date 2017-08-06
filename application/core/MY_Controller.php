@@ -40,14 +40,6 @@ class Admin_Controller extends CI_Controller
 		$this->render['menu'] = $this->Model_privilege->select_all($this->session->userdata('logged_in')['id_level']);
 		$this->render['active_menu'] = $this->router->class;
 	}
-
-	protected function getOldValue() {
-		$ret = array();
-		foreach ($_POST as $key => $val) {
-			$ret[$key] = $this->input->post($key);
-		}
-		return $ret;
-	}
 }
 
 class User_Controller extends CI_Controller
@@ -102,14 +94,6 @@ class User_Controller extends CI_Controller
 
 		$this->render['article_footer']   = $this->Model_article->select_all(4);
 	}
-
-  protected function getOldValue() {
-    $ret = array();
-    foreach ($_POST as $key => $val) {
-      $ret[$key] = $this->input->post($key);
-    }
-    return $ret;
-  }
 }
 
 
