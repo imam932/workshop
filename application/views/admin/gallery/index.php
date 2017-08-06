@@ -65,17 +65,20 @@
                   <form action="<?=base_url()?>admin/Gallery/store" method="post" enctype="multipart/form-data">
 
                     <div class="form-group <?= empty(form_error('title')) ? '' : 'has-error' ?>">
-                      <input type="text" name="title" class="form-control" id="" placeholder="Title Gallery" value="<?= set_value('title') ?>">
+                      <label for="title">Title</label>
+                      <input type="text" name="title" class="form-control" id="title" placeholder="Title Gallery" value="<?= set_value('title') ?>">
                       <div class="form-error"><?= form_error('title') ?></div>
                     </div>
 
                     <div class="form-group <?= empty($upload_error) ? '' : 'has-error' ?>">
-                      <input type="file" name="image" class="form-control" id="" placeholder="Image Gallery">
+                      <label for="image">Image</label>
+                      <input type="file" name="image" class="form-control" id="image" placeholder="Image Gallery">
                       <div class="form-error"><?= $upload_error ?></div>
                     </div>
 
                     <div class="form-group <?= empty(form_error('description')) ? '' : 'has-error' ?>">
-                      <textarea name="description" rows="5" class="form-control" placeholder="Description..."><?= set_value('description') ?></textarea>
+                      <label for="description">Description</label>
+                      <textarea name="description" id="description" rows="5" class="form-control" placeholder="Description"><?= set_value('description') ?></textarea>
                       <div class="form-error"><?= form_error('description') ?></div>
                     </div>
 

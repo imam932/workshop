@@ -13,14 +13,16 @@
 					<div class="row">
 						<div class="col-xs-12 col-sm-12 col-md-5">
 							<div class="form-group <?= empty(form_error('division')) ? '' : 'has-error' ?>">
-								<input type="text" name="division" class="form-control" id="" placeholder="Division Name" value="<?= set_value('division') ?>">
+                <label for="division">Division</label>
+                <input type="text" name="division" class="form-control" id="division" placeholder="Division Name" value="<?= set_value('division') ?>">
 							  <div class="form-error"><?= form_error('division') ?></div>
               </div>
 						</div>
 
 						<div class="col-xs-12 col-sm-12 col-md-4">
 							<div class="form-group <?= empty($upload_error) ? '' : 'has-error' ?>">
-								<input type="file" class="form-control" name="image">
+                <label for="image">Image</label>
+                <input type="file" class="form-control" name="image" id="image">
                 <div class="form-error"><?= $upload_error ?></div>
               </div>
 						</div>

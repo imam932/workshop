@@ -20,12 +20,12 @@
 
           <div class="form-group <?= empty(form_error('description')) ? '' : 'has-error' ?>">
             <label for="description">Description</label>
-            <textarea id="description" class="form-control" name="description"><?= set_value('description', $gallery[0]->description) ?></textarea>
+            <textarea id="description" class="form-control" name="description" placeholder="Description"><?= set_value('description', $gallery[0]->description) ?></textarea>
             <div class="form-error"><?= form_error('description') ?></div>
           </div>
 
           <div class="form-group <?= empty($upload_error) ? '' : 'has-error' ?>">
-            <label for="image">Change Image</label>
+            <label for="image">Image</label>
             <div class="input-group">
               <input type="file" class="form-control" placeholder="" name="image" id="image">
               <span class="input-group-btn">

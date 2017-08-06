@@ -9,14 +9,16 @@
 					<div class="row">
 						<div class="col-xs-12 col-sm-12 col-md-5">
 							<div class="form-group <?= empty(form_error('title')) ? '' : 'has-error' ?>">
-								<input type="text" name="title" class="form-control" id="" placeholder="Title" value="<?= set_value('title') ?>">
+                <label for="title">Title</label>
+								<input type="text" name="title" class="form-control" id="title" placeholder="Title" value="<?= set_value('title') ?>">
 							  <div class="form-error"><?= form_error('title') ?></div>
               </div>
 						</div>
 
 						<div class="col-xs-12 col-sm-12 col-md-3">
 							<div class="form-group <?= empty(form_error('id_category')) ? '' : 'has-error' ?>">
-								<select class="form-control" name="id_category">
+                <label for="category">Category</label>
+                <select class="form-control" name="id_category" id="category">
 									<option selected disabled>Select Category</option>
 									<?php foreach ($category as $row) {
                     $selected = $row->id_category == set_value('id_category') ? "selected" : "";
@@ -30,7 +32,8 @@
 
 						<div class="col-xs-12 col-sm-12 col-md-4">
 							<div class="form-group <?= empty($upload_error) ? '' : 'has-error' ?>">
-								<input type="file" class="form-control" name="image">
+                <label for="image">Image</label>
+                <input type="file" class="form-control" name="image" id="image">
                 <div class="form-error">
                   <?= $upload_error ?>
                 </div>

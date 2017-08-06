@@ -12,13 +12,15 @@
 						<div class="row">
 							<div class="col-xs-12 col-sm-12 col-md-5">
 								<div class="form-group <?= empty(form_error('activity')) ? '' : 'has-error' ?>">
-									<input type="text" name="activity" class="form-control" id="" placeholder="Activity Name" value="<?= set_value('activity', $activity[0]->activity) ?>">
+                  <label for="activity">Activity</label>
+									<input type="text" name="activity" class="form-control" id="activity" placeholder="Activity Name" value="<?= set_value('activity', $activity[0]->activity) ?>">
                   <div class="form-error"><?= form_error('activity') ?></div>
                 </div>
 							</div>
 
 								<div class="col-xs-12 col-sm-12 col-md-4">
 									<div class="form-group <?= empty($upload_error) ? '' : 'has-error' ?>">
+                    <label for="image">Image</label>
 										<div class="input-group">
 										  <input type="file" class="form-control" name="image" id="image">
 											<span class="input-group-btn">
@@ -42,6 +44,7 @@
 						</div>
 
 						<div class="col-xs-12 col-sm-12 col-lg-3">
+              <label>Previous Image</label>
 							<img src="<?= base_url() ?>assets/upload/activity/<?= $activity[0]->image ?>">
 						</div>
 					</form>

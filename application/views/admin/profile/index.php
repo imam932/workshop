@@ -51,15 +51,18 @@
             </div>
             <div class="panel-body">
               <div class="form-group">
-                <input type="password" name="old_password" class="form-control" value="" placeholder="Old Password">
+                <label for="old_password">Old Password</label>
+                <input type="password" name="old_password" id="old_password" class="form-control" value="" placeholder="Old Password">
               </div>
 
               <div class="form-group">
-                <input type="password" name="password" class="form-control" value="" placeholder="New Password">
+                <label for="password">New password</label>
+                <input type="password" name="password" id="password" class="form-control" value="" placeholder="New Password">
               </div>
 
               <div class="form-group">
-                <input type="password" name="password2" class="form-control" value="" placeholder="Confirm Password">
+                <label for="password2">Confirm Password</label>
+                <input type="password" name="password2" id="password2" class="form-control" value="" placeholder="Confirm Password">
               </div>
 
               <button type="submit" class="btn btn-primary">Reset</button>

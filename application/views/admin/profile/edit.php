@@ -14,8 +14,11 @@
           <form class="" action="<?= base_url().'admin/Profile/edit/'.$user[0]->id_user ?>" method="post">
             <div class="panel-body">
               <div class="form-group">
-                <input type="text" name="name" class="form-control" value="<?= $user[0]->name ?>">
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name" class="form-control" value="<?= $user[0]->name ?>">
               </div>
+
+              <label>Gender</label>
               <div class="radio">
                 <label>
                   <input type="radio" name="gender" value="1" <?php if($user[0]->gender == 1) echo 'checked' ?>> Male
@@ -24,18 +27,24 @@
                   <input type="radio" name="gender" value="0" <?php if($user[0]->gender == 0) echo 'checked' ?>> Female
                 </label>
               </div>
+
               <div class="form-group">
+                <label for="datepicker">Birth</label>
                 <div class="input-group date" id="datepicker" data-date="" data-date-format="yyyy-mm-dd" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
                   <input class="form-control" size="16" type="text" value="<?= $user[0]->birth ?>" name="birth">
                   <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
                   <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
                 </div>
               </div>
+
               <div class="form-group">
-                <textarea name="address" rows="2" class="form-control"><?= $user[0]->address ?></textarea>
+                <label for="address">Address</label>
+                <textarea name="address" id="address" rows="2" class="form-control"><?= $user[0]->address ?></textarea>
               </div>
+
               <div class="form-group">
-                <input type="text" name="phone" class="form-control" value="<?= $user[0]->phone ?>">
+                <label for="phone">Phone</label>
+                <input type="text" name="phone" id="phone" class="form-control" value="<?= $user[0]->phone ?>">
               </div>
 
               <input type="submit" value="Submit" class="btn btn-primary">

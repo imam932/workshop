@@ -12,14 +12,16 @@
 						<div class="row">
 							<div class="col-xs-12 col-sm-12 col-md-5">
 								<div class="form-group <?= empty(form_error('title')) ? '' : 'has-error' ?>">
-									<input type="text" name="title" class="form-control" id="" placeholder="Title" value="<?= set_value('title', $article[0]->title) ?>">
+                  <label for="title">Title</label>
+                  <input type="text" name="title" class="form-control" id="title" placeholder="Title" value="<?= set_value('title', $article[0]->title) ?>">
                   <div class="form-error"><?= form_error('title') ?></div>
                 </div>
 							</div>
 
 							<div class="col-xs-12 col-sm-12 col-md-3">
 								<div class="form-group <?= empty(form_error('id_category')) ? '' : 'has-error' ?>">
-									<select class="form-control" name="id_category">
+                  <label for="category">Category</label>
+                  <select class="form-control" name="id_category" id="category">
 										<option selected disabled>Select Category</option>
 										<?php
                     $id_category = set_value('id_category', $article[0]->id_category);
@@ -34,6 +36,7 @@
 
 								<div class="col-xs-12 col-sm-12 col-md-4">
 									<div class="form-group <?= empty($upload_error) ? '' : 'has-error' ?>">
+                    <label for="image">Image</label>
 										<div class="input-group">
 										  <input type="file" class="form-control" name="image" id="image">
 											<span class="input-group-btn">
@@ -59,6 +62,7 @@
 						</div>
 
 						<div class="col-xs-12 col-sm-12 col-lg-3">
+              <label>Previous Image</label>
 							<img src="<?= base_url() ?>assets/upload/article/<?= $article[0]->image ?>">
 						</div>
 					</form>
