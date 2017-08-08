@@ -17,11 +17,11 @@
             <!-- <b>Profil User</b> -->
           </div>
           <label for="">Name</label>
-          <p><?= $user[0]->name ?></p>
+          <p><?= $user->name ?></p>
           <hr>
           <label for="">gender</label>
           <p><?php
-          if ($user[0]->gender == 1) {
+          if ($user->gender == 1) {
             echo "Male";
           }else {
             echo "Female";
@@ -29,13 +29,13 @@
           ?></p>
           <hr>
           <label for="">Birth</label>
-          <p><?= $user[0]->birth ?></p>
+          <p><?= $user->birth ?></p>
           <hr>
           <label for="">Address</label>
-          <p><?= $user[0]->address ?></p>
+          <p><?= $user->address ?></p>
           <hr>
           <label for="">Phone</label>
-          <p><?= $user[0]->phone ?></p>
+          <p><?= $user->phone ?></p>
           <hr>
         </div>
       </div>

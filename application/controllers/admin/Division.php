@@ -113,7 +113,7 @@ class Division extends Admin_Controller{
             // delete image File
             $path = "assets/upload/division/";
             $record = $this->Model_division->select_by_id($id);
-            $filename = $record[0]->image;
+            $filename = $record->image;
             unlink($path . $filename);
 
             $data['image'] = $this->upload->data()['file_name'];
@@ -148,7 +148,7 @@ class Division extends Admin_Controller{
 		// delete image File
     $path = "assets/upload/division/";
     $record = $this->Model_division->select_by_id($id);
-    $filename = $record[0]->image;
+    $filename = $record->image;
     unlink($path . $filename);
 
 		$this->Model_division->delete($id);

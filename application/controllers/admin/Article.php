@@ -91,7 +91,7 @@ class Article extends Admin_Controller {
 		// delete image File
     $path = "assets/upload/article/";
     $record = $this->Model_article->select_by_id($id);
-    $filename = $record[0]->image;
+    $filename = $record->image;
     unlink($path . $filename);
 
 		$this->Model_article->delete($id);
@@ -136,7 +136,7 @@ class Article extends Admin_Controller {
             // delete image File
             $path = "assets/upload/article/";
             $record = $this->Model_article->select_by_id($id);
-            $filename = $record[0]->image;
+            $filename = $record->image;
             unlink($path . $filename);
 
             $data['image'] = $this->upload->data()['file_name'];

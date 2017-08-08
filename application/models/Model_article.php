@@ -46,7 +46,7 @@ class Model_article extends CI_Model
 
 		if ($q->num_rows() == 1)
 		{
-			return $q->result();
+			return $q->row();
 		}
 		else
 		{

@@ -43,7 +43,7 @@ class Profile extends Admin_Controller
       $data['password'] = md5($this->input->post('password'));
       $password2 = md5($this->input->post('password2'));
 
-      if($old_password == $auth[0]->password)
+      if($old_password == $auth->password)
       {
         if($data['password'] == $password2)
         {

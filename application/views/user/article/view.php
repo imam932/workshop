@@ -1,12 +1,12 @@
-<?php $time = new DateTime($article[0]->date); ?>
+<?php $time = new DateTime($article->date); ?>
 
 <div class="row">
   <div class="col-md-9 article-view">
 
-    <h1><?= $article[0]->title ?></h1>
-    <img src="<?= base_url() ?>assets/upload/article/<?= $article[0]->image ?>" class="pull-left">
+    <h1><?= $article->title ?></h1>
+    <img src="<?= base_url() ?>assets/upload/article/<?= $article->image ?>" class="pull-left">
     <p>
-      <?= $article[0]->posting ?>
+      <?= $article->posting ?>
     </p>
 
     <ol class="breadcrumb">
@@ -22,12 +22,12 @@
 
       <span>
         <i class="fa fa-tag"></i>
-        <?= $article[0]->category ?>
+        <?= $article->category ?>
       </span>
 
       <span>
         <i class="fa fa-pencil"></i>
-        <?= $article[0]->name ?>
+        <?= $article->name ?>
       </span>
     </ol>
   </div>

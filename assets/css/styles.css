@@ -519,3 +519,7 @@ anggota h4{
 	color: #f6533b;
 	padding-top: 5px;
 }
+
+.form-error p {
+	color: #f6533b;
+}

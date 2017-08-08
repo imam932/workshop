@@ -112,7 +112,7 @@ class Activity extends Admin_Controller{
             // delete image File
             $path = "assets/upload/activity/";
             $record = $this->Model_activity->select_by_id($id);
-            $filename = $record[0]->image;
+            $filename = $record->image;
             unlink($path . $filename);
 
             $data['image'] = $this->upload->data()['file_name'];
@@ -149,7 +149,7 @@ class Activity extends Admin_Controller{
 		// delete image File
     $path = "assets/upload/activity/";
     $record = $this->Model_activity->select_by_id($id);
-    $filename = $record[0]->image;
+    $filename = $record->image;
     unlink($path . $filename);
 
 		$this->Model_activity->delete($id);

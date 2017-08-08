@@ -75,7 +75,7 @@ class Gallery extends Admin_Controller
     // delete image File
     $path = "assets/upload/gallery/";
     $record = $this->Model_gallery->select_by_id($id);
-    $filename = $record[0]->image;
+    $filename = $record->image;
     unlink($path . $filename);
 
     // delete record
@@ -119,7 +119,7 @@ class Gallery extends Admin_Controller
             // delete image File
             $path = "assets/upload/gallery/";
             $record = $this->Model_gallery->select_by_id($id);
-            $filename = $record[0]->image;
+            $filename = $record->image;
             unlink($path . $filename);
 
             $data['image'] = $this->upload->data()['file_name'];
