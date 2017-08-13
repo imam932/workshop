@@ -6,26 +6,30 @@
       data-plugin-options='{"gridwidth": 1170, "gridheight": 500}'>
       <ul>
         <li data-transition="fade">
-          <img src="<?= base_url() ?>assets/img/bg.png"
-          alt=""
-          data-bgposition="center center"
-          data-bgfit="cover"
-          data-bgrepeat="no-repeat"
-          class="rev-slidebg">
+          <img src="<?= base_url('assets/img/bg.jpg') ?>"
+               alt=""
+               data-bgposition="center center"
+               data-bgfit="cover"
+               data-bgrepeat="no-repeat"
+               class="rev-slidebg">
 
-          <div class="tp-caption top-label" data-x="100" data-y="180" data-start="500" data-transform_in="y:[-300%];opacity:0;s:500;">
-            pengen belajar
+          <div class="tp-caption top-label header-label" data-x="100" data-y="180" data-start="500" data-transform_in="y:[-300%];opacity:0;s:500;">
+            Pengen belajar
           </div>
 
-          <div class="tp-caption main-label" data-x="0" data-y="210" data-start="1500" data-whitespace="nowrap" data-transform_in="y:[100%];s:500;" data-transform_out="opacity:0;s:500;" data-mask_in="x:0px;y:0px;">
+          <div class="tp-caption main-label header-label" data-x="0" data-y="230" data-start="1500" data-whitespace="nowrap" data-transform_in="y:[100%];s:500;" data-transform_out="opacity:0;s:500;" data-mask_in="x:0px;y:0px;">
             PEMROGRAMAN
           </div>
 
-          <div class="tp-caption bottom-label" data-x="100" data-y="280" data-start="2000" data-transform_in="y:[100%];opacity:0;s:500;">
+          <div class="tp-caption bottom-label header-label" data-x="100" data-y="320" data-start="2000" data-transform_in="y:[100%];opacity:0;s:500;">
             Ayo gabung sama WRI
           </div>
 
-          <div class="tp-caption" data-x="500" data-y="0" data-start="2600" data-transform_in="z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;s:500;e:Power2.easeOut;">
+          <div class="tp-caption bottom-label" data-x="100" data-y="380" data-start="2500" data-transform_in="y:[100%];opacity:0;s:500;">
+            <button class="btn btn-primary btn-lg">Gabung Sekarang</button>
+          </div>
+
+          <div class="tp-caption" data-x="500" data-y="0" data-start="3000" data-transform_in="z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;s:500;e:Power2.easeOut;">
             <youtube-video class="embed-responsive-item" video-id="featuredVideoId" id="featuredVideo"></youtube-video>
           </div>
         </li>
@@ -41,12 +45,14 @@
 </div>
 
 <div class="container">
+
   <div class="row">
     <div class="col-md-3">
       <img class="img-responsive" src="<?= base_url() ?>assets/img/Page_profile.png" width="170"
       data-appear-animation="fadeInLeft" alt="Logo WRI">
     </div>
     <div class="col-md-9">
+
       <h1 class="word-rotator-title mb-sm">
         Workshop Riset Informatika
       </h1>
@@ -69,10 +75,10 @@
   <div class="container">
     <div class="featured-boxes">
 
-      <div class="row">
+      <div class="row row-match">
         <?php foreach ($division as $row) { ?>
           <div class="col-md-4 col-sm-6">
-            <div class="featured-box featured-box-primary">
+            <div class="featured-box featured-box-primary col-match">
               <div class="box-content" align="center">
                 <img src="<?= base_url() ?>assets/upload/division/<?= $row->image ?>" class="img-responsive" width="50%"  alt="">
                 <h4 class="text-uppercase"><?= $row->division ?></h4>
@@ -283,28 +289,20 @@
                 </center>
 
                 <div class="col-md-12">
-                  <ul class="timeline">
-                    <?php $i = 1; foreach ($activity as $row) {
-                      if ($i % 2 == 0) {
-                        $inverted = "timeline-inverted";
-                      } else {
-                        $inverted = "";
-                      }
-                      ?>
-                      <li class="<?= $inverted ?>">
-                        <div class="timeline-badge warning"></div>
-                        <div class="timeline-panel">
-                          <div class="timeline-heading">
-                            <h4 class="timeline-title"><?= $row->activity ?></h4>
-                          </div>
-                          <div class="timeline-body">
-                            <img class="img-responsive pull-left" src="<?= base_url() ?>assets/upload/activity/<?= $row->image ?>" width="200px" style="margin-right:15px">
+
+                  <div class="row row-match">
+                    <?php $i = 1; foreach ($activity as $row) { ?>
+                      <div class="col-md-3 col-sm-6">
+                        <div class="featured-box featured-box-primary col-match">
+                          <div class="box-content" align="center">
+                            <img src="<?= base_url() ?>assets/upload/activity/<?= $row->image ?>" class="img-responsive" width="50%"  alt="">
+                            <h4><?= $row->activity ?></h4>
                             <p><?= $row->description ?></p>
+                            <!-- <p><a href="/" class="lnk-primary learn-more">Learn More <i class="fa fa-angle-right"></i></a></p> -->
                           </div>
                         </div>
-                      </li>
-                      <?php $i++; } ?>
-                    </ul>
+                      </div>
+                    <?php } ?>
                   </div>
                 </div>
                 <!-- end activity  -->
