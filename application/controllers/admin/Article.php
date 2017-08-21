@@ -36,11 +36,11 @@ class Article extends Admin_Controller {
 			//form validation
 	    $this->form_validation->set_rules('title', 'Title', 'trim|required|xss_clean');
 	    $this->form_validation->set_rules('id_category', 'Category', 'required');
-	    $this->form_validation->set_rules('posting', 'Posting', 'required|xss_clean');
+	    $this->form_validation->set_rules('posting', 'Posting', 'required');
 
 	    if($this->form_validation->run())
 			{
-				$data['id_article'] = random_string('alnum', 6) . date('my') . random_string('alnum', 5);
+				$data['id_article'] = $this->input->post('id_article');
 				$data['date'] = date('Y-m-d H:i:s');
 				$data['title'] = $this->input->post('title');
 				$data['id_category'] = $this->input->post('id_category');
@@ -105,7 +105,7 @@ class Article extends Admin_Controller {
 		{
 			//form validation
 	    $this->form_validation->set_rules('title', 'Title', 'trim|required|xss_clean');
-	    $this->form_validation->set_rules('posting', 'Posting', 'required|xss_clean');
+	    $this->form_validation->set_rules('posting', 'Posting', 'required');
 
 	    if ($this->form_validation->run())
 			{
@@ -175,6 +175,30 @@ class Article extends Admin_Controller {
 		$this->Model_article->update($data, $id);
 		redirect('admin/Article', 'refresh');
 	}
+
+  function sendImage() {
+
+		if ($_FILES['file']['name'] && !$_FILES['file']['error']) {
+      //upload file config
+      $path = 'assets/upload/article';
+      $config['upload_path'] = $path;
+      $config['allowed_types'] = 'jpg|png';
+      $config['max_size'] = 5000;
+      $config['encrypt_name'] = TRUE;
+      $this->load->library('upload', $config);
+
+      // if upload success return its url or error message if failed
+			$response = "";
+      if($this->upload->do_upload('file'))  {
+      	$filename = $this->upload->data('file_name');
+      	$response['url'] = base_url('assets/upload/article/' . $filename);
+      } else {
+      	$response['error'] = $this->upload->display_errors();
+			}
+
+			echo json_encode($response);
+    }
+  }
 }
 
 /* End of file Article.php */

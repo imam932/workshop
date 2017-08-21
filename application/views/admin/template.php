@@ -29,6 +29,7 @@
   <link rel="stylesheet" href="<?= base_url( )?>assets/admin/css/jquery.paginate.css">
   <link rel="stylesheet" href="<?= base_url( )?>assets/admin/css/chartist.min.css">
   <link rel="stylesheet" href="<?= base_url( )?>assets/admin/css/chartist-plugin-tooltip.css">
+  <link rel="stylesheet" href="<?= base_url( )?>assets/admin/summernote/summernote.css">
 </head>
 
 <body ng-app="myApp">
@@ -168,6 +169,10 @@
     </div>
     <!-- /#wrapper -->
 
+    <script>
+      var base_url = "<?= base_url() ?>"
+    </script>
+
     <!-- Include JS -->
     <!-- Vendor -->
     <script src="<?= base_url() ?>assets/admin/js/jquery.js"></script>
@@ -185,7 +190,7 @@
     <script src="<?= base_url() ?>assets/admin/js/chartist.min.js"></script>
     <script src="<?= base_url() ?>assets/admin/js/chartist-plugin-pointlabels.min.js"></script>
     <script src="<?= base_url() ?>assets/admin/js/chartist-plugin-tooltip.min.js"></script>
-    <script src="<?= base_url() ?>assets/admin/ckeditor/ckeditor.js"></script>
+    <script src="<?= base_url() ?>assets/admin/summernote/summernote.min.js"></script>
     <script src="<?= base_url() ?>assets/admin/js/angular.min.js"></script>
     <script src="<?= base_url() ?>assets/admin/js/controller.js"></script>
     <script src="<?= base_url() ?>assets/admin/js/angular-youtube-api-factory.min.js"></script>

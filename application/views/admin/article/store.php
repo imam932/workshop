@@ -2,12 +2,15 @@
 <div class="row">
 	<div class="col-lg-12">
 
+    <div id="error-message" class="alert alert-danger alert-link" style="display: none"></div>
+
 		<form method="post" action="<?=base_url()?>admin/Article/store" enctype="multipart/form-data">
 			<div class="row">
 				<div class="col-lg-9">
 
 					<div class="row">
 						<div class="col-xs-12 col-sm-12 col-md-5">
+              <input type="hidden" name="id_article" value="<?= random_string('alnum', 6) . date('my') . random_string('alnum', 5) ?>">
 							<div class="form-group <?= empty(form_error('title')) ? '' : 'has-error' ?>">
                 <label for="title">Title</label>
 								<input type="text" name="title" class="form-control" id="title" placeholder="Title" value="<?= set_value('title') ?>">
@@ -42,7 +45,7 @@
 					</div>
 
 					<div class="form-group <?= empty(form_error('title')) ? '' : 'posting' ?>">
-						<textarea name="posting" class="form-control ckeditor"><?= set_value('posting') ?></textarea>
+						<textarea name="posting" class="form-control editor"><?= set_value('posting') ?></textarea>
             <div class="form-error"><?= form_error('posting') ?></div>
           </div>
 

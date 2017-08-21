@@ -3,33 +3,41 @@
 <div class="row">
   <div class="col-md-9 article-view">
 
-    <h1><?= $article->title ?></h1>
-    <img src="<?= base_url() ?>assets/upload/article/<?= $article->image ?>" class="pull-left">
-    <p>
-      <?= $article->posting ?>
-    </p>
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <h1><?= $article->title ?></h1>
+        <p>
+          <?= $article->posting ?>
+        </p>
+      </div>
+    </div>
 
-    <ol class="breadcrumb">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <ol class="breadcrumb">
       <span>
         <i class="fa fa-calendar"></i>
         <?= $time->format('d/m/Y') ?>
       </span>
 
-      <span>
+          <span>
         <i class="fa fa-clock-o"></i>
-        <?= $time->format('H:i') ?>
+            <?= $time->format('H:i') ?>
       </span>
 
-      <span>
+          <span>
         <i class="fa fa-tag"></i>
-        <?= $article->category ?>
+            <?= $article->category ?>
       </span>
 
-      <span>
+          <span>
         <i class="fa fa-pencil"></i>
-        <?= $article->name ?>
+            <?= $article->name ?>
       </span>
-    </ol>
+        </ol>
+      </div>
+    </div>
+
   </div>
 
   <div class="col-md-3">

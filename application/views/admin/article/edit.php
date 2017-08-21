@@ -2,9 +2,7 @@
 <div class="row">
 	<div class="col-lg-12">
 
-		<?php if(isset($error)) { ?>
-			<div class="alert alert-danger alert-link"><?=$error?></div>
-			<?php } ?>
+			<div id="error-message" class="alert alert-danger alert-link" style="display: none"></div>
 
 			<form method="post" action="<?=base_url()?>admin/Article/edit/<?= $article->id_article ?>" enctype="multipart/form-data">
 				<div class="row">
@@ -51,7 +49,7 @@
 							</div>
 
 							<div class="form-group <?= empty(form_error('posting')) ? '' : 'has-error' ?>">
-								<textarea name="posting" class="form-control ckeditor"><?= set_value('posting', $article->posting) ?></textarea>
+								<textarea name="posting" class="form-control editor"><?= set_value('posting', $article->posting) ?></textarea>
                 <div class="form-error"><?= form_error('posting') ?></div>
               </div>
 
