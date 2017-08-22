@@ -40,29 +40,44 @@ class Article extends Admin_Controller {
 
 	    if($this->form_validation->run())
 			{
-				$data['id_article'] = $this->input->post('id_article');
+				$data['id_article'] = random_string('alnum', 6) . date('my') . random_string('alnum', 5);
 				$data['date'] = date('Y-m-d H:i:s');
 				$data['title'] = $this->input->post('title');
 				$data['id_category'] = $this->input->post('id_category');
-				$data['posting'] = $this->input->post('posting');
 				$data['id_user'] = $this->session->userdata('logged_in')['id_user'];
 				$data['publish'] = 1;
 
 				//upload file config
-	      $path = 'assets/upload/article';
+	      $path = 'assets/upload/article/' . $data['id_article'] . "/";
 	      $config['upload_path'] = $path;
 	      $config['allowed_types'] = 'jpg|png';
 	      $config['max_size'] = 5000;
-	      $config['encrypt_name'] = TRUE;
+	      $config['file_name'] = uniqid('thumbnail');
 				$this->load->library('upload', $config);
+
+        if (!is_dir($path)) {
+          mkdir($path, 0777, true);
+        }
 
 				//uploading File
 	      if(!$this->upload->do_upload('image'))
 	      {
+	      	rmdir($path);
 	        $this->session->set_flashdata('upload_error', $this->upload->display_errors());
 	      }
 	      else
 	      {
+          $dom = new DOMDocument();
+          $dom->loadHTML($this->input->post('posting'));
+          foreach ($dom->getElementsByTagName('img') as $tag) {
+            // store img data
+            $img = $tag->getAttribute('src');
+            $src = $this->save64Image($img, $path);
+            // change DOM
+            $tag->setAttribute("src", $src);
+          }
+          $data['posting'] = $dom->saveHTML();
+
 	        $data['image'] = $this->upload->data()['file_name'];
 	        $this->Model_article->insert($data);
 	        $this->session->set_flashdata('message', 'Success ! Article has been created');
@@ -88,11 +103,12 @@ class Article extends Admin_Controller {
 
 	function delete($id)
 	{
-		// delete image File
-    $path = "assets/upload/article/";
-    $record = $this->Model_article->select_by_id($id);
-    $filename = $record->image;
-    unlink($path . $filename);
+		// delete all image File in directory and remove directory
+    $path = "assets/upload/article/" . $id . "/";
+    foreach (glob($path . "*.*") as $file) {
+    	unlink($file);
+		}
+    rmdir($path);
 
 		$this->Model_article->delete($id);
 		$this->session->set_flashdata('message', 'Success ! Article has been deleted');
@@ -111,17 +127,17 @@ class Article extends Admin_Controller {
 			{
 				$data['title'] = $this->input->post('title');
 				$data['id_category'] = $this->input->post('id_category');
-				$data['posting'] = $this->input->post('posting');
 				$data['id_user'] = $this->session->userdata('logged_in')['id_user'];
+
+        $path = 'assets/upload/article/' . $id . '/';
 
 				if(!$_FILES['image']['name'] == '')
         {
           //upload file config
-          $path = 'assets/upload/article';
           $config['upload_path'] = $path;
           $config['allowed_types'] = 'jpg|png';
           $config['max_size'] = 5000;
-          $config['encrypt_name'] = TRUE;
+          $config['file_name'] = uniqid('thumbnail');
 
           $this->load->library('upload', $config);
 
@@ -134,7 +150,6 @@ class Article extends Admin_Controller {
           else
           {
             // delete image File
-            $path = "assets/upload/article/";
             $record = $this->Model_article->select_by_id($id);
             $filename = $record->image;
             unlink($path . $filename);
@@ -143,8 +158,43 @@ class Article extends Admin_Controller {
           }
         }
 
-				$this->Model_article->update($data, $id);
+        $dom = new DOMDocument();
+        $dom->loadHTML($this->input->post('posting'));
 
+				// search for unused image and delete it from server
+				$image_from_server = array();
+        foreach ($dom->getElementsByTagName('img') as $tag) {
+        	$img = $tag->getAttribute('src');
+        	if (strpos($img, 'base64') === FALSE) {
+            $url = explode('/', rtrim($img, '/'));
+        		array_push($image_from_server, end($url));
+					}
+				}
+				foreach (glob($path . '*.*') as $file) {
+        	$url = explode('/', $file);
+        	$filename = end($url);
+        	$found = FALSE;
+					foreach ($image_from_server as $img) {
+						if ($filename == $img) {
+							$found = TRUE;
+						}
+					}
+					if($found == FALSE && strpos($filename, 'thumbnail') === FALSE) {
+						unlink($file);
+					}
+				}
+
+        // convert base64 to image and put it on server
+        foreach ($dom->getElementsByTagName('img') as $tag) {
+          $img = $tag->getAttribute('src');
+          if (strpos($img, 'base64,') !== FALSE) {
+            $src = $this->save64Image($img, $path);
+            $tag->setAttribute("src", $src);
+					}
+        }
+
+        $data['posting'] = $dom->saveHTML();
+				$this->Model_article->update($data, $id);
 				$this->session->set_flashdata('message', 'Success ! Article has been edited');
 				redirect('admin/Article', 'refresh');
 			}
@@ -175,30 +225,6 @@ class Article extends Admin_Controller {
 		$this->Model_article->update($data, $id);
 		redirect('admin/Article', 'refresh');
 	}
-
-  function sendImage() {
-
-		if ($_FILES['file']['name'] && !$_FILES['file']['error']) {
-      //upload file config
-      $path = 'assets/upload/article';
-      $config['upload_path'] = $path;
-      $config['allowed_types'] = 'jpg|png';
-      $config['max_size'] = 5000;
-      $config['encrypt_name'] = TRUE;
-      $this->load->library('upload', $config);
-
-      // if upload success return its url or error message if failed
-			$response = "";
-      if($this->upload->do_upload('file'))  {
-      	$filename = $this->upload->data('file_name');
-      	$response['url'] = base_url('assets/upload/article/' . $filename);
-      } else {
-      	$response['error'] = $this->upload->display_errors();
-			}
-
-			echo json_encode($response);
-    }
-  }
 }
 
 /* End of file Article.php */

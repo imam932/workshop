@@ -34,7 +34,7 @@
 
 								<div class="col-xs-12 col-sm-12 col-md-4">
 									<div class="form-group <?= empty($upload_error) ? '' : 'has-error' ?>">
-                    <label for="image">Image</label>
+                    <label for="image">Thumbnail Image</label>
 										<div class="input-group">
 										  <input type="file" class="form-control" name="image" id="image">
 											<span class="input-group-btn">
@@ -60,9 +60,8 @@
 						</div>
 
 						<div class="col-xs-12 col-sm-12 col-lg-3">
-              <label>Previous Image</label>
-							<img src="<?= base_url() ?>assets/upload/article/<?= $article->image ?>">
+              <label>Previous Thumbnail Image</label>
+							<img src="<?= base_url() ?>assets/upload/article/<?= $article->id_article ?>/<?= $article->image ?>">
 						</div>
 					</form>
 				</div>
-			</div>

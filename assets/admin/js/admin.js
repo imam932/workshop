@@ -2,37 +2,8 @@ $(document).ready(function() {
 
 	// summernote
 	$('.editor').summernote({
-		height: 200,
-		callbacks: {
-            onImageUpload: function(files) {
-                that = $(this);
-            	sendFile(files[0], that);
-            }
-		}
+		height: 250
     });
-
-	// summernote upload image
-    function sendFile(file, that) {
-        var data = new FormData();
-        data.append("file", file);
-        $.ajax({
-            data: data,
-            type: "POST",
-            url: base_url + "admin/Article/sendImage",
-            cache: false,
-            contentType: false,
-            processData: false,
-            success: function(response) {
-            	var data = JSON.parse(response)
-
-            	if (data.error) {
-            		$('#error-message').show().html(data.error)
-				} else {
-                    $(that).summernote('insertImage', data.url)
-                }
-            }
-        });
-    }
 
 	// tooltip enabled
 	$('[data-toggle="tooltip"]').tooltip();

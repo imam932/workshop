@@ -10,7 +10,6 @@
 
 					<div class="row">
 						<div class="col-xs-12 col-sm-12 col-md-5">
-              <input type="hidden" name="id_article" value="<?= random_string('alnum', 6) . date('my') . random_string('alnum', 5) ?>">
 							<div class="form-group <?= empty(form_error('title')) ? '' : 'has-error' ?>">
                 <label for="title">Title</label>
 								<input type="text" name="title" class="form-control" id="title" placeholder="Title" value="<?= set_value('title') ?>">
@@ -35,7 +34,7 @@
 
 						<div class="col-xs-12 col-sm-12 col-md-4">
 							<div class="form-group <?= empty($upload_error) ? '' : 'has-error' ?>">
-                <label for="image">Image</label>
+                <label for="image">Thumbnail Image</label>
                 <input type="file" class="form-control" name="image" id="image">
                 <div class="form-error">
                   <?= $upload_error ?>
