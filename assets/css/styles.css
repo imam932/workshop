@@ -195,6 +195,14 @@ img {
 	display: inline-block;
 }
 
+.posting-container img[style*="float: left"] {
+	margin-right: 10px;
+}
+
+.posting-container img[style*="float: right"] {
+	margin-left: 10px;
+}
+
 /*modal*/
 .modal-content h2{
 	border-bottom: 1px solid #ddd;
