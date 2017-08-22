@@ -121,7 +121,7 @@
                       </h4>
 
                       <div class="image-container-post">
-                        <img src="<?= base_url().'assets/upload/article/'.$row->image ?>" alt="Image Article">
+                        <img src="<?= base_url().'assets/upload/article/' . $row->id_article . '/' .$row->image ?>" alt="Image Article">
                       </div>
                       <p class="text-preview-home">
                         <?= strip_tags($row->posting) ?>
