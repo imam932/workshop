@@ -26,7 +26,7 @@
           </div>
 
           <div class="tp-caption bottom-label" data-x="100" data-y="380" data-start="2500" data-transform_in="y:[100%];opacity:0;s:500;">
-            <button class="btn btn-primary btn-lg">Gabung Sekarang</button>
+            <button href="#" onclick="window.location='https://docs.google.com/forms/d/e/1FAIpQLScoQTPD3F1nktBMUxB2aADVoC4YgSFHEkyvfNgBgbr9XqhHwg/viewform'" class="btn btn-primary btn-lg">Gabung Sekarang</button>
           </div>
 
           <div class="tp-caption" data-x="500" data-y="0" data-start="3000" data-transform_in="z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;s:500;e:Power2.easeOut;">
