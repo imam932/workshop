@@ -1,4 +1,5 @@
-var channel = "UCRDuxyMCKmyaX5rRDFo-RCQ";
+// var channel = "UCRDuxyMCKmyaX5rRDFo-RCQ";
+var channel = "UCyU5wkjgQYGRB0hIHMwm2Sgs";
 var key = "AIzaSyCEFnhqYRdnmWn0-rvVLFTr8UOCdivVvDE";
 
 var app = angular.module('myApp', ['youtube-embed', 'ui.bootstrap']);
@@ -139,7 +140,9 @@ app.controller('playlist', function ($scope, $http) {
 			part: "snippet",
 			key: key,
 			maxResults: 12,
+			q: $scope.cari,
 			order:$scope.orderName,
+			type: "playlist"
 		}
 
 		if (nextPage) {
@@ -151,7 +154,7 @@ app.controller('playlist', function ($scope, $http) {
 			params: query
 		};
 
-		$http.get("https://www.googleapis.com/youtube/v3/playlists", config).then(function (response) {
+		$http.get("https://www.googleapis.com/youtube/v3/search", config).then(function (response) {
 			$scope.data = response.data;
 			console.log(response);
 			if (nextPage) {
@@ -169,7 +172,7 @@ app.controller('playlist', function ($scope, $http) {
 		angular.forEach($scope.playlist, function(row) {
 
 			var query = {
-				id: row.id,
+				id: row.id.playlistId,
 				part: "contentDetails",
 				key: key
 			}

@@ -16,6 +16,7 @@
 						<tr>
 							<th>No.</th>
 							<th>Name</th>
+              <th>Username</th>
 							<th>Gender</th>
 							<th>Birth</th>
 							<th>address</th>
@@ -33,6 +34,7 @@
 							<tr>
 								<td><?= $no++ ?></td>
 								<td><?= $row->name ?></td>
+								<td><?= $row->username ?></td>
 								<td><?php
 								if ($row->gender == 1) {
 									echo "Male";

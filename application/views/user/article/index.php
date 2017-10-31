@@ -15,7 +15,7 @@
             <div class="row">
               <div class="col-md-4 col-sm-4 col-xs-12">
                 <div class="image-container">
-                  <img src="<?= base_url() ?>assets/upload/article/<?= $row->image ?>" alt="">
+                  <img src="<?= base_url() ?>assets/upload/article/<?= $row->id_article ?>/<?= $row->image ?>" alt="">
                 </div>
               </div>
 

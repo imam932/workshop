@@ -1,35 +1,43 @@
-<?php $time = new DateTime($article[0]->date); ?>
+<?php $time = new DateTime($article->date); ?>
 
 <div class="row">
   <div class="col-md-9 article-view">
 
-    <h1><?= $article[0]->title ?></h1>
-    <img src="<?= base_url() ?>assets/upload/article/<?= $article[0]->image ?>" class="pull-left">
-    <p>
-      <?= $article[0]->posting ?>
-    </p>
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <h1><?= $article->title ?></h1>
+        <p>
+          <?= $article->posting ?>
+        </p>
+      </div>
+    </div>
 
-    <ol class="breadcrumb">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <ol class="breadcrumb">
       <span>
         <i class="fa fa-calendar"></i>
         <?= $time->format('d/m/Y') ?>
       </span>
 
-      <span>
+          <span>
         <i class="fa fa-clock-o"></i>
-        <?= $time->format('H:i') ?>
+            <?= $time->format('H:i') ?>
       </span>
 
-      <span>
+          <span>
         <i class="fa fa-tag"></i>
-        <?= $article[0]->category ?>
+            <?= $article->category ?>
       </span>
 
-      <span>
+          <span>
         <i class="fa fa-pencil"></i>
-        <?= $article[0]->name ?>
+            <?= $article->name ?>
       </span>
-    </ol>
+        </ol>
+      </div>
+    </div>
+
   </div>
 
   <div class="col-md-3">
@@ -50,7 +58,7 @@
               <div class="row">
                 <div class="col-md-12 col-sm-4 col-xs-12">
                   <div class="image-container">
-                    <img src="<?= base_url() ?>assets/upload/article/<?= $row->image ?>" alt="">
+                    <img src="<?= base_url() ?>assets/upload/article/<?= $row->id_article ?>/<?= $row->image ?>" alt="">
                   </div>
                 </div>
 

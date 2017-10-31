@@ -19,25 +19,37 @@
     <?php } ?>
 
     <form class="" action="<?= base_url() ?>Contact/sendMessage" method="post">
-      <div class="form-group">
-        <div class="form-inline">
-          <div class="form-group">
+
+
+      <div class="row">
+
+        <div class="col-md-6">
+          <div class="form-group <?= empty(form_error('name')) ? '' : 'has-error' ?>">
             <label for="Nama">Nama <b class="red">*</b></label>
-            <input type="text" name="name" class="form-control" id="" placeholder="Nama Lengkap">
-          </div>
-          <div class="form-group">
-            <label for="E-mail">E-Mail <b class="red">*</b></label>
-            <input type="email" name="email" class="form-control" id="" placeholder="example@gmail.com">
+            <input type="text" name="name" class="form-control" id="" placeholder="Nama Lengkap" value="<?= set_value('name') ?>">
+            <div class="form-error"><?= form_error('name') ?></div>
           </div>
         </div>
+
+        <div class="col-md-6">
+          <div class="form-group <?= empty(form_error('email')) ? '' : 'has-error' ?>">
+            <label for="E-mail">E-Mail <b class="red">*</b></label>
+            <input type="email" name="email" class="form-control" id="" placeholder="example@gmail.com" value="<?= set_value('email') ?>">
+            <div class="form-error"><?= form_error('email') ?></div>
+          </div>
+        </div>
+
       </div>
-      <div class="form-group">
+
+      <div class="form-group <?= empty(form_error('message')) ? '' : 'has-error' ?>">
         <label for="Pesan">Pesan <b class="red">*</b></label>
-        <textarea name="message" class="form-control" rows="4" cols="80" placeholder="Pesan yang ingin di sampaikan"></textarea>
+        <textarea name="message" class="form-control" rows="4" cols="80" placeholder="Pesan yang ingin di sampaikan"><?= set_value('message') ?></textarea>
+        <div class="form-error"><?= form_error('message') ?></div>
       </div>
 
       <button type="submit" class="btn btn-primary">KIRIM</button>
     </form>
+
   </div>
 
   <div class="row col-lg-4 col-md-4 col-sm-4">

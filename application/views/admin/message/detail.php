@@ -12,7 +12,7 @@
             <i class="fa fa-calendar"></i>
             <?php
             $time = new DateTime($message->date);
-            echo $time->format('d-m-Y');
+            echo $time->format('d/m/Y') . " at " . $time->format('h:i');
             ?>
           </div>
         </div>
@@ -24,6 +24,6 @@
         </div>
       </div>
     </div>
-    <button type="submit" class="btn btn-primary" onclick="window.history.back()" ><i class="fa fa-backward"></i> Back</button>
+    <button type="submit" class="btn btn-primary" onclick="location='<?= base_url() ?>admin/Message'" ><i class="fa fa-arrow-left"></i> Back</button>
   </div>
 </div>

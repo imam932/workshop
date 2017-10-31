@@ -31,11 +31,11 @@ class Login extends CI_Controller
 
 			if($result != FALSE)
 			{
-				$id_level = $this->Model_user->select_by_id($result[0]->id_user)[0]->id_level;
+				$id_level = $this->Model_user->select_by_id($result->id_user)->id_level;
 
 				$session_data = array(
-					'id_user' => $result[0]->id_user,
-					'username' => $result[0]->username,
+					'id_user' => $result->id_user,
+					'username' => $result->username,
 					'id_level' => $id_level
 				);
 

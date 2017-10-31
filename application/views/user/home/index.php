@@ -27,6 +27,7 @@
 
           <div class="tp-caption bottom-label" data-x="100" data-y="380" data-start="2500" data-transform_in="y:[100%];opacity:0;s:500;">
             <a href="https://goo.gl/forms/fKTWqMQUx85Wnh7I3" class="btn btn-primary btn-lg header-label" target="_blank">Gabung Sekarang</a>
+
           </div>
 
           <div class="tp-caption" data-x="500" data-y="0" data-start="3000" data-transform_in="z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;s:500;e:Power2.easeOut;">

@@ -32,7 +32,7 @@ class Model_activity extends CI_Model
 
     if($query->num_rows() == 1)
     {
-      return $query->result();
+      return $query->row();
     }
     else
     {

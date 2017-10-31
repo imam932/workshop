@@ -23,12 +23,12 @@
 
       </div>
 
-      <div class="col-md-6">
+      <!-- apabila sudah melebihi 50 <div class="col-md-6">
         <div class="form-group">
           <label for="">Pencarian</label>
           <input class="search form-control" placeholder="Cari Playlist" ng-model="cari" />
         </div>
-      </div>
+      </div> -->
 
       <div class="col-md-3">
         <div class="form-group">
@@ -53,7 +53,8 @@
 
           <!-- Playlist Link  -->
           <div class="panel-heading">
-            <a data-toggle="modal" href="<?= base_url() ?>Tutorial/viewPlaylist/{{ li.id.playlistId }}">
+            <!-- kalau sudah melebihi 50 video <a data-toggle="modal" href="<?= base_url() ?>Tutorial/viewPlaylist/{{ li.id.playlistId }}"> -->
+            <a data-toggle="modal" href="<?= base_url() ?>Tutorial/viewPlaylist/{{ li.id }}">
               <img src="{{ li.snippet.thumbnails.high.url }}" alt="" class="img-responsive">
               <div class="play">
                 <i class="fa fa-play-circle"></i>
@@ -68,7 +69,7 @@
           </div>
 
           <div class="panel-body">
-            <b>{{ li.snippet.title }}</b>
+            <b data-toggle="tooltip" data-placement="bottom" title="{{ li.snippet.title }}">{{ li.snippet.title }}</b>
           </div>
         </div>
       </div>

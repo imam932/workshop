@@ -2,10 +2,6 @@
 <div class="row">
 	<div class="col-lg-12">
 
-		<?php if(isset($error)) { ?>
-			<div class="alert alert-danger alert-link"><?=$error?></div>
-		<?php } ?>
-
 		<?php if(isset($message)) { ?>
 			<div class="alert alert-success alert-link"><?=$message?></div>
 		<?php } ?>
@@ -30,9 +26,11 @@
 									<td><?= $no++; ?></td>
 									<td>
 										<form id="form<?=$row->id_category?>" action="<?=base_url()?>admin/Category/edit/<?=$row->id_category?>" method="post">
-											<div class="form-group">
-												<input type="text" class="form-control" name="category" value="<?= $row->category; ?>">
+											<div class="form-group <?= empty(form_error('category')) || set_value('id_category') != $row->id_category ? '' : 'has-error'  ?>">
+                        <input type="hidden" name="id_category" value="<?= $row->id_category ?>">
+												<input type="text" class="form-control" name="category" placeholder="Category" value="<?= set_value('id_category') == $row->id_category ? set_value('category', $row->category) : $row->category ?>">
 												<span class="hidden"><?= $row->category; ?></span>
+                        <div class="form-error"><?= empty(form_error('category')) || set_value('id_category') != $row->id_category ? '' : form_error('category') ?></div>
 											</div>
 										</form>
 									</td>
@@ -53,12 +51,13 @@
 				<div class="col-lg-6">
 					<h4>Create New Category</h4>
 					<form class="" action="<?= base_url(); ?>admin/Category/store" method="post">
-						<div class="input-group">
-							<input type="text" class="form-control" placeholder="Category" name="category">
+						<div class="input-group <?= empty(form_error('category')) || !empty(set_value('id_category')) ? '' : 'has-error' ?>">
+							<input type="text" class="form-control" placeholder="Category" name="category" value="<?= set_value('category') ?>">
 							<span class="input-group-btn">
 								<button class="btn btn-primary" name="submit">Submit</button>
 							</span>
 						</div>
+            <div class="form-error"><?= empty(form_error('category')) || !empty(set_value('id_category')) ? '' : form_error('category') ?></div>
 					</form>
 				</div>
 			</div>

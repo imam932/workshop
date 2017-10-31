@@ -9,10 +9,11 @@
 		<form method="post" action="<?=base_url()?>admin/Level/store" enctype="multipart/form-data">
 			<div class="row">
 				<div class="col-lg-9">
-					<div class="form-group">
+					<div class="form-group <?= empty(form_error('level')) ? '' : 'has-error' ?>">
 						<label for="level">Level</label>
-						<input type="text" class="form-control" id="level" name="level" placeholder="Level">
-					</div>
+						<input type="text" class="form-control" id="level" name="level" placeholder="Level" value="<?=  set_value('level')?>">
+					  <div class="form-error"><?= form_error('level') ?></div>
+          </div>
 
 					<div class="form-group">
 						<label>Allow to Access</label> <br>
@@ -21,8 +22,6 @@
 								<input type="checkbox" name="enabled_module[]" id="<?= $row->module ?>" value="<?= $row->id_module ?>" checked>
 								<?= $row->module ?>
 							</label>
-
-							&nbsp;
 						<?php } ?>
 					</div>
 

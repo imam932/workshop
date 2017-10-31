@@ -1,10 +1,12 @@
 $(document).ready(function() {
 
+	// summernote
+	$('.editor').summernote({
+		height: 250
+    });
+
 	// tooltip enabled
 	$('[data-toggle="tooltip"]').tooltip();
-
-	// uploadcare public key on ckeditor
-	UPLOADCARE_PUBLIC_KEY =	'5aceaad6265140705950';
 
 	// data table
 	$('#example').DataTable();

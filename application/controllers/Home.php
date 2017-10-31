@@ -15,7 +15,7 @@ class Home extends User_Controller{
   function index()
   {
     // load data
-    $data['article']          = $this->Model_article->select_all(8);
+    $data['article']          = $this->Model_article->select_all(8, TRUE);
     $data['gallery']          = $this->Model_gallery->select_all(5);
     $data['division']          = $this->Model_division->select_all();
     $data['activity']          = $this->Model_activity->select_all();

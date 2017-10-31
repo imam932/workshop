@@ -15,15 +15,10 @@ class Profile extends Admin_Controller
     $id = $this->session->userdata('logged_in')['id_user'];
     // load data
     $data['user']  = $this->Model_user->select_by_id($id);
-    // error handling
-    if (!empty($this->session->flashdata('message')))
-    {
-      $data['message'] = $this->session->flashdata('message');
-    }
-    else if (!empty($this->session->flashdata('error')))
-    {
-      $data['error'] = $this->session->flashdata('error');
-    }
+    $data['message'] = $this->session->flashdata('message');
+    $data['old_error'] = $this->session->flashdata('old_error');
+    $data['confirm_error'] = $this->session->flashdata('confirm_error');
+
     // load page
     $this->render['content']        = $this->load->view('admin/profile/index', $data, TRUE);
 
@@ -41,37 +36,32 @@ class Profile extends Admin_Controller
     $this->form_validation->set_rules('password', 'Password', 'required');
     $this->form_validation->set_rules('password2', 'Confirm Password', 'required');
 
-    if(!$this->form_validation->run())
-    {
-      $this->session->set_flashdata('error', validation_errors());
-    }
-    else
+    if($this->form_validation->run())
     {
       $auth = $this->Model_user->select_by_id($id);
       $old_password = md5($this->input->post('old_password'));
       $data['password'] = md5($this->input->post('password'));
       $password2 = md5($this->input->post('password2'));
 
-      $message = array();
-      if($old_password == $auth[0]->password)
+      if($old_password == $auth->password)
       {
         if($data['password'] == $password2)
         {
           $this->Model_user->update($data, $id);
           $this->session->set_flashdata('message', 'Success ! Your password has been reseted');
+          redirect('admin/Profile');
         }
         else
         {
-          $this->session->set_flashdata('error', 'Confirmation password invalid');
+          $this->session->set_flashdata('confirm_error', 'Confirmation password invalid');
         }
       }
       else
       {
-        $this->session->set_flashdata('error', 'Your old password invalid');
+        $this->session->set_flashdata('old_error', 'Your old password invalid');
       }
     }
-
-    redirect('admin/Profile');
+    $this->index();
   }
 
   public function edit($id)
@@ -85,12 +75,7 @@ class Profile extends Admin_Controller
       $this->form_validation->set_rules('address', 'Address', 'trim|required|xss_clean');
       $this->form_validation->set_rules('phone', 'Phone', 'trim|required|xss_clean|numeric');
 
-	    if(!$this->form_validation->run())
-	    {
-	      $this->session->set_flashdata('error', validation_errors());
-				redirect('admin/Profile/edit/' . $id, 'refresh');
-	    }
-      else
+	    if($this->form_validation->run())
       {
         $data['name']    = $this->input->post('name');
         $data['gender']  = $this->input->post('gender');
@@ -103,12 +88,7 @@ class Profile extends Admin_Controller
         redirect('admin/Profile', 'refresh');
       }
     }
-    //error handling
-    $data = array();
-    if(!empty($this->session->flashdata('error')))
-    {
-      $data['error'] = $this->session->flashdata('error');
-    }
+
     // load data
     $data['user'] = $this->Model_user->select_by_id($id);
     // load page

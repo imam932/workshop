@@ -82,6 +82,13 @@
                     <li class="social-icons-google-plus">
                       <a href="https://www.youtube.com/channel/UCRDuxyMCKmyaX5rRDFo-RCQ" target="_blank" title="Youtube">
                         <i class="fa fa-youtube"></i>
+
+                    <li class="social-icons-youtube">
+                      <a href="https://www.youtube.com/channel/UCRDuxyMCKmyaX5rRDFo-RCQ" target="_blank" title="Youtube">
+                        <i class="fa fa-youtube"></i>
+                      </a>
+                    </li>
+
                       </a>
                     </li>
                       <li class="social-icons-github">
@@ -259,6 +266,13 @@
                 <li class="social-icons-google-plus">
                   <a href="https://www.youtube.com/channel/UCRDuxyMCKmyaX5rRDFo-RCQ" target="_blank" title="Youtube">
                     <i class="fa fa-youtube"></i>
+
+                <li class="social-icons-youtube">
+                  <a href="https://www.youtube.com/channel/UCRDuxyMCKmyaX5rRDFo-RCQ" target="_blank" title="Youtube">
+                    <i class="fa fa-youtube"></i>
+                  </a>
+                </li>
+
                   </a>
                 </li>
                   <li class="social-icons-github">

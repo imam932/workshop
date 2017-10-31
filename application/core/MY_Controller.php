@@ -40,6 +40,23 @@ class Admin_Controller extends CI_Controller
 		$this->render['menu'] = $this->Model_privilege->select_all($this->session->userdata('logged_in')['id_level']);
 		$this->render['active_menu'] = $this->router->class;
 	}
+
+	public function save64Image($image64, $dir) {
+		// get img string64
+    $image64 = explode(',', $image64)[1];
+    $data = base64_decode($image64);
+
+    // get img extention
+    $f = finfo_open();
+    $mime_type = finfo_buffer($f, $data, FILEINFO_MIME_TYPE);
+    $extention = explode('/', $mime_type)[1];
+
+    // save img to server
+    $file = uniqid() . "." . $extention;
+    file_put_contents($dir . $file, $data);
+
+    return base_url($dir . $file);
+	}
 }
 
 class User_Controller extends CI_Controller
@@ -49,7 +66,7 @@ class User_Controller extends CI_Controller
 	public function __construct()
 	{
 		parent::__construct();
-
+		error_reporting(0);
 		// load model
 		$this->load->model('Model_article');
 

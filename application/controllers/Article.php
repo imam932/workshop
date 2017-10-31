@@ -32,12 +32,12 @@ class Article extends User_Controller
   {
     // load data
     $data['article'] = $this->Model_article->select_by_id($id);
-    $id_category = $data['article'][0]->id_category;
+    $id_category = $data['article']->id_category;
     $data['related'] = $this->Model_article->select_related($id, $id_category, 4);
     $this->render['content'] = $this->load->view('user/article/view', $data, TRUE);
 
     //load template
-    $title = $data['article'][0]->title;
+    $title = $data['article']->title;
     $this->render['title'] = "Artikel";
     $this->render['desc'] = "Kumpulan artikel, berita, tentang WRI";
     $this->render['breadcrumb'] = array(

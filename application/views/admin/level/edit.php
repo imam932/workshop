@@ -9,17 +9,19 @@
 		<form method="post" action="<?=base_url()?>admin/Level/edit/<?= $level->id_level ?>" enctype="multipart/form-data">
 			<div class="row">
 				<div class="col-lg-9">
-					<div class="form-group">
+					<div class="form-group <?= empty(form_error('level')) ? '' : 'has-error' ?>">
 						<label for="level">Level</label>
-						<input type="text" class="form-control" id="level" name="level" placeholder="Level" value="<?= $level->level ?>">
-					</div>
+						<input type="text" class="form-control" id="level" name="level" placeholder="Level" value="<?= set_value('level', $level->level) ?>">
+            <div class="form-error"><?= form_error('level') ?></div>
+          </div>
 
 					<div class="form-group">
 						<label>Allow to Access</label> <br>
 						<?php foreach ($module as $row_module) {
 							$checked = "";
+
 							foreach ($privilege as $row_privilege) {
-								if($row_privilege->id_module == $row_module->id_module) {
+							  if($row_privilege->id_module == $row_module->id_module) {
 									$checked = "checked";
 									break;
 								}
@@ -36,7 +38,7 @@
 
 					<div class="form-group">
 					  <input type="submit" class="btn btn-primary" value="submit">
-					  <button type="button" class="btn btn-danger" onclick="history.go(-1)">cancel</button>
+					  <button type="button" class="btn btn-danger" onclick="location='<?= base_url() ?>admin/Level'">cancel</button>
 					</div>
 				</div>
 			</div>

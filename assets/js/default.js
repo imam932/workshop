@@ -1,5 +1,19 @@
 $(document).ready(function() {
 
+    $(".row-match").each(function() {
+        var heights = $(this).find(".col-match").map(function() {
+        	return $(this).height();
+		}).get();
+
+		var maxHeight = Math.max.apply(null, heights);
+
+        $(this).find(".col-match").map(function() {
+        	$(this).height(maxHeight)
+		})
+    });
+
+	$("body").tooltip({ selector: '[data-toggle=tooltip]' });
+
 	$('#clearImage').click(function() {
 		$("#image").filestyle('clear');
 	});

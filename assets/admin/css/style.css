@@ -9,6 +9,7 @@ img {
 .btn-pos{
 	background-color:  #FACC2E;
 }
+
 p {
     margin: 0;
 }
@@ -177,4 +178,7 @@ a:hover {
  	fill: white !important;
 }
 
-
+.form-error {
+	color: #f6533b;
+	padding-top: 5px;
+}
