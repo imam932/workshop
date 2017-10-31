@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row about col-lg-6 col-sm-12">
     <div class="about__title">
-      <h2>Foto Semua Angkatan</h2>
+      <h2>Foto Komunitas</h2>
     </div>
     <img src="<?= base_url() ?>assets/img/20161217_121043.jpg" alt="Foto angkatan">
   </div>
@@ -21,7 +21,7 @@
   <div class="row about col-lg-12 col-md-12">
     <hr>
     <div class="about__title">
-      <h2>Struktur Organisasi</h2>
+      <h2>Struktur Komunitas</h2>
     </div>
 
     <!-- 1 -->
@@ -67,15 +67,15 @@
     <!-- 3 -->
     <div class="organisasi col-lg-6 col-md-12">
       <anggota>
-        <h4>Nadia</h4>
-        <i><p>Sekretaris</p></i>
-        <img src="<?= base_url() ?>assets/img/nadia.jpg" alt="Nadia" class="img-circle">
+        <h4>Nadiah Nahdah Anisah</h4>
+        <i><p>Bendahara</p></i>
+        <img src="<?= base_url() ?>assets/img/nadia.jpg" alt="Nadiah" class="img-circle">
       </anggota>
     </div>
     <div class="organisasi col-lg-6 col-md-12">
       <anggota>
-        <h4>Aidha</h4>
-        <i><p>Bendahara</p></i>
+        <h4>Aidha Nurhidayah</h4>
+        <i><p>Sekretaris</p></i>
         <img src="<?= base_url() ?>assets/img/aidha.jpg" alt="Aidha" class="img-circle">
       </anggota>
     </div>

@@ -79,18 +79,16 @@
                         <i class="fa fa-facebook"></i>
                       </a>
                     </li>
-                    <!-- <li class="social-icons-google-plus">
-                      <a href="https://plus.google.com/u/0/106221484184732111240" target="_blank" title="Google +">
-                        <i class="fa fa-google-plus"></i>
+                    <li class="social-icons-google-plus">
+                      <a href="https://www.youtube.com/channel/UCRDuxyMCKmyaX5rRDFo-RCQ" target="_blank" title="Youtube">
+                        <i class="fa fa-youtube"></i>
                       </a>
                     </li>
-                    <li class="social-icons-github">
-                      <a href="https://github.com/wridev" target="_blank" title="Github">
-                        <i class="fa fa-github"></i>
+                      <li class="social-icons-github">
+                        <a href="https://github.com/wridev" target="_blank" title="Github">
+                          <i class="fa fa-github"></i>
                       </a>
-                    </li> -->
-
-                    <!--</li>-->
+                    </li>
 
                   </ul>
                 </nav>
@@ -237,7 +235,7 @@
                     <p>
                       <i class="fa fa-phone"></i>
                       <strong>Telp:</strong>
-                      085-730-269-938
+                      Nadiah - 082-336-969-697
                     </p>
                   </li>
                   <li>
@@ -258,16 +256,16 @@
                     <i class="fa fa-facebook"></i>
                   </a>
                 </li>
-                <!-- <li class="social-icons-google-plus">
-                  <a href="https://plus.google.com/u/0/106221484184732111240" target="_blank" title="Google +">
-                    <i class="fa fa-google-plus"></i>
+                <li class="social-icons-google-plus">
+                  <a href="https://www.youtube.com/channel/UCRDuxyMCKmyaX5rRDFo-RCQ" target="_blank" title="Youtube">
+                    <i class="fa fa-youtube"></i>
                   </a>
                 </li>
                   <li class="social-icons-github">
                     <a href="https://github.com/wridev" target="_blank" title="Github">
                       <i class="fa fa-github"></i>
                   </a>
-                </li> -->
+                </li>
               </ul>
             </div>
           </div>

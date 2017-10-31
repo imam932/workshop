@@ -46,7 +46,7 @@
       <p>wripolinema@gmail.com</p>
       <hr>
       <label for="Telepon" class="contact">Telepon</label>
-      <p>085-730-269-938</p>
+      <p>Nadiah - 082-336-969-697</p>
       <hr>
       <label for="Alamat" class="contact">Alamat</label>
       <p>Jl. Soekarno Hatta No. 9 Malang, <br>

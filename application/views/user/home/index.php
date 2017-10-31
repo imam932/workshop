@@ -6,26 +6,30 @@
       data-plugin-options='{"gridwidth": 1170, "gridheight": 500}'>
       <ul>
         <li data-transition="fade">
-          <img src="<?= base_url() ?>assets/img/bg.png"
-          alt=""
-          data-bgposition="center center"
-          data-bgfit="cover"
-          data-bgrepeat="no-repeat"
-          class="rev-slidebg">
+          <img src="<?= base_url('assets/img/bg.jpg') ?>"
+               alt=""
+               data-bgposition="center center"
+               data-bgfit="cover"
+               data-bgrepeat="no-repeat"
+               class="rev-slidebg">
 
-          <div class="tp-caption top-label" data-x="100" data-y="180" data-start="500" data-transform_in="y:[-300%];opacity:0;s:500;">
-            pengen belajar
+          <div class="tp-caption top-label header-label" data-x="100" data-y="180" data-start="500" data-transform_in="y:[-300%];opacity:0;s:500;">
+            Pengen belajar
           </div>
 
-          <div class="tp-caption main-label" data-x="0" data-y="210" data-start="1500" data-whitespace="nowrap" data-transform_in="y:[100%];s:500;" data-transform_out="opacity:0;s:500;" data-mask_in="x:0px;y:0px;">
+          <div class="tp-caption main-label header-label" data-x="0" data-y="230" data-start="1500" data-whitespace="nowrap" data-transform_in="y:[100%];s:500;" data-transform_out="opacity:0;s:500;" data-mask_in="x:0px;y:0px;">
             PEMROGRAMAN
           </div>
 
-          <div class="tp-caption bottom-label" data-x="100" data-y="280" data-start="2000" data-transform_in="y:[100%];opacity:0;s:500;">
+          <div class="tp-caption bottom-label header-label" data-x="100" data-y="320" data-start="2000" data-transform_in="y:[100%];opacity:0;s:500;">
             Ayo gabung sama WRI
           </div>
 
-          <div class="tp-caption" data-x="500" data-y="0" data-start="2600" data-transform_in="z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;s:500;e:Power2.easeOut;">
+          <div class="tp-caption bottom-label" data-x="100" data-y="380" data-start="2500" data-transform_in="y:[100%];opacity:0;s:500;">
+            <a href="https://goo.gl/forms/fKTWqMQUx85Wnh7I3" class="btn btn-primary btn-lg header-label" target="_blank">Gabung Sekarang</a>
+          </div>
+
+          <div class="tp-caption" data-x="500" data-y="0" data-start="3000" data-transform_in="z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;s:500;e:Power2.easeOut;">
             <youtube-video class="embed-responsive-item" video-id="featuredVideoId" id="featuredVideo"></youtube-video>
           </div>
         </li>
@@ -41,12 +45,14 @@
 </div>
 
 <div class="container">
+
   <div class="row">
     <div class="col-md-3">
       <img class="img-responsive" src="<?= base_url() ?>assets/img/Page_profile.png" width="170"
       data-appear-animation="fadeInLeft" alt="Logo WRI">
     </div>
     <div class="col-md-9">
+
       <h1 class="word-rotator-title mb-sm">
         Workshop Riset Informatika
       </h1>
@@ -69,10 +75,10 @@
   <div class="container">
     <div class="featured-boxes">
 
-      <div class="row">
+      <div class="row row-match">
         <?php foreach ($division as $row) { ?>
           <div class="col-md-4 col-sm-6">
-            <div class="featured-box featured-box-primary">
+            <div class="featured-box featured-box-primary col-match">
               <div class="box-content" align="center">
                 <img src="<?= base_url() ?>assets/upload/division/<?= $row->image ?>" class="img-responsive" width="50%"  alt="">
                 <h4 class="text-uppercase"><?= $row->division ?></h4>
@@ -115,7 +121,7 @@
                       </h4>
 
                       <div class="image-container-post">
-                        <img src="<?= base_url().'assets/upload/article/'.$row->image ?>" alt="Image Article">
+                        <img src="<?= base_url().'assets/upload/article/' . $row->id_article . '/' .$row->image ?>" alt="Image Article">
                       </div>
                       <p class="text-preview-home">
                         <?= strip_tags($row->posting) ?>
@@ -131,6 +137,12 @@
                   <?php } ?>
                 </div>
 
+                <center>
+                  <a href="<?= base_url() ?>Article" class="btn btn-primary">
+                    Lihat Semua Artikel
+                  </a>
+                </center>
+
               </div>
             </div>
             <!-- end article -->
@@ -144,20 +156,17 @@
               <div class="col-md-12">
 
                 <center>
-                  <h2>Tutorial Terbaru</h2>
+                  <h2>Video Terbaru</h2>
                 </center>
 
                 <!-- Modal Video -->
-                <div class="modal fade" ng-repeat="li in videos" id="modal-video{{ li.id.videoId }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                  <div class="modal-dialog" role="document">
+                <div class="modal fade" ng-click="videoPlayer.stopVideo()" ng-repeat="li in videos" id="modal-video{{ li.id.videoId }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                  <div class="modal-dialog modal-lg" role="document">
                     <div class="modal-content">
                       <div class="modal-body">
                         <div class="embed-responsive embed-responsive-16by9">
                           <youtube-video class="embed-responsive-item" video-id="li.id.videoId" player="videoPlayer"></youtube-video>
                         </div>
-                      </div>
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" data-dismiss="modal" ng-click="videoPlayer.stopVideo()">Close</button>
                       </div>
                     </div>
                   </div>
@@ -180,11 +189,17 @@
                       </div>
 
                       <div class="panel-body">
-                        <b>{{ li.snippet.title }}</b>
+                        <b data-toggle="tooltip" data-placement="bottom" title="{{ li.snippet.title }}">{{ li.snippet.title }}</b>
                       </div>
                     </div>
                   </div>
                 </div>
+
+                <center>
+                  <a href="<?= base_url() ?>Tutorial" class="btn btn-primary">
+                    Lihat Semua Tutorial
+                  </a>
+                </center>
 
               </div>
 
@@ -236,16 +251,8 @@
                         <div class="modal fade" id="modal-show-<?= $row->id_gallery ?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
                           <div class="modal-dialog modal-lg" role="document">
                             <div class="modal-content">
-                              <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                <h4 class="modal-title" id="exampleModalLabel"><?= $row->title ?></h4>
-                              </div>
                               <div class="modal-body">
                                 <img src="<?= base_url().'assets/upload/gallery/'.$row->image ?>" class="img-responsive">
-
-                              </div>
-                              <div class="modal-footer">
-                                <p><?= $row->description ?></p>
                               </div>
                             </div>
                           </div>
@@ -257,6 +264,13 @@
                     </ul>
 
                   </div>
+
+                  <center>
+                    <a href="<?= base_url() ?>Gallery" class="btn btn-primary">
+                      Lihat Semua Galeri
+                    </a>
+                  </center>
+
                 </div>
               </div>
               <!-- end gallery -->
@@ -275,28 +289,20 @@
                 </center>
 
                 <div class="col-md-12">
-                  <ul class="timeline">
-                    <?php $i = 1; foreach ($activity as $row) {
-                      if ($i % 2 == 0) {
-                        $inverted = "timeline-inverted";
-                      } else {
-                        $inverted = "";
-                      }
-                      ?>
-                      <li class="<?= $inverted ?>">
-                        <div class="timeline-badge warning"></div>
-                        <div class="timeline-panel">
-                          <div class="timeline-heading">
-                            <h4 class="timeline-title"><?= $row->activity ?></h4>
-                          </div>
-                          <div class="timeline-body">
-                            <img class="img-responsive pull-left" src="<?= base_url() ?>assets/upload/activity/<?= $row->image ?>" width="200px" style="margin-right:15px">
+
+                  <div class="row row-match">
+                    <?php $i = 1; foreach ($activity as $row) { ?>
+                      <div class="col-md-3 col-sm-6">
+                        <div class="featured-box featured-box-primary col-match">
+                          <div class="box-content" align="center">
+                            <img src="<?= base_url() ?>assets/upload/activity/<?= $row->image ?>" class="img-responsive" width="50%"  alt="">
+                            <h4><?= $row->activity ?></h4>
                             <p><?= $row->description ?></p>
+                            <!-- <p><a href="/" class="lnk-primary learn-more">Learn More <i class="fa fa-angle-right"></i></a></p> -->
                           </div>
                         </div>
-                      </li>
-                      <?php $i++; } ?>
-                    </ul>
+                      </div>
+                    <?php } ?>
                   </div>
                 </div>
                 <!-- end activity  -->
